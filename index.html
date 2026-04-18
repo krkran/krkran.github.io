@@ -215,9 +215,6 @@ footer { background: var(--dk); padding: 5rem 3rem 3rem; }
 .blog-layout { max-width: 1100px; margin: 0 auto; padding: 5rem 3rem; display: grid; grid-template-columns: 1.65fr 1fr; gap: 5rem; align-items: start; }
 .blog-empty-state { padding: 3rem 0; }
 .blog-empty-state p { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--lg); line-height: 1.8; margin-bottom: 1.5rem; }
-.blog-add-hint { background: var(--ml2); border: 1px solid rgba(150,66,82,0.15); padding: 1.5rem; margin-top: 1.5rem; }
-.blog-add-hint h4 { font-size: 12px; font-weight: 500; color: var(--md); margin-bottom: 0.5rem; letter-spacing: 0.04em; }
-.blog-add-hint ol { font-size: 12px; color: var(--gr); line-height: 1.9; padding-left: 1.25rem; }
 .blog-list-placeholder { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
 .blog-add-post { background: var(--white); border: 1.5px dashed rgba(150,66,82,0.2); padding: 1.5rem; text-align: center; cursor: pointer; transition: background 0.2s; }
 .blog-add-post:hover { background: var(--ml2); }
@@ -784,19 +781,16 @@ footer { background: var(--dk); padding: 5rem 3rem 3rem; }
     <div>
       <div class="blog-empty-state">
         <p>The first issue is coming. Subscribe below to be notified when stories go live.</p>
-        <div class="blog-add-hint">
-          <h4>How to add posts</h4>
-          <ol>
-            <li>Open this HTML file in a text editor</li>
-            <li>Find the section marked "ADD BLOG POSTS HERE"</li>
-            <li>Copy a blog item template and fill in your title, category, date, and excerpt</li>
-            <li>Save the file and re-upload to Google Sites</li>
-          </ol>
-        </div>
       </div>
 
-      <!-- ADD BLOG POSTS HERE
-      To add a post, copy this block and fill in your details:
+      <!--
+      =====================================================
+      HOW TO ADD A BLOG POST
+      =====================================================
+      Copy the block below, remove the dashes around it,
+      and fill in your category, title, date and read time.
+      Paste it after this comment block.
+      =====================================================
 
       <div class="blog-item" style="display:grid;grid-template-columns:68px 1fr;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid rgba(150,66,82,0.08);cursor:pointer">
         <div style="background:var(--ml2);border:1px solid rgba(150,66,82,0.12);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--m);font-weight:700">D</div>
@@ -806,7 +800,8 @@ footer { background: var(--dk); padding: 5rem 3rem 3rem; }
           <div style="font-family:'Courier Prime',monospace;font-size:10px;color:var(--lg)">Month Year, X min read</div>
         </div>
       </div>
-      -->
+
+      ===================================================== -->
     </div>
 
     <div class="blog-side">
