@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>KRNBRY Studio Journal</title>
+<link>https://krnbrystudio.com/journal.html</link>
+<description>Reflections, articles and thoughts on where KRNBRY Studio is heading.</description>
+<language>en-au</language>
+<item>
+<title>Hello, world</title>
+<link>https://krnbrystudio.com/journal.html#/post/2026-09-27-hello-world</link>
+<guid isPermaLink="false">2026-09-27-hello-world</guid>
+<pubDate>Sun, 27 Sep 2026 10:30:00 GMT</pubDate>
+<description><![CDATA[<p>This is the first entry in the KRNBRY Studio journal.</p>]]></description>
+</item>
+</channel>
+</rss>

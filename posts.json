@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "id": "2026-09-27-hello-world",
+      "date": "2026-09-27T20:30:00+10:00",
+      "type": "reflection",
+      "title": "Hello, world",
+      "body": "This is the first entry in the KRNBRY Studio journal.\n\nIt's where I'll think out loud about where the studio is heading, what I'm learning along the way, and how I want it to grow. Some of it will be proper articles. Some of it will be half-finished thoughts written late at night.\n\nMore soon."
+    }
+  ]
+}
