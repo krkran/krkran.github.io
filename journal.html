@@ -28,22 +28,20 @@ a:hover{color:var(--ink);background:#F3DFA9}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 
 /* top strip */
-.strip{background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.8rem}
-.strip .wrap{display:flex;justify-content:space-between;gap:1rem;padding-top:.55rem;padding-bottom:.55rem;flex-wrap:wrap}
+.strip{background:var(--ink);color:var(--paper);font-size:.85rem}
+.strip .wrap{display:flex;justify-content:space-between;gap:1rem;padding-top:.6rem;padding-bottom:.6rem;flex-wrap:wrap}
 .strip a{color:var(--paper);text-decoration:none}
 .strip a:hover{background:none;color:var(--ochre)}
 .strip nav{display:flex;gap:1.1rem;flex-wrap:wrap}
 
 /* masthead */
-.mast{padding:3rem 0 1.5rem;border-bottom:4px double var(--ink)}
-.mast .kick{font-family:var(--mono);font-size:.8rem;color:var(--red);letter-spacing:.04em;margin-bottom:.9rem}
+.mast{padding:3rem 0 2.25rem;border-bottom:4px double var(--ink);display:grid;grid-template-columns:auto 1fr;gap:1rem 2.5rem;align-items:end}
 .mast h1{font-weight:900;font-stretch:122%;letter-spacing:-.045em;line-height:.9;font-size:clamp(2.8rem,9vw,6.2rem)}
 .mast h1 a{color:inherit;text-decoration:none}
 .mast h1 a:hover{background:none}
 .mast h1 em{font-family:var(--serif);font-weight:400;font-stretch:100%;color:var(--red);letter-spacing:-.02em}
-.mast p{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.35rem);color:var(--ink-2);max-width:46ch;margin-top:1rem}
-.meta-line{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;font-family:var(--mono);font-size:.78rem;color:var(--muted);padding:.8rem 0;border-bottom:1px solid var(--line)}
-.meta-line b{color:var(--ink);font-weight:600}
+.hello{font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.3rem);line-height:1.5;color:var(--ink-2);max-width:40ch;padding-bottom:.4rem}
+.hello .sig{display:block;font-style:italic;color:var(--red);font-size:clamp(1.3rem,2.4vw,1.8rem)}
 
 /* layout */
 .layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:3.5rem;padding-top:2.5rem;padding-bottom:4rem}
@@ -110,6 +108,7 @@ aside{font-size:.93rem}
 .me i{width:46px;height:46px;flex-shrink:0;background:var(--red);color:var(--paper);display:grid;place-items:center;font-style:normal;font-weight:900;font-stretch:125%;font-size:1.3rem}
 .me b{display:block;line-height:1.2}
 .me small{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.updated{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-top:.7rem}
 .badges{display:flex;flex-wrap:wrap;gap:6px}
 .badge{display:inline-flex;height:31px;width:88px;border:1px solid var(--ink);font-family:var(--mono);font-size:9.5px;font-weight:600;line-height:1.05;text-decoration:none;color:var(--ink);overflow:hidden}
 .badge:hover{background:none;transform:translateY(-1px)}
@@ -126,6 +125,7 @@ footer a{color:var(--ink-2)}
 @media (max-width:860px){
   .layout{grid-template-columns:1fr;gap:1rem}
   aside{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+  .mast{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   aside{grid-template-columns:1fr}
@@ -138,7 +138,7 @@ footer a{color:var(--ink-2)}
 
 <div class="strip">
   <div class="wrap">
-    <a href="index.html">← Back to krnbrystudio.com</a>
+    <a href="index.html">← Back to KRNBRY Studio</a>
     <nav aria-label="Site">
       <a href="index.html#about">About</a>
       <a href="index.html#work">Work</a>
@@ -150,11 +150,9 @@ footer a{color:var(--ink-2)}
 
 <header class="wrap">
   <div class="mast">
-    <div class="kick">KRNBRY STUDIO · EST. 2026 · VICTORIA, AUSTRALIA</div>
     <h1><a href="#/">The <em>Journal.</em></a></h1>
-    <p>Reflections, articles and half-formed thoughts on where the studio is heading and how I want it to grow.</p>
+    <p class="hello"><span class="sig">Thanks for reading.</span></p>
   </div>
-  <div class="meta-line" id="metaLine"><span>Loading…</span></div>
 </header>
 
 <div class="wrap layout">
@@ -166,6 +164,7 @@ footer a{color:var(--ink-2)}
       <div class="in">
         <div class="me"><i>K</i><div><b>Kran</b><small>Founder, KRNBRY Studio</small></div></div>
         <p>A place to think out loud about building a not-for-profit media studio: the plans, the ideas, the lessons, and the things I'm still figuring out.</p>
+        <p class="updated" id="updated"></p>
       </div>
     </div>
 
@@ -216,7 +215,7 @@ footer a{color:var(--ink-2)}
   let posts = [];
 
   /* ---------- tiny markdown ---------- */
-  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   const safeUrl = u => /^(https?:\/\/|mailto:|#|\/|\.\/|[\w-]+[\w./-]*$)/i.test(u) && !/^javascript:/i.test(u);
   function inline(s){
     return esc(s)
@@ -232,7 +231,7 @@ footer a{color:var(--ink-2)}
       if (!b.trim()) return '';
       const lines = b.split('\n');
       if (/^\s*(---|\*\*\*)\s*$/.test(b)) return '<hr>';
-      let m = b.match(/^(#{1,3})\s+(.*)$/);
+      const m = b.match(/^(#{1,3})\s+(.*)$/);
       if (m && lines.length === 1) { const lv = m[1].length >= 3 ? 4 : 3; return `<h${lv}>${inline(m[2])}</h${lv}>`; }
       if (lines.every(l => /^>\s?/.test(l))) return '<blockquote><p>' + lines.map(l => inline(l.replace(/^>\s?/,''))).join('<br>') + '</p></blockquote>';
       if (lines.every(l => /^\s*[-*]\s+/.test(l))) return '<ul>' + lines.map(l => '<li>' + inline(l.replace(/^\s*[-*]\s+/,'')) + '</li>').join('') + '</ul>';
@@ -265,8 +264,8 @@ footer a{color:var(--ink-2)}
     }
     const cover = p.image ? `<figure class="cover"><img src="${esc(p.image)}" alt="${esc(p.imageAlt || '')}" loading="lazy">${p.imageAlt ? `<figcaption>${esc(p.imageAlt)}</figcaption>` : ''}</figure>` : '';
     const heading = p.title ? (full ? `<h2>${esc(p.title)}</h2>` : `<h2><a href="${url}">${esc(p.title)}</a></h2>`) : '';
-    return `<article class="entry ${p.type}" id="e-${esc(p.id)}">
-      <a class="type ${p.type}" href="#/type/${p.type}">${(TYPES[p.type] || 'Entry').replace(/s$/,'')}</a>
+    return `<article class="entry ${esc(p.type)}" id="e-${esc(p.id)}">
+      <a class="type ${esc(p.type)}" href="#/type/${esc(p.type)}">${(TYPES[p.type] || 'Entry').replace(/s$/,'')}</a>
       ${heading}${cover}
       <div class="prose">${md(body)}</div>
       ${long ? `<p class="more" style="margin-top:1rem"><a href="${url}">Keep reading →</a></p>` : ''}
@@ -355,13 +354,6 @@ footer a{color:var(--ink-2)}
     window.scrollTo(0, 0);
   }
 
-  function meta(){
-    const last = posts[0];
-    $('metaLine').innerHTML = posts.length
-      ? `<span><b>${posts.length}</b> ${posts.length === 1 ? 'entry' : 'entries'} so far</span><span>Last updated <b>${fmtShort(last.updated || last.date)}</b></span><span>Written by Kran</span><span><a href="journal/feed.xml">RSS</a></span>`
-      : '<span>No entries yet</span>';
-  }
-
   $('yr').textContent = new Date().getFullYear();
   window.addEventListener('hashchange', render);
   fetch('journal/posts.json?v=' + Date.now())
@@ -370,7 +362,10 @@ footer a{color:var(--ink-2)}
       posts = (Array.isArray(data) ? data : data.posts || []).filter(p => p && !p.draft && p.date).sort((a, b) => d(b.date) - d(a.date));
     })
     .catch(() => {})
-    .finally(() => { meta(); render(); });
+    .finally(() => {
+      if (posts.length) $('updated').textContent = 'Last updated ' + fmtShort(posts[0].updated || posts[0].date);
+      render();
+    });
 })();
 </script>
 </body>
