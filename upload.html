@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>KRNBRY Studio | Portfolio uploader</title>
+<title>KRNBRY Studio | Studio uploader</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1F2E'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-weight='900' font-size='34' fill='%23F4EFE7' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--paper:#F4EFE7;--paper-2:#EAE2D5;--white:#FFFDF9;--ink:#1A1614;--ink-2:#463E39;--muted:#7A6F66;--red:#7A1F2E;--red-d:#561521;--ochre:#D9962A;--green:#2E6B35;--line:rgba(26,22,20,.14)}
@@ -76,6 +76,56 @@ input:focus,select:focus{outline:none;border-color:var(--red);background:var(--w
 .log .s{color:var(--green);font-weight:650}
 .hide{display:none!important}
 details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem}
+
+/* tabs */
+.tabs{display:flex;gap:.4rem;background:var(--paper-2);padding:.35rem;border-radius:999px;width:max-content;max-width:100%;margin-bottom:1.5rem}
+.tab{padding:.65rem 1.4rem;border-radius:999px;font-weight:700;color:var(--ink-2)}
+.tab.active{background:var(--ink);color:var(--paper)}
+/* journal editor */
+.typepick{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1.1rem}
+.typepick label{cursor:pointer}
+.typepick input{position:absolute;opacity:0}
+.typepick span{display:block;height:100%;border:1.5px solid var(--line);border-radius:14px;padding:.8rem .9rem;background:var(--paper);transition:all .15s}
+.typepick b{display:block;font-weight:750}
+.typepick small{color:var(--muted);font-size:.84rem}
+.typepick input:checked+span{border-color:var(--red);background:#F7E9EA;box-shadow:inset 0 0 0 1px var(--red)}
+.typepick input:focus-visible+span{outline:3px solid var(--ochre)}
+.ed{display:grid;gap:1rem}
+.tb{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.tb button{min-width:36px;height:34px;padding:0 .6rem;border-radius:8px;border:1.5px solid var(--line);background:var(--white);font-weight:700;font-size:.88rem}
+.tb button:hover{border-color:var(--ink)}
+.tb .grow{flex:1}
+.tb button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+textarea{width:100%;min-height:340px;padding:1rem 1.1rem;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);font-family:'Newsreader',Georgia,serif;font-size:1.15rem;line-height:1.65;resize:vertical;color:var(--ink)}
+textarea:focus{outline:none;border-color:var(--red);background:var(--white)}
+input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font:inherit}
+.preview{min-height:340px;padding:1rem 1.25rem;border-radius:14px;border:1.5px dashed var(--line);background:var(--white);font-family:'Newsreader',Georgia,serif;font-size:1.15rem;line-height:1.65}
+.preview>*+*{margin-top:1em}
+.preview h3,.preview h4{font-family:'Archivo',sans-serif}
+.preview blockquote{border-left:4px solid var(--ochre);padding-left:1rem;font-style:italic}
+.preview ul,.preview ol{padding-left:1.4rem}
+.preview hr{border:0;border-top:1px dashed var(--line)}
+.preview img{max-width:100%}
+.hint{font-size:.84rem;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem}
+.coverbox{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.coverbox img{width:88px;height:62px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.ed-actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.wc{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--muted);margin-left:auto}
+.jrow{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.jrow h3{font-weight:720;font-size:1.05rem;line-height:1.3}
+.jrow p{font-size:.86rem;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.jrow .row-acts{display:flex;gap:.35rem}
+.tag.draft{background:var(--paper-2);color:var(--ink-2)}
+.tag.t-reflection{background:#F6E1E3;color:var(--red)}
+.tag.t-article{background:#E3ECF3;color:#2F5D7C}
+.tag.t-thought{background:#FBF0DC;color:#8A5A0F}
+.restored{font-size:.88rem;background:#FBF0DC;border-radius:12px;padding:.6rem .9rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+@media (max-width:720px){
+  .typepick{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .jrow{grid-template-columns:1fr}
+}
 @media (max-width:720px){
   .grid3{grid-template-columns:1fr}
   .row{grid-template-columns:72px 1fr;align-items:start}
@@ -88,14 +138,14 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
 <body>
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html#portfolio">KRNBRY<span>Portfolio uploader</span></a>
+    <a class="logo" href="index.html#portfolio">KRNBRY<span>Studio uploader</span></a>
     <a class="btn btn-line btn-sm" href="index.html#portfolio" target="_blank" rel="noopener">View portfolio ↗</a>
   </div>
 </header>
 
 <main class="wrap">
-  <h1>Add photos to your portfolio.</h1>
-  <p class="sub">Drag photos in, add a caption, press <b>Publish</b>. Photos are resized automatically, so you can use them straight from your camera or phone.</p>
+  <h1>Studio uploader.</h1>
+  <p class="sub">Add photos to your portfolio or write in your journal. Press <b>Publish</b> and your website updates in about a minute.</p>
 
   <!-- ===== Connect ===== -->
   <section class="panel" id="connectPanel">
@@ -109,7 +159,7 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
     <div id="connectForm">
       <ol class="steps">
         <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → New fine-grained token</a>.</li>
-        <li>Name it "Portfolio uploader". Under <b>Repository access</b>, choose <b>Only select repositories</b> and pick your website repo.</li>
+        <li>Name it "Studio uploader". Under <b>Repository access</b>, choose <b>Only select repositories</b> and pick your website repo.</li>
         <li>Under <b>Permissions → Repository permissions</b>, set <b>Contents</b> to <b>Read and write</b>.</li>
         <li>Click <b>Generate token</b>, copy it, and paste it below.</li>
       </ol>
@@ -125,6 +175,11 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
       <button class="btn btn-line btn-sm" id="disconnectBtn">Disconnect</button>
     </div>
   </section>
+
+  <div class="tabs hide" id="tabs" role="tablist" aria-label="What do you want to do?">
+    <button class="tab active" role="tab" data-tab="photos">Photos</button>
+    <button class="tab" role="tab" data-tab="journal">Journal</button>
+  </div>
 
   <div id="work" class="hide">
     <!-- ===== Add ===== -->
@@ -152,6 +207,74 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
       </div>
       <datalist id="cats"><option>Events</option><option>Portraits</option><option>Places</option><option>Behind the scenes</option><option>Community</option></datalist>
       <div class="list" id="list"><div class="empty">Loading your photos…</div></div>
+    </section>
+  </div>
+
+  <!-- ===== JOURNAL ===== -->
+  <div id="journalWork" class="hide">
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2 id="edTitle">Write a new entry</h2>
+          <p>Your writing saves in this browser as you type, so you won't lose it.</p>
+        </div>
+        <button class="btn btn-line btn-sm hide" id="edCancel">Stop editing</button>
+      </div>
+      <div class="ed">
+        <div id="restored" class="restored hide"><span>We brought back what you were writing last time.</span><button class="btn btn-line btn-sm" id="discardDraft">Start fresh instead</button></div>
+        <div class="typepick" role="radiogroup" aria-label="Entry type">
+          <label><input type="radio" name="etype" value="reflection" checked><span><b>Reflection</b><small>Looking back, lessons, how it's going</small></span></label>
+          <label><input type="radio" name="etype" value="article"><span><b>Article</b><small>A longer piece on one topic</small></span></label>
+          <label><input type="radio" name="etype" value="thought"><span><b>Thought</b><small>A quick note, no title needed</small></span></label>
+        </div>
+        <div class="field" id="titleField"><label for="eTitle">Title</label><input type="text" id="eTitle" placeholder="e.g. Where I want the studio to be in five years"></div>
+        <div class="field">
+          <label for="eBody">Your writing</label>
+          <div class="tb" role="toolbar" aria-label="Formatting">
+            <button type="button" data-f="bold" title="Bold"><b>B</b></button>
+            <button type="button" data-f="italic" title="Italic"><i>I</i></button>
+            <button type="button" data-f="h" title="Heading">H</button>
+            <button type="button" data-f="quote" title="Quote">“ ”</button>
+            <button type="button" data-f="list" title="Bullet list">• List</button>
+            <button type="button" data-f="link" title="Link">Link</button>
+            <button type="button" data-f="hr" title="Divider">✦</button>
+            <span class="grow"></span>
+            <button type="button" id="previewBtn">Preview</button>
+          </div>
+          <textarea id="eBody" placeholder="Start writing…"></textarea>
+          <div id="ePreview" class="preview hide"></div>
+          <div class="hint">Leave a blank line between paragraphs. Buttons above add formatting for you.</div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label>Cover photo <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <div class="coverbox">
+              <img id="coverThumb" class="hide" alt="">
+              <label class="btn btn-line btn-sm" style="cursor:pointer">Choose photo<input type="file" id="coverFile" accept="image/*" hidden></label>
+              <button type="button" class="btn btn-line btn-sm hide" id="coverRemove">Remove</button>
+            </div>
+          </div>
+          <div class="field"><label for="eDate">Date and time</label><input type="datetime-local" id="eDate"></div>
+        </div>
+        <div class="field hide" id="altField"><label for="eAlt">Photo caption <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="eAlt" placeholder="What's in the photo?"></div>
+        <div class="ed-actions">
+          <button class="btn btn-red" id="ePublish">Publish entry</button>
+          <button class="btn btn-line" id="eDraft">Save as draft</button>
+          <span class="wc" id="wc">0 words</span>
+        </div>
+        <div class="log" id="jLog"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Your entries</h2>
+          <p>Newest first. Drafts are only visible to you here.</p>
+        </div>
+        <a class="btn btn-line btn-sm" href="journal.html" target="_blank" rel="noopener">View journal ↗</a>
+      </div>
+      <div class="list" id="jList"><div class="empty">Loading…</div></div>
     </section>
   </div>
 </main>
@@ -223,9 +346,9 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
       $('connectForm').classList.add('hide');
       $('connectedInfo').classList.remove('hide');
       $('connectedText').textContent = 'Publishing to ' + cfg.user + '/' + cfg.repo + ' (' + branch + ')';
-      $('work').classList.remove('hide');
-      $('bar').classList.remove('hide');
-      await loadExisting();
+      $('tabs').classList.remove('hide');
+      showTab((location.hash === '#journal' && 'journal') || store.get('tab') || 'photos');
+      await Promise.all([loadExisting(), loadJournal()]);
     } catch (e) {
       setConn('bad', 'Could not connect');
       alertBox(e.message);
@@ -424,6 +547,321 @@ details summary{cursor:pointer;font-weight:650;color:var(--red);font-size:.93rem
       $('summary').textContent = 'Published.';
     } else { updateSummary(); }
   };
+
+
+  /* =================== TABS =================== */
+  function showTab(t){
+    if (t !== 'journal') t = 'photos';
+    store.set('tab', t);
+    document.querySelectorAll('.tab').forEach(b => { const on = b.dataset.tab === t; b.classList.toggle('active', on); b.setAttribute('aria-selected', on); });
+    $('work').classList.toggle('hide', t !== 'photos');
+    $('bar').classList.toggle('hide', t !== 'photos');
+    $('journalWork').classList.toggle('hide', t !== 'journal');
+  }
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+
+  /* =================== JOURNAL =================== */
+  const JPOSTS = 'journal/posts.json', JFEED = 'journal/feed.xml', JIMG = 'journal/img/';
+  let jposts = [], editingId = null, coverFile = null, coverExisting = null, coverExistingAlt = '';
+  const dec = c => decodeURIComponent(escape(atob(c.replace(/\n/g, ''))));
+  const escH = s => String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const refq = () => '?ref=' + encodeURIComponent(branch);
+
+  function jlog(t, cls){ const d = document.createElement('div'); if (cls) d.className = cls; d.textContent = t; $('jLog').appendChild(d); }
+
+  /* tiny markdown (same as journal.html) */
+  const safeUrl = u => /^(https?:\/\/|mailto:|#|\/|\.\/|[\w-]+[\w./-]*$)/i.test(u) && !/^javascript:/i.test(u);
+  function inline(s){
+    return escH(s)
+      .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (m,a,u) => safeUrl(u) ? `<img src="${u}" alt="${a}">` : '')
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m,t,u) => safeUrl(u) ? `<a href="${u}" target="_blank" rel="noopener">${t}</a>` : t)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, '$1<em>$2</em>');
+  }
+  function md(src){
+    return (src || '').replace(/\r/g,'').split(/\n{2,}/).map(b => {
+      b = b.replace(/^\n+|\n+$/g,''); if (!b.trim()) return '';
+      const lines = b.split('\n');
+      if (/^\s*(---|\*\*\*)\s*$/.test(b)) return '<hr>';
+      const m = b.match(/^(#{1,3})\s+(.*)$/);
+      if (m && lines.length === 1) { const lv = m[1].length >= 3 ? 4 : 3; return `<h${lv}>${inline(m[2])}</h${lv}>`; }
+      if (lines.every(l => /^>\s?/.test(l))) return '<blockquote><p>' + lines.map(l => inline(l.replace(/^>\s?/,''))).join('<br>') + '</p></blockquote>';
+      if (lines.every(l => /^\s*[-*]\s+/.test(l))) return '<ul>' + lines.map(l => '<li>' + inline(l.replace(/^\s*[-*]\s+/,'')) + '</li>').join('') + '</ul>';
+      if (lines.every(l => /^\s*\d+[.)]\s+/.test(l))) return '<ol>' + lines.map(l => '<li>' + inline(l.replace(/^\s*\d+[.)]\s+/,'')) + '</li>').join('') + '</ol>';
+      return '<p>' + lines.map(inline).join('<br>') + '</p>';
+    }).join('\n');
+  }
+
+  /* ----- editor helpers ----- */
+  const body = $('eBody');
+  const typeVal = () => (document.querySelector('input[name=etype]:checked') || {}).value || 'reflection';
+  const setType = t => { const r = document.querySelector(`input[name=etype][value="${t}"]`); if (r) r.checked = true; syncType(); };
+  function syncType(){ const th = typeVal() === 'thought'; $('titleField').querySelector('label').innerHTML = th ? 'Title <span style="font-weight:400;color:var(--muted)">(optional for thoughts)</span>' : 'Title'; }
+  document.querySelectorAll('input[name=etype]').forEach(r => r.addEventListener('change', () => { syncType(); autosave(); }));
+
+  const pad = n => String(n).padStart(2, '0');
+  const toLocalInput = dt => `${dt.getFullYear()}-${pad(dt.getMonth()+1)}-${pad(dt.getDate())}T${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+  function isoWithOffset(v){
+    const dt = v ? new Date(v) : new Date();
+    const off = -dt.getTimezoneOffset(), sign = off >= 0 ? '+' : '-', a = Math.abs(off);
+    return toLocalInput(dt) + ':00' + sign + pad(Math.floor(a / 60)) + ':' + pad(a % 60);
+  }
+
+  function wrapSel(before, after, placeholder){
+    const s = body.selectionStart, e = body.selectionEnd, v = body.value;
+    const sel = v.slice(s, e) || placeholder;
+    body.value = v.slice(0, s) + before + sel + after + v.slice(e);
+    body.focus(); body.selectionStart = s + before.length; body.selectionEnd = s + before.length + sel.length;
+    autosave();
+  }
+  function prefixLines(prefix, placeholder){
+    const s = body.selectionStart, e = body.selectionEnd, v = body.value;
+    const ls = v.lastIndexOf('\n', s - 1) + 1;
+    let le = v.indexOf('\n', e); if (le < 0) le = v.length;
+    const line = v.slice(ls, le);
+    if (s === e && line.trim()) {
+      // cursor on a line that already has writing: start a fresh block after it
+      const ins = '\n\n' + prefix + placeholder;
+      body.value = v.slice(0, le) + ins + v.slice(le);
+      body.focus(); body.selectionStart = le + 2 + prefix.length; body.selectionEnd = le + ins.length; autosave();
+      return;
+    }
+    const chunk = line.trim() ? line : placeholder;
+    const out = chunk.split('\n').map(l => prefix + l.replace(/^(#{1,3}\s|>\s?|[-*]\s)/, '')).join('\n');
+    const gapBefore = ls > 0 && v.slice(0, ls).slice(-2) !== '\n\n' ? '\n' : '';
+    const gapAfter = le < v.length && v.slice(le, le + 2) !== '\n\n' ? '\n' : '';
+    body.value = v.slice(0, ls) + gapBefore + out + gapAfter + v.slice(le);
+    const st = ls + gapBefore.length;
+    body.focus();
+    if (!line.trim()) { body.selectionStart = st + prefix.length; body.selectionEnd = st + out.length; } else { body.selectionStart = body.selectionEnd = st + out.length; }
+    autosave();
+  }
+  document.querySelectorAll('.tb [data-f]').forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.f;
+    if (f === 'bold') wrapSel('**', '**', 'bold text');
+    if (f === 'italic') wrapSel('*', '*', 'italic text');
+    if (f === 'h') prefixLines('## ', 'Heading');
+    if (f === 'quote') prefixLines('> ', 'A quote');
+    if (f === 'list') prefixLines('- ', 'List item');
+    if (f === 'hr') { const p = body.selectionStart; body.value = body.value.slice(0, p) + '\n\n---\n\n' + body.value.slice(p); body.focus(); autosave(); }
+    if (f === 'link') {
+      const url = prompt('Paste the link (web address):', 'https://');
+      if (url && url !== 'https://') wrapSel('[', '](' + url.trim() + ')', 'link text');
+    }
+  }));
+  $('previewBtn').onclick = () => {
+    const on = $('ePreview').classList.toggle('hide') === false;
+    $('previewBtn').classList.toggle('on', on);
+    $('previewBtn').textContent = on ? 'Back to writing' : 'Preview';
+    body.classList.toggle('hide', on);
+    if (on) $('ePreview').innerHTML = ($('eTitle').value ? `<h3 style="font-size:1.6rem">${escH($('eTitle').value)}</h3>` : '') + (md(body.value) || '<p style="color:var(--muted)">Nothing written yet.</p>');
+  };
+  function updateWC(){ const n = body.value.trim().split(/\s+/).filter(Boolean).length; $('wc').textContent = n + (n === 1 ? ' word' : ' words') + (n > 200 ? ' · ' + Math.max(1, Math.round(n / 220)) + ' min read' : ''); }
+
+  /* cover */
+  function showCover(src){
+    $('coverThumb').classList.toggle('hide', !src); if (src) $('coverThumb').src = src;
+    $('coverRemove').classList.toggle('hide', !src); $('altField').classList.toggle('hide', !src);
+  }
+  $('coverFile').addEventListener('change', e => { const f = e.target.files[0]; if (!f) return; coverFile = f; showCover(URL.createObjectURL(f)); e.target.value = ''; });
+  $('coverRemove').onclick = () => { coverFile = null; coverExisting = null; $('eAlt').value = ''; showCover(null); };
+
+  /* autosave */
+  function autosave(){
+    updateWC();
+    if (!body.value.trim() && !$('eTitle').value.trim()) { store.del('jdraft'); return; }
+    store.set('jdraft', JSON.stringify({ type: typeVal(), title: $('eTitle').value, body: body.value, date: $('eDate').value, alt: $('eAlt').value, editingId }));
+  }
+  ['input'].forEach(ev => { body.addEventListener(ev, autosave); $('eTitle').addEventListener(ev, autosave); $('eDate').addEventListener(ev, autosave); $('eAlt').addEventListener(ev, autosave); });
+
+  function resetEditor(){
+    editingId = null; coverFile = null; coverExisting = null;
+    $('eTitle').value = ''; body.value = ''; $('eAlt').value = ''; $('eDate').value = toLocalInput(new Date());
+    setType('reflection'); showCover(null);
+    $('edTitle').textContent = 'Write a new entry'; $('edCancel').classList.add('hide'); $('restored').classList.add('hide');
+    $('ePublish').textContent = 'Publish entry';
+    if (!$('ePreview').classList.contains('hide')) $('previewBtn').click();
+    store.del('jdraft'); updateWC();
+  }
+  $('edCancel').onclick = () => { if (confirm('Stop editing? Unpublished changes to this entry will be lost.')) resetEditor(); };
+  $('discardDraft').onclick = () => resetEditor();
+
+  function loadIntoEditor(p){
+    editingId = p.id; coverFile = null; coverExisting = p.image || null;
+    setType(p.type || 'reflection'); $('eTitle').value = p.title || ''; body.value = p.body || '';
+    $('eDate').value = toLocalInput(new Date(p.date)); $('eAlt').value = p.imageAlt || '';
+    showCover(coverExisting ? (coverExisting + '?v=' + Date.now()) : null);
+    $('edTitle').textContent = 'Editing: ' + (p.title || 'a thought'); $('edCancel').classList.remove('hide');
+    $('ePublish').textContent = p.draft ? 'Publish entry' : 'Update entry';
+    $('restored').classList.add('hide'); $('jLog').innerHTML = '';
+    updateWC(); autosave();
+    window.scrollTo({ top: $('journalWork').offsetTop - 20, behavior: 'smooth' });
+  }
+
+  /* ----- load / list ----- */
+  async function readPosts(){
+    const r = await api('/contents/' + JPOSTS + refq());
+    if (!r || !r.content) return { list: [], sha: null };
+    let list = [];
+    try { const d = JSON.parse(dec(r.content)); list = Array.isArray(d) ? d : (d.posts || []); } catch(e){}
+    return { list, sha: r.sha };
+  }
+  async function loadJournal(){
+    try { jposts = (await readPosts()).list; } catch(e) { jposts = []; }
+    if (editingId && !coverExisting && !coverFile) { const p = jposts.find(x => x.id === editingId); if (p && p.image) { coverExisting = p.image; showCover(p.image); } }
+    renderJList();
+  }
+  function renderJList(){
+    const el = $('jList');
+    const list = jposts.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    if (!list.length) { el.innerHTML = '<div class="empty">No entries yet. Write your first one above.</div>'; return; }
+    el.innerHTML = '';
+    list.forEach(p => {
+      const row = document.createElement('div'); row.className = 'jrow';
+      const when = new Date(p.date).toLocaleDateString('en-AU', { day:'numeric', month:'short', year:'numeric' });
+      const words = (p.body || '').trim().split(/\s+/).filter(Boolean).length;
+      row.innerHTML = `<div>
+          <div class="meta"><span class="tag t-${escH(p.type)}">${escH((p.type || 'entry').replace(/^./, c => c.toUpperCase()))}</span>${p.draft ? '<span class="tag draft">Draft</span>' : ''}</div>
+          <h3>${escH(p.title || (p.body || '').slice(0, 70) + ((p.body || '').length > 70 ? '…' : ''))}</h3>
+          <p>${when} · ${words} words</p>
+        </div>
+        <div class="row-acts"></div>`;
+      const acts = row.querySelector('.row-acts');
+      const mk = (t, fn, cls) => { const b = document.createElement('button'); b.className = 'btn btn-line btn-sm ' + (cls || ''); b.textContent = t; b.onclick = fn; acts.appendChild(b); };
+      if (!p.draft) { const a = document.createElement('a'); a.className = 'btn btn-line btn-sm'; a.textContent = 'View'; a.target = '_blank'; a.rel = 'noopener'; a.href = 'journal.html#/post/' + encodeURIComponent(p.id); acts.appendChild(a); }
+      mk('Edit', () => loadIntoEditor(p));
+      mk('Delete', () => deletePost(p));
+      el.appendChild(row);
+    });
+  }
+
+  /* ----- RSS ----- */
+  function siteBase(){
+    if (/^https?:$/.test(location.protocol)) return location.origin + location.pathname.replace(/[^/]*$/, '');
+    return 'https://krnbrystudio.com/';
+  }
+  function feedXML(list){
+    const base = siteBase();
+    const x = s => String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const items = list.filter(p => !p.draft).slice(0, 30).map(p => {
+      const title = p.title || (p.body || '').split('\n')[0].slice(0, 80);
+      let html = md(p.body); if (p.image) html = `<p><img src="${base}${p.image}" alt="${escH(p.imageAlt || '')}"></p>` + html;
+      return `<item>
+<title>${x(title)}</title>
+<link>${base}journal.html#/post/${encodeURIComponent(p.id)}</link>
+<guid isPermaLink="false">${x(p.id)}</guid>
+<category>${x(p.type)}</category>
+<pubDate>${new Date(p.date).toUTCString()}</pubDate>
+<description><![CDATA[${html.replace(/]]>/g, ']]]]><![CDATA[>')}]]></description>
+</item>`;
+    }).join('\n');
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>KRNBRY Studio Journal</title>
+<link>${base}journal.html</link>
+<description>Reflections, articles and thoughts on where KRNBRY Studio is heading.</description>
+<language>en-au</language>
+<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${items}
+</channel>
+</rss>
+`;
+  }
+
+  async function writeAll(list, message){
+    list.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const fresh = await api('/contents/' + JPOSTS + refq());
+    const b1 = { message, content: strB64(JSON.stringify({ posts: list }, null, 2) + '\n'), branch };
+    if (fresh && fresh.sha) b1.sha = fresh.sha;
+    await api('/contents/' + JPOSTS, { method: 'PUT', body: JSON.stringify(b1) });
+    const f = await api('/contents/' + JFEED + refq());
+    const b2 = { message: 'Update journal RSS feed', content: strB64(feedXML(list)), branch };
+    if (f && f.sha) b2.sha = f.sha;
+    await api('/contents/' + JFEED, { method: 'PUT', body: JSON.stringify(b2) });
+    jposts = list;
+  }
+
+  /* ----- save ----- */
+  async function save(asDraft){
+    $('jLog').innerHTML = '';
+    const type = typeVal(), title = $('eTitle').value.trim(), text = body.value.replace(/\s+$/,'');
+    if (!text.trim()) { jlog('Write something first.', 'e'); return; }
+    if (type !== 'thought' && !title) { jlog('Add a title (only thoughts can skip it).', 'e'); $('eTitle').focus(); return; }
+    const btns = [$('ePublish'), $('eDraft')]; btns.forEach(b => b.disabled = true);
+    const label = $('ePublish').textContent; $('ePublish').textContent = asDraft ? label : 'Publishing…';
+    try {
+      const latest = (await readPosts()).list;
+      const date = isoWithOffset($('eDate').value);
+      const prev = editingId ? latest.find(p => p.id === editingId) : null;
+      let id = editingId;
+      if (!id) {
+        id = date.slice(0, 10) + '-' + slug(title || text.split(/\s+/).slice(0, 6).join(' '));
+        let n = 2, base = id; while (latest.some(p => p.id === id)) id = base + '-' + (n++);
+      }
+      let image = coverExisting || null;
+      if (coverFile) {
+        jlog('Resizing and uploading your photo…');
+        const blob = await resize(coverFile);
+        const path = JIMG + id + '-' + Date.now().toString(36) + '.jpg';
+        await api('/contents/' + path, { method: 'PUT', body: JSON.stringify({ message: 'Add journal image', content: await toB64(blob), branch }) });
+        image = path;
+      }
+      const post = { id, date, type, title, body: text };
+      if (image) { post.image = image; if ($('eAlt').value.trim()) post.imageAlt = $('eAlt').value.trim(); }
+      if (asDraft) post.draft = true;
+      if (prev && !prev.draft && !asDraft) post.updated = isoWithOffset();
+      const list = latest.filter(p => p.id !== id); list.push(post);
+      jlog(asDraft ? 'Saving draft…' : 'Publishing…');
+      await writeAll(list, (asDraft ? 'Save journal draft: ' : (prev ? 'Update journal entry: ' : 'New journal entry: ')) + (title || id));
+      $('jLog').innerHTML = '';
+      if (asDraft) jlog('Draft saved. It\'s only visible here until you publish it.', 's');
+      else {
+        const d = document.createElement('div'); d.className = 's';
+        d.innerHTML = 'Published! Live in about a minute: <a href="journal.html#/post/' + encodeURIComponent(id) + '" target="_blank" rel="noopener">view entry ↗</a>';
+        $('jLog').appendChild(d);
+      }
+      const keepLog = $('jLog').innerHTML;
+      resetEditor(); $('jLog').innerHTML = keepLog;
+      renderJList();
+    } catch (e) {
+      jlog('Something went wrong: ' + e.message + '. Your writing is still here, so just try again.', 'e');
+      $('ePublish').textContent = label;
+    }
+    btns.forEach(b => b.disabled = false);
+  }
+  $('ePublish').onclick = () => save(false);
+  $('eDraft').onclick = () => save(true);
+
+  async function deletePost(p){
+    if (!confirm('Delete "' + (p.title || 'this thought') + '"? This can\'t be undone.')) return;
+    $('jLog').innerHTML = ''; jlog('Deleting…');
+    try {
+      const latest = (await readPosts()).list.filter(x => x.id !== p.id);
+      await writeAll(latest, 'Delete journal entry: ' + (p.title || p.id));
+      if (p.image && p.image.indexOf(JIMG) === 0 && !latest.some(x => x.image === p.image)) {
+        try { const f = await api('/contents/' + p.image + refq()); if (f && f.sha) await api('/contents/' + p.image, { method: 'DELETE', body: JSON.stringify({ message: 'Remove journal image', sha: f.sha, branch }) }); } catch(e){}
+      }
+      if (editingId === p.id) resetEditor();
+      $('jLog').innerHTML = ''; jlog('Deleted.', 's');
+      renderJList();
+    } catch (e) { jlog('Could not delete: ' + e.message, 'e'); }
+  }
+
+  /* restore unsent writing */
+  (function restore(){
+    $('eDate').value = toLocalInput(new Date());
+    let d = null; try { d = JSON.parse(store.get('jdraft') || 'null'); } catch(e){}
+    if (d && (d.body || d.title)) {
+      setType(d.type || 'reflection'); $('eTitle').value = d.title || ''; body.value = d.body || '';
+      if (d.date) $('eDate').value = d.date; $('eAlt').value = d.alt || '';
+      editingId = d.editingId || null;
+      if (editingId) { $('edTitle').textContent = 'Editing: ' + (d.title || 'a thought'); $('edCancel').classList.remove('hide'); $('ePublish').textContent = 'Update entry'; }
+      $('restored').classList.remove('hide');
+    }
+    syncType(); updateWC();
+  })();
 
   if (store.get('token')) connect();
 })();
