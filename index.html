@@ -174,6 +174,27 @@ section{position:relative}
 .jb-link:hover .arr{transform:translateX(4px)}
 .jb-date{font-size:.85rem;color:var(--muted)}
 @media (max-width:620px){.jband-in{flex-direction:column;align-items:flex-start;gap:.25rem}}
+/* ---------- BELONGING ---------- */
+.bel-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.bel-phon{font-family:'IBM Plex Mono',ui-monospace,monospace;color:#E0204F;font-size:1rem;margin-bottom:.6rem}
+.bel-title{color:#E0204F}
+.bel-cover{position:relative;max-width:440px;justify-self:center}
+.bel-cover img{width:100%;height:auto;display:block;box-shadow:0 40px 70px -34px rgba(26,22,20,.55),0 0 0 1px rgba(26,22,20,.08);transform:rotate(1.5deg)}
+.bel-q{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.25;max-width:26ch}
+.bel-parts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
+.bel-part{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:1.6rem}
+.bel-part b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.8rem;color:#E0204F;margin-bottom:.8rem}
+.bel-part h3{font-weight:760;font-stretch:108%;font-size:1.2rem;margin-bottom:.4rem}
+.bel-part p{color:var(--ink-2);font-size:.95rem}
+.bel-join{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.bel-join ul{list-style:none;margin:1.5rem 0;display:grid;gap:.7rem}
+.bel-join li{display:flex;gap:.75rem;color:rgba(244,239,231,.85)}
+.bel-join li::before{content:"✦";color:var(--ochre)}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;color:var(--ink-2)}
+.check input{margin-top:.3rem;width:18px;height:18px;accent-color:var(--maroon)}
+@media (max-width:1020px){.bel-parts{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.bel-hero,.bel-join{grid-template-columns:1fr}.bel-cover{max-width:340px}}
+@media (max-width:620px){.bel-parts{grid-template-columns:1fr}}
 /* ---------- MISSION ---------- */
 .quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.35;letter-spacing:-.01em;max-width:30ch}
 .quote-wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem)}
@@ -317,6 +338,15 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   .value:not(:nth-child(3n+1)){padding-left:0;border-left:0}
   .value:nth-child(even){padding-left:2rem;border-left:1px solid var(--line)}
 }
+@media (max-width:1100px){
+  .burger{display:flex}
+  .nav-links{position:fixed;top:var(--nav);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);padding:.5rem var(--gut) 1.5rem;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .25s}
+  .nav.open .nav-links{transform:none;opacity:1;pointer-events:auto}
+  .nav-links a{padding:.95rem .25rem;border-radius:0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav-links a.active{background:none;color:var(--maroon)}
+  .nav-links .nav-cta{margin:1rem 0 0;text-align:center;border-radius:999px;border:0}
+}
+.dark .form{color:var(--ink)}
 @media (max-width:900px){
   .burger{display:flex}
   .nav-links{position:fixed;top:var(--nav);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);padding:.5rem var(--gut) 1.5rem;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .25s}
@@ -357,6 +387,85 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* =================== PREMIUM MOTION & DETAILS =================== */
+::selection{background:#7A1F2E;color:#F4EFE7}
+
+/* paper grain */
+.grain{position:fixed;inset:-50%;z-index:95;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* scroll progress */
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:70;background:var(--maroon);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+/* nav hides on scroll down */
+.nav{transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.nav.away{transform:translateY(-100%)}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+
+/* headline word reveal */
+.split .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .12em 0;margin:0 -.06em -.12em 0}
+.split .sw>span{display:inline-block;transform:translateY(110%);transition:transform 1s cubic-bezier(.2,.75,.15,1);transition-delay:calc(var(--i) * 45ms)}
+.split.in .sw>span{transform:none}
+
+/* images fade in when loaded */
+.g-item img,.strip img,.hero-media img{opacity:0;filter:blur(12px);transition:opacity .9s ease,filter .9s ease,transform .6s ease}
+.g-item img.loaded,.strip img.loaded,.hero-media img.loaded{opacity:1;filter:none}
+.hero-media img.loaded{animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+
+/* tilt cards (desktop) */
+.tilt{transform-style:preserve-3d;will-change:transform;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,opacity .4s}
+.tilt.hovering{transition:transform .12s linear,box-shadow .4s,opacity .4s}
+.tilt .glare{position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.28),transparent 45%);mix-blend-mode:soft-light;z-index:2}
+.tilt.hovering .glare{opacity:1}
+.g-item.tilt.hovering,.strip button.tilt.hovering{box-shadow:0 30px 60px -25px rgba(26,22,20,.55);z-index:3}
+.g-item{transform-origin:center}
+@media (hover:hover) and (pointer:fine){
+  .gallery:hover .g-item:not(.hovering){opacity:.55}
+}
+.bel-cover.tilt{border-radius:2px}
+
+/* ticker pauses on hover */
+.ticker:hover .ticker-track{animation-play-state:paused}
+
+/* magnetic buttons */
+.mag{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.mag.pulling{transition:transform .15s linear}
+
+/* flipbook */
+.book-wrap{margin-top:2.5rem}
+.book{position:relative;width:min(100%,1000px);margin:0 auto;aspect-ratio:1.414/1;perspective:2600px}
+.book-inner{position:absolute;inset:0;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.book.at-start .book-inner{transform:translateX(-25%)}
+.book.at-end .book-inner{transform:translateX(25%)}
+.leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.3,.7,.2,1);cursor:pointer}
+.leaf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;background-size:cover;background-position:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 50px -30px rgba(26,22,20,.6)}
+.face.front{border-radius:0 4px 4px 0}
+.face.back{transform:rotateY(180deg);border-radius:4px 0 0 4px}
+.face.front::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0) 8%);pointer-events:none}
+.face.back::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.22),rgba(0,0,0,0) 8%);pointer-events:none}
+.book-ctrl{display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-top:1.75rem}
+.book-ctrl .btn{padding:.7rem 1.2rem}
+.book-ctrl .btn:disabled{opacity:.3;pointer-events:none}
+#bookLabel{min-width:9em;text-align:center;font-weight:600;color:var(--ink-2)}
+
+/* count-up numbers */
+.fact b{font-variant-numeric:tabular-nums}
+
+@media (prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  .rv{opacity:1;transform:none}
+  .split .sw>span{transform:none}
+  .g-item img,.strip img,.hero-media img{opacity:1;filter:none}
+}
 </style>
 </head>
 <body>
@@ -370,6 +479,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
         <li><a href="#about">About</a></li>
         <li><a href="#mission">Mission</a></li>
         <li><a href="#work">Work</a></li>
+        <li data-belonging="live"><a href="#belonging">Belonging</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="journal.html">Journal</a></li>
         <li><a href="#involve">Get involved</a></li>
@@ -462,11 +572,17 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
           <div><a class="btn btn-light" href="#work">About the project <span class="arr">→</span></a></div>
         </article>
         <div class="stack">
-          <article class="card plain">
+          <article class="card plain" data-belonging="soon">
             <span class="status idea">Ongoing</span>
             <h3 class="h3">Photography</h3>
             <p class="body">Documenting people, places and moments in our communities as we go.</p>
             <div><a class="textlink" href="#portfolio">See the portfolio →</a></div>
+          </article>
+          <article class="card plain" data-belonging="live">
+            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Out now</span>
+            <h3 class="h3">Belonging, Vol. 1</h3>
+            <p class="body">Our yearly magazine of portraits and first-person stories about home, identity and finding your place.</p>
+            <div><a class="textlink" href="#belonging">Look inside →</a></div>
           </article>
           <article class="card plain">
             <span class="status live">Where we started</span>
@@ -734,6 +850,18 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
           <p class="body">Following rural doctors and culturally diverse health professionals across Victoria: why they chose rural practice, what it asks of them, and what their communities gain. We plan to submit it to the Australian Youth Film Festival.</p>
         </article>
         <div class="stack">
+          <article class="card plain" data-belonging="soon">
+            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Coming soon</span>
+            <h3 class="h3">Belonging, Vol. 1</h3>
+            <p class="body">A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p>
+            <div><a class="textlink" href="#contact">Want to be in it? Get in touch →</a></div>
+          </article>
+          <article class="card plain" data-belonging="live">
+            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Out now</span>
+            <h3 class="h3">Belonging, Vol. 1</h3>
+            <p class="body">A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p>
+            <div><a class="textlink" href="#belonging">Look inside →</a></div>
+          </article>
           <article class="card plain">
             <span class="status live">Background</span>
             <h3 class="h3">CityVision TV</h3>
@@ -779,6 +907,92 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
         <article class="plan" data-c="comm"><span class="cat">Community space</span><h3>Community spaces</h3><p>Low-barrier gatherings, in person and online, where communities come together around culture, story and shared experience.</p><span class="status idea">Future plan</span></article>
         <article class="plan" data-c="comm"><span class="cat">Partnerships</span><h3>Community partnerships</h3><p>Working with cultural associations, health services, diaspora groups and advocacy bodies. If your work serves underrepresented communities, get in touch.</p><span class="status idea">Open to talks</span></article>
       </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= BELONGING ================= -->
+<div class="page" id="p-belonging" data-belonging="live">
+  <section class="pad">
+    <div class="container bel-hero">
+      <div>
+        <div class="kicker">Our magazine</div>
+        <div class="bel-phon">/ bɪˈlɒŋɪŋ /</div>
+        <h1 class="display h1 bel-title">Belonging.</h1>
+        <p class="lead" style="margin-top:1.25rem">A yearly magazine of portraits and first-person stories from the people who make multicultural Australia.</p>
+        <p class="body" style="margin-top:1rem">Volume 1 is in the works. Over the coming months we're meeting people, taking photos and listening to their stories. Each edition will be printed in a small run and shared free online.</p>
+        <div class="btn-row" style="margin-top:2rem">
+          <a class="btn btn-dark" href="#bel-join" data-scroll="bel-join">Be in Vol. 1 <span class="arr">→</span></a>
+          <a class="btn btn-line" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Follow along ↗</a>
+        </div>
+      </div>
+      <figure class="bel-cover"><img src="magazine/belonging-vol1-cover.jpg" alt="Cover of Belonging Vol. 1: a collage of street photos from Queen Victoria Market with the title Belonging in red"></figure>
+    </div>
+  </section>
+
+  <section class="pad sand">
+    <div class="container">
+      <div class="kicker">The question</div>
+      <p class="bel-q">What does belonging mean to you, and where do you find it?</p>
+      <p class="body" style="margin-top:1.5rem">Every edition asks the same question. The answers change with every person, and that's the point.</p>
+      <div class="bel-parts">
+        <div class="bel-part"><b>01</b><h3>Features</h3><p>Long interviews and portraits, told in people's own words.</p></div>
+        <div class="bel-part"><b>02</b><h3>Voices</h3><p>Short portraits, each with one answer to the big question.</p></div>
+        <div class="bel-part"><b>03</b><h3>Place</h3><p>Photo essays from the places where people gather.</p></div>
+        <div class="bel-part"><b>04</b><h3>Your belonging</h3><p>Photos, writing and recipes sent in by readers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="bel-inside">
+    <div class="container">
+      <div class="strip-head">
+        <div>
+          <div class="kicker">Look inside</div>
+          <h2 class="display h2">Flip through the first pages.</h2>
+        </div>
+        <p class="body" style="max-width:36ch">Early layouts with placeholder words. The real stories are being gathered now.</p>
+      </div>
+      <div class="book-wrap">
+        <div class="book" id="book" aria-label="Belonging Vol. 1 preview. Use the arrows to turn pages.">
+          <div class="book-inner" id="bookInner"><div class="leaf" data-i="0"><div class="face front" style="background-image:url(magazine/preview/p1.jpg)"></div><div class="face back" style="background-image:url(magazine/preview/p2.jpg)"></div></div><div class="leaf" data-i="1"><div class="face front" style="background-image:url(magazine/preview/p3.jpg)"></div><div class="face back" style="background-image:url(magazine/preview/p4.jpg)"></div></div><div class="leaf" data-i="2"><div class="face front" style="background-image:url(magazine/preview/p5.jpg)"></div><div class="face back" style="background-image:url(magazine/preview/p6.jpg)"></div></div><div class="leaf" data-i="3"><div class="face front" style="background-image:url(magazine/preview/p7.jpg)"></div><div class="face back" style="background-image:url(magazine/preview/p8.jpg)"></div></div></div>
+        </div>
+        <div class="book-ctrl">
+          <button class="btn btn-line" id="bookPrev" aria-label="Previous page">←</button>
+          <span id="bookLabel">Cover</span>
+          <button class="btn btn-dark" id="bookNext" aria-label="Next page">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad dark on-dark" id="bel-join">
+    <div class="container bel-join">
+      <div>
+        <div class="kicker">Be in Vol. 1</div>
+        <h2 class="display h2">Have a story about home?</h2>
+        <p class="body" style="margin-top:1.25rem">We're looking for people of all ages and backgrounds, anywhere in Australia, to feature in the first edition. You don't need to be famous or have a perfect story. You just need to be willing to share yours.</p>
+        <ul>
+          <li>A relaxed chat first, so you know what to expect</li>
+          <li>You check your quotes and photos before anything is printed</li>
+          <li>Everyone featured gets free copies</li>
+        </ul>
+      </div>
+      <form class="form" action="https://formspree.io/f/myklwldv" method="POST">
+        <input type="hidden" name="_subject" value="Belonging Vol. 1: someone wants to be featured">
+        <input type="hidden" name="enquiry_type" value="Being featured in Belonging">
+        <div class="row2">
+          <div class="field"><label for="b-name">Your name</label><input id="b-name" type="text" name="name" required></div>
+          <div class="field"><label for="b-where">Where you live</label><input id="b-where" type="text" name="suburb" placeholder="Suburb or town"></div>
+        </div>
+        <div class="field"><label for="b-email">Email or Instagram handle</label><input id="b-email" type="text" name="contact" required></div>
+        <div class="field"><label for="b-story">Tell us a little about you</label><textarea id="b-story" name="story" placeholder="Where you're from, what home means to you, or who you'd like to nominate." required></textarea></div>
+        <label class="check"><input type="checkbox" name="nominating" value="yes"> I'm nominating someone else (tell us who above)</label>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between">
+          <button class="btn btn-dark" type="submit">Send <span class="arr">→</span></button>
+          <small>We'll get back to you within a week.</small>
+        </div>
+      </form>
     </div>
   </section>
 </div>
@@ -899,6 +1113,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
             <option>Funding or grants</option>
             <option>A community program or event idea</option>
             <option>Partnership enquiry</option>
+            <option data-belonging="live">Being featured in Belonging</option>
             <option>Joining the committee</option>
             <option>Media or press</option>
             <option>Something else</option>
@@ -934,6 +1149,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
           <li><a href="#about">About</a></li>
           <li><a href="#mission">Mission</a></li>
           <li><a href="#work">Work and future plans</a></li>
+          <li data-belonging="live"><a href="#belonging">Belonging magazine</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="journal.html">Journal</a></li>
         </ul>
@@ -963,6 +1179,22 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">→</button>
   <div class="lb-cap" id="lbCap"></div>
 </div>
+
+<script>
+/* =====================================================================
+   BELONGING MAGAZINE SWITCH
+   ---------------------------------------------------------------------
+   false = the magazine shows only as "Coming soon" on the Work page.
+   true  = the full Belonging page goes live: menu link, cover, flipbook,
+           "be featured" form, home page card and contact form option.
+   When Vol. 1 is ready, change false to true and upload this file.
+   ===================================================================== */
+const BELONGING_LIVE = false;
+document.querySelectorAll('[data-belonging]').forEach(el => {
+  if ((el.dataset.belonging === 'live') !== BELONGING_LIVE) el.remove();
+});
+if (!BELONGING_LIVE && /^#bel/.test(location.hash)) history.replaceState(null, '', '#work');
+</script>
 
 <script>
 /* =====================================================================
@@ -997,7 +1229,7 @@ const PORTFOLIO = {
   const links = [...document.querySelectorAll('.nav-links a')];
   const nav = document.getElementById('nav');
   const pageIds = pages.map(p => p.id.slice(2));
-  const anchorMap = { donate: 'involve' };
+  const anchorMap = { donate: 'involve', 'bel-join': 'belonging' };
 
   function route(){
     let h = (location.hash || '#home').slice(1);
@@ -1016,7 +1248,7 @@ const PORTFOLIO = {
     } else {
       window.scrollTo(0, 0);
     }
-    const titles = { home:'Stories that grow multicultural Australia', about:'About', mission:'Mission', work:'Work and future plans', portfolio:'Portfolio', involve:'Get involved', contact:'Contact' };
+    const titles = { home:'Stories that grow multicultural Australia', about:'About', mission:'Mission', work:'Work and future plans', belonging:'Belonging magazine', portfolio:'Portfolio', involve:'Get involved', contact:'Contact' };
     document.title = 'KRNBRY Studio | ' + (titles[h] || '');
   }
   window.addEventListener('hashchange', route);
@@ -1233,6 +1465,186 @@ const PORTFOLIO = {
   loadPhotos()
     .then(list => { photos = list || []; if (!photos.length) return renderEmpty(); renderFilters(); renderGallery(); renderHome(); })
     .catch(() => renderEmpty());
+})();
+</script>
+<script>
+/* =================== PREMIUM MOTION & DETAILS =================== */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const small = () => innerWidth < 620;
+  const $$ = (q, r = document) => [...r.querySelectorAll(q)];
+
+  /* ---- grain + progress bar ---- */
+  const grain = document.createElement('div'); grain.className = 'grain'; grain.setAttribute('aria-hidden', 'true');
+  const bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true');
+  document.body.append(grain, bar);
+
+  /* ---- images fade in once loaded ---- */
+  const markLoaded = img => img.classList.add('loaded');
+  document.addEventListener('load', e => { if (e.target.tagName === 'IMG') markLoaded(e.target); }, true);
+  const sweepImgs = () => $$('.g-item img, .strip img, .hero-media img').forEach(i => { if (i.complete && i.naturalWidth) markLoaded(i); });
+  sweepImgs();
+
+  /* ---- headline word reveal ---- */
+  function split(el){
+    let i = 0;
+    const walk = n => [...n.childNodes].forEach(c => {
+      if (c.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(p => {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const o = document.createElement('span'); o.className = 'sw';
+          const inn = document.createElement('span'); inn.textContent = p; inn.style.setProperty('--i', i++);
+          o.appendChild(inn); frag.appendChild(o);
+        });
+        c.replaceWith(frag);
+      } else if (c.nodeType === 1) walk(c);
+    });
+    walk(el); el.classList.add('split');
+  }
+
+  /* ---- reveal on scroll ---- */
+  const REVEAL = ['.kicker', '.lead', '.body', '.btn-row', '.hero-media', '.pillar', '.now-grid .card', '.now-grid .stack > *', '.plan-list li',
+    '.strip-head > *', '.fact', '.cta-band > div', '.goal', '.chips', '.obj', '.note', '.origin', '.value', '.team > *',
+    '.work-now > *', '.work-now .stack > *', '.plan', '.way', '.donate-grid > div', '.funds li', '.contact-grid > *', '.bel-part',
+    '.bel-cover', '.bel-join > *', '.quote-wrap', '.f-top > div', '.book-wrap', '.statement > div', '.phead .lead', '.bel-phon', '.jl a'];
+  const io = reduce ? null : new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+  function prepReveal(root = document){
+    if (reduce) return;
+    const els = $$(REVEAL.join(','), root).filter(el => !el.classList.contains('rv') && !el.closest('.hero-fallback, .lightbox, .nav, footer .socials'));
+    const set = new Set(els);
+    els.filter(el => { let p = el.parentElement; while (p) { if (set.has(p)) return false; p = p.parentElement; } return true; })
+      .forEach(el => {
+        const sib = el.parentElement ? [...el.parentElement.children].filter(c => set.has(c)) : [];
+        el.style.setProperty('--d', Math.min(sib.indexOf(el), 6) * 80 + 'ms');
+        el.classList.add('rv'); io.observe(el);
+      });
+    $$('.display.h1, .display.h2, .bel-q', root).forEach(h => {
+      if (h.classList.contains('split') || h.classList.contains('rv')) return;
+      if (small()) { h.classList.add('rv'); io.observe(h); return; }
+      split(h); io.observe(h);
+    });
+  }
+  prepReveal();
+
+  /* ---- count-up numbers ---- */
+  if (!reduce) $$('.fact b').forEach(b => {
+    const m = b.textContent.trim().match(/^(\$?)(\d+)(%?)$/); if (!m || +m[2] === 0) return;
+    const [ , pre, num, post] = m, end = +num; b.textContent = pre + '0' + post;
+    const cio = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; cio.disconnect();
+      const t0 = performance.now(), dur = 1600;
+      const step = t => { const k = Math.min(1, (t - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 3))); b.textContent = pre + v + post; if (k < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step); }, { threshold: .6 });
+    cio.observe(b);
+  });
+
+  /* ---- scroll: progress, nav hide, parallax, ticker speed ---- */
+  const nav = document.getElementById('nav');
+  const ticker = document.querySelector('.ticker-track');
+  let lastY = scrollY, vel = 0, ticking = false;
+  const PARA = [['.hero-media', .06], ['.bel-cover', .08], ['.card.feature .ring', .15], ['.strip button:nth-child(odd)', .04], ['.strip button:nth-child(even)', -.04]];
+  function onScroll(){
+    const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    const dy = y - lastY; vel = vel * .8 + dy * .2;
+    if (nav && !nav.classList.contains('open')) nav.classList.toggle('away', y > 140 && dy > 4 ? true : (dy < -4 || y < 140 ? false : nav.classList.contains('away')));
+    if (!reduce) {
+      PARA.forEach(([q, k]) => $$(q).forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom < -200 || r.top > innerHeight + 200) return;
+        const c = r.top + r.height / 2 - innerHeight / 2; el.style.translate = `0 ${(-c * k).toFixed(1)}px`; }));
+      if (ticker) { const a = ticker.getAnimations()[0]; if (a) a.playbackRate = 1 + Math.min(Math.abs(vel) / 12, 4); }
+    }
+    lastY = y; ticking = false;
+  }
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  setInterval(() => { if (Math.abs(vel) > .1) { vel *= .7; if (ticker) { const a = ticker.getAnimations()[0]; if (a) a.playbackRate = 1 + Math.min(Math.abs(vel) / 12, 4); } } }, 120);
+
+  /* ---- route changes (single-page site) ---- */
+  addEventListener('hashchange', () => { requestAnimationFrame(() => { prepReveal(); sweepImgs(); if (nav) nav.classList.remove('away'); onScroll(); }); });
+
+  /* ---- things added later (portfolio photos) ---- */
+  const mo = new MutationObserver(ms => { let hit = false; ms.forEach(m => m.addedNodes.forEach(n => { if (n.nodeType === 1) hit = true; })); if (hit) { prepGallery(); sweepImgs(); } });
+  ['gallery', 'stripGrid', 'heroMedia'].forEach(id => { const el = document.getElementById(id); if (el) mo.observe(el, { childList: true, subtree: true }); });
+  function prepGallery(){
+    if (!reduce) $$('.g-item:not(.rv)').forEach((el, i) => { el.style.setProperty('--d', (i % 6) * 70 + 'ms'); el.classList.add('rv'); io.observe(el); });
+    if (fine && !reduce) $$('.g-item, .strip button').forEach(addTilt);
+  }
+
+  /* ---- 3D tilt with glare ---- */
+  function addTilt(el, max = 7){
+    if (el.dataset.tilt) return; el.dataset.tilt = '1'; el.classList.add('tilt');
+    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+    const g = document.createElement('span'); g.className = 'glare'; el.appendChild(g);
+    const lift = el.classList.contains('bel-cover') ? 1.02 : 1.04;
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      el.classList.add('hovering');
+      el.style.transform = `perspective(900px) rotateX(${((.5 - py) * max).toFixed(2)}deg) rotateY(${((px - .5) * max).toFixed(2)}deg) scale(${lift})`;
+      el.style.setProperty('--gx', px * 100 + '%'); el.style.setProperty('--gy', py * 100 + '%');
+    });
+    el.addEventListener('pointerleave', () => { el.classList.remove('hovering'); el.style.transform = ''; });
+  }
+  if (fine && !reduce) { $$('.bel-cover, .hero-media').forEach(el => addTilt(el, 5)); prepGallery(); }
+
+  /* ---- magnetic buttons ---- */
+  if (fine && !reduce) $$('.btn, .nav-cta, .burger').forEach(el => {
+    el.classList.add('mag');
+    el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.classList.add('pulling');
+      el.style.transform = `translate(${((e.clientX - r.left - r.width / 2) * .22).toFixed(1)}px, ${((e.clientY - r.top - r.height / 2) * .3).toFixed(1)}px)`; });
+    el.addEventListener('pointerleave', () => { el.classList.remove('pulling'); el.style.transform = ''; });
+  });
+
+  /* ---- lightbox zooms out of the photo you clicked ---- */
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+  let lastThumb = null;
+  document.addEventListener('click', e => { const t = e.target.closest && e.target.closest('.g-item, .strip button'); if (t) lastThumb = t.querySelector('img'); }, true);
+  if (lb && lbImg && !reduce) new MutationObserver(() => {
+    if (!lb.classList.contains('open') || !lastThumb) return;
+    const th = lastThumb; lastThumb = null;
+    const run = () => {
+      const a = th.getBoundingClientRect(), b = lbImg.getBoundingClientRect();
+      if (!a.width || !b.width) return;
+      const s = a.width / b.width, dx = (a.left + a.width / 2) - (b.left + b.width / 2), dy = (a.top + a.height / 2) - (b.top + b.height / 2);
+      lbImg.animate([{ transform: `translate(${dx}px, ${dy}px) scale(${s})`, opacity: .6 }, { transform: 'none', opacity: 1 }], { duration: 560, easing: 'cubic-bezier(.2,.75,.15,1)' });
+      lb.animate([{ backgroundColor: 'rgba(18,15,14,0)' }, { backgroundColor: 'rgba(18,15,14,.94)' }], { duration: 420, easing: 'ease-out' });
+    };
+    if (lbImg.complete && lbImg.naturalWidth) requestAnimationFrame(run); else lbImg.addEventListener('load', () => requestAnimationFrame(run), { once: true });
+  }).observe(lb, { attributes: true, attributeFilter: ['class'] });
+
+  /* ---- Belonging flipbook ---- */
+  const book = document.getElementById('book');
+  if (book) {
+    const leaves = $$('.leaf', book), n = leaves.length, prev = document.getElementById('bookPrev'), next = document.getElementById('bookNext'), label = document.getElementById('bookLabel');
+    const labels = ['Cover', 'Pages 2 and 3', 'Pages 8 and 9', 'Pages 10 and 14', 'Back cover'];
+    let at = 0;
+    function draw(){
+      leaves.forEach((l, i) => { const f = i < at; l.classList.toggle('flipped', f); l.style.zIndex = f ? i + 1 : n - i; });
+      book.classList.toggle('at-start', at === 0); book.classList.toggle('at-end', at === n);
+      prev.disabled = at === 0; next.disabled = at === n; label.textContent = labels[at];
+    }
+    function go(d){
+      const to = Math.max(0, Math.min(n, at + d)); if (to === at) return;
+      const moving = leaves[d > 0 ? at : to]; moving.style.zIndex = 50;
+      at = to; draw(); moving.style.zIndex = 50;
+      setTimeout(() => draw(), 1100);
+    }
+    leaves.forEach((l, i) => l.addEventListener('click', () => go(i < at ? -1 : 1)));
+    prev.addEventListener('click', () => go(-1)); next.addEventListener('click', () => go(1));
+    addEventListener('keydown', e => {
+      if (!document.getElementById('p-belonging')?.classList.contains('active') || (lb && lb.classList.contains('open'))) return;
+      const r = book.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+      if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1);
+    });
+    let sx = null; book.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    book.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1); sx = null; });
+    draw();
+  }
+
+  onScroll();
 })();
 </script>
 </body>
