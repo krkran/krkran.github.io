@@ -141,6 +141,19 @@ footer a{color:var(--ink-2)}
   .prose{font-size:1.12rem}
   .mast{padding-top:2rem}
 }
+
+::selection{background:#7A1F2E;color:#F4EFE7}
+.grain{position:fixed;inset:-50%;z-index:95;pointer-events:none;opacity:.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:70;background:var(--red);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+.mast h1{animation:mastin 1.1s cubic-bezier(.2,.75,.15,1) both}
+.hello{animation:mastin 1.1s .15s cubic-bezier(.2,.75,.15,1) both}
+@keyframes mastin{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.cover img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cover:hover img{transform:scale(1.02)}
+@media (prefers-reduced-motion:reduce){.grain,.mast h1,.hello{animation:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -171,7 +184,7 @@ footer a{color:var(--ink-2)}
     <div class="box">
       <h3>About this journal</h3>
       <div class="in">
-        <div class="me"><i>K</i><div><b>Kranjol</b><small>Founder, KRNBRY Studio</small></div></div>
+        <div class="me"><i>K</i><div><b>Kran</b><small>Founder, KRNBRY Studio</small></div></div>
         <p>A place to think out loud about building a not-for-profit media studio: the plans, the ideas, the lessons, and the things I'm still figuring out.</p>
         <p class="updated" id="updated"></p>
       </div>
@@ -409,6 +422,22 @@ const EMAIL_FORM_ACTION = 'https://api.follow.it/subscription-form/U0s4eFRIRDlzM
       if (posts.length) $('updated').textContent = 'Last updated ' + fmtShort(posts[0].updated || posts[0].date);
       render();
     });
+})();
+</script>
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const g = document.createElement('div'); g.className = 'grain'; g.setAttribute('aria-hidden','true');
+  const bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden','true');
+  document.body.append(g, bar);
+  const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; bar.style.transform = 'scaleX(' + (m > 0 ? scrollY / m : 0) + ')'; };
+  addEventListener('scroll', () => requestAnimationFrame(upd), { passive: true }); upd();
+  if (reduce) return;
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -6% 0px' });
+  const prep = () => { document.querySelectorAll('#main .entry, #main .day, #main .pager, #main .notice, aside .box, .badges').forEach((el, i) => {
+    if (el.classList.contains('rv')) return; el.style.setProperty('--d', Math.min(i, 5) * 60 + 'ms'); el.classList.add('rv'); io.observe(el); }); upd(); };
+  new MutationObserver(prep).observe(document.getElementById('main'), { childList: true });
+  prep();
 })();
 </script>
 </body>
