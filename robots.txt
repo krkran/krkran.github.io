@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /upload.html
+
+Sitemap: https://krnbrystudio.com/sitemap.xml
