@@ -87,6 +87,15 @@ a:hover{color:var(--ink);background:#F3DFA9}
 .pager{display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.9rem;border-top:4px double var(--ink);padding-top:1rem;margin-top:1rem}
 .pager span{color:var(--muted)}
 .empty{font-family:var(--mono);background:var(--white);border:1px dashed var(--line);padding:2rem;text-align:center;color:var(--ink-2)}
+aside .sub-copy{margin:0}
+aside .sub-copy button{padding:0 .8rem}
+.sub-btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:.8rem 0 1.6rem}
+.sub-btn{display:inline-block;padding:.75rem 1.2rem;border:1.5px solid var(--ink);background:var(--white);color:var(--ink);font-weight:650;text-decoration:none;font-size:.95rem}
+.sub-btn:hover{background:var(--ink);color:var(--paper)}
+.sub-copy{display:flex;max-width:560px;margin:.6rem 0 1.6rem;border:1.5px solid var(--ink);background:var(--white)}
+.sub-copy input{flex:1;width:100%;min-width:0;border:0;background:none;padding:.75rem .9rem;font-family:var(--mono);font-size:.85rem;color:var(--ink)}
+.sub-copy input:focus{outline:none}
+.sub-copy button{border:0;border-left:1.5px solid var(--ink);background:var(--ink);color:var(--paper);font:600 .9rem var(--sans);padding:0 1.1rem;cursor:pointer}
 .copy{font:inherit;color:var(--muted);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .copy:hover{color:var(--ink)}
 
@@ -169,6 +178,11 @@ footer a{color:var(--ink-2)}
     </div>
 
     <div class="box">
+      <h3>Get new entries by email</h3>
+      <div class="in"><p style="margin-bottom:.7rem">One email when something new goes up. Nothing else.</p><div data-subform="side"></div></div>
+    </div>
+
+    <div class="box">
       <h3>Browse</h3>
       <div class="in"><ul id="types"></ul></div>
     </div>
@@ -186,13 +200,13 @@ footer a{color:var(--ink-2)}
           <li><a href="index.html#portfolio">Portfolio</a><span>photos</span></li>
           <li><a href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Instagram</a><span>↗</span></li>
           <li><a href="https://www.youtube.com/@krnbrystudio" target="_blank" rel="noopener">YouTube</a><span>↗</span></li>
-          <li><a href="journal/feed.xml">RSS feed</a><span>subscribe</span></li>
+          <li><a href="#/subscribe">Subscribe by email</a><span>✉</span></li>
         </ul>
       </div>
     </div>
 
     <div class="badges" aria-label="Badges">
-      <a class="badge" href="journal/feed.xml" title="Subscribe via RSS"><b>RSS</b><span>SUBSCRIBE</span></a>
+      <a class="badge" href="#/subscribe" title="Subscribe by email"><b>✉</b><span>GET IT BY EMAIL</span></a>
       <a class="badge o" href="index.html" title="Not-for-profit"><b>NFP</b><span>KRNBRY STUDIO</span></a>
       <span class="badge k"><b>VIC</b><span>MADE IN AUSTRALIA</span></span>
       <span class="badge s"><b>✍</b><span>WRITTEN BY A HUMAN</span></span>
@@ -203,10 +217,18 @@ footer a{color:var(--ink-2)}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> KRNBRY Studio Inc. · Not-for-profit · ABN 92 249 582 525</span>
-    <span><a href="#/">Journal home</a> · <a href="journal/feed.xml">RSS</a> · <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a></span>
+    <span><a href="#/">Journal home</a> · <a href="#/subscribe">Subscribe</a> · <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a></span>
   </div>
 </footer>
 
+<script>
+/* ===== EMAIL SUBSCRIPTIONS =====
+   Sign-ups are handled by follow.it (free, emails subscribers automatically
+   whenever a new entry appears in journal/feed.xml).
+   Paste the form address follow.it gives you between the quotes below.
+   Until then, sign-ups arrive in your inbox through your contact form. */
+const EMAIL_FORM_ACTION = 'https://api.follow.it/subscription-form/U0s4eFRIRDlzMWFEdTgzQjFHci8wcjNkTjM1WDZvK2RYWXhpeVZhc2F3RktQaVBTamU4aG5aTFBGT3R5RlJpS0dXZURFYUdKRzR3emZTUUhjMVBHTTEycGxHWlNvM3NpQ1FHWDV6Q2FXRXBmMEh4NmJmYlR3aWkwWis5Ukw3bXR8QVRtL0JIbUVLMXV2VnJUZkc1QjlWYWNGSWZyTTgwM3pUSjErUnJaTjBjVT0=/8';
+</script>
 <script>
 (function(){
   const PER_PAGE = 6;
@@ -335,14 +357,34 @@ footer a{color:var(--ink-2)}
     if (parts[0] === 'post') return { kind:'post', v: parts.slice(1).join('/') };
     if (parts[0] === 'type' && TYPES[parts[1]]) return { kind:'type', v: parts[1], page };
     if (parts[0] === 'month') return { kind:'month', v: parts[1], page };
+    if (parts[0] === 'subscribe') return { kind:'subscribe' };
     return { kind:'home', page };
+  }
+
+  function subForm(where){
+    const action = EMAIL_FORM_ACTION || 'https://formspree.io/f/myklwldv';
+    const extra = EMAIL_FORM_ACTION ? '' : '<input type="hidden" name="_subject" value="New journal subscriber"><input type="hidden" name="enquiry_type" value="Journal email subscription">';
+    return `<form class="sub-copy" action="${action}" method="post" target="_blank">${extra}<input type="email" name="email" required placeholder="you@email.com" aria-label="Your email"><button type="submit">Subscribe</button></form>`;
+  }
+
+  function subscribeHTML(){
+    document.title = 'Subscribe | The Journal | KRNBRY Studio';
+    return `<div class="notice"><a href="#/">← All entries</a><span>Subscribe</span></div>
+      <article class="entry">
+        <span class="type reflection">Email</span>
+        <h2>Get new entries by email</h2>
+        <div class="prose"><p>Pop your email in and you'll get a short note whenever something new goes up on the journal. No spam, and you can unsubscribe any time.</p></div>
+        ${subForm('page')}
+        <div class="prose"><p style="font-size:1rem;color:var(--muted)">You can also follow <a href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">@krnbrystudio</a> on Instagram. Use a feed reader? <a href="journal/feed.xml">Here's the RSS feed</a>.</p></div>
+      </article>`;
   }
 
   function render(){
     const r = parse();
     document.title = 'The Journal | KRNBRY Studio';
     let html;
-    if (!posts.length) html = '<div class="empty">The first entry is on its way.<br>Check back soon.</div>';
+    if (r.kind === 'subscribe') html = subscribeHTML();
+    else if (!posts.length) html = '<div class="empty">The first entry is on its way.<br>Check back soon.</div>';
     else if (r.kind === 'post') html = postHTML(r.v);
     else if (r.kind === 'type') html = listHTML(posts.filter(p => p.type === r.v), r.page, '#/type/' + r.v, `Showing ${TYPES[r.v].toLowerCase()} only`);
     else if (r.kind === 'month') html = listHTML(posts.filter(p => monthKey(p.date) === r.v), r.page, '#/month/' + r.v, `Entries from ${monthName(r.v)} ${r.v.slice(0,4)}`);
@@ -355,6 +397,7 @@ footer a{color:var(--ink-2)}
   }
 
   $('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-subform]').forEach(el => { el.innerHTML = subForm('side'); });
   window.addEventListener('hashchange', render);
   fetch('journal/posts.json?v=' + Date.now())
     .then(r => r.ok ? r.json() : { posts: [] })
