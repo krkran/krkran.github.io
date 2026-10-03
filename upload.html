@@ -142,8 +142,8 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
 <body>
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html#portfolio">KRNBRY<span>Studio uploader</span></a>
-    <a class="btn btn-line btn-sm" href="index.html#portfolio" target="_blank" rel="noopener">View portfolio ↗</a>
+    <a class="logo" href="/portfolio">KRNBRY<span>Studio uploader</span></a>
+    <a class="btn btn-line btn-sm" href="/portfolio" target="_blank" rel="noopener">View portfolio ↗</a>
   </div>
 </header>
 
@@ -276,7 +276,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
           <h2>Your entries</h2>
           <p>Newest first. Drafts are only visible to you here.</p>
         </div>
-        <a class="btn btn-line btn-sm" href="journal.html" target="_blank" rel="noopener">View journal ↗</a>
+        <a class="btn btn-line btn-sm" href="/journal/" target="_blank" rel="noopener">View journal ↗</a>
       </div>
       <div class="list" id="jList"><div class="empty">Loading…</div></div>
     </section>
@@ -733,7 +733,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
         <div class="row-acts"></div>`;
       const acts = row.querySelector('.row-acts');
       const mk = (t, fn, cls) => { const b = document.createElement('button'); b.className = 'btn btn-line btn-sm ' + (cls || ''); b.textContent = t; b.onclick = fn; acts.appendChild(b); };
-      if (!p.draft) { const a = document.createElement('a'); a.className = 'btn btn-line btn-sm'; a.textContent = 'View'; a.target = '_blank'; a.rel = 'noopener'; a.href = 'journal.html#/post/' + encodeURIComponent(p.id); acts.appendChild(a); }
+      if (!p.draft) { const a = document.createElement('a'); a.className = 'btn btn-line btn-sm'; a.textContent = 'View'; a.target = '_blank'; a.rel = 'noopener'; a.href = '/journal/' + encodeURIComponent(p.id); acts.appendChild(a); }
       mk('Edit', () => loadIntoEditor(p));
       mk('Delete', () => deletePost(p));
       el.appendChild(row);
@@ -753,7 +753,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       let html = md(p.body); if (p.image) html = `<p><img src="${base}${p.image}" alt="${escH(p.imageAlt || '')}"></p>` + html;
       return `<item>
 <title>${x(title)}</title>
-<link>${base}journal.html#/post/${encodeURIComponent(p.id)}</link>
+<link>${base}journal/${encodeURIComponent(p.id)}</link>
 <guid isPermaLink="false">${x(p.id)}</guid>
 <category>${x(p.type)}</category>
 <pubDate>${new Date(p.date).toUTCString()}</pubDate>
@@ -764,7 +764,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>KRNBRY Studio Journal</title>
-<link>${base}journal.html</link>
+<link>${base}journal/</link>
 <atom:link href="${base}journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Reflections, articles and thoughts on where KRNBRY Studio is heading.</description>
 <language>en-au</language>
@@ -773,6 +773,37 @@ ${items}
 </channel>
 </rss>
 `;
+  }
+
+  /* each published entry gets its own page, so its address is krnbrystudio.com/journal/<entry> */
+  const escA = s => String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  function injectMeta(src, path, title, desc){
+    const u = 'https://krnbrystudio.com' + path, t = escA(title), d = escA(desc);
+    return src.replace(/<title>[^<]*<\/title>/, '<title>' + t + '</title>')
+      .replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + d + '">')
+      .replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + u + '">')
+      .replace(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + u + '">')
+      .replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + t + '">');
+  }
+  async function writePostPage(post){
+    const path = 'journal/' + post.id + '.html';
+    const have = await api('/contents/' + path + refq());
+    if (post.draft) {
+      if (have && have.sha) await api('/contents/' + path, { method: 'DELETE', body: JSON.stringify({ message: 'Unpublish journal page: ' + post.id, sha: have.sha, branch }) });
+      return;
+    }
+    const shell = await api('/contents/journal/index.html' + refq());
+    if (!shell || !shell.content) return;
+    const plain = (post.body || '').replace(/[#>*_`\[\]()!]/g, '').replace(/\s+/g, ' ').trim();
+    const html = injectMeta(dec(shell.content), '/journal/' + post.id, (post.title || plain.slice(0, 60)) + ' | The Journal | KRNBRY Studio', plain.slice(0, 155));
+    const b = { message: 'Journal page: ' + (post.title || post.id), content: strB64(html), branch };
+    if (have && have.sha) b.sha = have.sha;
+    await api('/contents/' + path, { method: 'PUT', body: JSON.stringify(b) });
+  }
+  async function removePostPage(id){
+    const path = 'journal/' + id + '.html';
+    const have = await api('/contents/' + path + refq());
+    if (have && have.sha) await api('/contents/' + path, { method: 'DELETE', body: JSON.stringify({ message: 'Remove journal page: ' + id, sha: have.sha, branch }) });
   }
 
   async function writeAll(list, message){
@@ -819,12 +850,13 @@ ${items}
       if (prev && !prev.draft && !asDraft) post.updated = isoWithOffset();
       const list = latest.filter(p => p.id !== id); list.push(post);
       jlog(asDraft ? 'Saving draft…' : 'Publishing…');
+      await writePostPage(post);
       await writeAll(list, (asDraft ? 'Save journal draft: ' : (prev ? 'Update journal entry: ' : 'New journal entry: ')) + (title || id));
       $('jLog').innerHTML = '';
       if (asDraft) jlog('Draft saved. It\'s only visible here until you publish it.', 's');
       else {
         const d = document.createElement('div'); d.className = 's';
-        d.innerHTML = 'Published! Live in about a minute: <a href="journal.html#/post/' + encodeURIComponent(id) + '" target="_blank" rel="noopener">view entry ↗</a>';
+        d.innerHTML = 'Published! Live in about a minute: <a href="/journal/' + encodeURIComponent(id) + '" target="_blank" rel="noopener">view entry ↗</a>';
         $('jLog').appendChild(d);
       }
       const keepLog = $('jLog').innerHTML;
@@ -845,6 +877,7 @@ ${items}
     try {
       const latest = (await readPosts()).list.filter(x => x.id !== p.id);
       await writeAll(latest, 'Delete journal entry: ' + (p.title || p.id));
+      try { await removePostPage(p.id); } catch(e){}
       if (p.image && p.image.indexOf(JIMG) === 0 && !latest.some(x => x.image === p.image)) {
         try { const f = await api('/contents/' + p.image + refq()); if (f && f.sha) await api('/contents/' + p.image, { method: 'DELETE', body: JSON.stringify({ message: 'Remove journal image', sha: f.sha, branch }) }); } catch(e){}
       }
