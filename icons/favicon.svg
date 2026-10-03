@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>KRNBRY Studio icon</title>
+  <rect id="tile" width="1024" height="1024" rx="225.28" fill="#7A1F2E"/>
+  <circle id="accent" cx="860.16" cy="163.84" r="71.68" fill="#D9962A"/>
+  <g id="k" fill="#F4EFE7" transform="translate(181.23 730.4)">
+    <path d="M46.98112 0.0V-436.79744H203.79648V-243.79392L415.21152 -436.79744H609.4848L416.48128 -258.39616L614.56384 0.0H423.46496L300.93312 -164.43392L203.79648 -85.7088V0.0Z"/>
+  </g>
+</svg>
