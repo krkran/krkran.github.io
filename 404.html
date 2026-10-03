@@ -13,7 +13,7 @@
   if (p.length > 1) p = p.replace(/\/+$/, '');
   var rest = location.search + location.hash;
   if (/^\/journal(\/|$)/.test(p)) { location.replace('/journal/?r=' + encodeURIComponent(p + rest)); return; }
-  var known = ['/about','/mission','/work','/portfolio','/get-involved','/contact','/donate','/belonging','/be-featured'];
+  var known = ['/about','/mission','/work','/portfolio','/portfolio/films','/get-involved','/contact','/donate','/belonging','/be-featured'];
   if (known.indexOf(p) >= 0) { location.replace('/?r=' + encodeURIComponent(p + rest)); return; }
 })();
 </script>

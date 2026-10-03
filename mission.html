@@ -281,8 +281,147 @@ section{position:relative}
 .lb-close{top:1rem;right:1rem}
 .lb-prev{left:1rem;top:50%;transform:translateY(-50%)}
 .lb-next{right:1rem;top:50%;transform:translateY(-50%)}
-.lb-cap{position:absolute;left:0;right:0;bottom:1.5rem;text-align:center;color:var(--paper);font-size:.95rem;padding:0 5rem}
-.lb-cap small{display:block;color:rgba(244,239,231,.55);margin-top:.2rem}
+.lb-cap{position:absolute;left:0;right:0;bottom:1.25rem;margin:0 auto;max-width:760px;text-align:center;color:var(--paper);font-size:.95rem;padding:0 5rem}
+.lb-album{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ochre);margin-bottom:.35rem}
+.lb-title{font-weight:700;font-size:1.05rem}
+.lb-text{font-family:var(--serif);font-size:1.05rem;line-height:1.5;color:rgba(244,239,231,.88);margin:.4rem auto 0;max-height:7.5em;overflow:auto}
+.lb-cap small{display:block;color:rgba(244,239,231,.6);margin-top:.5rem;white-space:pre-wrap}
+.lightbox{padding-bottom:12rem}
+.g-album{margin-bottom:clamp(3rem,6vw,5rem)}
+.g-album:last-child{margin-bottom:0}
+.g-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin-bottom:1.25rem;padding-bottom:.9rem;border-bottom:1px solid var(--line)}
+.g-head .h3{margin:0}
+.g-count{font-size:.85rem;font-weight:600;color:var(--muted)}
+.g-desc{flex-basis:100%;margin:0;max-width:62ch}
+.filter .f-n{font-size:.75rem;opacity:.6;margin-left:.45rem}
+
+/* ---------- PORTFOLIO: dark "through the lens" theme ---------- */
+#p-portfolio{--paper:#141110;--paper-2:#2A2320;--white:#1E1916;--ink:#F4EFE7;--ink-2:rgba(244,239,231,.78);--muted:rgba(244,239,231,.55);--line:rgba(244,239,231,.14);
+  background:#141110;color:var(--ink);min-height:100vh}
+#p-portfolio .kicker{color:var(--ochre)}
+#p-portfolio .kicker::before{background:var(--paper-2);box-shadow:inset 0 0 0 2px var(--ochre)}
+#p-portfolio .serif-i{color:var(--ochre)}
+#p-portfolio .phead{border-bottom-color:var(--line)}
+#p-portfolio .g-item{background:#221C19}
+#p-portfolio .g-empty{border-color:var(--line)}
+#p-portfolio .textlink:hover{color:var(--ochre)}
+html.pf-dark .nav{background:rgba(20,17,16,.86)}
+html.pf-dark .nav.scrolled{border-bottom-color:rgba(244,239,231,.12)}
+html.pf-dark .logo b{color:var(--paper)}
+html.pf-dark .logo span{color:var(--ochre)}
+html.pf-dark .nav-links a{color:rgba(244,239,231,.75)}
+html.pf-dark .nav-links a:hover,html.pf-dark .nav-links a.active{background:rgba(244,239,231,.1);color:var(--paper)}
+html.pf-dark .burger i{background:var(--paper)}
+@media (max-width:1100px){html.pf-dark .nav-links{background:#141110;border-bottom-color:rgba(244,239,231,.12)}html.pf-dark .nav-links a{border-bottom-color:rgba(244,239,231,.1)}html.pf-dark .nav-links a.active{background:none;color:var(--ochre)}}
+html.pf-dark .grain{mix-blend-mode:screen;opacity:.05}
+html.pf-dark .progress{background:var(--ochre)}
+
+/* photos / films switch */
+.pf-switch{position:relative;display:inline-flex;margin:2.5rem 0 2rem;padding:6px;border-radius:999px;background:rgba(244,239,231,.07);border:1px solid rgba(244,239,231,.1)}
+.pf-switch a{position:relative;z-index:1;padding:.85rem 2rem;border-radius:999px;font-weight:750;font-stretch:110%;font-size:1.05rem;color:rgba(244,239,231,.6);text-decoration:none;transition:color .35s}
+.pf-switch a.on{color:#141110}
+.pf-ind{position:absolute;top:6px;bottom:6px;left:6px;border-radius:999px;background:var(--paper);background:#F4EFE7;transition:transform .5s cubic-bezier(.2,.75,.15,1),width .5s cubic-bezier(.2,.75,.15,1)}
+.pf-pane{padding-bottom:clamp(4rem,8vw,7rem)}
+.pf-pane.enter{animation:pfIn .7s cubic-bezier(.2,.75,.15,1) both}
+@keyframes pfIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* album decks */
+.decks-wrap{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.decks-hint{font-size:.85rem;color:var(--muted);margin-bottom:1rem;font-weight:600;letter-spacing:.02em}
+.decks{display:flex;gap:clamp(1.25rem,3vw,2.5rem);overflow-x:auto;padding:1.5rem .5rem 2rem;margin:0 -.5rem;scroll-snap-type:x mandatory;scrollbar-width:none}
+.decks::-webkit-scrollbar{display:none}
+.decks-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.25rem}
+.decks-top .decks-hint{margin:0}
+.decks-arrows{display:flex;gap:.5rem}
+.decks-arrows button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--ink);font-size:1.1rem;font-weight:700;transition:background .25s,color .25s,opacity .25s}
+.decks-arrows button:hover{background:var(--ochre);color:#141110;border-color:var(--ochre)}
+.decks-arrows button:disabled{opacity:.3;pointer-events:none}
+.decks.more-r{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.decks.more-l.more-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 85%,transparent)}
+.decks.more-l:not(.more-r){-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%);mask-image:linear-gradient(90deg,transparent,#000 8%)}
+#p-portfolio .g-cap{color:#F4EFE7}
+.deck{flex:0 0 clamp(220px,24vw,300px);scroll-snap-align:start;text-align:left;color:var(--ink);position:relative}
+.deck-stack{position:relative;aspect-ratio:4/5;margin-bottom:1.1rem}
+.deck-card{position:absolute;inset:0;border-radius:14px;overflow:hidden;background:#2A2320;box-shadow:0 22px 40px -22px rgba(0,0,0,.9);transition:transform .6s cubic-bezier(.2,.75,.15,1),filter .4s}
+.deck-card img{width:100%;height:100%;object-fit:cover;display:block}
+.deck-card.c2{transform:rotate(-5deg) translate(-4%,1%);filter:brightness(.55)}
+.deck-card.c3{transform:rotate(4deg) translate(4%,-1%);filter:brightness(.45)}
+.deck:hover .deck-card.c2,.deck:focus-visible .deck-card.c2{transform:rotate(-11deg) translate(-16%,2%);filter:brightness(.7)}
+.deck:hover .deck-card.c3,.deck:focus-visible .deck-card.c3{transform:rotate(10deg) translate(16%,-2%);filter:brightness(.6)}
+.deck:hover .deck-card.c1{transform:translateY(-10px) scale(1.03)}
+.deck-card.c1::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.deck-dots{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:4px;z-index:2;opacity:0;transition:opacity .3s}
+.deck:hover .deck-dots{opacity:1}
+.deck-dots i{flex:1;height:3px;border-radius:2px;background:rgba(244,239,231,.3);transition:background .2s}
+.deck-dots i.on{background:#F4EFE7}
+.deck b{display:block;font-weight:780;font-stretch:110%;font-size:1.25rem;letter-spacing:-.015em;line-height:1.15}
+.deck small{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted);font-weight:600}
+.deck.active b{color:var(--ochre)}
+.deck.active .deck-stack::before{content:"Viewing";position:absolute;top:-12px;left:14px;z-index:5;background:var(--ochre);color:#141110;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px}
+
+/* album view header */
+.pf-album-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:1rem 2rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
+.pf-album-head h2{font-weight:820;font-stretch:115%;letter-spacing:-.035em;line-height:.95;font-size:clamp(2.2rem,5.5vw,4rem)}
+.pf-album-head p{grid-column:1/-1;color:var(--ink-2);max-width:60ch;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.5}
+.pf-album-head .pf-count{font-weight:650;color:var(--muted);white-space:nowrap}
+.pf-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.pf-nav button{color:var(--ink);font-weight:700;font-size:1rem;text-align:left}
+.pf-nav button span{display:block;font-size:.8rem;color:var(--muted);font-weight:600;margin-bottom:.15rem}
+.pf-nav button:last-child{text-align:right}
+.pf-nav button:hover{color:var(--ochre)}
+#gallery.swap{animation:pfIn .6s cubic-bezier(.2,.75,.15,1) both}
+
+/* films */
+.f-feature{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:center;margin-bottom:clamp(3rem,6vw,4.5rem)}
+.f-thumb{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#2A2320;display:block;width:100%}
+.f-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.f-thumb:hover img{transform:scale(1.04)}
+.f-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.45))}
+.f-play{position:absolute;left:50%;top:50%;z-index:2;width:clamp(64px,8vw,92px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:#F4EFE7;display:grid;place-items:center;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.f-play::before{content:"";border-left:clamp(18px,2.2vw,26px) solid var(--maroon);border-top:clamp(11px,1.4vw,16px) solid transparent;border-bottom:clamp(11px,1.4vw,16px) solid transparent;margin-left:8%}
+.f-thumb:hover .f-play{transform:translate(-50%,-50%) scale(1.1)}
+.f-badge{display:inline-block;font-size:.8rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;background:rgba(217,150,42,.16);color:var(--ochre);margin-bottom:1rem}
+.f-feature h2{font-weight:820;font-stretch:112%;letter-spacing:-.03em;line-height:1;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.8rem}
+.f-feature p{color:var(--ink-2);line-height:1.6;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.f-meta{font-size:.9rem;color:var(--muted);margin-top:.9rem}
+.f-feature .btn{margin-top:1.4rem}
+.f-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem 1rem;padding-bottom:1rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+.f-head h3{font-weight:760;font-stretch:108%;font-size:1.6rem;letter-spacing:-.02em}
+.f-head span{font-size:.85rem;font-weight:600;color:var(--muted)}
+.f-head a{margin-left:auto}
+.f-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.f-card{text-align:left;color:var(--ink)}
+.f-card .f-thumb{border-radius:14px;margin-bottom:.8rem;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.f-card .f-play{width:46px;opacity:0;transition:opacity .3s,transform .3s}
+.f-card .f-play::before{border-left-width:14px;border-top-width:9px;border-bottom-width:9px}
+.f-card:hover .f-thumb{transform:translateY(-5px);box-shadow:0 26px 44px -26px rgba(0,0,0,.9)}
+.f-card:hover .f-play{opacity:1}
+.f-card b{display:block;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.f-card small{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted)}
+.f-soon{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:center}
+.f-soon .f-frame{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 70% 30%,#3B1814 0%,#1E1916 55%,#141110 100%);border:1px solid rgba(244,239,231,.08)}
+.f-soon .f-frame::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(244,239,231,.04) 0 2px,transparent 2px 80px)}
+.f-soon .rec{position:absolute;top:18px;left:20px;display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:800;letter-spacing:.1em;color:rgba(244,239,231,.75)}
+.f-soon .rec::before{content:"";width:10px;height:10px;border-radius:50%;background:#E0204F;animation:rec 1.6s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+.f-soon .tc{position:absolute;right:20px;bottom:16px;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;color:rgba(244,239,231,.5)}
+.f-ghosts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:clamp(3rem,6vw,4.5rem);opacity:.5}
+.f-ghost i{display:block;aspect-ratio:16/9;border-radius:14px;background:linear-gradient(100deg,#221C19 40%,#2A2320 50%,#221C19 60%);background-size:300% 100%;animation:shimmer 2.2s infinite}
+.f-ghost b{display:block;height:12px;width:80%;border-radius:6px;background:#221C19;margin-top:.8rem}
+.f-ghost s{display:block;height:10px;width:45%;border-radius:6px;background:#1E1916;margin-top:.5rem}
+
+/* video player */
+.vbox{position:fixed;inset:0;z-index:101;background:rgba(10,8,7,.94);display:none;flex-direction:column;align-items:center;justify-content:center;padding:4.5rem 1rem 2rem}
+.vbox.open{display:flex}
+.vbox-frame{width:min(100%,calc((100vh - 12rem) * 16 / 9),1200px);aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.vbox-frame iframe{width:100%;height:100%;border:0;display:block}
+.vbox-cap{color:var(--paper);text-align:center;margin-top:1.1rem;max-width:760px}
+.vbox-cap b{display:block;font-size:1.1rem}
+.vbox-cap small{color:rgba(244,239,231,.6)}
+@media (max-width:1020px){.f-grid,.f-ghosts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.f-feature,.f-soon{grid-template-columns:1fr}.pf-album-head{grid-template-columns:1fr}}
+@media (max-width:620px){.pf-switch a{padding:.75rem 1.4rem;font-size:1rem}.f-grid{grid-template-columns:1fr 1fr;gap:1rem}.deck{flex-basis:62vw}}
+@media (prefers-reduced-motion:reduce){.deck-card,.pf-ind{transition:none}.f-soon .rec::before{animation:none}}
 
 /* ---------- INVOLVE ---------- */
 .ways{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
@@ -1005,21 +1144,46 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
 
 <!-- ================= PORTFOLIO ================= -->
 <div class="page" id="p-portfolio">
-  <section class="phead">
+  <section class="phead pf-head">
     <div class="container phead-grid">
       <div>
         <div class="kicker">Portfolio</div>
-        <h1 class="display h1">Through the lens.</h1>
+        <h1 class="display h1">Through the <span class="serif-i">lens.</span></h1>
       </div>
-      <p class="lead">Photographs of the people, places and moments we've been lucky enough to capture.</p>
+      <p class="lead">Photographs and films of the people, places and moments we've been lucky enough to capture.</p>
     </div>
   </section>
-  <section class="pad-s">
+
+  <div class="container">
+    <div class="pf-switch" role="tablist" aria-label="Photos or films">
+      <span class="pf-ind" aria-hidden="true"></span>
+      <a href="/portfolio" role="tab" data-pf="photos" class="on">Photos</a>
+      <a href="/portfolio/films" role="tab" data-pf="films">Films</a>
+    </div>
+  </div>
+
+  <section class="pf-pane" id="pfPhotos">
     <div class="container">
-      <div class="filters" id="gFilters" role="group" aria-label="Filter photos" hidden></div>
-      <div id="gallery"><div class="g-loading" aria-label="Loading photos"><div></div><div></div><div></div></div></div>
+      <div class="decks-wrap" id="decksWrap" hidden>
+        <div class="decks-top"><p class="decks-hint">Albums · hover to flick through, click to open</p><div class="decks-arrows" id="decksArrows" hidden><button type="button" data-d="-1" aria-label="Previous albums">←</button><button type="button" data-d="1" aria-label="More albums">→</button></div></div>
+        <div class="decks" id="decks"></div>
+      </div>
+      <div class="pf-view" id="pfView">
+        <div id="gallery"><div class="g-loading" aria-label="Loading photos"><div></div><div></div><div></div></div></div>
+      </div>
     </div>
   </section>
+
+  <section class="pf-pane" id="pfFilms" hidden>
+    <div class="container" id="films"></div>
+  </section>
+</div>
+
+<!-- Video player -->
+<div class="vbox" id="vbox" role="dialog" aria-modal="true" aria-label="Video player">
+  <button class="lb-btn lb-close" id="vbClose" aria-label="Close">✕</button>
+  <div class="vbox-frame"><iframe id="vbFrame" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div class="vbox-cap" id="vbCap"></div>
 </div>
 
 <!-- ================= GET INVOLVED ================= -->
@@ -1237,7 +1401,7 @@ const PORTFOLIO = {
   const pageIds = pages.map(p => p.id.slice(2));
   /* Clean addresses: krnbrystudio.com/about instead of #about or about.html */
   const PATHS = { home: '/', about: '/about', mission: '/mission', work: '/work', belonging: '/belonging', portfolio: '/portfolio', involve: '/get-involved', contact: '/contact' };
-  const ALIASES = { '/donate': ['involve', 'donate'], '/be-featured': ['belonging', 'bel-join'] };
+  const ALIASES = { '/donate': ['involve', 'donate'], '/be-featured': ['belonging', 'bel-join'], '/portfolio/films': ['portfolio', null] };
   const BY_PATH = {}; Object.keys(PATHS).forEach(k => { BY_PATH[PATHS[k]] = k; });
   const clean = p => { p = (p || '/').replace(/\/index\.html$/, '/').replace(/\.html$/, ''); if (p.length > 1) p = p.replace(/\/+$/, ''); return p || '/'; };
 
@@ -1367,16 +1531,28 @@ const PORTFOLIO = {
   }
 
   async function loadPhotos(){
-    if (PORTFOLIO.photos && PORTFOLIO.photos.length) {
-      return PORTFOLIO.photos.map(p => ({ ...p, title: p.title || nice(p.src.split('/').pop()) }));
-    }
+    const norm = (arr, albums) => {
+      albums = (albums || []).filter(a => a && a.id && a.name);
+      const byName = {}; albums.forEach(a => { byName[a.name.toLowerCase()] = a; });
+      const list = arr.filter(p => p && p.src).map(p => {
+        let album = p.album || '';
+        if (!album && p.tag) {            // older photo lists used "tag"
+          const k = p.tag.toLowerCase();
+          if (!byName[k]) { const a = { id: k.replace(/[^\w]+/g, '-'), name: p.tag }; albums.push(a); byName[k] = a; }
+          album = byName[k].id;
+        }
+        return { ...p, album, title: p.title || nice(p.src.split('/').pop()) };
+      });
+      return { photos: list, albums };
+    };
+    if (PORTFOLIO.photos && PORTFOLIO.photos.length) return norm(PORTFOLIO.photos, []);
     // 1. The photo list written by upload.html (fast, no GitHub limits)
     try {
       const r = await fetch('/' + PORTFOLIO.folder + '/photos.json?v=' + Date.now());
       if (r.ok) {
         const d = await r.json();
         const arr = Array.isArray(d) ? d : (d.photos || []);
-        if (arr.length) return arr.filter(p => p && p.src).map(p => ({ ...p, title: p.title || nice(p.src.split('/').pop()) }));
+        if (arr.length) return norm(arr, Array.isArray(d) ? [] : d.albums);
       }
     } catch (e) {}
     // 2. Otherwise, list whatever is in the portfolio folder on GitHub
@@ -1384,33 +1560,36 @@ const PORTFOLIO = {
     const key = 'krnbry-photos-' + user + '/' + repo;
     try {
       const c = JSON.parse(sessionStorage.getItem(key) || 'null');
-      if (c && Date.now() - c.t < 10 * 60 * 1000) return c.d;
+      if (c && Date.now() - c.t < 10 * 60 * 1000) return norm(c.d, []);
     } catch (e) {}
     const list = await listDir(user, repo, PORTFOLIO.folder, 0);
     list.sort((a, b) => a.src.localeCompare(b.src, undefined, { numeric: true }));
     try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d: list })); } catch (e) {}
-    return list;
+    return norm(list, []);
   }
 
-  let photos = [], shown = [], cur = 0;
+  let photos = [], albums = [], shown = [], cur = 0;
   const gallery = document.getElementById('gallery');
-  const gFilters = document.getElementById('gFilters');
+  
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const fmtDate = d => { if (!d) return ''; const m = String(d).match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/); if (!m) return d;
+    return [m[3] ? Number(m[3]) : '', m[2] ? MONTHS[Number(m[2]) - 1] : '', m[1]].filter(Boolean).join(' '); };
+  const albumOf = id => albums.find(a => a.id === id);
 
   function imgEl(p, eager){
     const i = new Image();
-    i.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; i.alt = p.title || 'Photograph by KRNBRY Studio';
+    i.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; i.alt = p.alt || p.title || 'Photograph by KRNBRY Studio';
     i.loading = eager ? 'eager' : 'lazy'; i.decoding = 'async';
     i.onerror = function(){ if (p.remote && this.src !== p.remote) this.src = p.remote; else this.closest('button, .hero-media')?.classList.add('broken'); };
     return i;
   }
 
-  function renderGallery(tag){
-    shown = tag && tag !== 'All' ? photos.filter(p => p.tag === tag) : photos.slice();
-    gallery.innerHTML = '';
+  function grid(list){
     const wrap = document.createElement('div');
     wrap.className = 'gallery';
-    if (shown.length < 3) wrap.style.columns = shown.length + ' 320px';
-    shown.forEach((p, idx) => {
+    if (list.length < 3) { wrap.style.columns = list.length + ' 320px'; wrap.style.maxWidth = list.length * 420 + 'px'; }
+    list.forEach(p => {
+      const idx = shown.length; shown.push(p);
       const b = document.createElement('button');
       b.className = 'g-item';
       b.setAttribute('aria-label', 'Open photo: ' + (p.title || 'photo'));
@@ -1419,8 +1598,192 @@ const PORTFOLIO = {
       b.addEventListener('click', () => openLb(idx));
       wrap.appendChild(b);
     });
-    gallery.appendChild(wrap);
+    return wrap;
   }
+  function albumHead(a, n){
+    const h = document.createElement('header'); h.className = 'g-head';
+    const t = document.createElement('h3'); t.className = 'h3'; t.textContent = a.name;
+    const c = document.createElement('span'); c.className = 'g-count'; c.textContent = n + (n === 1 ? ' photo' : ' photos');
+    h.append(t, c);
+    if (a.description) { const d = document.createElement('p'); d.className = 'body g-desc'; d.textContent = a.description; h.appendChild(d); }
+    return h;
+  }
+  function albumIntro(a, n){
+    const h = document.createElement('header'); h.className = 'pf-album-head';
+    const t = document.createElement('h2'); t.textContent = a.name;
+    const c = document.createElement('span'); c.className = 'pf-count'; c.textContent = n + (n === 1 ? ' photo' : ' photos');
+    h.append(t, c);
+    if (a.description) { const d = document.createElement('p'); d.textContent = a.description; h.appendChild(d); }
+    return h;
+  }
+  let currentAlbum = 'all';
+  function renderGallery(albumId){
+    currentAlbum = albumId || 'all';
+    shown = [];
+    gallery.innerHTML = '';
+    gallery.classList.remove('swap'); void gallery.offsetWidth; gallery.classList.add('swap');
+    const used = albums.filter(a => photos.some(p => p.album === a.id));
+    if (currentAlbum !== 'all') {
+      const a = albumOf(currentAlbum), list = photos.filter(p => p.album === currentAlbum);
+      if (a) gallery.appendChild(albumIntro(a, list.length));
+      gallery.appendChild(grid(list));
+      const i = used.findIndex(x => x.id === currentAlbum), prev = used[i - 1], next = used[i + 1];
+      const nav = document.createElement('nav'); nav.className = 'pf-nav';
+      const mk = (lbl, al) => { const b = document.createElement('button'); b.type = 'button';
+        if (al) { b.innerHTML = '<span></span>'; b.firstChild.textContent = lbl; b.append(document.createTextNode(al.name)); b.onclick = () => openAlbum(al.id, true); }
+        else { b.innerHTML = '<span></span>All photos'; b.firstChild.textContent = lbl; b.onclick = () => openAlbum('all', true); }
+        return b; };
+      nav.append(mk('← Previous', prev), mk('Next →', next));
+      gallery.appendChild(nav);
+      return;
+    }
+    if (!used.length) { gallery.appendChild(grid(photos)); return; }
+    used.forEach(a => {
+      const list = photos.filter(p => p.album === a.id);
+      const sec = document.createElement('section'); sec.className = 'g-album';
+      sec.append(albumHead(a, list.length), grid(list)); gallery.appendChild(sec);
+    });
+    const rest = photos.filter(p => !albumOf(p.album));
+    if (rest.length) { const sec = document.createElement('section'); sec.className = 'g-album'; sec.append(albumHead({ name: 'More photos' }, rest.length), grid(rest)); gallery.appendChild(sec); }
+  }
+  function openAlbum(id, scroll){
+    document.querySelectorAll('.deck').forEach(d => d.classList.toggle('active', d.dataset.album === id));
+    renderGallery(id);
+    const act = document.querySelector('.deck.active'); if (act) act.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (scroll) { const y = document.getElementById('pfView').getBoundingClientRect().top + scrollY - 90; window.scrollTo({ top: y, behavior: 'smooth' }); }
+  }
+
+  /* album decks: fanned stacks you can flick through by moving across them */
+  function renderDecks(){
+    const used = albums.filter(a => photos.some(p => p.album === a.id));
+    if (!used.length) return;
+    const wrap = document.getElementById('decksWrap'), el = document.getElementById('decks');
+    el.innerHTML = ''; wrap.hidden = false;
+    const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const hint = wrap.querySelector('.decks-hint'); if (hint && !fine) hint.textContent = 'Albums · swipe to browse, tap to open';
+    [{ id: 'all', name: 'All photos', list: photos }, ...used.map(a => ({ ...a, list: photos.filter(p => p.album === a.id) }))].forEach(a => {
+      const d = document.createElement('button'); d.type = 'button'; d.className = 'deck' + (a.id === 'all' ? ' active' : ''); d.dataset.album = a.id;
+      d.setAttribute('aria-label', 'Open album ' + a.name);
+      const st = document.createElement('div'); st.className = 'deck-stack';
+      const pics = a.list.slice(0, 3);
+      ['c3', 'c2', 'c1'].forEach((c, k) => { const p = pics[2 - k] || pics[0]; const card = document.createElement('div'); card.className = 'deck-card ' + c; if (p) card.appendChild(imgEl(p)); st.appendChild(card); });
+      const front = st.querySelector('.c1 img');
+      if (fine && a.list.length > 1 && front) {
+        const n = Math.min(a.list.length, 12), dots = document.createElement('div'); dots.className = 'deck-dots';
+        for (let i = 0; i < n; i++) dots.appendChild(document.createElement('i'));
+        dots.firstChild.classList.add('on'); st.querySelector('.c1').appendChild(dots);
+        let last = 0;
+        d.addEventListener('pointermove', e => {
+          const r = st.getBoundingClientRect(), i = Math.max(0, Math.min(n - 1, Math.floor((e.clientX - r.left) / r.width * n)));
+          if (i === last) return; last = i; const p = a.list[i];
+          front.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src;
+          [...dots.children].forEach((x, j) => x.classList.toggle('on', j === i));
+        });
+        d.addEventListener('pointerleave', () => { last = 0; const p = a.list[0]; front.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; [...dots.children].forEach((x, j) => x.classList.toggle('on', j === 0)); });
+      }
+      const b = document.createElement('b'); b.textContent = a.name;
+      const s = document.createElement('small'); s.textContent = a.list.length + (a.list.length === 1 ? ' photo' : ' photos');
+      d.append(st, b, s);
+      d.addEventListener('click', () => openAlbum(a.id, true));
+      el.appendChild(d);
+    });
+    // arrows + soft edges when there are more albums than fit
+    const arrows = document.getElementById('decksArrows'), [prevB, nextB] = arrows.children;
+    const edges = () => {
+      const max = el.scrollWidth - el.clientWidth - 2, x = el.scrollLeft;
+      arrows.hidden = max <= 0; el.classList.toggle('more-l', x > 2); el.classList.toggle('more-r', x < max);
+      prevB.disabled = x <= 2; nextB.disabled = x >= max;
+    };
+    if (!el.dataset.wired) {
+      el.dataset.wired = 1;
+      el.addEventListener('scroll', edges, { passive: true }); addEventListener('resize', edges);
+      arrows.addEventListener('click', e => { const b = e.target.closest('button'); if (b) el.scrollBy({ left: b.dataset.d * el.clientWidth * .8, behavior: 'smooth' }); });
+    }
+    requestAnimationFrame(edges); setTimeout(edges, 600);
+  }
+
+  /* photos / films switch, with its own address: /portfolio/films */
+  const pfPhotos = document.getElementById('pfPhotos'), pfFilms = document.getElementById('pfFilms');
+  function setPfTab(){
+    if (!pfPhotos) return;
+    const films = /^\/portfolio\/films\/?$/.test(location.pathname);
+    const was = !pfFilms.hidden;
+    pfFilms.hidden = !films; pfPhotos.hidden = films;
+    document.querySelectorAll('.pf-switch a').forEach(a => a.classList.toggle('on', (a.dataset.pf === 'films') === films));
+    const on = document.querySelector('.pf-switch a.on'), ind = document.querySelector('.pf-ind');
+    if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; }
+    if (films !== was) { const pane = films ? pfFilms : pfPhotos; pane.classList.remove('enter'); void pane.offsetWidth; pane.classList.add('enter'); }
+    if (films) loadFilms();
+    document.documentElement.classList.toggle('pf-dark', document.getElementById('p-portfolio').classList.contains('active'));
+  }
+  window.addEventListener('krn:route', setPfTab);
+  window.addEventListener('resize', () => { const on = document.querySelector('.pf-switch a.on'), ind = document.querySelector('.pf-ind'); if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; } });
+
+  /* ---------- films (from portfolio/videos.json, kept up to date by GitHub) ---------- */
+  let filmsLoaded = false;
+  const filmsEl = document.getElementById('films');
+  const fDate = s => { const d = new Date(s); return isNaN(d) ? '' : d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }); };
+  const thumb = (v, big) => 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/' + (big ? 'maxresdefault' : 'hqdefault') + '.jpg';
+  async function loadFilms(){
+    if (filmsLoaded) return; filmsLoaded = true;
+    let data = { videos: [] };
+    try { const r = await fetch('/portfolio/videos.json?v=' + Date.now()); if (r.ok) data = await r.json(); } catch (e) {}
+    const vids = (data.videos || []).filter(v => v && v.id).sort((a, b) => new Date(b.published) - new Date(a.published));
+    const chan = data.channelUrl || 'https://www.youtube.com/@krnbrystudio';
+    filmsEl.innerHTML = '';
+    if (!vids.length) {
+      filmsEl.innerHTML = `<div class="f-soon">
+          <div class="f-frame"><span class="rec">REC</span><span class="f-play" style="opacity:.25"></span><span class="tc">00:00:00:00</span></div>
+          <div><span class="f-badge">Coming soon</span>
+            <h2 class="display" style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.8rem">Films are in the edit.</h2>
+            <p class="body">Documentaries, interviews and short films will live here. New videos from our YouTube channel appear automatically.</p>
+            <a class="btn btn-light" style="margin-top:1.4rem" href="${chan}" target="_blank" rel="noopener">Subscribe on YouTube <span class="arr">↗</span></a></div>
+        </div>
+        <div class="f-ghosts" aria-hidden="true">${'<div class="f-ghost"><i></i><b></b><s></s></div>'.repeat(4)}</div>`;
+      tickTC(); return;
+    }
+    const [first, ...rest] = vids;
+    const feat = document.createElement('div'); feat.className = 'f-feature';
+    const fb = document.createElement('button'); fb.type = 'button'; fb.className = 'f-thumb'; fb.setAttribute('aria-label', 'Play ' + first.title);
+    const fi = new Image(); fi.src = thumb(first, true); fi.alt = ''; fi.onerror = () => { fi.onerror = null; fi.src = thumb(first); };
+    fb.append(fi, Object.assign(document.createElement('span'), { className: 'f-play' })); fb.onclick = () => playVideo(first);
+    const info = document.createElement('div');
+    info.innerHTML = '<span class="f-badge">Latest film</span><h2></h2><p></p><div class="f-meta"></div><button type="button" class="btn btn-light">▶ Play film</button>';
+    info.querySelector('h2').textContent = first.title; info.querySelector('p').textContent = first.description || '';
+    info.querySelector('.f-meta').textContent = fDate(first.published); info.querySelector('.btn').onclick = () => playVideo(first);
+    feat.append(fb, info); filmsEl.appendChild(feat);
+    if (rest.length) {
+      const head = document.createElement('div'); head.className = 'f-head';
+      head.innerHTML = '<h3>All films</h3><span></span><a class="textlink" target="_blank" rel="noopener">Subscribe on YouTube ↗</a>';
+      head.querySelector('span').textContent = vids.length + ' videos'; head.querySelector('a').href = chan;
+      const g = document.createElement('div'); g.className = 'f-grid';
+      rest.forEach(v => {
+        const c = document.createElement('button'); c.type = 'button'; c.className = 'f-card'; c.setAttribute('aria-label', 'Play ' + v.title);
+        const t = document.createElement('span'); t.className = 'f-thumb'; const im = new Image(); im.src = thumb(v); im.alt = ''; im.loading = 'lazy';
+        t.append(im, Object.assign(document.createElement('span'), { className: 'f-play' }));
+        const b = document.createElement('b'); b.textContent = v.title; const s = document.createElement('small'); s.textContent = fDate(v.published);
+        c.append(t, b, s); c.onclick = () => playVideo(v); g.appendChild(c);
+      });
+      filmsEl.append(head, g);
+    }
+  }
+  function tickTC(){
+    const tc = filmsEl.querySelector('.tc'); if (!tc || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t0 = performance.now();
+    (function loop(){ if (!document.body.contains(tc)) return; const f = Math.floor((performance.now() - t0) / 40), p = n => String(n).padStart(2, '0');
+      tc.textContent = p(Math.floor(f / 90000) % 24) + ':' + p(Math.floor(f / 1500) % 60) + ':' + p(Math.floor(f / 25) % 60) + ':' + p(f % 25); requestAnimationFrame(loop); })();
+  }
+  const vbox = document.getElementById('vbox'), vbFrame = document.getElementById('vbFrame'), vbCap = document.getElementById('vbCap');
+  function playVideo(v){
+    vbFrame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0&modestbranding=1';
+    vbCap.innerHTML = '<b></b><small></small>'; vbCap.firstChild.textContent = v.title; vbCap.lastChild.textContent = fDate(v.published);
+    vbox.classList.add('open'); document.body.style.overflow = 'hidden'; document.getElementById('vbClose').focus();
+  }
+  function closeVideo(){ vbox.classList.remove('open'); vbFrame.src = 'about:blank'; document.body.style.overflow = ''; }
+  document.getElementById('vbClose').onclick = closeVideo;
+  vbox.addEventListener('click', e => { if (e.target === vbox) closeVideo(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && vbox.classList.contains('open')) closeVideo(); });
+  setPfTab();
 
   function renderEmpty(){
     gallery.innerHTML = '<div class="g-empty"><h3 class="h3">Photos coming soon.</h3><p class="body" style="margin:0 auto">We\'re putting the portfolio together. In the meantime, follow <a class="textlink" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">@krnbrystudio</a> for our latest work.</p></div>';
@@ -1452,23 +1815,6 @@ const PORTFOLIO = {
     document.getElementById('homeStrip').hidden = false;
   }
 
-  function renderFilters(){
-    const tags = [...new Set(photos.map(p => p.tag).filter(Boolean))];
-    if (tags.length < 2) return;
-    gFilters.hidden = false;
-    ['All', ...tags].forEach((t, i) => {
-      const b = document.createElement('button');
-      b.className = 'filter' + (i === 0 ? ' active' : '');
-      b.textContent = t;
-      b.addEventListener('click', () => {
-        gFilters.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
-        b.classList.add('active');
-        renderGallery(t);
-      });
-      gFilters.appendChild(b);
-    });
-  }
-
   /* lightbox */
   const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
   let lastFocus = null;
@@ -1476,12 +1822,15 @@ const PORTFOLIO = {
     if (!shown.length) return;
     cur = (i + shown.length) % shown.length;
     const p = shown[cur];
-    lbImg.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; lbImg.alt = p.title || '';
+    lbImg.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; lbImg.alt = p.alt || p.title || '';
     lbImg.onerror = () => { if (p.remote && lbImg.src !== p.remote) lbImg.src = p.remote; };
     lbCap.innerHTML = '';
-    const t = document.createElement('div'); t.textContent = p.title || '';
-    const s = document.createElement('small'); s.textContent = [p.place, (cur + 1) + ' / ' + shown.length].filter(Boolean).join(' · ');
-    lbCap.append(t, s);
+    const a = albumOf(p.album);
+    if (a) { const k = document.createElement('span'); k.className = 'lb-album'; k.textContent = a.name; lbCap.appendChild(k); }
+    const t = document.createElement('div'); t.className = 'lb-title'; t.textContent = p.title || ''; lbCap.appendChild(t);
+    if (p.caption) { const c = document.createElement('p'); c.className = 'lb-text'; c.textContent = p.caption; lbCap.appendChild(c); }
+    const s = document.createElement('small'); s.textContent = [fmtDate(p.date), p.place, (cur + 1) + ' / ' + shown.length].filter(Boolean).join('  ·  ');
+    lbCap.appendChild(s);
   }
   function openLb(i){ if (i < 0) i = 0; lastFocus = document.activeElement; show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; document.getElementById('lbClose').focus(); }
   function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
@@ -1500,7 +1849,7 @@ const PORTFOLIO = {
   lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); tx = null; });
 
   loadPhotos()
-    .then(list => { photos = list || []; if (!photos.length) return renderEmpty(); renderFilters(); renderGallery(); renderHome(); })
+    .then(res => { photos = (res && res.photos) || []; albums = (res && res.albums) || []; if (!photos.length) return renderEmpty(); renderDecks(); renderGallery('all'); renderHome(); })
     .catch(() => renderEmpty());
 })();
 </script>

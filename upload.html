@@ -60,7 +60,20 @@ input:focus,select:focus{outline:none;border-color:var(--red);background:var(--w
 .row.removed{opacity:.45}
 .row.removed .thumb{filter:grayscale(1)}
 .thumb{width:96px;height:96px;border-radius:12px;object-fit:cover;background:var(--paper-2)}
-.fields{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:.5rem}
+.fields{display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem}
+.fields .full{grid-column:1/-1}
+.fields textarea{width:100%;min-height:68px;padding:.55rem .7rem;font:inherit;font-size:.92rem;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);resize:vertical;font-family:inherit;line-height:1.45}
+.fields textarea:focus{outline:none;border-color:var(--red);background:var(--white)}
+.fields select{padding:.55rem .7rem;font-size:.92rem;border-radius:10px}
+.fields input[type=date]{padding:.5rem .7rem;font-size:.92rem;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);font:inherit}
+.f-lbl{font-size:.74rem;font-weight:700;color:var(--muted);margin:0 0 .15rem .15rem;display:block}
+.albums{display:grid;gap:.7rem}
+.album{display:grid;grid-template-columns:1fr auto;gap:.5rem 1rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.album input{font-weight:700}
+.album textarea{grid-column:1/2;width:100%;min-height:52px;padding:.55rem .7rem;font:inherit;font-size:.9rem;border-radius:10px;border:1.5px solid var(--line);background:var(--white);resize:vertical}
+.album .a-side{grid-row:1/3;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;font-size:.82rem;color:var(--muted)}
+.toolbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:1rem}
+.toolbar select{width:auto;min-width:200px}
 .fields input{padding:.55rem .7rem;font-size:.92rem;border-radius:10px}
 .meta{display:flex;gap:.4rem;align-items:center;margin-bottom:.45rem;flex-wrap:wrap}
 .tag{font-size:.75rem;font-weight:700;padding:.15rem .55rem;border-radius:999px}
@@ -135,6 +148,8 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   .row{grid-template-columns:72px 1fr;align-items:start}
   .thumb{width:72px;height:72px}
   .fields{grid-template-columns:1fr}
+  .album{grid-template-columns:1fr}
+  .album .a-side{grid-row:auto;grid-column:auto;flex-direction:row;align-items:center;justify-content:space-between}
   .acts{grid-column:1/-1;flex-direction:row;justify-content:flex-end}
 }
 </style>
@@ -194,6 +209,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
           <p>JPG, PNG or WEBP. iPhone HEIC photos work in Safari; in other browsers export them as JPG first.</p>
         </div>
       </div>
+      <div class="toolbar"><label for="newAlbum" style="font-weight:650;font-size:.92rem">Add new photos to:</label><select id="newAlbum"></select></div>
       <label class="drop" id="drop">
         <input type="file" id="file" accept="image/*" multiple hidden>
         <b>Drop photos here</b>
@@ -201,15 +217,27 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       </label>
     </section>
 
+    <!-- ===== Albums ===== -->
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>3. Albums</h2>
+          <p>Group photos into sections, like a shoot, a place or a series. Each album gets its own heading and description on the portfolio.</p>
+        </div>
+        <button class="btn btn-line btn-sm" id="addAlbum" type="button">+ New album</button>
+      </div>
+      <div class="albums" id="albumList"></div>
+    </section>
+
     <!-- ===== Manage ===== -->
     <section class="panel">
       <div class="panel-head">
         <div>
-          <h2>3. Captions and order</h2>
-          <p>The top photo is the cover, which is the big image on the home page. Categories become filter buttons on the portfolio.</p>
+          <h2>4. Captions and order</h2>
+          <p>Give each photo a title, album, date, location and a proper caption. The top photo is the cover, the big image on the home page.</p>
         </div>
       </div>
-      <datalist id="cats"><option>Events</option><option>Portraits</option><option>Places</option><option>Behind the scenes</option><option>Community</option></datalist>
+      <div class="toolbar"><label for="showAlbum" style="font-weight:650;font-size:.92rem">Show:</label><select id="showAlbum"></select></div>
       <div class="list" id="list"><div class="empty">Loading your photos…</div></div>
     </section>
   </div>
@@ -379,37 +407,41 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   async function loadExisting(){
     items = []; shaMap = {}; manifestSha = null;
     const files = await listFolder(FOLDER, 0);
-    let manifest = [];
+    let manifest = []; albums = [];
     const m = await api('/contents/' + MANIFEST + '?ref=' + encodeURIComponent(branch));
     if (m && m.content) {
       manifestSha = m.sha;
       try {
         const d = JSON.parse(decodeURIComponent(escape(atob(m.content.replace(/\n/g, '')))));
         manifest = Array.isArray(d) ? d : (d.photos || []);
+        if (!Array.isArray(d) && Array.isArray(d.albums)) albums = d.albums.filter(a => a && a.id).map(a => ({ id: a.id, name: a.name || '', description: a.description || '' }));
       } catch(e){}
     }
+    const albumFor = name => { if (!name) return ''; const k = name.trim().toLowerCase(); let a = albums.find(x => x.name.toLowerCase() === k);
+      if (!a) { a = { id: newId(name), name: name.trim(), description: '' }; albums.push(a); } return a.id; };
     const known = new Set();
     manifest.forEach(p => {
       if (!p.src || !shaMap[p.src]) return;
       known.add(p.src);
-      items.push({ src: p.src, title: p.title || '', place: p.place || '', tag: p.tag || '', url: shaMap[p.src].url });
+      items.push({ src: p.src, title: p.title || '', caption: p.caption || '', place: p.place || '', date: p.date || '', album: p.album || albumFor(p.tag), alt: p.alt || '', url: shaMap[p.src].url });
     });
     // photos uploaded straight to GitHub that aren't in the list yet
     files.sort((a, b) => a.path.localeCompare(b.path, undefined, { numeric: true })).forEach(f => {
       if (known.has(f.path)) return;
       const parts = f.path.split('/');
-      items.push({ src: f.path, title: nice(f.name), place: '', tag: parts.length > 2 ? nice(parts[1]) : '', url: f.download_url });
+      items.push({ src: f.path, title: nice(f.name), caption: '', place: '', date: '', album: parts.length > 2 ? albumFor(nice(parts[1])) : '', url: f.download_url });
     });
-    items.forEach(i => { i.orig = JSON.stringify([i.title, i.place, i.tag]); });
+    items.forEach(i => { i.orig = sig(i); });
     items._origOrder = items.map(i => i.src).join('|');
-    render();
+    albumsOrig = JSON.stringify(albums);
+    renderAlbums(); render();
   }
 
   /* ---------- add new ---------- */
   function addFiles(list){
     [...list].forEach(file => {
       if (!file.type.startsWith('image/') && !/\.(heic|heif)$/i.test(file.name)) return;
-      items.unshift({ file, isNew: true, title: nice(file.name), place: '', tag: '', url: URL.createObjectURL(file) });
+      items.unshift({ file, isNew: true, title: nice(file.name), caption: '', place: '', date: '', album: $('newAlbum').value, url: URL.createObjectURL(file) });
     });
     render();
   }
@@ -419,13 +451,56 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
   drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
 
+  /* ---------- albums ---------- */
+  let albums = [], albumsOrig = '[]';
+  const sig = i => JSON.stringify([i.title, i.caption, i.place, i.date, i.album, i.alt]);
+  const newId = name => slug(name || 'album') + '-' + Math.random().toString(36).slice(2, 6);
+  function albumOptions(sel, none){
+    const v = sel.value; sel.innerHTML = '';
+    const o0 = document.createElement('option'); o0.value = ''; o0.textContent = none; sel.appendChild(o0);
+    albums.forEach(a => { const o = document.createElement('option'); o.value = a.id; o.textContent = a.name || 'Untitled album'; sel.appendChild(o); });
+    sel.value = v;
+  }
+  function refreshPickers(){
+    albumOptions($('newAlbum'), 'No album');
+    const sa = $('showAlbum'), v = sa.value || '*'; sa.innerHTML = '';
+    [['*', 'All photos'], ...albums.map(a => [a.id, a.name || 'Untitled album']), ['-', 'Not in an album']].forEach(([val, t]) => { const o = document.createElement('option'); o.value = val; o.textContent = t; sa.appendChild(o); });
+    sa.value = [...sa.options].some(o => o.value === v) ? v : '*';
+  }
+  function renderAlbums(){
+    const el = $('albumList'); el.innerHTML = '';
+    if (!albums.length) el.innerHTML = '<div class="empty" style="padding:.8rem">No albums yet. Photos show in one big grid until you make one.</div>';
+    albums.forEach((a, idx) => {
+      const box = document.createElement('div'); box.className = 'album';
+      const n = document.createElement('input'); n.type = 'text'; n.placeholder = 'Album name, e.g. Market mornings'; n.value = a.name;
+      n.addEventListener('input', () => { a.name = n.value; refreshPickers(); render(); });
+      const d = document.createElement('textarea'); d.placeholder = 'A line or two about this album (optional)'; d.value = a.description;
+      d.addEventListener('input', () => { a.description = d.value; updateSummary(); });
+      const side = document.createElement('div'); side.className = 'a-side';
+      const cnt = items.filter(i => !i.removed && i.album === a.id).length;
+      const c = document.createElement('span'); c.textContent = cnt + (cnt === 1 ? ' photo' : ' photos');
+      const up = document.createElement('button'); up.type = 'button'; up.className = 'ib'; up.textContent = '↑'; up.title = 'Move album up';
+      up.onclick = () => { if (idx > 0) { [albums[idx - 1], albums[idx]] = [albums[idx], albums[idx - 1]]; renderAlbums(); refreshPickers(); render(); } };
+      const del = document.createElement('button'); del.type = 'button'; del.className = 'ib del'; del.textContent = '✕'; del.title = 'Delete album (photos stay)';
+      del.onclick = () => { if (!confirm('Delete the album "' + (a.name || 'Untitled') + '"? Its photos stay in your portfolio, just not in an album.')) return;
+        items.forEach(i => { if (i.album === a.id) i.album = ''; }); albums.splice(idx, 1); renderAlbums(); refreshPickers(); render(); };
+      side.append(c, up, del);
+      box.append(n, side, d); el.appendChild(box);
+    });
+    refreshPickers(); updateSummary();
+  }
+  $('addAlbum').onclick = () => { albums.push({ id: newId('album'), name: '', description: '' }); renderAlbums(); const ins = $('albumList').querySelectorAll('.album input'); if (ins.length) ins[ins.length - 1].focus(); };
+  $('showAlbum').addEventListener('change', () => render());
+
   /* ---------- render ---------- */
   function render(){
     const list = $('list');
     list.innerHTML = '';
     if (!items.length) { list.innerHTML = '<div class="empty">No photos yet. Add some above.</div>'; updateSummary(); return; }
     let visibleIdx = 0;
+    const filt = $('showAlbum').value || '*';
     items.forEach((it, i) => {
+      if (filt !== '*' && (it.album || '') !== (filt === '-' ? '' : filt)) { if (!it.removed && visibleIdx === 0) visibleIdx++; return; }
       const row = document.createElement('div');
       row.className = 'row' + (it.isNew ? ' new' : '') + (it.removed ? ' removed' : '');
       const img = document.createElement('img'); img.className = 'thumb'; img.src = it.url; img.alt = ''; img.loading = 'lazy';
@@ -437,13 +512,15 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       if (it.removed) meta.innerHTML += '<span class="tag gone">Will be removed</span>';
       if (!it.removed) visibleIdx++;
       const f = document.createElement('div'); f.className = 'fields';
-      [['title','Caption'],['place','Place (optional)'],['tag','Category (optional)']].forEach(([k, ph]) => {
-        const inp = document.createElement('input'); inp.type = 'text'; inp.placeholder = ph; inp.value = it[k] || ''; inp.setAttribute('aria-label', ph);
-        if (k === 'tag') inp.setAttribute('list', 'cats');
-        inp.disabled = !!it.removed;
-        inp.addEventListener('input', () => { it[k] = inp.value; updateSummary(); });
-        f.appendChild(inp);
-      });
+      const fld = (label, el, full) => { const w = document.createElement('div'); if (full) w.className = 'full'; const l = document.createElement('span'); l.className = 'f-lbl'; l.textContent = label; w.append(l, el); f.appendChild(w); return el; };
+      const bind = (el, k) => { el.value = it[k] || ''; el.disabled = !!it.removed; el.addEventListener('input', () => { it[k] = el.value; updateSummary(); }); el.addEventListener('change', () => { it[k] = el.value; updateSummary(); }); return el; };
+      const inp = (k, ph, type) => { const e = document.createElement('input'); e.type = type || 'text'; e.placeholder = ph || ''; return bind(e, k); };
+      fld('Title', inp('title', 'e.g. Saturday at the market'));
+      const sel = document.createElement('select'); albumOptions(sel, 'No album'); fld('Album', bind(sel, 'album'));
+      sel.addEventListener('change', () => renderAlbums());
+      fld('Date taken', inp('date', '', 'date'));
+      fld('Location', inp('place', 'e.g. Queen Victoria Market, Naarm'));
+      const ta = document.createElement('textarea'); ta.placeholder = 'The story behind the photo: who, what was happening, why it matters.'; fld('Caption', bind(ta, 'caption'), true);
       mid.append(meta, f);
       const acts = document.createElement('div'); acts.className = 'acts';
       const mk = (label, title, fn, cls) => { const b = document.createElement('button'); b.className = 'ib ' + (cls || ''); b.textContent = label; b.title = title; b.setAttribute('aria-label', title); b.onclick = fn; acts.appendChild(b); };
@@ -464,9 +541,10 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   function changes(){
     const added = items.filter(i => i.isNew).length;
     const removed = items.filter(i => i.removed).length;
-    const edited = items.filter(i => !i.isNew && !i.removed && i.orig !== JSON.stringify([i.title, i.place, i.tag])).length;
+    const edited = items.filter(i => !i.isNew && !i.removed && i.orig !== sig(i)).length;
+    const albumsChanged = JSON.stringify(albums) !== albumsOrig;
     const reordered = items.filter(i => !i.isNew).map(i => i.src).join('|') !== items._origOrder;
-    return { added, removed, edited, reordered, any: added || removed || edited || reordered };
+    return { added, removed, edited, reordered, albumsChanged, any: added || removed || edited || reordered || albumsChanged };
   }
   function updateSummary(){
     if (busy) return;
@@ -476,6 +554,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     if (c.removed) parts.push(c.removed + ' to remove');
     if (c.edited) parts.push(c.edited + ' caption' + (c.edited > 1 ? 's' : '') + ' edited');
     if (c.reordered && !c.added) parts.push('new order');
+    if (c.albumsChanged) parts.push('albums changed');
     $('summary').textContent = parts.length ? 'Ready to publish: ' + parts.join(', ') + '.' : 'No changes yet.';
     $('publishBtn').disabled = !c.any;
   }
@@ -530,7 +609,10 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       // write the photo list
       addLog('Saving captions and order…');
       const keep = items.filter(i => !i.removed && i.src);
-      const data = keep.map(i => { const o = { src: i.src, title: (i.title || '').trim() }; if ((i.place || '').trim()) o.place = i.place.trim(); if ((i.tag || '').trim()) o.tag = i.tag.trim(); return o; });
+      const photosOut = keep.map(i => { const o = { src: i.src, title: (i.title || '').trim() };
+        ['caption', 'place', 'date', 'album', 'alt'].forEach(k => { if ((i[k] || '').trim()) o[k] = i[k].trim(); }); return o; });
+      const albumsOut = albums.filter(a => a.name.trim()).map(a => { const o = { id: a.id, name: a.name.trim() }; if (a.description.trim()) o.description = a.description.trim(); return o; });
+      const data = { albums: albumsOut, photos: photosOut };
       const body = { message: 'Update portfolio list', content: strB64(JSON.stringify(data, null, 2) + '\n'), branch };
       if (manifestSha) body.sha = manifestSha;
       const r = await api('/contents/' + MANIFEST, { method: 'PUT', body: JSON.stringify(body) });
@@ -545,7 +627,8 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     btn.textContent = 'Publish to website';
     if (!failed) {
       items = items.filter(i => !i.removed);
-      items.forEach(i => { i.isNew = false; i.orig = JSON.stringify([i.title, i.place, i.tag]); if (shaMap[i.src]) i.url = shaMap[i.src].url || i.url; });
+      items.forEach(i => { i.isNew = false; i.orig = sig(i); if (shaMap[i.src]) i.url = shaMap[i.src].url || i.url; });
+      albumsOrig = JSON.stringify(albums);
       items._origOrder = items.map(i => i.src).join('|');
       render();
       $('summary').textContent = 'Published.';
