@@ -1,18 +1,33 @@
-[
-  {
-    "src": "portfolio/2026-09-27-aama.jpg",
-    "title": "Aama"
-  },
-  {
-    "src": "portfolio/2026-09-28-smile.jpg",
-    "title": "Smile"
-  },
-  {
-    "src": "portfolio/2026-09-27-market.jpg",
-    "title": "Market"
-  },
-  {
-    "src": "portfolio/2026-09-27-together.jpg",
-    "title": "Together"
-  }
-]
+{
+  "albums": [
+    {
+      "id": "album-ms08",
+      "name": "Portraits",
+      "description": "Raw and honest capture of the beauty of the human condition."
+    }
+  ],
+  "photos": [
+    {
+      "src": "portfolio/2026-09-27-aama.jpg",
+      "title": "Aama",
+      "place": "Kirtipur, Nepal",
+      "album": "album-ms08"
+    },
+    {
+      "src": "portfolio/2026-09-28-smile.jpg",
+      "title": "Smile",
+      "place": "Queen Victoria Market"
+    },
+    {
+      "src": "portfolio/2026-09-27-market.jpg",
+      "title": "Market",
+      "place": "Queen Victoria Market"
+    },
+    {
+      "src": "portfolio/2026-09-27-together.jpg",
+      "title": "Together",
+      "place": "Kathmandu, Nepal",
+      "album": "album-ms08"
+    }
+  ]
+}
