@@ -30,6 +30,12 @@
       "album": "album-ms08"
     },
     {
+      "src": "portfolio/2026-09-27-together.jpg",
+      "title": "Together",
+      "place": "Kathmandu, Nepal",
+      "album": "album-ms08"
+    },
+    {
       "src": "portfolio/2026-10-04-dscf3728.jpg",
       "title": "DSCF3728",
       "album": "album-po5i"
@@ -65,12 +71,13 @@
       "title": "Market",
       "place": "Queen Victoria Market",
       "album": "album-k7tc"
-    },
-    {
-      "src": "portfolio/2026-09-27-together.jpg",
-      "title": "Together",
-      "place": "Kathmandu, Nepal",
-      "album": "album-ms08"
     }
+  ],
+  "cover": "portfolio/2026-09-27-aama.jpg",
+  "featured": [
+    "portfolio/2026-09-27-together.jpg",
+    "portfolio/2026-10-04-dscf3724.jpg",
+    "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
+    "portfolio/2026-09-27-market.jpg"
   ]
 }
