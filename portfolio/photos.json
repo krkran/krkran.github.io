@@ -4,6 +4,22 @@
       "id": "album-ms08",
       "name": "Portraits",
       "description": "Raw and honest capture of the beauty of the human condition."
+    },
+    {
+      "id": "album-po5i",
+      "name": "Architecture"
+    },
+    {
+      "id": "album-b2tr",
+      "name": "Animals"
+    },
+    {
+      "id": "album-drh9",
+      "name": "Botany"
+    },
+    {
+      "id": "album-k7tc",
+      "name": "People"
     }
   ],
   "photos": [
@@ -14,14 +30,41 @@
       "album": "album-ms08"
     },
     {
+      "src": "portfolio/2026-10-04-dscf3728.jpg",
+      "title": "DSCF3728",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-10-04-dscf3726.jpg",
+      "title": "DSCF3726",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-10-04-dscf3725.jpg",
+      "title": "DSCF3725",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-10-04-dscf3724.jpg",
+      "title": "DSCF3724",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
+      "title": "Bee in the midst of lavendar",
+      "album": "album-b2tr"
+    },
+    {
       "src": "portfolio/2026-09-28-smile.jpg",
       "title": "Smile",
-      "place": "Queen Victoria Market"
+      "place": "Queen Victoria Market",
+      "album": "album-k7tc"
     },
     {
       "src": "portfolio/2026-09-27-market.jpg",
       "title": "Market",
-      "place": "Queen Victoria Market"
+      "place": "Queen Victoria Market",
+      "album": "album-k7tc"
     },
     {
       "src": "portfolio/2026-09-27-together.jpg",
