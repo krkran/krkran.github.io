@@ -161,6 +161,15 @@ section{position:relative}
 .strip button{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--paper-2)}
 .strip button:nth-child(2),.strip button:nth-child(4){transform:translateY(2rem)}
 .strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.strip-acts{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.strip-nav{display:flex;gap:.5rem}
+.strip-nav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);font-size:1.1rem;font-weight:700;transition:background .25s,color .25s,opacity .25s}
+.strip-nav button:hover{background:var(--ink);color:var(--paper)}
+.strip-nav button:disabled{opacity:.3;pointer-events:none}
+.strip.car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:2.5rem;margin-bottom:-2.5rem}
+.strip.car::-webkit-scrollbar{display:none}
+.strip.car button{flex:0 0 calc((100% - 2.25rem) / 4);scroll-snap-align:start}
+.strip.car button:nth-child(even){transform:translateY(2rem)}
 .strip button:hover img{transform:scale(1.05)}
 
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-l)}
@@ -502,7 +511,9 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   .hero-grid,.statement,.now-grid,.plans-teaser,.phead-grid,.about-grid,.work-now,.donate-grid,.contact-grid,.cta-band,.team{grid-template-columns:1fr}
   .hero-media{aspect-ratio:4/3}
   .strip{grid-template-columns:repeat(2,1fr)}
-  .strip button:nth-child(n+5){display:none}
+  .strip:not(.car) button:nth-child(n+5){display:none}
+  .strip.car button{flex-basis:calc((100% - .75rem) / 2);transform:none!important}
+  .strip.car{padding-bottom:0;margin-bottom:0}
   .strip button:nth-child(2),.strip button:nth-child(4){transform:none}
   .facts{grid-template-columns:1fr 1fr}
   .fact:nth-child(3){padding-left:0;border-left:0}
@@ -711,9 +722,9 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
       <div class="now-grid">
         <article class="card feature">
           <div class="ring" aria-hidden="true"></div>
-          <span class="status dev">In process</span>
+          <span class="status dev">In progress</span>
           <h3 class="display" style="font-size:clamp(2rem,4vw,3rem)">Where We Work</h3>
-          <p class="body">A short documentary following rural doctors and culturally diverse health professionals across Victoria. It's currently in process, with the aim of submitting it to the Australian Youth Film Festival.</p>
+          <p class="body">A short documentary following rural doctors and culturally diverse health professionals across Victoria. It's currently in progress, with the aim of submitting it to the Australian Youth Film Festival.</p>
           <div><a class="btn btn-light" href="/work">About the project <span class="arr">→</span></a></div>
         </article>
         <div class="stack">
@@ -771,7 +782,10 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
           <div class="kicker">From the portfolio</div>
           <h2 class="display h2">Seen through our lens.</h2>
         </div>
-        <a class="btn btn-line" href="/portfolio">Full portfolio <span class="arr">→</span></a>
+        <div class="strip-acts">
+          <div class="strip-nav" id="stripNav" hidden><button type="button" aria-label="Previous photos">←</button><button type="button" aria-label="More photos">→</button></div>
+          <a class="btn btn-line" href="/portfolio">Full portfolio <span class="arr">→</span></a>
+        </div>
       </div>
       <div class="strip" id="stripGrid"></div>
       <div style="height:2rem"></div>
@@ -954,10 +968,10 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
       <p class="body" style="margin-top:1.25rem">KRNBRY Studio is governed by a committee of health professionals, media practitioners and community representatives.</p>
       <div class="team">
         <div class="person">
-          <!-- To use a photo: replace the K with <img src="portfolio/your-photo.jpg" alt="Kran Khanal"> -->
+          <!-- To use a photo: replace the K with <img src="portfolio/your-photo.jpg" alt="Kranjol Khanal"> -->
           <div class="avatar">K</div>
           <div>
-            <h3>Kran Khanal</h3>
+            <h3>Kranjol Khanal</h3>
             <p>Founder, Director and Producer</p>
           </div>
         </div>
@@ -979,7 +993,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
         <div class="kicker">Our work</div>
         <h1 class="display h1">What we're making, and what's next.</h1>
       </div>
-      <p class="lead">One project in process, a background in community media, and a clear list of what we want to build.</p>
+      <p class="lead">One project in progress, a background in community media, and a clear list of what we want to build.</p>
     </div>
   </section>
 
@@ -989,7 +1003,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
       <div class="work-now">
         <article class="card feature" style="min-height:420px">
           <div class="ring" aria-hidden="true"></div>
-          <span class="status dev">In process</span>
+          <span class="status dev">In progress</span>
           <span style="font-size:.9rem;font-weight:650;opacity:.8">Short documentary</span>
           <h2 class="display" style="font-size:clamp(2.2rem,5vw,3.6rem)">Where We Work</h2>
           <p class="body">Following rural doctors and culturally diverse health professionals across Victoria: why they chose rural practice, what it asks of them, and what their communities gain. We plan to submit it to the Australian Youth Film Festival.</p>
@@ -1552,7 +1566,7 @@ const PORTFOLIO = {
       if (r.ok) {
         const d = await r.json();
         const arr = Array.isArray(d) ? d : (d.photos || []);
-        if (arr.length) return norm(arr, Array.isArray(d) ? [] : d.albums);
+        if (arr.length) { if (!Array.isArray(d) && d.cover) homeSrc = d.cover; if (!Array.isArray(d) && Array.isArray(d.featured)) featSrc = d.featured; return norm(arr, Array.isArray(d) ? [] : d.albums); }
       }
     } catch (e) {}
     // 2. Otherwise, list whatever is in the portfolio folder on GitHub
@@ -1568,7 +1582,7 @@ const PORTFOLIO = {
     return norm(list, []);
   }
 
-  let photos = [], albums = [], shown = [], cur = 0;
+  let photos = [], albums = [], shown = [], cur = 0, homeSrc = '', featSrc = [];
   const gallery = document.getElementById('gallery');
   
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -1792,7 +1806,7 @@ const PORTFOLIO = {
   function renderHome(){
     if (!photos.length) return;
     const hero = document.getElementById('heroMedia');
-    const first = photos[0];
+    const first = photos.find(p => p.src === homeSrc) || photos[0];
     const im = imgEl(first, true);
     im.onload = () => { document.getElementById('heroFallback').style.display = 'none'; };
     hero.prepend(im);
@@ -1803,8 +1817,12 @@ const PORTFOLIO = {
     im.addEventListener('load', () => hero.appendChild(tag), { once:true });
 
     const strip = document.getElementById('stripGrid');
-    const pick = photos.slice(photos.length > 4 ? 1 : 0, (photos.length > 4 ? 1 : 0) + 4);
+    // photos picked in the uploader for the front page, else the first few
+    const chosen = photos.filter(p => featSrc.includes(p.src));
+    const rest = photos.length > 4 ? photos.filter(p => p !== first) : photos;
+    const pick = chosen.length >= 2 ? chosen.slice(0, 16) : rest.slice(0, 4);
     if (pick.length < 2) return;
+    if (pick.length > 4) strip.classList.add('car');
     pick.forEach(p => {
       const b = document.createElement('button');
       b.setAttribute('aria-label', 'Open photo: ' + (p.title || 'photo'));
@@ -1813,6 +1831,25 @@ const PORTFOLIO = {
       strip.appendChild(b);
     });
     document.getElementById('homeStrip').hidden = false;
+    if (pick.length > 4) carousel(strip);
+  }
+
+  // more than four front-page photos: a slow, swipeable carousel
+  function carousel(strip){
+    const nav = document.getElementById('stripNav'); nav.hidden = false;
+    const [prev, next] = nav.children;
+    const stepW = () => { const b = strip.querySelector('button'); return b ? b.getBoundingClientRect().width + parseFloat(getComputedStyle(strip).columnGap || 12) : 300; };
+    const atEnd = () => strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 4;
+    const go = d => { if (d > 0 && atEnd()) strip.scrollTo({ left: 0, behavior: 'smooth' }); else strip.scrollBy({ left: d * stepW(), behavior: 'smooth' }); };
+    prev.onclick = () => { go(-1); hold(); }; next.onclick = () => { go(1); hold(); };
+    const upd = () => { prev.disabled = strip.scrollLeft <= 4; };
+    strip.addEventListener('scroll', upd, { passive: true }); upd();
+    let paused = false, t = null;
+    const hold = () => { paused = true; clearTimeout(t); t = setTimeout(() => { paused = false; }, 8000); };
+    ['pointerdown', 'wheel', 'touchstart'].forEach(ev => strip.addEventListener(ev, hold, { passive: true }));
+    strip.addEventListener('mouseenter', () => { paused = true; }); strip.addEventListener('mouseleave', () => { paused = false; });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+      setInterval(() => { if (!paused && !document.hidden && strip.getBoundingClientRect().top < innerHeight && strip.getBoundingClientRect().bottom > 0) go(1); }, 4500);
   }
 
   /* lightbox */
