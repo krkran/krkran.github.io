@@ -15,9 +15,12 @@
 <link rel="icon" href="/icons/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Mukta:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Mukta:wght@600;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -633,7 +636,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   --line:rgba(20,16,16,.16); --line-l:rgba(246,241,232,.2);
   --nav:76px; --ann:34px;
   --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --disp:'Sora','Instrument Sans',system-ui,sans-serif;
+  --disp:'Clash Display','Instrument Sans',system-ui,sans-serif;
   --serif:var(--disp);
   --ne:'Mukta','Instrument Sans',sans-serif;
   --ease:cubic-bezier(.2,.75,.15,1);
@@ -1385,6 +1388,17 @@ footer ul a:hover{color:var(--ochre)}
 html.pf-dark .nav{color:var(--paper)}
 html.pf-dark .lg-s{fill:var(--ochre)}
 @media (max-width:620px){.hx-badge{top:calc(var(--nav) + var(--ann) + .9rem);right:auto;left:var(--gut);font-size:.64rem;padding:.45rem .65rem}}
+
+/* =================== Clash Display tuning =================== */
+.display,.hx-title,.ms-title,.now-title,.prod-title,.talk-big,.mg-title,.eq-line,.aim-t,.mf,.fp-t,.vf b,.sr span,.mg-big{letter-spacing:-.025em}
+[class]{font-stretch:normal}
+.display{font-weight:600;line-height:1}
+.hx-title{font-weight:600;font-size:clamp(2.7rem,6.8vw,6.6rem);line-height:.98}
+.now-title,.prod-title,.talk-big,.ms-title,.mg-title{font-weight:600}
+.eq-line{font-weight:600}
+.thread h3,.crew-card h3,.crew-join h3,.pw h3,.tk h3,.al h3,.nc h3,.stg b,.funds2 h4,.plan-list h4,.pt,.po,.paths-q,.jb-link,.f-big,.mailbig,.acard h3,.mg-part h3,.lens-cap,.pf-modes button b{letter-spacing:-.015em;font-weight:600}
+.fact b,.give-big,.sl-row b,.mg-count b{letter-spacing:-.02em;font-weight:600}
+.lt-line{letter-spacing:-.01em;font-weight:500}
 </style>
 </head>
 <body>
