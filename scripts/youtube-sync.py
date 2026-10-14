@@ -2,14 +2,27 @@
 """Refresh portfolio/videos.json from the KRNBRY Studio YouTube channel.
 Runs daily via .github/workflows/youtube.yml. No API key needed: it reads
 YouTube's public RSS feed. Set "channelId" in videos.json to skip the lookup."""
-import json, re, urllib.request, xml.etree.ElementTree as ET
+import json, re, sys, time, urllib.request, xml.etree.ElementTree as ET
 
 PATH = 'portfolio/videos.json'
 UA = {'User-Agent': 'Mozilla/5.0 (KRNBRY Studio site sync)', 'Accept-Language': 'en'}
 
 def get(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
-        return r.read().decode('utf-8', 'replace')
+    last = None
+    for wait in (0, 5, 20, 60):          # YouTube sometimes turns GitHub's servers away; try a few times
+        time.sleep(wait)
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+                return r.read().decode('utf-8', 'replace')
+        except Exception as e:
+            last = e
+            print(f'  attempt failed: {e}')
+    raise last
+
+def give_up(why):
+    # never fail the run: keep the films list as it is and try again tomorrow
+    print(f'Skipped today: {why}. The films list was left as it is.')
+    sys.exit(0)
 
 try:
     data = json.load(open(PATH))
@@ -21,17 +34,23 @@ data.setdefault('channelUrl', f'https://www.youtube.com/@{handle}')
 
 cid = data.get('channelId')
 if not cid:
-    page = get(f'https://www.youtube.com/@{handle}')
+    try:
+        page = get(f'https://www.youtube.com/@{handle}')
+    except Exception as e:
+        give_up(f'could not reach the channel page ({e})')
     m = (re.search(r'<link rel="canonical" href="https://www\.youtube\.com/channel/(UC[\w-]{22})"', page)
          or re.search(r'"(?:externalId|channelId)":"(UC[\w-]{22})"', page))
     if not m:
-        raise SystemExit(f'Could not find a channel ID for @{handle}')
+        give_up(f'could not find a channel ID for @{handle}')
     cid = m.group(1)
     data['channelId'] = cid
 
 ns = {'a': 'http://www.w3.org/2005/Atom', 'yt': 'http://www.youtube.com/xml/schemas/2015',
       'media': 'http://search.yahoo.com/mrss/'}
-root = ET.fromstring(get(f'https://www.youtube.com/feeds/videos.xml?channel_id={cid}'))
+try:
+    root = ET.fromstring(get(f'https://www.youtube.com/feeds/videos.xml?channel_id={cid}'))
+except Exception as e:
+    give_up(f'YouTube did not send the video list ({e})')
 videos = []
 for e in root.findall('a:entry', ns):
     vid = e.findtext('yt:videoId', '', ns)

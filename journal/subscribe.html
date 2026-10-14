@@ -18,7 +18,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -28,7 +28,7 @@
   --red:#7A1F2E; --red-d:#561521; --ochre:#D9962A; --sky:#2F5D7C;
   --accent:#1D4F7A; --hi:#F6DFA4;
   --line:rgba(18,36,58,.17);
-  --sans:'Archivo',system-ui,sans-serif; --serif:'Newsreader',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'Instrument Sans',system-ui,sans-serif; --serif:'Instrument Sans',system-ui,sans-serif; --mono:'Instrument Sans',system-ui,sans-serif; --disp:'Bricolage Grotesque','Instrument Sans',sans-serif;
 }
 html{-webkit-text-size-adjust:100%}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -46,7 +46,7 @@ a:hover{color:var(--ink);background:var(--hi)}
 
 /* masthead */
 .mast{padding:3.25rem 0 0;border-bottom:4px double var(--ink)}
-.mast h1{font-family:var(--sans);font-weight:880;font-stretch:118%;letter-spacing:-.04em;line-height:.88;font-size:clamp(3.2rem,11vw,7.5rem);color:var(--ink)}
+.mast h1{font-family:var(--disp);font-weight:780;font-stretch:88%;letter-spacing:-.03em;line-height:.88;font-size:clamp(3.2rem,11vw,7.5rem);color:var(--ink)}
 .mast h1 a{color:inherit;text-decoration:none}
 .mast h1 a:hover{background:none}
 .mast h1 .the{display:block;font-weight:500;font-stretch:100%;letter-spacing:-.01em;font-size:.3em;line-height:1;margin:0 0 .35em .08em;color:var(--ink-2)}
@@ -75,9 +75,9 @@ a:hover{color:var(--ink);background:var(--hi)}
 .cover img{width:100%;height:auto;display:block}
 .cover figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);padding:.5rem .15rem 0}
 
-.prose{font-family:var(--serif);font-size:1.2rem;line-height:1.7;color:#1E3045;max-width:66ch}
+.prose{font-family:var(--serif);font-size:1.14rem;line-height:1.75;color:#1E3045;max-width:66ch}
 .prose>*+*{margin-top:1.05em}
-.prose h3{font-family:var(--sans);font-weight:780;font-stretch:108%;font-size:1.3rem;letter-spacing:-.015em;margin-top:1.6em;color:var(--ink)}
+.prose h3{font-family:var(--disp);font-weight:780;font-stretch:108%;font-size:1.3rem;letter-spacing:-.015em;margin-top:1.6em;color:var(--ink)}
 .prose h4{font-family:var(--sans);font-weight:720;font-size:1.08rem;margin-top:1.4em;color:var(--ink)}
 .prose blockquote{border-left:4px solid var(--ochre);padding:.2rem 0 .2rem 1.1rem;font-style:italic;color:var(--ink-2)}
 .prose ul,.prose ol{padding-left:1.4rem}
@@ -167,6 +167,9 @@ footer a{color:var(--ink-2)}
 .cover img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .cover:hover img{transform:scale(1.02)}
 @media (prefers-reduced-motion:reduce){.grain,.mast h1,.hello{animation:none}.rv{opacity:1;transform:none}}
+.entry h2,.box h3+*, .mast h1 .the{}
+.entry h2{font-family:var(--disp);font-stretch:90%;letter-spacing:-.025em}
+.day,.type,.foot,.pager,.box h3,.mast-sub,.notice{letter-spacing:.08em}
 </style>
 </head>
 <body>

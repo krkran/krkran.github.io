@@ -9,7 +9,7 @@
 <meta property="og:url" content="https://krnbrystudio.com/">
 <meta property="og:title" content="KRNBRY Studio">
 <meta property="og:description" content="Stories that teach, connect and grow multicultural Australia.">
-<meta name="theme-color" content="#1A1614">
+<meta name="theme-color" content="#7A1F2E">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/icons/favicon-96.png" type="image/png" sizes="96x96">
@@ -17,7 +17,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Mukta:wght@600;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -43,7 +43,7 @@ section{position:relative}
 .h1{font-size:clamp(2.6rem,7vw,5.6rem)}
 .h2{font-size:clamp(2rem,4.6vw,3.6rem)}
 .h3{font-size:clamp(1.3rem,2.2vw,1.65rem);font-weight:760;font-stretch:108%;letter-spacing:-.02em;line-height:1.15}
-.serif-i{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;font-stretch:100%}
+.serif-i{font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:-.01em;font-stretch:100%}
 .lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--ink-2);max-width:40ch}
 .body{color:var(--ink-2);max-width:62ch}
 .body+.body{margin-top:1rem}
@@ -53,7 +53,7 @@ section{position:relative}
 .on-dark .kicker::before{background:var(--paper)}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:650;font-size:.98rem;text-decoration:none;transition:transform .2s,background .2s,color .2s,border-color .2s;border:2px solid transparent;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:2px;font-weight:650;font-size:.98rem;text-decoration:none;transition:transform .2s,background .2s,color .2s,border-color .2s;border:2px solid transparent;white-space:nowrap}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-dark{background:var(--ink);color:var(--paper)}
@@ -74,9 +74,9 @@ section{position:relative}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo{display:flex;align-items:baseline;gap:.45rem;text-decoration:none}
 .logo b{font-weight:900;font-stretch:125%;font-size:1.3rem;letter-spacing:-.03em}
-.logo span{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--maroon)}
+.logo span{font-family:var(--serif);font-style:normal;font-size:1.1rem;color:var(--maroon)}
 .nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
-.nav-links a{display:block;padding:.5rem .8rem;border-radius:999px;text-decoration:none;font-weight:550;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
+.nav-links a{display:block;padding:.5rem .8rem;border-radius:2px;text-decoration:none;font-weight:550;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
 .nav-links a:hover{background:var(--paper-2);color:var(--ink)}
 .nav-links a.active{color:var(--ink);background:var(--paper-2)}
 .nav-links .nav-cta{background:var(--maroon);color:var(--paper);margin-left:.5rem;padding:.55rem 1.1rem}
@@ -111,13 +111,13 @@ section{position:relative}
 .hero h1{margin-bottom:1.75rem}
 .hero h1 .serif-i{color:var(--maroon)}
 .hero .lead{margin-bottom:2.25rem}
-.hero-media{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--maroon)}
+.hero-media{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--maroon)}
 .hero-media img{width:100%;height:100%;object-fit:cover}
 .hero-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:2rem;color:var(--paper)}
 .hero-fallback .big{font-weight:850;font-stretch:118%;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:.95;letter-spacing:-.04em}
 .hero-fallback .big em{font-family:var(--serif);font-weight:400;font-stretch:100%;color:var(--ochre)}
 .hero-shapes{position:absolute;inset:0;pointer-events:none}
-.hero-tag{position:absolute;left:1rem;bottom:1rem;right:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;background:rgba(26,22,20,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--paper);padding:.8rem 1rem;border-radius:16px;font-size:.88rem}
+.hero-tag{position:absolute;left:1rem;bottom:1rem;right:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;background:rgba(26,22,20,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--paper);padding:.8rem 1rem;border-radius:4px;font-size:.88rem}
 .hero-tag a{color:var(--ochre);font-weight:650;text-decoration:none;white-space:nowrap}
 
 .ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:1.1rem 0;border-block:1px solid var(--ink)}
@@ -130,18 +130,18 @@ section{position:relative}
 .statement .h2{max-width:13ch}
 
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
-.pillar{background:var(--white);border-radius:24px;padding:2rem;display:flex;flex-direction:column;gap:1rem;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.pillar{background:var(--white);border-radius:4px;padding:2rem;display:flex;flex-direction:column;gap:1rem;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
 .pillar:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(26,22,20,.35)}
 .pillar .num{font-weight:900;font-stretch:125%;font-size:3.2rem;line-height:1;color:var(--paper-2);-webkit-text-stroke:1.5px var(--maroon)}
 .pillar p{color:var(--ink-2);font-size:.98rem}
 
 .now-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.25rem;margin-top:3rem}
-.card{border-radius:24px;padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;gap:1rem}
+.card{border-radius:4px;padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;gap:1rem}
 .card.feature{background:var(--maroon);color:var(--paper);min-height:360px;justify-content:flex-end;position:relative;overflow:hidden}
 .card.feature .body{color:rgba(244,239,231,.85)}
 .card.feature .ring{position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;border:48px solid rgba(217,150,42,.28)}
 .card.plain{background:var(--white);border:1px solid var(--line)}
-.status{display:inline-flex;align-items:center;gap:.45rem;align-self:flex-start;font-size:.8rem;font-weight:700;padding:.35rem .75rem;border-radius:999px;background:rgba(244,239,231,.16)}
+.status{display:inline-flex;align-items:center;gap:.45rem;align-self:flex-start;font-size:.8rem;font-weight:700;padding:.35rem .75rem;border-radius:2px;background:rgba(244,239,231,.16)}
 .status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 .status.live{background:#E4EFE3;color:#2E6B35}
 .status.dev{background:rgba(244,239,231,.16);color:var(--ochre)}
@@ -158,7 +158,7 @@ section{position:relative}
 
 .strip-head{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
-.strip button{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--paper-2)}
+.strip button{border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:var(--paper-2)}
 .strip button:nth-child(2),.strip button:nth-child(4){transform:translateY(2rem)}
 .strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .strip-acts{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
@@ -183,7 +183,7 @@ section{position:relative}
 .jband{background:var(--paper-2);border-bottom:1px solid var(--line)}
 .jband-in{display:flex;align-items:baseline;gap:.5rem 1.5rem;flex-wrap:wrap;padding-top:1.3rem;padding-bottom:1.3rem}
 .jb-label{font-size:.88rem;font-weight:650;color:var(--maroon)}
-.jb-link{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);text-decoration:none;color:var(--ink);flex:1;min-width:0}
+.jb-link{font-family:var(--serif);font-style:normal;font-size:clamp(1.1rem,2vw,1.35rem);text-decoration:none;color:var(--ink);flex:1;min-width:0}
 .jb-link:hover{color:var(--maroon)}
 .jb-link .arr{font-family:var(--sans);font-style:normal;display:inline-block;transition:transform .2s}
 .jb-link:hover .arr{transform:translateX(4px)}
@@ -191,14 +191,14 @@ section{position:relative}
 @media (max-width:620px){.jband-in{flex-direction:column;align-items:flex-start;gap:.25rem}}
 /* ---------- BELONGING ---------- */
 .bel-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.bel-phon{font-family:'IBM Plex Mono',ui-monospace,monospace;color:#E0204F;font-size:1rem;margin-bottom:.6rem}
+.bel-phon{font-family:var(--sans);letter-spacing:.06em;color:#E0204F;font-size:1rem;margin-bottom:.6rem}
 .bel-title{color:#E0204F}
 .bel-cover{position:relative;max-width:440px;justify-self:center}
 .bel-cover img{width:100%;height:auto;display:block;box-shadow:0 40px 70px -34px rgba(26,22,20,.55),0 0 0 1px rgba(26,22,20,.08);transform:rotate(1.5deg)}
-.bel-q{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.25;max-width:26ch}
+.bel-q{font-family:var(--serif);font-style:normal;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.25;max-width:26ch}
 .bel-parts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
-.bel-part{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:1.6rem}
-.bel-part b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.8rem;color:#E0204F;margin-bottom:.8rem}
+.bel-part{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:1.6rem}
+.bel-part b{display:block;font-family:var(--sans);letter-spacing:.06em;font-size:.8rem;color:#E0204F;margin-bottom:.8rem}
 .bel-part h3{font-weight:760;font-stretch:108%;font-size:1.2rem;margin-bottom:.4rem}
 .bel-part p{color:var(--ink-2);font-size:.95rem}
 .bel-join{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
@@ -211,16 +211,16 @@ section{position:relative}
 @media (max-width:900px){.bel-hero,.bel-join{grid-template-columns:1fr}.bel-cover{max-width:340px}}
 @media (max-width:620px){.bel-parts{grid-template-columns:1fr}}
 /* ---------- MISSION ---------- */
-.quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.35;letter-spacing:-.01em;max-width:30ch}
+.quote{font-family:var(--serif);font-style:normal;font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.35;letter-spacing:-.01em;max-width:30ch}
 .quote-wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem)}
 .quote-mark{font-family:var(--serif);font-size:7rem;line-height:.7;color:var(--ochre)}
 .goals{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.goal{padding:1.75rem;border-radius:22px;background:var(--white);border:1px solid var(--line)}
-.goal .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:1.25rem;color:var(--paper)}
+.goal{padding:1.75rem;border-radius:4px;background:var(--white);border:1px solid var(--line)}
+.goal .ic{width:48px;height:48px;border-radius:4px;display:grid;place-items:center;margin-bottom:1.25rem;color:var(--paper)}
 .goal h3{font-weight:760;font-stretch:110%;font-size:1.3rem;margin-bottom:.5rem;letter-spacing:-.015em}
 .goal p{font-size:.96rem;color:var(--ink-2)}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
-.chip{padding:.7rem 1.15rem;border-radius:999px;border:1.5px solid var(--ink);font-weight:600;font-size:.97rem}
+.chip{padding:.7rem 1.15rem;border-radius:2px;border:1.5px solid var(--ink);font-weight:600;font-size:.97rem}
 .dark .chip{border-color:var(--line-l)}
 .obj{display:grid;grid-template-columns:260px 1fr;gap:clamp(1.5rem,4vw,4rem);padding:2.5rem 0;border-top:1px solid var(--line)}
 .obj:last-child{border-bottom:1px solid var(--line)}
@@ -228,13 +228,13 @@ section{position:relative}
 .obj ul{list-style:none;display:grid;gap:.85rem}
 .obj li{position:relative;padding-left:1.6rem;color:var(--ink-2)}
 .obj li::before{content:"";position:absolute;left:0;top:.6em;width:.65rem;height:2px;background:var(--ochre)}
-.note{display:flex;gap:.9rem;align-items:flex-start;background:var(--white);border:1px dashed rgba(122,31,46,.5);border-radius:18px;padding:1.15rem 1.35rem;color:var(--ink-2);font-size:.97rem;max-width:62ch}
+.note{display:flex;gap:.9rem;align-items:flex-start;background:var(--white);border:1px dashed rgba(122,31,46,.5);border-radius:4px;padding:1.15rem 1.35rem;color:var(--ink-2);font-size:.97rem;max-width:62ch}
 .note b{color:var(--maroon)}
 
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start}
 .about-grid strong{color:var(--ink);font-weight:650}
-.origin{border-radius:24px;overflow:hidden;background:var(--ink);color:var(--paper);padding:2rem;position:sticky;top:calc(var(--nav) + 1.5rem)}
+.origin{border-radius:4px;overflow:hidden;background:var(--ink);color:var(--paper);padding:2rem;position:sticky;top:calc(var(--nav) + 1.5rem)}
 .origin .body{color:rgba(244,239,231,.75)}
 .origin h3{margin:.4rem 0 .9rem}
 .origin-mark{display:flex;gap:.4rem;margin-bottom:1.5rem}
@@ -245,22 +245,22 @@ section{position:relative}
 .value h3{font-weight:760;font-stretch:110%;font-size:1.35rem;margin-bottom:.5rem;letter-spacing:-.015em}
 .value p{color:var(--ink-2);font-size:.97rem}
 .team{display:grid;grid-template-columns:1.1fr 1fr;gap:1.25rem;margin-top:3rem}
-.person{display:flex;gap:1.5rem;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:1.75rem}
+.person{display:flex;gap:1.5rem;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:4px;padding:1.75rem}
 .avatar{width:84px;height:84px;border-radius:50%;background:var(--maroon);color:var(--paper);display:grid;place-items:center;font-weight:900;font-stretch:125%;font-size:2rem;flex-shrink:0;overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .person h3{font-weight:760;font-size:1.3rem;font-stretch:108%}
 .person p{color:var(--muted);font-size:.95rem}
-.join{border-radius:24px;padding:1.75rem;border:2px dashed var(--line);display:flex;flex-direction:column;justify-content:center;gap:.75rem}
+.join{border-radius:4px;padding:1.75rem;border:2px dashed var(--line);display:flex;flex-direction:column;justify-content:center;gap:.75rem}
 .join p{color:var(--ink-2);font-size:.97rem}
 
 /* ---------- WORK ---------- */
 .work-now{display:grid;grid-template-columns:1.25fr 1fr;gap:1.25rem}
 .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.25rem 0 2rem}
-.filter{padding:.6rem 1.1rem;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:.93rem;color:var(--ink-2);transition:all .2s}
+.filter{padding:.6rem 1.1rem;border-radius:2px;border:1.5px solid var(--line);font-weight:600;font-size:.93rem;color:var(--ink-2);transition:all .2s}
 .filter:hover{border-color:var(--ink);color:var(--ink)}
 .filter.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.plan{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;transition:transform .25s,box-shadow .25s}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;transition:transform .25s,box-shadow .25s}
 .plan:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(26,22,20,.4)}
 .plan .cat{font-size:.82rem;font-weight:700;color:var(--maroon)}
 .plan h3{font-weight:760;font-stretch:108%;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
@@ -271,15 +271,15 @@ section{position:relative}
 
 /* ---------- PORTFOLIO ---------- */
 .gallery{columns:3 320px;column-gap:1rem}
-.g-item{break-inside:avoid;margin-bottom:1rem;display:block;width:100%;border-radius:16px;overflow:hidden;position:relative;background:var(--paper-2);text-align:left}
+.g-item{break-inside:avoid;margin-bottom:1rem;display:block;width:100%;border-radius:4px;overflow:hidden;position:relative;background:var(--paper-2);text-align:left}
 .g-item img{width:100%;height:auto;transition:transform .6s ease,filter .3s}
 .g-item:hover img{transform:scale(1.03)}
 .g-cap{position:absolute;inset:auto 0 0 0;padding:2.5rem 1rem .9rem;color:var(--paper);background:linear-gradient(transparent,rgba(26,22,20,.75));font-size:.92rem;font-weight:600;opacity:0;transform:translateY(8px);transition:all .3s}
 .g-item:hover .g-cap,.g-item:focus-visible .g-cap{opacity:1;transform:none}
-.g-empty{border:2px dashed var(--line);border-radius:24px;padding:clamp(2rem,5vw,4rem);text-align:center;color:var(--ink-2)}
+.g-empty{border:2px dashed var(--line);border-radius:4px;padding:clamp(2rem,5vw,4rem);text-align:center;color:var(--ink-2)}
 .g-empty h3{margin-bottom:.5rem}
 .g-loading{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.g-loading div{aspect-ratio:4/5;border-radius:16px;background:linear-gradient(100deg,var(--paper-2) 40%,var(--white) 50%,var(--paper-2) 60%);background-size:300% 100%;animation:shimmer 1.4s infinite}
+.g-loading div{aspect-ratio:4/5;border-radius:4px;background:linear-gradient(100deg,var(--paper-2) 40%,var(--white) 50%,var(--paper-2) 60%);background-size:300% 100%;animation:shimmer 1.4s infinite}
 @keyframes shimmer{to{background-position:-150% 0}}
 
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(18,15,14,.94);display:none;align-items:center;justify-content:center;padding:4.5rem 1rem 5.5rem}
@@ -326,10 +326,10 @@ html.pf-dark .grain{mix-blend-mode:screen;opacity:.05}
 html.pf-dark .progress{background:var(--ochre)}
 
 /* photos / films switch */
-.pf-switch{position:relative;display:inline-flex;margin:2.5rem 0 2rem;padding:6px;border-radius:999px;background:rgba(244,239,231,.07);border:1px solid rgba(244,239,231,.1)}
-.pf-switch a{position:relative;z-index:1;padding:.85rem 2rem;border-radius:999px;font-weight:750;font-stretch:110%;font-size:1.05rem;color:rgba(244,239,231,.6);text-decoration:none;transition:color .35s}
+.pf-switch{position:relative;display:inline-flex;margin:2.5rem 0 2rem;padding:6px;border-radius:2px;background:rgba(244,239,231,.07);border:1px solid rgba(244,239,231,.1)}
+.pf-switch a{position:relative;z-index:1;padding:.85rem 2rem;border-radius:2px;font-weight:750;font-stretch:110%;font-size:1.05rem;color:rgba(244,239,231,.6);text-decoration:none;transition:color .35s}
 .pf-switch a.on{color:#141110}
-.pf-ind{position:absolute;top:6px;bottom:6px;left:6px;border-radius:999px;background:var(--paper);background:#F4EFE7;transition:transform .5s cubic-bezier(.2,.75,.15,1),width .5s cubic-bezier(.2,.75,.15,1)}
+.pf-ind{position:absolute;top:6px;bottom:6px;left:6px;border-radius:2px;background:var(--paper);background:#F4EFE7;transition:transform .5s cubic-bezier(.2,.75,.15,1),width .5s cubic-bezier(.2,.75,.15,1)}
 .pf-pane{padding-bottom:clamp(4rem,8vw,7rem)}
 .pf-pane.enter{animation:pfIn .7s cubic-bezier(.2,.75,.15,1) both}
 @keyframes pfIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -351,7 +351,7 @@ html.pf-dark .progress{background:var(--ochre)}
 #p-portfolio .g-cap{color:#F4EFE7}
 .deck{flex:0 0 clamp(220px,24vw,300px);scroll-snap-align:start;text-align:left;color:var(--ink);position:relative}
 .deck-stack{position:relative;aspect-ratio:4/5;margin-bottom:1.1rem}
-.deck-card{position:absolute;inset:0;border-radius:14px;overflow:hidden;background:#2A2320;box-shadow:0 22px 40px -22px rgba(0,0,0,.9);transition:transform .6s cubic-bezier(.2,.75,.15,1),filter .4s}
+.deck-card{position:absolute;inset:0;border-radius:4px;overflow:hidden;background:#2A2320;box-shadow:0 22px 40px -22px rgba(0,0,0,.9);transition:transform .6s cubic-bezier(.2,.75,.15,1),filter .4s}
 .deck-card img{width:100%;height:100%;object-fit:cover;display:block}
 .deck-card.c2{transform:rotate(-5deg) translate(-4%,1%);filter:brightness(.55)}
 .deck-card.c3{transform:rotate(4deg) translate(4%,-1%);filter:brightness(.45)}
@@ -366,12 +366,12 @@ html.pf-dark .progress{background:var(--ochre)}
 .deck b{display:block;font-weight:780;font-stretch:110%;font-size:1.25rem;letter-spacing:-.015em;line-height:1.15}
 .deck small{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted);font-weight:600}
 .deck.active b{color:var(--ochre)}
-.deck.active .deck-stack::before{content:"Viewing";position:absolute;top:-12px;left:14px;z-index:5;background:var(--ochre);color:#141110;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px}
+.deck.active .deck-stack::before{content:"Viewing";position:absolute;top:-12px;left:14px;z-index:5;background:var(--ochre);color:#141110;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:2px}
 
 /* album view header */
 .pf-album-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:1rem 2rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
 .pf-album-head h2{font-weight:820;font-stretch:115%;letter-spacing:-.035em;line-height:.95;font-size:clamp(2.2rem,5.5vw,4rem)}
-.pf-album-head p{grid-column:1/-1;color:var(--ink-2);max-width:60ch;font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.5}
+.pf-album-head p{grid-column:1/-1;color:var(--ink-2);max-width:60ch;font-family:var(--serif);font-style:normal;font-size:1.2rem;line-height:1.5}
 .pf-album-head .pf-count{font-weight:650;color:var(--muted);white-space:nowrap}
 .pf-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--line)}
 .pf-nav button{color:var(--ink);font-weight:700;font-size:1rem;text-align:left}
@@ -382,14 +382,14 @@ html.pf-dark .progress{background:var(--ochre)}
 
 /* films */
 .f-feature{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:center;margin-bottom:clamp(3rem,6vw,4.5rem)}
-.f-thumb{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#2A2320;display:block;width:100%}
+.f-thumb{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#2A2320;display:block;width:100%}
 .f-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .f-thumb:hover img{transform:scale(1.04)}
 .f-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.45))}
 .f-play{position:absolute;left:50%;top:50%;z-index:2;width:clamp(64px,8vw,92px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:#F4EFE7;display:grid;place-items:center;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 .f-play::before{content:"";border-left:clamp(18px,2.2vw,26px) solid var(--maroon);border-top:clamp(11px,1.4vw,16px) solid transparent;border-bottom:clamp(11px,1.4vw,16px) solid transparent;margin-left:8%}
 .f-thumb:hover .f-play{transform:translate(-50%,-50%) scale(1.1)}
-.f-badge{display:inline-block;font-size:.8rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;background:rgba(217,150,42,.16);color:var(--ochre);margin-bottom:1rem}
+.f-badge{display:inline-block;font-size:.8rem;font-weight:700;padding:.35rem .8rem;border-radius:2px;background:rgba(217,150,42,.16);color:var(--ochre);margin-bottom:1rem}
 .f-feature h2{font-weight:820;font-stretch:112%;letter-spacing:-.03em;line-height:1;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.8rem}
 .f-feature p{color:var(--ink-2);line-height:1.6;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .f-meta{font-size:.9rem;color:var(--muted);margin-top:.9rem}
@@ -400,7 +400,7 @@ html.pf-dark .progress{background:var(--ochre)}
 .f-head a{margin-left:auto}
 .f-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
 .f-card{text-align:left;color:var(--ink)}
-.f-card .f-thumb{border-radius:14px;margin-bottom:.8rem;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.f-card .f-thumb{border-radius:4px;margin-bottom:.8rem;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
 .f-card .f-play{width:46px;opacity:0;transition:opacity .3s,transform .3s}
 .f-card .f-play::before{border-left-width:14px;border-top-width:9px;border-bottom-width:9px}
 .f-card:hover .f-thumb{transform:translateY(-5px);box-shadow:0 26px 44px -26px rgba(0,0,0,.9)}
@@ -408,21 +408,21 @@ html.pf-dark .progress{background:var(--ochre)}
 .f-card b{display:block;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .f-card small{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted)}
 .f-soon{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:center}
-.f-soon .f-frame{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 70% 30%,#3B1814 0%,#1E1916 55%,#141110 100%);border:1px solid rgba(244,239,231,.08)}
+.f-soon .f-frame{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:radial-gradient(120% 90% at 70% 30%,#3B1814 0%,#1E1916 55%,#141110 100%);border:1px solid rgba(244,239,231,.08)}
 .f-soon .f-frame::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(244,239,231,.04) 0 2px,transparent 2px 80px)}
 .f-soon .rec{position:absolute;top:18px;left:20px;display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:800;letter-spacing:.1em;color:rgba(244,239,231,.75)}
 .f-soon .rec::before{content:"";width:10px;height:10px;border-radius:50%;background:#E0204F;animation:rec 1.6s ease-in-out infinite}
 @keyframes rec{50%{opacity:.25}}
 .f-soon .tc{position:absolute;right:20px;bottom:16px;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;color:rgba(244,239,231,.5)}
 .f-ghosts{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:clamp(3rem,6vw,4.5rem);opacity:.5}
-.f-ghost i{display:block;aspect-ratio:16/9;border-radius:14px;background:linear-gradient(100deg,#221C19 40%,#2A2320 50%,#221C19 60%);background-size:300% 100%;animation:shimmer 2.2s infinite}
+.f-ghost i{display:block;aspect-ratio:16/9;border-radius:4px;background:linear-gradient(100deg,#221C19 40%,#2A2320 50%,#221C19 60%);background-size:300% 100%;animation:shimmer 2.2s infinite}
 .f-ghost b{display:block;height:12px;width:80%;border-radius:6px;background:#221C19;margin-top:.8rem}
 .f-ghost s{display:block;height:10px;width:45%;border-radius:6px;background:#1E1916;margin-top:.5rem}
 
 /* video player */
 .vbox{position:fixed;inset:0;z-index:101;background:rgba(10,8,7,.94);display:none;flex-direction:column;align-items:center;justify-content:center;padding:4.5rem 1rem 2rem}
 .vbox.open{display:flex}
-.vbox-frame{width:min(100%,calc((100vh - 12rem) * 16 / 9),1200px);aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.vbox-frame{width:min(100%,calc((100vh - 12rem) * 16 / 9),1200px);aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .vbox-frame iframe{width:100%;height:100%;border:0;display:block}
 .vbox-cap{color:var(--paper);text-align:center;margin-top:1.1rem;max-width:760px}
 .vbox-cap b{display:block;font-size:1.1rem}
@@ -434,16 +434,16 @@ html.pf-dark .progress{background:var(--ochre)}
 
 /* ---------- INVOLVE ---------- */
 .ways{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.way{border-radius:24px;padding:clamp(1.75rem,3vw,2.5rem);background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;gap:.9rem;align-items:flex-start}
+.way{border-radius:4px;padding:clamp(1.75rem,3vw,2.5rem);background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;gap:.9rem;align-items:flex-start}
 .way p{color:var(--ink-2);flex:1}
 .way:nth-child(3){background:var(--ochre);border-color:var(--ochre)}
 .way:nth-child(3) p{color:var(--ink)}
 .donate-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
 .amts{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1.25rem}
-.amt{padding:1rem;border-radius:16px;border:1.5px solid var(--line-l);color:var(--paper);font-weight:750;font-stretch:112%;font-size:1.2rem;transition:all .2s}
+.amt{padding:1rem;border-radius:4px;border:1.5px solid var(--line-l);color:var(--paper);font-weight:750;font-stretch:112%;font-size:1.2rem;transition:all .2s}
 .amt:hover{border-color:var(--paper)}
 .amt.active{background:var(--paper);color:var(--maroon);border-color:var(--paper)}
-.donate-box{background:rgba(26,22,20,.22);border-radius:24px;padding:1.75rem}
+.donate-box{background:rgba(26,22,20,.22);border-radius:4px;padding:1.75rem}
 .donate-box .btn{width:100%;justify-content:center}
 .donate-box small{display:block;margin-top:1rem;color:rgba(244,239,231,.7);font-size:.88rem}
 .funds{list-style:none;margin-top:2.5rem;border-top:1px solid var(--line)}
@@ -459,13 +459,13 @@ html.pf-dark .progress{background:var(--ochre)}
 .cdetails a{text-decoration:none;font-weight:600}
 .cdetails a:hover{color:var(--maroon)}
 .socials{display:flex;flex-wrap:wrap;gap:.5rem}
-.soc{padding:.55rem 1rem;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font-weight:600;font-size:.92rem;transition:all .2s}
+.soc{padding:.55rem 1rem;border-radius:2px;border:1.5px solid var(--line);text-decoration:none;font-weight:600;font-size:.92rem;transition:all .2s}
 .soc:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
-.form{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:clamp(1.5rem,4vw,2.75rem);display:grid;gap:1.1rem}
+.form{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:clamp(1.5rem,4vw,2.75rem);display:grid;gap:1.1rem}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .field{display:grid;gap:.4rem}
 .field label{font-size:.9rem;font-weight:650}
-.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.9rem 1rem;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.9rem 1rem;border-radius:4px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);transition:border-color .2s,background .2s;-webkit-appearance:none;appearance:none}
 .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231A1614' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--maroon);background:var(--white)}
 .field textarea{min-height:150px;resize:vertical}
@@ -498,7 +498,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   .nav.open .nav-links{transform:none;opacity:1;pointer-events:auto}
   .nav-links a{padding:.95rem .25rem;border-radius:0;border-bottom:1px solid var(--line);font-size:1.05rem}
   .nav-links a.active{background:none;color:var(--maroon)}
-  .nav-links .nav-cta{margin:1rem 0 0;text-align:center;border-radius:999px;border:0}
+  .nav-links .nav-cta{margin:1rem 0 0;text-align:center;border-radius:2px;border:0}
 }
 .dark .form{color:var(--ink)}
 @media (max-width:900px){
@@ -507,7 +507,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   .nav.open .nav-links{transform:none;opacity:1;pointer-events:auto}
   .nav-links a{padding:.95rem .25rem;border-radius:0;border-bottom:1px solid var(--line);font-size:1.05rem}
   .nav-links a.active{background:none;color:var(--maroon)}
-  .nav-links .nav-cta{margin:1rem 0 0;text-align:center;border-radius:999px;border:0}
+  .nav-links .nav-cta{margin:1rem 0 0;text-align:center;border-radius:2px;border:0}
   .hero-grid,.statement,.now-grid,.plans-teaser,.phead-grid,.about-grid,.work-now,.donate-grid,.contact-grid,.cta-band,.team{grid-template-columns:1fr}
   .hero-media{aspect-ratio:4/3}
   .strip{grid-template-columns:repeat(2,1fr)}
@@ -622,14 +622,614 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   .split .sw>span{transform:none}
   .g-item img,.strip img,.hero-media img{opacity:1;filter:none}
 }
+
+/* =====================================================================
+   REDESIGN 2026: woven, high-contrast, made in Australia with Nepali roots
+   ===================================================================== */
+:root{
+  --paper:#F6F1E8; --paper-2:#ECE3D4; --white:#FFFFFF;
+  --ink:#141010; --ink-2:#3A3330; --muted:#776B65;
+  --maroon:#7A1F2E; --maroon-d:#561521; --ochre:#F2A71B; --sky:#23408E;
+  --line:rgba(20,16,16,.16); --line-l:rgba(246,241,232,.2);
+  --nav:76px; --ann:34px;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --disp:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;
+  --serif:var(--disp);
+  --ne:'Mukta','Instrument Sans',sans-serif;
+  --ease:cubic-bezier(.2,.75,.15,1);
+  --tooth:polygon(0.00% 10px,4.17% 0px,8.33% 10px,12.50% 0px,16.67% 10px,20.83% 0px,25.00% 10px,29.17% 0px,33.33% 10px,37.50% 0px,41.67% 10px,45.83% 0px,50.00% 10px,54.17% 0px,58.33% 10px,62.50% 0px,66.67% 10px,70.83% 0px,75.00% 10px,79.17% 0px,83.33% 10px,87.50% 0px,91.67% 10px,95.83% 0px,100.00% 10px,100% 100%,0 100%);
+  --dhaka:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Crect width='48' height='24' fill='%237A1F2E'/%3E%3Cpath d='M0 24 12 12 24 24ZM24 24 36 12 48 24Z' fill='%23141010'/%3E%3Cpath d='M24 0 30 6 24 12 18 6Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 6 6 0 12ZM48 0 42 6 48 12Z' fill='%23F2A71B'/%3E%3Ccircle cx='12' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Ccircle cx='36' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Cpath d='M12 17 14 19 12 21 10 19ZM36 17 38 19 36 21 34 19Z' fill='%23F6F1E8'/%3E%3C/svg%3E");
+  --dhaka-big:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='48' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' fill='%237A1F2E'/%3E%3Cpath d='M0 48 16 32 32 48ZM32 48 48 32 64 48Z' fill='%23141010'/%3E%3Cpath d='M0 0 16 16 32 0ZM32 0 48 16 64 0Z' fill='%23141010'/%3E%3Cpath d='M32 10 46 24 32 38 18 24Z' fill='%23F2A71B'/%3E%3Cpath d='M32 16 40 24 32 32 24 24Z' fill='%237A1F2E'/%3E%3Cpath d='M32 21 35 24 32 27 29 24Z' fill='%23F6F1E8'/%3E%3Cpath d='M0 10 14 24 0 38ZM64 10 50 24 64 38Z' fill='%23F6F1E8'/%3E%3Cpath d='M0 17 7 24 0 31ZM64 17 57 24 64 31Z' fill='%2323408E'/%3E%3C/svg%3E");
+  --dhaka-thin:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Crect width='32' height='16' fill='%23141010'/%3E%3Cpath d='M0 16 8 8 16 16ZM16 16 24 8 32 16Z' fill='%237A1F2E'/%3E%3Cpath d='M16 0 20 4 16 8 12 4Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 4 4 0 8ZM32 0 28 4 32 8Z' fill='%23F2A71B'/%3E%3C/svg%3E");
+}
+html.ann-off{--ann:0px}
+body{font-family:var(--sans);font-size:17px;background:var(--paper);color:var(--ink)}
+::selection{background:var(--maroon);color:var(--paper)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+
+/* type: one family for headlines, no italics */
+.display,.h3,.f-big,.hero-fallback .big{font-family:var(--disp)}
+.display{font-weight:740;font-stretch:88%;letter-spacing:-.028em;line-height:.95}
+.h1{font-size:clamp(2.8rem,7.6vw,6.6rem)}
+.h2{font-size:clamp(2.1rem,5vw,4.2rem)}
+.h3{font-weight:700;font-stretch:90%;letter-spacing:-.02em}
+.serif-i,.display em,h1 em,h2 em,h3 em,.f-big em{font-family:inherit;font-style:normal;font-weight:inherit;font-stretch:inherit;letter-spacing:inherit;color:var(--maroon)}
+.dark .serif-i,.wine .serif-i,.on-dark .serif-i,#p-portfolio .serif-i,footer .f-big em{color:var(--ochre)}
+mark{background:linear-gradient(var(--maroon),var(--maroon)) 0 88%/0 100% no-repeat;color:inherit;padding:0 .08em;transition:background-size 1s var(--ease) .5s,color .4s .7s}
+.in mark,.split.in mark,mark.in{background-size:100% 100%;color:var(--paper)}
+.lead{font-size:clamp(1.1rem,1.6vw,1.32rem)}
+
+/* labels replace the old dot kicker */
+.kicker,.label{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);margin-bottom:1.25rem}
+.kicker::before,.label::before,.dia{content:"";width:9px;height:9px;background:var(--ochre);transform:rotate(45deg);flex-shrink:0;border-radius:0}
+.on-dark .kicker,.on-dark .label,.dark .label,.wine .label{color:var(--ochre)}
+.on-dark .kicker::before,.on-dark .label::before{background:var(--paper)}
+
+/* buttons: square, with a woven-edge fill on hover */
+.btn{position:relative;isolation:isolate;overflow:hidden;border-radius:0;padding:1.05rem 1.55rem;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-width:2px}
+.btn::before{content:"";position:absolute;inset:-12px 0 0;z-index:-1;background:var(--hov,var(--maroon));clip-path:var(--tooth);transform:translateY(102%);transition:transform .55s var(--ease)}
+.btn:hover::before,.btn:focus-visible::before{transform:none}
+.btn-dark{background:var(--ink);color:var(--paper);--hov:var(--maroon)}
+.btn-dark:hover{background:var(--ink)}
+.btn-line{border-color:var(--ink);color:var(--ink);--hov:var(--ink)}
+.btn-line:hover{background:transparent;color:var(--paper)}
+.btn-light,.btn-solid-l{background:var(--paper);color:var(--ink);border-color:var(--paper);--hov:var(--ochre)}
+.btn-light:hover,.btn-solid-l:hover{background:var(--paper);color:var(--ink)}
+.btn-ghost-l{border-color:rgba(246,241,232,.55);color:var(--paper);--hov:var(--paper)}
+.btn-ghost-l:hover{border-color:var(--paper);color:var(--ink)}
+.textlink{border-bottom:2px solid var(--ochre);text-decoration:none;font-weight:650}
+.textlink:hover{color:var(--maroon)}
+
+/* ---------- announcement + nav ---------- */
+.ann{position:fixed;top:0;left:0;right:0;height:var(--ann);z-index:52;background:var(--maroon);color:var(--paper);display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.82rem;padding:0 2.5rem;overflow:hidden;transition:height .35s var(--ease)}
+.ann a{color:inherit;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ann a b{font-weight:700}
+.ann a:hover span{text-decoration:underline;text-underline-offset:3px}
+.ann .rec-dot{width:7px;height:7px;border-radius:50%;background:var(--ochre);animation:blink 1.4s steps(2) infinite;flex-shrink:0}
+.ann-x{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);width:28px;height:28px;color:var(--paper);opacity:.75}
+.ann-x:hover{opacity:1}
+@keyframes blink{50%{opacity:.15}}
+.nav{top:var(--ann);height:var(--nav);background:rgba(246,241,232,.94);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid transparent;transition:transform .45s var(--ease),top .35s var(--ease),background .4s,color .4s,border-color .3s;color:var(--ink)}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav.over{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--paper);border-bottom-color:transparent}
+.logo{display:block;color:inherit;line-height:0;position:relative;z-index:2}
+.lg{height:34px;width:auto;overflow:visible}
+.lg-w{fill:currentColor}
+.lg-s{fill:var(--maroon);transition:fill .4s}
+.nav.over .lg-s,.nav.open .lg-s,footer .lg-s{fill:var(--ochre)}
+.lg-k path,.lg-ka{transition:opacity .45s var(--ease),transform .55s var(--ease);transform-box:fill-box;transform-origin:50% 50%}
+.lg-ka{font-family:var(--ne);font-weight:800;font-size:205px;fill:currentColor;opacity:0;transform:translateY(40px)}
+.logo.ka .lg-k path{opacity:0;transform:translateY(-40px)}
+.logo.ka .lg-ka{opacity:1;transform:none}
+.nav-links{gap:.15rem}
+.nav-links a{position:relative;border-radius:0;background:none!important;color:inherit;opacity:.82;font-size:.78rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:.55rem .7rem}
+.nav-links a::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.2rem;height:2px;background:var(--ochre);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav-links a:hover,.nav-links a.active{opacity:1}
+.nav-links a:hover::after,.nav-links a.active::after{transform:none}
+.nav-links .nav-cta{opacity:1;background:var(--maroon)!important;color:var(--paper);padding:.8rem 1.15rem;margin-left:.6rem;border-radius:0}
+.nav-links .nav-cta::after{display:none}
+.nav-links .nav-cta:hover{background:var(--ink)!important}
+.nav.over .nav-links .nav-cta{background:var(--paper)!important;color:var(--maroon)}
+.nav.over .nav-links .nav-cta:hover{background:var(--ochre)!important;color:var(--ink)}
+.burger{border-radius:0;z-index:2}
+.burger i{background:currentColor;width:26px}
+.page{padding-top:calc(var(--nav) + var(--ann))}
+#p-home{padding-top:0}
+@media (max-width:1100px){
+  .nav-links{position:fixed;inset:0;top:0;height:100svh;flex-direction:column;justify-content:center;align-items:flex-start;gap:0;background:var(--maroon);padding:calc(var(--nav) + 2rem) var(--gut) 5rem;border:0;transform:none;opacity:0;pointer-events:none;transition:opacity .35s;overflow:auto}
+  .nav-links::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:var(--dhaka-big) 0 0/64px 48px;animation:loom 30s linear infinite}
+  .nav.open .nav-links{opacity:1;pointer-events:auto}
+  .nav.open{color:var(--paper);background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav-links li{width:100%;overflow:hidden}
+  .nav-links a{font-family:var(--disp);font-size:clamp(2rem,8.5vw,3rem);font-weight:700;font-stretch:84%;letter-spacing:-.03em;text-transform:none;padding:.35rem 0;border:0;opacity:1;color:var(--paper);transform:translateY(105%);transition:transform .6s var(--ease)}
+  .nav.open .nav-links a{transform:none}
+  .nav-links li:nth-child(2) a{transition-delay:.04s}.nav-links li:nth-child(3) a{transition-delay:.08s}.nav-links li:nth-child(4) a{transition-delay:.12s}.nav-links li:nth-child(5) a{transition-delay:.16s}.nav-links li:nth-child(6) a{transition-delay:.2s}.nav-links li:nth-child(7) a{transition-delay:.24s}.nav-links li:nth-child(8) a{transition-delay:.28s}.nav-links li:nth-child(9) a{transition-delay:.32s}
+  .nav-links a::after{left:0;right:auto;width:2.5rem;bottom:.3rem}
+  .nav-links a.active{color:var(--ochre)}
+  .nav-links .nav-cta{margin:1.5rem 0 0;display:inline-block;background:var(--paper)!important;color:var(--maroon);font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:1rem 1.4rem}
+}
+@keyframes loom{to{background-position:-640px 0}}
+
+/* ---------- HOME: hero ---------- */
+.hx{position:relative;height:100svh;min-height:640px;max-height:1100px;background:var(--ink);color:var(--paper);overflow:hidden;isolation:isolate}
+.hx-media{position:absolute;inset:-3%;z-index:-3;transition:transform 1.4s var(--ease)}
+.hx-slide{position:absolute;inset:0;overflow:hidden;will-change:clip-path}
+.hx-slide img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(.92);transform:scale(1.08);transition:transform 9s linear}
+.hx-slide.live img{transform:scale(1)}
+.hx-slide.fb{background:var(--c,var(--maroon))}
+.hx-slide.fb::after{content:"";position:absolute;inset:0;background:var(--dhaka-big) 0 0/128px 96px;opacity:.13;mix-blend-mode:screen}
+.hx-fallback{position:absolute;inset:0;background:var(--maroon)}
+.hx-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(20,16,16,.62) 0%,rgba(20,16,16,.12) 30%,rgba(20,16,16,.18) 55%,rgba(20,16,16,.88) 100%)}
+.hx-weave{position:absolute;left:0;right:0;top:0;height:22px;z-index:-1;background:var(--dhaka) 0 0/48px 24px;opacity:0;pointer-events:none}
+.hx-in{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--nav) + var(--ann) + 2rem);padding-bottom:clamp(1.5rem,4vh,2.75rem)}
+.hx-tag{display:flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,241,232,.82);margin-bottom:1.4rem}
+.hx-title{font-family:var(--disp);font-weight:740;font-stretch:86%;font-size:clamp(3rem,8vw,8rem);line-height:.92;letter-spacing:-.03em;max-width:13ch;min-height:2.7em;margin-bottom:clamp(2rem,5vh,3.5rem)}
+.hx-title .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.hx-title .w>span{display:inline-block;transform:translateY(105%);transition:transform .9s var(--ease);transition-delay:calc(var(--i)*55ms)}
+.hx-title.show .w>span{transform:none}
+.hx-title.out .w>span{transform:translateY(-105%);transition-duration:.55s;transition-delay:calc(var(--i)*25ms)}
+.hx-title .hl{color:var(--ochre)}
+.hx-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem 2rem;flex-wrap:wrap;border-top:1px solid rgba(246,241,232,.25);padding-top:1.25rem}
+.hx-steps{display:flex;gap:clamp(.75rem,2.4vw,2rem);flex:1;min-width:0}
+.hx-step{flex:1;max-width:190px;text-align:left;color:rgba(246,241,232,.55);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;padding-top:.2rem}
+.hx-step b{display:block;font-family:var(--disp);font-size:1rem;letter-spacing:0;margin-bottom:.3rem;font-stretch:90%}
+.hx-step i{display:block;height:2px;background:rgba(246,241,232,.22);margin-top:.7rem;position:relative;overflow:hidden}
+.hx-step i::after{content:"";position:absolute;inset:0;background:var(--ochre);transform:scaleX(0);transform-origin:left}
+.hx-step.on{color:var(--paper)}
+.hx-step.done i::after{transform:none;transition:none}
+.hx-step.on i::after{animation:fill var(--dur,6.5s) linear forwards}
+.hx.paused .hx-step.on i::after{animation-play-state:paused}
+@keyframes fill{to{transform:none}}
+.hx-step:hover{color:var(--paper)}
+.hx-cta{display:flex;gap:.6rem;flex-wrap:wrap}
+.hx-side{position:absolute;left:clamp(.6rem,1.4vw,1.4rem);top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);opacity:.9}
+.hx-side span{font-family:var(--ne);font-size:1.05rem;letter-spacing:.06em;text-transform:none}
+.hx-down{display:none}
+
+/* ---------- HOME: sliced wordmark ---------- */
+.wm{background:var(--maroon);color:var(--paper);padding:clamp(3rem,7vw,5.5rem) 0 1.75rem;overflow:hidden}
+.wm-mark{position:relative;display:grid;padding:0 var(--gut);--gap:0px;--sx:0px}
+.wm-half{grid-area:1/1;line-height:0}
+.wm-half svg{width:100%;height:auto;fill:var(--paper);display:block}
+.wm-top{clip-path:inset(0 0 50% 0);transform:translate(calc(var(--sx)*-1),calc(var(--gap)/-2))}
+.wm-bot{clip-path:inset(50% 0 0 0);transform:translate(var(--sx),calc(var(--gap)/2))}
+.wm-thread{grid-area:1/1;align-self:center;height:var(--gap);margin:0 calc(var(--gut)*-1);background:var(--dhaka) 0 50%/48px 24px;animation:loom 24s linear infinite}
+.wm-row{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;margin-top:clamp(2rem,4vw,3rem);padding-top:1.1rem;border-top:1px solid rgba(246,241,232,.28);font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.wm-mid{text-align:center;color:var(--ochre)}
+.wm-end{text-align:right}
+
+/* ---------- HOME: the equation ---------- */
+.eq{padding:clamp(4.5rem,10vw,8rem) 0 clamp(4rem,8vw,6.5rem)}
+.eq-line{display:flex;flex-wrap:wrap;align-items:center;gap:.2em .45em;font-family:var(--disp);font-weight:720;font-stretch:88%;font-size:clamp(1.9rem,5.2vw,4.4rem);letter-spacing:-.02em;line-height:1;text-transform:uppercase}
+.eq-t{position:relative;font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--ink);padding:.06em .1em .1em;cursor:default}
+.eq-t .flip{display:inline-grid;overflow:hidden;vertical-align:bottom}
+.eq-t .flip>span{grid-area:1/1;transition:transform .6s var(--ease)}
+.eq-t .ne{font-family:var(--ne);font-weight:800;text-transform:none;letter-spacing:0;transform:translateY(105%);justify-self:start;font-size:.92em;line-height:1.1}
+.eq-t:hover .en,.eq-t.on .en{transform:translateY(-105%)}
+.eq-t:hover .ne,.eq-t.on .ne{transform:none}
+.eq-t::after{content:attr(data-ro);position:absolute;left:.15em;top:100%;font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s;white-space:nowrap}
+.eq-t:hover::after,.eq-t.on::after{opacity:1;transform:none}
+.eq-res{background:var(--maroon);color:var(--paper);padding:.06em .22em .1em}
+.eq-res::after{color:var(--maroon)}
+.eq-op{color:var(--ochre);font-weight:800}
+.eq-line>*{opacity:0;transform:translateY(40px);transition:opacity .7s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.eq-line.in>*{opacity:1;transform:none}
+.eq-hint{margin-top:1.6rem;font-size:.82rem;color:var(--muted)}
+.eq-say{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,6vw,6rem);margin-top:clamp(3.5rem,8vw,6rem);padding-top:clamp(2rem,4vw,3rem);border-top:2px solid var(--ink);align-items:start}
+.eq-say .h2{max-width:14ch}
+
+/* ---------- HOME: what we do ---------- */
+.aims{padding-bottom:clamp(4rem,9vw,7rem)}
+.sec-head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:.9rem}
+.sec-head .label{margin:0}
+.aim{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:4.5rem minmax(0,1.2fr) minmax(0,1fr) 3.5rem;align-items:center;gap:1.5rem;padding:clamp(1.5rem,3vw,2.4rem) 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:color .45s,padding .5s var(--ease)}
+.aim::before{content:"";position:absolute;inset:-12px 0 0;z-index:-1;background:var(--maroon);clip-path:var(--tooth);transform:translateY(102%);transition:transform .6s var(--ease)}
+.aim-n{font-family:var(--disp);font-weight:700;font-size:1rem;color:var(--maroon);transition:color .45s}
+.aim-t{font-family:var(--disp);font-weight:720;font-stretch:88%;font-size:clamp(1.7rem,4vw,3.3rem);letter-spacing:-.025em;line-height:.98}
+.aim-p{color:var(--ink-2);font-size:1rem;transition:color .45s}
+.aim-go{justify-self:end;width:3rem;height:3rem;display:grid;place-items:center;border:2px solid currentColor;font-size:1.2rem;transform:rotate(-45deg);transition:transform .5s var(--ease)}
+@media (hover:hover){
+  .aim:hover{color:var(--paper);padding-left:1.25rem;padding-right:1.25rem}
+  .aim:hover::before{transform:none}
+  .aim:hover .aim-n{color:var(--ochre)}
+  .aim:hover .aim-p{color:rgba(246,241,232,.85)}
+  .aim:hover .aim-go{transform:none}
+}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--ochre);color:var(--ink);border:0;padding:1.05rem 0}
+.ticker span{font-family:var(--disp);font-weight:700;font-stretch:86%;font-size:1.35rem;text-transform:uppercase;letter-spacing:-.01em;gap:2.2rem}
+.ticker span::after{content:"";width:12px;height:12px;background:var(--maroon);transform:rotate(45deg);box-shadow:0 0 0 3px var(--ochre),0 0 0 5px var(--maroon)}
+
+/* ---------- HOME: right now ---------- */
+.now{padding:clamp(4.5rem,9vw,7.5rem) 0 clamp(3rem,6vw,4.5rem);overflow:hidden}
+.now-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.rec{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);border:1px solid rgba(246,241,232,.35);padding:.5rem .8rem;margin-bottom:1.75rem}
+.rec i{width:9px;height:9px;border-radius:50%;background:#E3263F;animation:blink 1.2s steps(2) infinite}
+.now-title{font-family:var(--disp);font-weight:800;font-stretch:82%;font-size:clamp(3.6rem,10.5vw,9rem);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:1.75rem}
+.now-title:hover{color:var(--ochre);transition:color .4s}
+.now .body{color:rgba(246,241,232,.75);max-width:46ch}
+.now-reel{height:min(78vh,620px);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:12px;-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent);transform:rotate(-4deg)}
+.reel-col{display:flex;flex-direction:column;gap:12px;animation:reel 38s linear infinite}
+.reel-col:nth-child(2){animation-direction:reverse;animation-duration:44s}
+.now-reel:hover .reel-col{animation-play-state:paused}
+@keyframes reel{to{transform:translateY(-50%)}}
+.frame{position:relative;aspect-ratio:4/5;background:#221C1A;padding:0 14px;flex-shrink:0}
+.frame::before,.frame::after{content:"";position:absolute;top:0;bottom:0;width:8px;background:repeating-linear-gradient(transparent 0 6px,rgba(246,241,232,.55) 6px 12px)}
+.frame::before{left:3px}.frame::after{right:3px}
+.frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:filter .5s}
+.frame:hover img{filter:none}
+.frame.fb{background:var(--maroon) var(--dhaka-big) 0 0/64px 48px;opacity:.9}
+.now-cards{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);margin-top:clamp(3.5rem,7vw,5.5rem);border-top:1px solid rgba(246,241,232,.25)}
+.nc{padding:1.75rem 1.75rem 0 0;display:flex;flex-direction:column;gap:.7rem}
+.nc+.nc{padding-left:1.75rem;border-left:1px solid rgba(246,241,232,.25)}
+.nc .label{margin:0}
+.nc h3{font-family:var(--disp);font-weight:720;font-stretch:88%;font-size:1.7rem;letter-spacing:-.025em;line-height:1}
+.nc p{color:rgba(246,241,232,.7);font-size:.97rem}
+.nc .textlink{align-self:flex-start;margin-top:.3rem}
+.nc .textlink:hover{color:var(--ochre)}
+
+/* ---------- HOME: portfolio rail ---------- */
+.strip button{border-radius:0}
+.strip.car{cursor:grab;user-select:none;-webkit-user-select:none}
+.strip.car.dragging{cursor:grabbing;scroll-snap-type:none}
+.strip.car.dragging img{pointer-events:none}
+.strip-nav button{border-radius:0;border-width:2px}
+.drag-hint{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);border:1px dashed var(--maroon);padding:.55rem .8rem;animation:nudge 2.4s var(--ease) infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.strip-head .label{display:flex}
+
+/* ---------- HOME: looking ahead ---------- */
+.ahead{position:relative}
+.ahead::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:var(--dhaka-thin) 0 0/32px 16px;animation:loom 40s linear infinite reverse}
+.plan-list{border-top-color:rgba(246,241,232,.28)}
+.plan-list li{border-bottom-color:rgba(246,241,232,.28);transition:transform .5s var(--ease),background .4s;padding-left:.25rem}
+.plan-list li:hover{transform:translateX(10px)}
+.plan-list .pn{font-family:var(--disp)}
+.plan-list h4{font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:1.35rem;letter-spacing:-.02em}
+
+/* ---------- HOME: journal band, facts, talk ---------- */
+.jband{background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.jband-in{padding-top:1.4rem;padding-bottom:1.4rem;align-items:center}
+.jband .label{margin:0}
+.jb-link{font-family:var(--disp);font-style:normal;font-weight:650;font-stretch:90%;letter-spacing:-.02em;font-size:clamp(1.15rem,2.2vw,1.6rem)}
+.jb-link .arr{font-family:inherit}
+.jb-label{display:none}
+.fact b{font-family:var(--disp);font-stretch:84%;color:var(--ochre);font-weight:760;font-size:clamp(2.2rem,4.6vw,3.8rem)}
+.talk{padding:clamp(5rem,11vw,9rem) 0 clamp(4rem,9vw,7rem);position:relative}
+.talk-in{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:end}
+.talk-big{font-family:var(--disp);font-weight:800;font-stretch:82%;font-size:clamp(3.4rem,10vw,9rem);line-height:.86;letter-spacing:-.02em;text-transform:uppercase}
+.talk-big span{color:var(--maroon);display:inline-block;transition:transform .6s var(--ease)}
+.talk-big:hover span{transform:translateX(.08em)}
+.weave{height:44px;background:var(--dhaka-big) 0 0/64px 48px;animation:loom 34s linear infinite}
+
+[hidden]{display:none!important}
+.aim-go{margin-right:10px}
+/* ---------- inner pages ---------- */
+.phead{position:relative;border-bottom:0;padding-bottom:clamp(3rem,6vw,4.5rem)}
+.phead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--dhaka-thin) 0 0/32px 16px;animation:loom 50s linear infinite}
+.phead .h1{max-width:13ch}
+.status{border-radius:0;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.wine{background:var(--maroon)}
+.dark{background:var(--ink)}
+.sand{background:var(--paper-2)}
+
+/* ---------- footer ---------- */
+footer{padding-top:0;position:relative}
+.f-wm{padding:clamp(3rem,7vw,5rem) var(--gut) 0;line-height:0}
+.f-wm svg{width:100%;height:auto;fill:var(--paper);opacity:.95}
+.f-wm .lg-s{fill:var(--ochre)}
+.f-top{padding-top:clamp(2.5rem,5vw,3.5rem)}
+.f-big{font-weight:760;font-stretch:84%;letter-spacing:-.04em}
+footer .soc{border-radius:0}
+footer ul a:hover{color:var(--ochre)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .eq-say,.now-in,.talk-in{grid-template-columns:1fr}
+  .now-reel{height:420px;transform:none;margin:0 calc(var(--gut)*-1)}
+  .now-cards{grid-auto-flow:row;grid-template-columns:1fr}
+  .nc,.nc+.nc{padding:1.5rem 0;border-left:0;border-bottom:1px solid rgba(246,241,232,.2)}
+  .aim{grid-template-columns:3rem 1fr 2.6rem;gap:.4rem 1rem}
+  .aim-p{grid-column:2/3;grid-row:2}
+  .aim-go{grid-column:3;grid-row:1/3;width:2.6rem;height:2.6rem}
+  .wm-row{grid-template-columns:1fr 1fr}
+  .wm-mid{display:none}
+}
+@media (max-width:620px){
+  :root{--nav:64px;--ann:32px}
+  .lg{height:26px}
+  .ann{font-size:.74rem;justify-content:flex-start;padding:0 2.4rem 0 .9rem}
+  .hx{min-height:560px}
+  .hx-title{font-size:clamp(2.7rem,13vw,4rem);max-width:none;min-height:3.6em}
+  .hx-step{font-size:0}
+  .hx-step b{font-size:.9rem}
+  .hx-cta{width:100%}
+  .hx-cta .btn{flex:1;justify-content:center;padding:.95rem 1rem}
+  .hx-side{display:none}
+  .eq-line{font-size:clamp(1.7rem,9vw,2.6rem)}
+  .wm-row{font-size:.66rem}
+  .talk-big{font-size:clamp(3rem,15vw,4.6rem)}
+  .aim-t{font-size:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .hx-title .w>span{transform:none!important}
+  .eq-line>*{opacity:1;transform:none}
+  .reel-col,.weave,.wm-thread,.phead::after,.ahead::before{animation:none}
+  mark{background-size:100% 100%;color:var(--paper)}
+}
+
+
+/* =====================================================================
+   PAGES: each one has its own energy, same woven language
+   ===================================================================== */
+.ph{position:relative;padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(3.5rem,7vw,5.5rem)}
+.ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--dhaka-thin) 0 0/32px 16px;animation:loom 50s linear infinite}
+.ph-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.ph .h1{max-width:13ch;margin-bottom:1.5rem}
+.ph-meta{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:.8rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.ph-meta span:first-child::before{content:"";display:inline-block;width:8px;height:8px;background:var(--ochre);transform:rotate(45deg);margin-right:.7rem;vertical-align:1px}
+.ph-meta [lang=ne]{font-family:var(--ne);font-size:1.05rem;letter-spacing:.04em;text-transform:none;color:var(--maroon);font-weight:600}
+.aside-note{display:block;max-width:64ch;color:var(--ink-2);font-size:.97rem;border-left:3px solid var(--ochre);padding:.2rem 0 .2rem 1rem;margin-bottom:2.5rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- ABOUT: three worlds, a thread, a deck ---------- */
+.venn{position:relative;aspect-ratio:1/1.08;width:min(100%,480px);justify-self:center}
+.vc{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;mix-blend-mode:multiply;display:flex;padding:14%;color:var(--paper);font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:clamp(1rem,1.8vw,1.3rem);letter-spacing:-.01em;transition:transform .7s var(--ease),opacity .5s,filter .5s;cursor:pointer}
+.vc span{position:relative;z-index:1;mix-blend-mode:normal}
+.v1{left:0;top:0;background:var(--maroon);align-items:flex-start;justify-content:flex-start;animation:drift1 9s ease-in-out infinite alternate}
+.v2{right:0;top:0;background:#E09A16;align-items:flex-start;justify-content:flex-end;color:var(--ink);animation:drift2 11s ease-in-out infinite alternate}
+.v3{left:19%;bottom:8%;background:var(--sky);align-items:flex-end;justify-content:center;animation:drift3 10s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(4%,3%)}}@keyframes drift2{to{transform:translate(-4%,4%)}}@keyframes drift3{to{transform:translate(0,-4%)}}
+.venn:hover .vc,.venn.pick .vc{opacity:.35;filter:saturate(.6)}
+.venn .vc:hover,.venn .vc.on{opacity:1;filter:none;transform:scale(1.05);z-index:2}
+.v-core{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-family:var(--ne);font-weight:800;font-size:clamp(2.4rem,4vw,3.4rem);color:var(--paper);pointer-events:none;z-index:3;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.v-cap{position:absolute;left:0;right:0;bottom:-2.5rem;text-align:center;font-size:.95rem;color:var(--ink-2);min-height:3em}
+.story-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2.5rem,7vw,7rem);align-items:start}
+.story-intro{position:sticky;top:calc(var(--nav) + var(--ann) + 2rem)}
+.story-intro .h2{margin-bottom:1.5rem;max-width:14ch}
+.thread{list-style:none;position:relative;padding-left:2.75rem;--p:0}
+.thread::before,.thread::after{content:"";position:absolute;left:.62rem;top:.6rem;bottom:.6rem;width:3px;background:var(--line)}
+.thread::after{background:var(--dhaka-thin) 0 0/16px 8px;background-color:var(--maroon);transform-origin:top;transform:scaleY(var(--p));width:6px;left:.5rem}
+.thread li{position:relative;padding-bottom:clamp(2.2rem,5vw,3.4rem);opacity:.38;transition:opacity .6s}
+.thread li.lit{opacity:1}
+.thread li::before{content:"";position:absolute;left:-2.62rem;top:.35rem;width:16px;height:16px;background:var(--paper);border:3px solid var(--line);transform:rotate(45deg);transition:background .4s,border-color .4s;z-index:1}
+.thread li.lit::before{background:var(--ochre);border-color:var(--maroon)}
+.t-k{display:block;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:.3rem}
+.thread h3{font-family:var(--disp);font-weight:720;font-stretch:88%;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:-.02em;line-height:1.02;margin-bottom:.5rem}
+.thread p{color:var(--ink-2);max-width:48ch}
+.t-now h3{color:var(--maroon)}
+.t-now .t-k::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#E3263F;margin-left:.5rem;animation:blink 1.2s steps(2) infinite}
+.deck{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.vcard{position:relative;aspect-ratio:4/3;perspective:1200px;text-align:left;color:inherit}
+.vf,.vb{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .8s var(--ease);padding:clamp(1.2rem,2.4vw,1.8rem);display:flex;flex-direction:column}
+.vf{background:var(--maroon);color:var(--paper);justify-content:space-between}
+.vcard:nth-child(2) .vf{background:var(--ink)}
+.vcard:nth-child(3) .vf{background:var(--ochre);color:var(--ink)}
+.vcard:nth-child(4) .vf{background:var(--sky)}
+.vcard:nth-child(5) .vf{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.vcard:nth-child(6) .vf{background:var(--maroon-d)}
+.vf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--dhaka-thin) 0 0/20px 10px;opacity:.9}
+.vf i{font-style:normal;font-family:var(--disp);font-weight:700;font-size:.95rem;opacity:.75}
+.vf b{font-family:var(--disp);font-weight:760;font-stretch:84%;font-size:clamp(1.8rem,3.6vw,2.9rem);letter-spacing:-.03em;line-height:.95}
+.vf em{position:absolute;right:1.2rem;top:1rem;font-style:normal;font-size:1.1rem;opacity:.7;transition:transform .5s var(--ease)}
+.vcard:hover .vf em{transform:rotate(180deg)}
+.vb{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);transform:rotateY(180deg);justify-content:center;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.5}
+.vcard.on .vf{transform:rotateY(-180deg)}
+.vcard.on .vb{transform:none}
+.crew{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2.5rem}
+.crew-card{display:flex;gap:1.5rem;align-items:center;padding:clamp(1.5rem,3vw,2.25rem);border:2px solid var(--ink)}
+.crew-av{position:relative;width:96px;height:96px;flex-shrink:0;background:var(--maroon);color:var(--paper);display:grid;place-items:center;overflow:hidden;font-family:var(--disp);font-weight:800;font-size:2.8rem}
+.crew-av span{grid-area:1/1;transition:transform .6s var(--ease)}
+.crew-av [lang=ne]{font-family:var(--ne);transform:translateY(110%)}
+.crew-card:hover .crew-av span:first-child{transform:translateY(-110%)}
+.crew-card:hover .crew-av [lang=ne]{transform:none}
+.crew-card h3,.crew-join h3{font-family:var(--disp);font-weight:740;font-stretch:88%;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.02em;line-height:1}
+.crew-card p{color:var(--ink-2);margin-top:.35rem}
+.crew-card .label,.crew-join .label{margin-bottom:.5rem}
+.crew-join{position:relative;isolation:isolate;overflow:hidden;display:block;padding:clamp(1.5rem,3vw,2.25rem);background:var(--ink);color:var(--paper);text-decoration:none}
+.crew-join::before{content:"";position:absolute;inset:-12px 0 0;z-index:-1;background:var(--maroon);clip-path:var(--tooth);transform:translateY(102%);transition:transform .6s var(--ease)}
+.crew-join:hover::before{transform:none}
+.crew-join p{color:rgba(246,241,232,.75);margin:.5rem 0 1.25rem;max-width:44ch}
+.crew-go{font-weight:700;border-bottom:2px solid var(--ochre)}
+
+/* ---------- MISSION: a bold declaration, read as you scroll ---------- */
+.ph-mission{background:var(--maroon);color:var(--paper)}
+.ph-mission .ph-meta{color:rgba(246,241,232,.7);border-color:rgba(246,241,232,.25)}
+.ph-mission .ph-meta [lang=ne]{color:var(--ochre)}
+.ms-title{font-family:var(--disp);font-weight:800;font-stretch:80%;font-size:clamp(3.2rem,10.5vw,10rem);line-height:.86;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:2rem;animation:msIn 1.2s var(--ease) both}
+.ms-title span{display:block;color:var(--ochre)}
+@keyframes msIn{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.ph-mission .lead{color:rgba(246,241,232,.85);max-width:44ch}
+.manifesto{padding:clamp(5rem,12vw,9rem) 0}
+.mf{font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:clamp(1.9rem,4.8vw,4.1rem);line-height:1.06;letter-spacing:-.025em;max-width:22ch;margin:1.5rem 0 2.5rem}
+.mf .mw{opacity:.14;transition:opacity .35s,color .35s}
+.mf .mw.on{opacity:1}
+.mf .mw.key.on{color:var(--maroon)}
+.mf-more{max-width:62ch;margin-left:auto;padding-left:1.25rem;border-left:3px solid var(--maroon)}
+.g2-head{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:end;margin-bottom:2.5rem}
+.g2-head .h2{max-width:15ch}
+.fold{display:flex;gap:10px;height:clamp(380px,48vw,500px)}
+.fp{position:relative;isolation:isolate;overflow:hidden;flex:1;min-width:0;background:var(--c);color:var(--paper);text-align:left;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;transition:flex .8s var(--ease)}
+.fp::before{content:"";position:absolute;left:0;right:0;top:0;height:24px;z-index:-1;background:var(--dhaka) 0 0/48px 24px;opacity:0;transform:translateY(-100%);transition:opacity .6s,transform .6s var(--ease)}
+.fp.on{flex:3.4}
+.fp.on::before{opacity:1;transform:none}
+.fp-n{position:absolute;top:1.3rem;left:1.5rem;font-family:var(--disp);font-weight:700;opacity:.75}
+.fp-ne{position:absolute;top:1.1rem;right:1.4rem;font-family:var(--ne);font-weight:800;font-size:1.3rem;color:var(--ochre)}
+.fp:nth-child(2) .fp-ne{color:var(--ink)}
+.fp-t{font-family:var(--disp);font-weight:780;font-stretch:84%;font-size:clamp(1.8rem,3.4vw,3.2rem);letter-spacing:-.03em;line-height:1;white-space:nowrap;transition:transform .8s var(--ease)}
+.fp:not(.on) .fp-t{transform-origin:left bottom;transform:translateY(-.2em) rotate(-90deg) translateX(0);position:absolute;left:calc(1.5rem + .9em);bottom:1.5rem}
+.fp-p{max-width:36ch;font-size:1.05rem;line-height:1.5;margin-top:.9rem;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .6s var(--ease)}
+.fp.on .fp-p{opacity:.92;transform:none;transition-delay:.25s}
+.serve{padding:clamp(4.5rem,9vw,7rem) 0 clamp(3rem,6vw,4.5rem);overflow:hidden}
+.serve-rows{margin-top:clamp(2.5rem,5vw,4rem);display:grid;gap:.4rem}
+.sr{overflow:hidden;white-space:nowrap}
+.sr-t{display:inline-flex;gap:3rem;animation:tick 48s linear infinite;padding-right:3rem}
+.sr.rev .sr-t{animation-direction:reverse;animation-duration:56s}
+.sr span{font-family:var(--disp);font-weight:800;font-stretch:82%;font-size:clamp(2.4rem,7vw,6.2rem);letter-spacing:-.02em;text-transform:uppercase;line-height:1.05;color:transparent;-webkit-text-stroke:1.5px rgba(246,241,232,.55);transition:color .3s}
+.sr span:hover{color:var(--ochre);-webkit-text-stroke-color:var(--ochre)}
+.sr span:nth-child(3n+2){color:var(--paper);-webkit-text-stroke:0}
+.serve:hover .sr-t{animation-play-state:paused}
+.pill-tabs{display:grid;grid-template-columns:.9fr 1.3fr;gap:clamp(2rem,5vw,5rem);border-top:2px solid var(--ink);padding-top:2rem}
+.pt-nav{display:flex;flex-direction:column;gap:.25rem}
+.pt{position:relative;text-align:left;font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:-.02em;line-height:1.08;padding:1rem 1rem 1rem 3.5rem;color:var(--muted);transition:color .3s,background .3s}
+.pt i{position:absolute;left:1rem;top:1.15rem;font-style:normal;font-size:.95rem;color:var(--ochre)}
+.pt:hover{color:var(--ink)}
+.pt.on{color:var(--paper);background:var(--maroon)}
+.pt.on i{color:var(--ochre)}
+.pt-p{display:none;list-style:none;counter-reset:pi}
+.pt-p.on{display:grid;gap:0}
+.pt-p li{counter-increment:pi;display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);font-size:1.07rem;line-height:1.5;animation:liIn .6s var(--ease) both;animation-delay:calc(var(--k,0)*70ms)}
+.pt-p li::before{content:counter(pi,decimal-leading-zero);font-family:var(--disp);font-weight:700;color:var(--maroon)}
+@keyframes liIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+
+/* ---------- WORK: a production slate ---------- */
+.slate{background:var(--ink);color:var(--paper);padding:clamp(1.5rem,3vw,2.25rem);position:relative;overflow:hidden}
+.slate::before{content:"";position:absolute;left:0;right:0;top:0;height:22px;background:repeating-linear-gradient(-45deg,var(--paper) 0 16px,var(--ink) 16px 32px);opacity:.92}
+.sl-row{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(246,241,232,.18)}
+.sl-row:first-of-type{margin-top:1.4rem}
+.sl-row b{font-family:var(--disp);font-weight:800;font-stretch:84%;font-size:clamp(2.6rem,5vw,4rem);line-height:.9;color:var(--ochre);min-width:1.4em;font-variant-numeric:tabular-nums}
+.sl-row span{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,232,.75)}
+.sl-foot{margin-top:1rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,241,232,.5)}
+.prod{padding:clamp(4.5rem,9vw,7rem) 0}
+.prod-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.prod-title{font-family:var(--disp);font-weight:800;font-stretch:80%;font-size:clamp(3.4rem,9vw,8rem);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:1.5rem}
+.prod .body{color:rgba(246,241,232,.75);max-width:48ch}
+.stages{position:relative;display:grid;gap:0;padding-left:2.4rem}
+.stages::before{content:"";position:absolute;left:.55rem;top:.7rem;bottom:.7rem;width:2px;background:rgba(246,241,232,.2)}
+.stg{position:relative;padding:.9rem 0 1.1rem;border-bottom:1px solid rgba(246,241,232,.14);color:rgba(246,241,232,.5)}
+.stg i{position:absolute;left:-2.4rem;top:1.05rem;width:14px;height:14px;transform:rotate(45deg);border:2px solid rgba(246,241,232,.4);background:var(--ink)}
+.stg b{display:block;font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:1.35rem;color:inherit}
+.stg span{font-size:.93rem}
+.stg.done{color:rgba(246,241,232,.82)}
+.stg.done i{background:var(--paper);border-color:var(--paper)}
+.stg.now{color:var(--paper)}
+.stg.now b{color:var(--ochre)}
+.stg.now i{background:var(--ochre);border-color:var(--ochre);box-shadow:0 0 0 0 rgba(242,167,27,.6);animation:ping 1.8s ease-out infinite}
+@keyframes ping{to{box-shadow:0 0 0 14px rgba(242,167,27,0)}}
+.also{margin-top:clamp(3.5rem,7vw,5rem)}
+.also-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:12px}
+.al{border:1px solid rgba(246,241,232,.25);padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .3s,background .3s}
+.al:hover{border-color:var(--ochre);background:rgba(246,241,232,.04)}
+.al-s{align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--ochre);padding:.25rem .5rem}
+.al h3{font-family:var(--disp);font-weight:720;font-stretch:88%;font-size:1.5rem;letter-spacing:-.02em}
+.al p{color:rgba(246,241,232,.7);font-size:.95rem}
+.al .textlink{align-self:flex-start;margin-top:auto}
+.al .textlink:hover{color:var(--ochre)}
+.ideas-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:end;margin-bottom:2rem}
+.ideas-head .h2{max-width:13ch}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.filter{border-radius:0;border:2px solid var(--ink);padding:.6rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--ink);display:inline-flex;gap:.55rem;align-items:center}
+.filter i{font-style:normal;font-size:.7rem;background:var(--ink);color:var(--paper);min-width:1.7em;padding:.1em .35em;text-align:center}
+.filter:hover{background:var(--paper-2)}
+.filter.active{background:var(--ink);color:var(--paper)}
+.filter.active i{background:var(--ochre);color:var(--ink)}
+.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{display:flex;flex-direction:row;padding:0;border:0;border-radius:0;gap:0;background:var(--white);position:relative;min-height:260px;filter:drop-shadow(0 1px 0 var(--line));transition:transform .45s var(--ease),filter .45s;
+  -webkit-mask:radial-gradient(circle 11px at calc(100% - 92px) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 11px at calc(100% - 92px) 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle 11px at calc(100% - 92px) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 11px at calc(100% - 92px) 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.plan[hidden]{display:none}
+.plan:hover{transform:translateY(-6px) rotate(-.4deg);filter:drop-shadow(0 18px 24px rgba(20,16,16,.18))}
+.tk{flex:1;padding:1.4rem 1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;border-top:6px solid var(--tc,var(--maroon))}
+.plan[data-c=edu]{--tc:var(--maroon)}.plan[data-c=screen]{--tc:var(--ink)}.plan[data-c=arts]{--tc:var(--ochre)}.plan[data-c=comm]{--tc:var(--sky)}
+.tk .cat{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tk h3{font-family:var(--disp);font-weight:740;font-stretch:88%;font-size:1.45rem;letter-spacing:-.02em;line-height:1.05}
+.tk p{color:var(--ink-2);font-size:.93rem;line-height:1.5}
+.stub{width:92px;flex-shrink:0;border-left:2px dashed var(--line);border-top:6px solid var(--tc,var(--maroon));display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.2rem .4rem;text-align:center}
+.stub small{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stub b{font-family:var(--disp);font-weight:800;font-size:2rem;line-height:1;color:var(--tc,var(--maroon))}
+.plan[data-c=arts] .stub b{color:#B9781A}
+.stub a{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.6rem .35rem;border:2px solid var(--ink);transition:background .3s,color .3s}
+.stub a:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- GET INVOLVED: choose your path ---------- */
+.ph-involve{background:var(--ochre);color:var(--ink)}
+.ph-involve .ph-meta{color:rgba(20,16,16,.7);border-color:rgba(20,16,16,.25)}
+.ph-involve .ph-meta span:first-child::before{background:var(--maroon)}
+.ph-involve .lead{color:var(--ink);max-width:46ch}
+.ph-involve .serif-i{color:var(--maroon)}
+.paths{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.paths-q{font-family:var(--disp);font-weight:760;font-stretch:84%;font-size:clamp(1.6rem,3.6vw,2.6rem);letter-spacing:-.03em;margin-bottom:1rem}
+.paths-opts{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem}
+.po{font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:clamp(1.1rem,2.2vw,1.6rem);letter-spacing:-.02em;padding:.6rem 1.1rem;border:2px solid var(--ink);color:var(--ink);transition:background .3s,color .3s,transform .3s}
+.po:hover{transform:translateY(-2px)}
+.po.on{background:var(--ink);color:var(--paper)}
+.paths-out{position:relative}
+.pw{display:none;grid-template-columns:auto 1fr auto;gap:1.5rem 2rem;align-items:center;background:var(--paper);padding:clamp(1.5rem,3vw,2.25rem);box-shadow:8px 8px 0 var(--maroon)}
+.pw.on{display:grid;animation:pwIn .6s var(--ease)}
+@keyframes pwIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pw-n{font-family:var(--disp);font-weight:800;font-size:3rem;line-height:1;color:var(--maroon)}
+.pw h3{font-family:var(--disp);font-weight:740;font-stretch:88%;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.02em;margin-bottom:.4rem}
+.pw p{color:var(--ink-2);max-width:58ch}
+.give-big{font-family:var(--disp);font-weight:800;font-stretch:80%;font-size:clamp(4rem,10vw,7.5rem);line-height:.9;letter-spacing:-.03em;color:var(--ochre);display:flex;align-items:baseline;gap:.6rem;margin-bottom:1.25rem}
+.give-big small{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.14em;color:rgba(246,241,232,.7)}
+.give .donate-box{background:transparent;border:0;padding:0}
+.give .amts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.give .amt{border-radius:0;border:2px solid rgba(246,241,232,.4);background:transparent;color:var(--paper);font-family:var(--disp);font-weight:700;font-size:1.25rem;padding:.9rem 0;transition:background .3s,color .3s,border-color .3s}
+.give .amt:hover{border-color:var(--paper)}
+.give .amt.active{background:var(--paper);color:var(--maroon);border-color:var(--paper)}
+.give #donateBtn{width:100%;justify-content:center;margin-bottom:.75rem}
+.give small{color:rgba(246,241,232,.7)}
+.fund-grid{display:grid;grid-template-columns:.9fr 1.2fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.funds2{list-style:none;margin-top:1.75rem}
+.funds2 li{display:grid;grid-template-columns:auto 1fr auto;gap:1.25rem;align-items:start;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.f-dot{width:12px;height:12px;margin-top:.45rem;transform:rotate(45deg);border:2px solid var(--maroon)}
+.f-you .f-dot{background:var(--ochre);border-color:var(--ochre);animation:ping 1.8s ease-out infinite}
+.funds2 h4{font-family:var(--disp);font-weight:700;font-stretch:90%;font-size:1.25rem;letter-spacing:-.015em;margin-bottom:.25rem}
+.funds2 p{color:var(--ink-2);font-size:.95rem}
+.f-s{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid var(--ink);padding:.3rem .55rem;white-space:nowrap}
+
+/* ---------- CONTACT: write us a letter ---------- */
+.ct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:start}
+.ct-side .h1{font-size:clamp(2.8rem,6.4vw,5.4rem)}
+.mailbig{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;margin:2rem 0 1.5rem;padding:1.15rem 1.25rem;background:var(--ink);color:var(--paper);font-family:var(--disp);font-weight:700;font-stretch:90%;font-size:clamp(1.05rem,2vw,1.4rem);letter-spacing:-.01em;text-align:left;position:relative;isolation:isolate;overflow:hidden}
+.mailbig::before{content:"";position:absolute;inset:-12px 0 0;z-index:-1;background:var(--maroon);clip-path:var(--tooth);transform:translateY(102%);transition:transform .55s var(--ease)}
+.mailbig:hover::before{transform:none}
+.mailbig i{font-style:normal;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid rgba(246,241,232,.5);padding:.3rem .55rem}
+.cdetails{margin-top:0}
+.letter{position:relative;background:var(--white);padding:calc(12px + clamp(1.6rem,4vw,3rem)) clamp(1.6rem,4vw,3rem) clamp(1.6rem,4vw,3rem);box-shadow:10px 10px 0 var(--ink)}
+.letter::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:var(--dhaka-thin) 0 0/24px 12px}
+.lt-to{display:flex;justify-content:space-between;gap:1rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-bottom:1rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+.lt-line{font-family:var(--disp);font-weight:600;font-stretch:92%;font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:2;letter-spacing:-.015em;color:var(--ink)}
+.lt-line input,.lt-line select{font:inherit;font-weight:700;color:var(--maroon);background:transparent;border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:0 .15em;margin:0 .1em;width:auto;min-width:5ch;transition:border-color .3s,background .3s}
+.lt-line input{field-sizing:content;max-width:100%}
+.lt-line input:focus,.lt-line select:focus{outline:none;border-bottom-color:var(--maroon);background:rgba(122,31,46,.06)}
+.lt-line input::placeholder{color:rgba(20,16,16,.32);font-weight:600}
+.lt-line select{-webkit-appearance:none;appearance:none;padding-right:1.1em;background:linear-gradient(45deg,transparent 50%,var(--maroon) 50%) right .2em top 55%/.45em .45em no-repeat,linear-gradient(-45deg,transparent 50%,var(--maroon) 50%) right -.05em top 55%/.45em .45em no-repeat;max-width:100%}
+#fn,#ln{width:9ch}#org{width:15ch}#em{width:14ch}
+.lt-lbl{display:block;margin:1.75rem 0 .5rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.letter textarea{width:100%;min-height:150px;padding:1rem;border:2px solid var(--ink);border-radius:0;background:repeating-linear-gradient(transparent 0 31px,var(--line) 31px 32px);font:inherit;font-size:1.05rem;line-height:32px;resize:vertical;color:var(--ink)}
+.letter textarea:focus{outline:none;border-color:var(--maroon)}
+.lt-foot{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-top:1.5rem}
+.lt-foot small{color:var(--muted)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .ph-grid,.story-grid,.g2-head,.pill-tabs,.prod-grid,.ideas-head,.fund-grid,.ct-grid{grid-template-columns:1fr}
+  .story-intro{position:static}
+  .venn{width:min(100%,380px);margin-bottom:3rem}
+  .deck{grid-template-columns:1fr 1fr}
+  .crew{grid-template-columns:1fr}
+  .fold{flex-direction:column;height:auto}
+  .fp{min-height:84px;flex:none;transition:min-height .7s var(--ease)}
+  .fp.on{min-height:280px;flex:none}
+  .fp:not(.on) .fp-t{position:static;transform:none}
+  .fp:not(.on) .fp-p{display:none}
+  .pt-nav{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .pt{flex:0 0 auto;max-width:70vw;font-size:1.1rem;padding:.8rem .9rem .8rem 2.6rem}
+  .pt i{left:.8rem;top:.95rem}
+  .tickets{grid-template-columns:1fr 1fr}
+  .also-row{grid-auto-flow:row;grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .ms-title{font-size:10.6vw}
+  .fp:not(.on) .fp-n{display:none}
+  .deck{grid-template-columns:1fr}
+  .vcard{aspect-ratio:16/9}
+  .tickets{grid-template-columns:1fr}
+  .also-row{grid-template-columns:1fr}
+  .pw{grid-template-columns:1fr}
+  .pw-n{font-size:2rem}
+  .funds2 li{grid-template-columns:auto 1fr}
+  .funds2 li>:last-child{grid-column:2}
+  .lt-line{line-height:1.9}
+  #fn,#ln,#org,#em{width:100%;display:block;margin:.2em 0}
+  .lt-line select{display:block;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .vc,.sr-t,.stg.now i,.f-you .f-dot{animation:none}
+  .mf .mw{opacity:1}
+}
+
 </style>
 </head>
 <body>
 
 <!-- ================= NAV ================= -->
+<div class="ann" id="ann"><span class="rec-dot" aria-hidden="true"></span><a href="/work"><b>Now in production:</b> <span>Where We Work, a documentary on rural and culturally diverse health workers →</span></a><button class="ann-x" id="annX" type="button" aria-label="Hide this message">✕</button></div>
 <header class="nav" id="nav">
   <div class="container nav-in">
-    <a class="logo" href="/" aria-label="KRNBRY Studio home"><b>KRNBRY</b><span>studio</span></a>
+    <a class="logo" href="/" aria-label="KRNBRY Studio home"><svg class="lg" viewBox="0 0 1149.2 288.34" aria-hidden="true"><g class="lg-w" transform="translate(9.2 161.6)"><g class="lg-k"><path d="M14.8 0.0V-137.6H64.2V-76.80L130.8 -137.6H192.0L131.20 -81.4L193.60 0.0H133.4L94.80 -51.80L64.2 -27.0V0.0Z"/></g><text class="lg-ka" x="104" y="2" text-anchor="middle">क</text><path d="M206.40 0.0V-137.6H325.6Q341.0 -137.6 351.3 -131.2Q361.6 -124.80 366.8 -114.4Q372.0 -104.0 372.0 -92.0Q372.0 -78.2 365.90 -67.5Q359.80 -56.80 348.0 -50.40L375.20 0.0H319.40L298.6 -43.0H255.8V0.0ZM255.8 -77.2H308.20Q313.8 -77.2 317.6 -80.7Q321.40 -84.2 321.40 -90.4Q321.40 -94.60 319.6 -97.5Q317.8 -100.4 314.9 -101.9Q312.0 -103.4 308.20 -103.4H255.8Z"/><path d="M389.00 0.0V-137.6H432.00L500.00 -80.2Q501.20 -79.2 503.40 -77.2Q505.6 -75.2 508.00 -73.0Q510.40 -70.8 512.40 -69.0H514.40Q514.40 -71.8 514.40 -76.5Q514.40 -81.2 514.40 -85.60V-137.6H560.80V0.0H518.2L453.6 -54.2Q449.40 -57.6 444.70 -61.8Q440.00 -66.0 437.20 -68.60H435.40Q435.40 -65.8 435.40 -60.7Q435.40 -55.6 435.40 -50.40V0.0Z"/><path d="M584.4 0.0V-137.6H703.2Q714.6 -137.6 723.90 -133.3Q733.2 -129.0 738.7 -121.4Q744.2 -113.80 744.2 -103.80Q744.2 -93.80 740.80 -87.4Q737.40 -81.0 731.7 -77.30Q726.0 -73.60 719.2 -71.8V-71.0Q727.0 -69.4 733.40 -65.5Q739.80 -61.6 743.60 -54.6Q747.40 -47.6 747.40 -36.6Q747.40 -25.6 741.7 -17.40Q736.0 -9.20 726.2 -4.60Q716.40 0.0 704.40 0.0ZM633.80 -32.0H684.6Q690.0 -32.0 693.40 -35.2Q696.80 -38.40 696.80 -44.80Q696.80 -47.80 695.30 -50.30Q693.80 -52.80 691.0 -54.2Q688.2 -55.6 684.6 -55.6H633.80ZM633.80 -84.0H681.40Q685.2 -84.0 687.90 -85.5Q690.6 -87.0 692.1 -89.80Q693.6 -92.60 693.6 -96.80Q693.6 -101.2 690.0 -104.30Q686.40 -107.4 681.40 -107.4H633.80Z"/><path d="M764.4 0.0V-137.6H883.6Q899.0 -137.6 909.3 -131.2Q919.6 -124.80 924.8 -114.4Q930.0 -104.0 930.0 -92.0Q930.0 -78.2 923.90 -67.5Q917.80 -56.80 906.0 -50.40L933.2 0.0H877.40L856.6 -43.0H813.80V0.0ZM813.80 -77.2H866.2Q871.80 -77.2 875.60 -80.7Q879.40 -84.2 879.40 -90.4Q879.40 -94.60 877.60 -97.5Q875.80 -100.4 872.90 -101.9Q870.0 -103.4 866.2 -103.4H813.80Z"/><path d="M998.2 0.0V-54.2L929.6 -137.6H987.40L1023.2 -91.2H1024.60L1060.4 -137.6H1116.0L1047.60 -54.2V0.0Z"/></g><g class="lg-s" transform="translate(837.1 263.16)"><path d="M8.02 -13.03Q8.20 -9.02 8.67 -6.72Q9.14 -4.42 9.91 -3.42Q10.73 -2.41 11.74 -2.15Q12.74 -1.88 14.04 -1.88Q17.75 -1.88 20.38 -3.06Q23.00 -4.24 24.39 -6.51Q25.78 -8.79 25.78 -11.97Q25.78 -13.86 25.07 -15.98Q24.36 -18.11 22.77 -20.73Q21.18 -23.36 18.46 -26.84Q15.81 -30.32 14.30 -33.15Q12.80 -35.98 12.21 -38.40Q11.62 -40.82 11.62 -43.07Q11.62 -48.20 14.33 -52.39Q17.05 -56.58 21.77 -59.08Q26.49 -61.59 32.56 -61.59Q36.81 -61.59 39.29 -60.65Q41.77 -59.70 42.83 -58.02Q43.89 -56.34 43.89 -54.04Q43.89 -52.27 43.04 -51.00Q42.18 -49.73 40.23 -49.05Q38.29 -48.37 34.86 -48.37Q35.10 -52.56 34.81 -54.75Q34.51 -56.93 33.80 -57.76Q33.09 -58.58 32.06 -58.88Q31.03 -59.17 29.32 -59.17Q24.48 -59.17 21.56 -56.75Q18.64 -54.33 18.64 -49.73Q18.64 -47.96 19.20 -46.04Q19.76 -44.13 21.21 -41.59Q22.65 -39.05 25.31 -35.34Q27.96 -31.68 29.47 -28.85Q30.97 -26.01 31.59 -23.65Q32.21 -21.29 32.21 -18.99Q32.21 -13.09 29.32 -8.55Q26.43 -4.01 21.38 -1.41Q16.34 1.18 9.91 1.18Q5.60 1.18 3.06 0.23Q0.53 -0.70 -0.59 -2.44Q-1.71 -4.18 -1.71 -6.48Q-1.71 -8.79 -0.70 -10.23Q0.29 -11.68 2.44 -12.36Q4.60 -13.03 8.02 -13.03Z"/><path d="M49.38 -57.34 50.32 -60.41H83.66L82.89 -57.34ZM56.22 -13.80Q55.81 -12.44 55.57 -11.53Q55.34 -10.62 55.25 -10.03Q55.16 -9.44 55.16 -8.96Q55.16 -7.84 55.84 -7.37Q56.52 -6.90 57.81 -6.90Q59.23 -6.90 61.44 -7.84Q63.66 -8.79 66.96 -11.62Q70.26 -14.45 74.81 -20.06L75.34 -19.64Q70.85 -12.86 67.23 -8.73Q63.60 -4.60 60.65 -2.44Q57.70 -0.29 55.31 0.44Q52.92 1.18 50.97 1.18Q48.37 1.18 46.61 -0.35Q44.83 -1.88 44.83 -5.48Q44.83 -6.66 45.16 -8.73Q45.48 -10.79 46.96 -15.45L66.02 -74.92H75.81Z"/><path d="M111.74 -3.71 117.29 -21.47H117.82Q113.69 -14.98 110.38 -10.62Q107.08 -6.25 104.22 -3.65Q101.36 -1.06 98.70 0.05Q96.05 1.18 93.22 1.18Q87.85 1.18 85.66 -1.35Q83.48 -3.89 83.48 -7.55Q83.48 -9.26 83.89 -11.18Q84.31 -13.09 85.01 -14.98L100.18 -55.22L101.59 -53.27Q100.53 -53.92 97.99 -53.24Q95.46 -52.56 91.44 -49.67Q87.43 -46.78 81.95 -40.65L81.42 -41.06Q86.55 -48.32 90.86 -52.86Q95.16 -57.40 98.82 -59.50Q102.48 -61.59 105.61 -61.59Q109.09 -61.59 110.38 -60.09Q111.68 -58.58 110.27 -54.98L95.22 -16.57Q94.51 -14.80 94.16 -13.39Q93.81 -11.97 93.81 -10.97Q93.81 -8.85 95.22 -7.99Q96.64 -7.13 99.35 -7.13Q101.95 -7.13 104.90 -9.02Q107.85 -10.91 110.65 -13.83Q113.45 -16.75 115.55 -19.94Q117.64 -23.12 118.53 -25.66L130.21 -60.41H139.82L121.12 -5.13L120.06 -6.96Q121.65 -6.43 124.31 -7.40Q126.96 -8.37 130.59 -11.29Q134.22 -14.21 138.64 -19.47L139.18 -19.05Q131.98 -7.67 126.23 -3.24Q120.47 1.18 116.22 1.18Q113.33 1.18 112.18 -0.11Q111.03 -1.41 111.74 -3.71Z"/><path d="M190.39 -49.73Q188.74 -54.27 186.49 -55.90Q184.25 -57.52 181.30 -57.52Q177.0 -57.52 172.72 -54.39Q168.44 -51.27 164.61 -46.16Q160.77 -41.06 157.76 -35.13Q154.75 -29.20 153.04 -23.45Q151.33 -17.7 151.33 -13.33Q151.33 -9.55 152.95 -8.05Q154.57 -6.54 157.05 -6.54Q158.41 -6.54 160.09 -7.16Q161.77 -7.78 163.78 -9.20Q165.79 -10.62 168.14 -12.92Q170.51 -15.22 173.25 -18.52Q175.99 -21.83 179.12 -26.31L195.52 -76.87Q194.46 -77.58 193.01 -78.49Q191.57 -79.41 189.95 -80.50Q188.32 -81.59 186.61 -82.65L186.67 -83.01L207.85 -87.55H208.03L181.95 -5.13L180.42 -6.90Q181.95 -6.43 184.64 -7.37Q187.32 -8.31 191.18 -11.20Q195.05 -14.10 200.06 -19.47L200.6 -19.05Q192.98 -8.31 187.11 -3.56Q181.24 1.18 176.88 1.18Q173.69 1.18 172.75 -0.32Q171.80 -1.82 172.92 -5.42L179.53 -26.01H180.18Q174.52 -17.34 170.12 -11.94Q165.73 -6.54 162.33 -3.71Q158.94 -0.88 156.35 0.14Q153.75 1.18 151.63 1.18Q148.56 1.18 146.11 -0.08Q143.66 -1.35 142.27 -3.83Q140.89 -6.31 140.89 -9.97Q140.89 -15.75 143.04 -22.65Q145.19 -29.55 148.94 -36.37Q152.69 -43.18 157.53 -48.85Q162.36 -54.51 167.79 -57.93Q173.22 -61.36 178.71 -61.36Q182.42 -61.36 185.58 -58.94Q188.74 -56.52 190.80 -51.74Z"/><path d="M205.37 -5.42 223.96 -55.22 225.08 -53.45Q223.49 -53.86 220.98 -53.01Q218.47 -52.15 214.76 -49.32Q211.04 -46.49 205.73 -40.94L205.20 -41.35Q210.27 -48.55 214.49 -53.01Q218.71 -57.46 222.31 -59.53Q225.91 -61.59 229.03 -61.59Q232.63 -61.59 233.55 -59.85Q234.46 -58.11 233.28 -54.98L214.70 -5.19L213.28 -7.31Q214.58 -6.54 216.85 -7.10Q219.12 -7.67 223.01 -10.53Q226.91 -13.39 232.93 -19.47L233.46 -19.05Q228.38 -11.91 224.08 -7.43Q219.77 -2.94 216.20 -0.88Q212.63 1.18 209.68 1.18Q206.20 1.18 205.14 -0.32Q204.08 -1.82 205.37 -5.42ZM228.32 -79.11Q228.32 -81.00 229.24 -82.62Q230.15 -84.25 231.81 -85.22Q233.46 -86.19 235.76 -86.19Q239.18 -86.19 241.07 -84.07Q242.96 -81.95 242.96 -79.11Q242.96 -77.17 242.10 -75.43Q241.25 -73.69 239.65 -72.59Q238.06 -71.50 235.76 -71.50Q232.34 -71.50 230.33 -73.86Q228.32 -76.22 228.32 -79.11Z"/><path d="M273.34 -61.59Q278.24 -61.59 281.51 -59.56Q284.79 -57.52 286.44 -53.66Q288.09 -49.79 288.09 -44.25Q288.09 -36.10 285.26 -28.05Q282.43 -20.00 277.56 -13.39Q272.69 -6.78 266.44 -2.80Q260.19 1.18 253.34 1.18Q248.50 1.18 245.20 -0.85Q241.89 -2.89 240.24 -6.78Q238.59 -10.67 238.59 -16.16Q238.59 -24.30 241.42 -32.36Q244.26 -40.41 249.12 -47.02Q253.99 -53.63 260.24 -57.61Q266.50 -61.59 273.34 -61.59ZM253.52 -0.82Q257.06 -0.82 260.69 -3.74Q264.32 -6.66 267.56 -11.65Q270.81 -16.63 273.34 -22.95Q275.88 -29.26 277.35 -36.10Q278.83 -42.95 278.83 -49.55Q278.83 -54.63 277.50 -57.11Q276.17 -59.58 273.16 -59.58Q269.63 -59.58 266.00 -56.66Q262.37 -53.74 259.12 -48.76Q255.88 -43.77 253.34 -37.46Q250.80 -31.15 249.33 -24.30Q247.85 -17.46 247.85 -10.85Q247.85 -5.78 249.18 -3.30Q250.51 -0.82 253.52 -0.82Z"/></g></svg></a>
     <nav aria-label="Main">
       <ul class="nav-links" id="navlinks">
         <li><a href="/about">About</a></li>
@@ -650,30 +1250,85 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
 <main>
 <!-- ================= HOME ================= -->
 <div class="page" id="p-home">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="kicker">Not-for-profit media studio, Australia</div>
-        <h1 class="display h1">Stories that teach, connect and <span class="serif-i">grow</span> multicultural Australia.</h1>
-        <p class="lead">KRNBRY Studio makes films, podcasts and creative work with underrepresented and multicultural communities. Our aim is simple: create content that educates, celebrates culture, and helps Australians understand each other a little better.</p>
-        <div class="btn-row">
-          <a class="btn btn-dark" href="/mission">Our mission <span class="arr">→</span></a>
-          <a class="btn btn-line" href="/portfolio">View the portfolio</a>
+  <!-- HERO: our aims, told over photos from the portfolio -->
+  <section class="hx" id="hx" aria-label="What KRNBRY Studio is about">
+    <div class="hx-media" id="heroMedia" aria-hidden="true">
+      <div class="hx-fallback" id="heroFallback"></div>
+    </div>
+    <div class="hx-shade" aria-hidden="true"></div>
+    <div class="hx-weave" id="hxWeave" aria-hidden="true"></div>
+    <div class="hx-in container">
+      <p class="hx-tag"><span class="dia" aria-hidden="true"></span><span>Not-for-profit media studio · Australia</span></p>
+      <h1 class="hx-title" id="hxTitle">Voices that have gone unheard won't stay that way.</h1>
+      <div class="hx-foot">
+        <div class="hx-steps" id="hxSteps" role="tablist" aria-label="Our aims"></div>
+        <div class="hx-cta">
+          <a class="btn btn-solid-l" href="/mission">Our mission <span class="arr">→</span></a>
+          <a class="btn btn-ghost-l" href="/portfolio">See the work</a>
         </div>
       </div>
-      <div class="hero-media" id="heroMedia">
-        <div class="hero-fallback" id="heroFallback">
-          <svg class="hero-shapes" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <circle cx="330" cy="70" r="120" fill="#D9962A" opacity=".9"/>
-            <circle cx="330" cy="70" r="62" fill="#7A1F2E"/>
-            <rect x="-40" y="300" width="260" height="260" rx="130" fill="#561521"/>
-            <rect x="180" y="360" width="260" height="30" fill="#F4EFE7" opacity=".15"/>
-            <rect x="180" y="410" width="260" height="30" fill="#F4EFE7" opacity=".1"/>
-          </svg>
-          <span style="position:relative;font-weight:700;font-size:.9rem;opacity:.8">Est. 2026</span>
-          <div class="big" style="position:relative">Every community has a story <em>worth learning.</em></div>
+    </div>
+    <p class="hx-side" aria-hidden="true"><span lang="ne">आवाज</span> · voice through story</p>
+    <a class="hx-down" href="#hxNext" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- the wordmark, sliced like woven cloth -->
+  <section class="wm" id="hxNext" aria-label="KRNBRY Studio">
+    <div class="wm-mark" id="wmMark" aria-hidden="true">
+      <div class="wm-half wm-top"><svg class="wm-svg" viewBox="0 18 1149.2 150" aria-hidden="true"><g class="lg-w" transform="translate(9.2 161.6)"><path d="M14.8 0.0V-137.6H64.2V-76.80L130.8 -137.6H192.0L131.20 -81.4L193.60 0.0H133.4L94.80 -51.80L64.2 -27.0V0.0Z"/><path d="M206.40 0.0V-137.6H325.6Q341.0 -137.6 351.3 -131.2Q361.6 -124.80 366.8 -114.4Q372.0 -104.0 372.0 -92.0Q372.0 -78.2 365.90 -67.5Q359.80 -56.80 348.0 -50.40L375.20 0.0H319.40L298.6 -43.0H255.8V0.0ZM255.8 -77.2H308.20Q313.8 -77.2 317.6 -80.7Q321.40 -84.2 321.40 -90.4Q321.40 -94.60 319.6 -97.5Q317.8 -100.4 314.9 -101.9Q312.0 -103.4 308.20 -103.4H255.8Z"/><path d="M389.00 0.0V-137.6H432.00L500.00 -80.2Q501.20 -79.2 503.40 -77.2Q505.6 -75.2 508.00 -73.0Q510.40 -70.8 512.40 -69.0H514.40Q514.40 -71.8 514.40 -76.5Q514.40 -81.2 514.40 -85.60V-137.6H560.80V0.0H518.2L453.6 -54.2Q449.40 -57.6 444.70 -61.8Q440.00 -66.0 437.20 -68.60H435.40Q435.40 -65.8 435.40 -60.7Q435.40 -55.6 435.40 -50.40V0.0Z"/><path d="M584.4 0.0V-137.6H703.2Q714.6 -137.6 723.90 -133.3Q733.2 -129.0 738.7 -121.4Q744.2 -113.80 744.2 -103.80Q744.2 -93.80 740.80 -87.4Q737.40 -81.0 731.7 -77.30Q726.0 -73.60 719.2 -71.8V-71.0Q727.0 -69.4 733.40 -65.5Q739.80 -61.6 743.60 -54.6Q747.40 -47.6 747.40 -36.6Q747.40 -25.6 741.7 -17.40Q736.0 -9.20 726.2 -4.60Q716.40 0.0 704.40 0.0ZM633.80 -32.0H684.6Q690.0 -32.0 693.40 -35.2Q696.80 -38.40 696.80 -44.80Q696.80 -47.80 695.30 -50.30Q693.80 -52.80 691.0 -54.2Q688.2 -55.6 684.6 -55.6H633.80ZM633.80 -84.0H681.40Q685.2 -84.0 687.90 -85.5Q690.6 -87.0 692.1 -89.80Q693.6 -92.60 693.6 -96.80Q693.6 -101.2 690.0 -104.30Q686.40 -107.4 681.40 -107.4H633.80Z"/><path d="M764.4 0.0V-137.6H883.6Q899.0 -137.6 909.3 -131.2Q919.6 -124.80 924.8 -114.4Q930.0 -104.0 930.0 -92.0Q930.0 -78.2 923.90 -67.5Q917.80 -56.80 906.0 -50.40L933.2 0.0H877.40L856.6 -43.0H813.80V0.0ZM813.80 -77.2H866.2Q871.80 -77.2 875.60 -80.7Q879.40 -84.2 879.40 -90.4Q879.40 -94.60 877.60 -97.5Q875.80 -100.4 872.90 -101.9Q870.0 -103.4 866.2 -103.4H813.80Z"/><path d="M998.2 0.0V-54.2L929.6 -137.6H987.40L1023.2 -91.2H1024.60L1060.4 -137.6H1116.0L1047.60 -54.2V0.0Z"/></g></svg></div>
+      <div class="wm-thread"></div>
+      <div class="wm-half wm-bot"><svg class="wm-svg" viewBox="0 18 1149.2 150" aria-hidden="true"><g class="lg-w" transform="translate(9.2 161.6)"><path d="M14.8 0.0V-137.6H64.2V-76.80L130.8 -137.6H192.0L131.20 -81.4L193.60 0.0H133.4L94.80 -51.80L64.2 -27.0V0.0Z"/><path d="M206.40 0.0V-137.6H325.6Q341.0 -137.6 351.3 -131.2Q361.6 -124.80 366.8 -114.4Q372.0 -104.0 372.0 -92.0Q372.0 -78.2 365.90 -67.5Q359.80 -56.80 348.0 -50.40L375.20 0.0H319.40L298.6 -43.0H255.8V0.0ZM255.8 -77.2H308.20Q313.8 -77.2 317.6 -80.7Q321.40 -84.2 321.40 -90.4Q321.40 -94.60 319.6 -97.5Q317.8 -100.4 314.9 -101.9Q312.0 -103.4 308.20 -103.4H255.8Z"/><path d="M389.00 0.0V-137.6H432.00L500.00 -80.2Q501.20 -79.2 503.40 -77.2Q505.6 -75.2 508.00 -73.0Q510.40 -70.8 512.40 -69.0H514.40Q514.40 -71.8 514.40 -76.5Q514.40 -81.2 514.40 -85.60V-137.6H560.80V0.0H518.2L453.6 -54.2Q449.40 -57.6 444.70 -61.8Q440.00 -66.0 437.20 -68.60H435.40Q435.40 -65.8 435.40 -60.7Q435.40 -55.6 435.40 -50.40V0.0Z"/><path d="M584.4 0.0V-137.6H703.2Q714.6 -137.6 723.90 -133.3Q733.2 -129.0 738.7 -121.4Q744.2 -113.80 744.2 -103.80Q744.2 -93.80 740.80 -87.4Q737.40 -81.0 731.7 -77.30Q726.0 -73.60 719.2 -71.8V-71.0Q727.0 -69.4 733.40 -65.5Q739.80 -61.6 743.60 -54.6Q747.40 -47.6 747.40 -36.6Q747.40 -25.6 741.7 -17.40Q736.0 -9.20 726.2 -4.60Q716.40 0.0 704.40 0.0ZM633.80 -32.0H684.6Q690.0 -32.0 693.40 -35.2Q696.80 -38.40 696.80 -44.80Q696.80 -47.80 695.30 -50.30Q693.80 -52.80 691.0 -54.2Q688.2 -55.6 684.6 -55.6H633.80ZM633.80 -84.0H681.40Q685.2 -84.0 687.90 -85.5Q690.6 -87.0 692.1 -89.80Q693.6 -92.60 693.6 -96.80Q693.6 -101.2 690.0 -104.30Q686.40 -107.4 681.40 -107.4H633.80Z"/><path d="M764.4 0.0V-137.6H883.6Q899.0 -137.6 909.3 -131.2Q919.6 -124.80 924.8 -114.4Q930.0 -104.0 930.0 -92.0Q930.0 -78.2 923.90 -67.5Q917.80 -56.80 906.0 -50.40L933.2 0.0H877.40L856.6 -43.0H813.80V0.0ZM813.80 -77.2H866.2Q871.80 -77.2 875.60 -80.7Q879.40 -84.2 879.40 -90.4Q879.40 -94.60 877.60 -97.5Q875.80 -100.4 872.90 -101.9Q870.0 -103.4 866.2 -103.4H813.80Z"/><path d="M998.2 0.0V-54.2L929.6 -137.6H987.40L1023.2 -91.2H1024.60L1060.4 -137.6H1116.0L1047.60 -54.2V0.0Z"/></g></svg></div>
+    </div>
+    <div class="container wm-row">
+      <p>A not-for-profit media studio</p>
+      <p class="wm-mid">Films · Podcasts · Photography · Education</p>
+      <p class="wm-end">Made in Victoria, Australia</p>
+    </div>
+  </section>
+
+  <!-- the equation -->
+  <section class="eq" aria-label="What we believe">
+    <div class="container">
+      <p class="eq-line" id="eqLine">
+        <button type="button" class="eq-t" data-ne="कथा" data-ro="katha">Stories</button><span class="eq-op">+</span>
+        <button type="button" class="eq-t" data-ne="समुदाय" data-ro="samudaya">Community</button><span class="eq-op">+</span>
+        <button type="button" class="eq-t" data-ne="शिक्षा" data-ro="shiksha">Education</button><span class="eq-op">=</span>
+        <button type="button" class="eq-t eq-res" data-ne="अपनत्व" data-ro="apanatva">Belonging</button>
+      </p>
+      <p class="eq-hint" id="eqHint">Hover or tap a word to read it in Nepali.</p>
+      <div class="eq-say">
+        <h2 class="display h2">Too many stories are told <mark>about</mark> communities, not <mark>with</mark> them.</h2>
+        <div>
+          <p class="body">KRNBRY Studio exists to give voice to underrepresented and multicultural communities across Australia, and to turn their stories into content people can actually learn from.</p>
+          <p class="body">Documentaries that explain, podcasts that open up conversations, and creative work that builds pride in cultural identity. Anything we earn goes back into making more of it.</p>
+          <p style="margin-top:1.75rem"><a class="textlink" href="/about">Who we are →</a></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- the three things we do -->
+  <section class="aims" aria-label="What we do">
+    <div class="container">
+      <div class="sec-head"><span class="label">What we do</span><span class="label">03</span></div>
+      <a class="aim" href="/work" data-aim="0">
+        <span class="aim-n">01</span>
+        <span class="aim-t">Media and storytelling</span>
+        <span class="aim-p">Documentary, podcast and short-form video sharing the lives of multicultural and underrepresented Australians.</span>
+        <span class="aim-go" aria-hidden="true">→</span>
+      </a>
+      <a class="aim" href="/mission" data-aim="1">
+        <span class="aim-n">02</span>
+        <span class="aim-t">Arts, creativity and education</span>
+        <span class="aim-p">Backing artists from underrepresented communities, and turning stories into learning resources for schools and the public.</span>
+        <span class="aim-go" aria-hidden="true">→</span>
+      </a>
+      <a class="aim" href="/get-involved" data-aim="2">
+        <span class="aim-n">03</span>
+        <span class="aim-t">Live events and community</span>
+        <span class="aim-p">Showcases, performance nights and gathering spaces where cultures meet, share and are celebrated.</span>
+        <span class="aim-go" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
@@ -684,79 +1339,64 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
     </div>
   </div>
 
-  <section class="pad">
+  <!-- right now -->
+  <section class="now dark on-dark">
+    <div class="container now-in">
+      <div class="now-main">
+        <span class="rec"><i></i>In production</span>
+        <h2 class="now-title">Where<br>We Work</h2>
+        <p class="body">A short documentary following rural doctors and culturally diverse health professionals across Victoria. It's currently in progress, with the aim of submitting it to the Australian Youth Film Festival.</p>
+        <div class="btn-row" style="margin-top:2rem"><a class="btn btn-solid-l" href="/work">About the project <span class="arr">→</span></a></div>
+      </div>
+      <div class="now-reel" id="nowReel" aria-hidden="true"></div>
+    </div>
+    <div class="container now-cards">
+      <article class="nc" data-belonging="soon">
+        <span class="label">Ongoing</span>
+        <h3>Photography</h3>
+        <p>Documenting people, places and moments in our communities as we go.</p>
+        <a class="textlink" href="/portfolio">See the portfolio →</a>
+      </article>
+      <article class="nc" data-belonging="live">
+        <span class="label">Out now</span>
+        <h3>Belonging, Vol. 1</h3>
+        <p>Our yearly magazine of portraits and first-person stories about home, identity and finding your place.</p>
+        <a class="textlink" href="/belonging">Look inside →</a>
+      </article>
+      <article class="nc">
+        <span class="label">Where we started</span>
+        <h3>CityVision TV</h3>
+        <p>An online platform serving the Nepali diaspora in Australia through podcasts, interviews and community stories.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- portfolio rail -->
+  <section class="pad" id="homeStrip" hidden>
     <div class="container">
-      <div class="statement">
-        <h2 class="display h2">Too many stories are told <span class="serif-i">about</span> communities, not <span class="serif-i">with</span> them.</h2>
+      <div class="strip-head">
         <div>
-          <p class="body">We want to change that. KRNBRY Studio exists to give voice to underrepresented and marginalised communities across Australia, and to turn their stories into content people can actually learn from.</p>
-          <p class="body">That means documentaries that explain, podcasts that open up conversations, and creative work that builds pride in cultural identity. Anything we earn goes back into making more of it.</p>
-          <p style="margin-top:1.75rem"><a class="textlink" href="/about">Who we are →</a></p>
+          <span class="label">From the portfolio</span>
+          <h2 class="display h2">Seen through our lens.</h2>
+        </div>
+        <div class="strip-acts">
+          <span class="drag-hint" id="dragHint" hidden>← drag →</span>
+          <div class="strip-nav" id="stripNav" hidden><button type="button" aria-label="Previous photos">←</button><button type="button" aria-label="More photos">→</button></div>
+          <a class="btn btn-line" href="/portfolio">Full portfolio <span class="arr">→</span></a>
         </div>
       </div>
-
-      <div class="pillars">
-        <div class="pillar">
-          <span class="num">01</span>
-          <h3 class="h3">Media and storytelling</h3>
-          <p>Documentary, podcast, short-form video and digital content that shares the lives of multicultural and underrepresented Australians, including healthcare workers and rural communities.</p>
-        </div>
-        <div class="pillar">
-          <span class="num">02</span>
-          <h3 class="h3">Arts, creativity and education</h3>
-          <p>Backing artists and creators from underrepresented communities, and turning stories into learning resources for schools, young people and the wider public.</p>
-        </div>
-        <div class="pillar">
-          <span class="num">03</span>
-          <h3 class="h3">Live events and community</h3>
-          <p>Bringing people together through showcases, performance nights and gathering spaces where cultures meet, share and are celebrated.</p>
-        </div>
-      </div>
+      <div class="strip" id="stripGrid"></div>
     </div>
   </section>
 
-  <section class="pad sand">
-    <div class="container">
-      <div class="kicker">Right now</div>
-      <h2 class="display h2" style="max-width:16ch">What we're working on today.</h2>
-      <div class="now-grid">
-        <article class="card feature">
-          <div class="ring" aria-hidden="true"></div>
-          <span class="status dev">In progress</span>
-          <h3 class="display" style="font-size:clamp(2rem,4vw,3rem)">Where We Work</h3>
-          <p class="body">A short documentary following rural doctors and culturally diverse health professionals across Victoria. It's currently in progress, with the aim of submitting it to the Australian Youth Film Festival.</p>
-          <div><a class="btn btn-light" href="/work">About the project <span class="arr">→</span></a></div>
-        </article>
-        <div class="stack">
-          <article class="card plain" data-belonging="soon">
-            <span class="status idea">Ongoing</span>
-            <h3 class="h3">Photography</h3>
-            <p class="body">Documenting people, places and moments in our communities as we go.</p>
-            <div><a class="textlink" href="/portfolio">See the portfolio →</a></div>
-          </article>
-          <article class="card plain" data-belonging="live">
-            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Out now</span>
-            <h3 class="h3">Belonging, Vol. 1</h3>
-            <p class="body">Our yearly magazine of portraits and first-person stories about home, identity and finding your place.</p>
-            <div><a class="textlink" href="/belonging">Look inside →</a></div>
-          </article>
-          <article class="card plain">
-            <span class="status live">Where we started</span>
-            <h3 class="h3">CityVision TV</h3>
-            <p class="body">Our roots are in CityVision TV, an online platform serving the Nepali diaspora in Australia through podcasts, interviews and community stories.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pad dark on-dark">
+  <!-- looking ahead -->
+  <section class="pad wine on-dark ahead">
     <div class="container plans-teaser">
       <div>
-        <div class="kicker">Looking ahead</div>
+        <span class="label">Looking ahead</span>
         <h2 class="display h2" style="margin-bottom:1.5rem">Where we want to go next.</h2>
         <p class="body" style="margin-bottom:2rem">These are plans, not programs we're running yet. They're the ideas we're building towards, and we'd love the right people to help shape them.</p>
-        <a class="btn btn-light" href="/work">See all future plans <span class="arr">→</span></a>
+        <a class="btn btn-solid-l" href="/work">See all future plans <span class="arr">→</span></a>
       </div>
       <ul class="plan-list">
         <li><span class="pn">01</span><div><h4>Multilingual explainers</h4><p>Short videos that explain Australian systems like healthcare and schooling in community languages.</p></div></li>
@@ -769,30 +1409,13 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
 
   <section class="jband" aria-label="From the journal">
     <div class="container jband-in">
-      <span class="jb-label">From the journal</span>
+      <span class="label">From the journal</span>
       <a class="jb-link" id="jbLink" href="/journal/"><span id="jbTitle">Notes on where the studio is heading</span>&nbsp;<span class="arr">→</span></a>
       <span class="jb-date" id="jbDate"></span>
     </div>
   </section>
 
-  <section class="pad" id="homeStrip" hidden>
-    <div class="container">
-      <div class="strip-head">
-        <div>
-          <div class="kicker">From the portfolio</div>
-          <h2 class="display h2">Seen through our lens.</h2>
-        </div>
-        <div class="strip-acts">
-          <div class="strip-nav" id="stripNav" hidden><button type="button" aria-label="Previous photos">←</button><button type="button" aria-label="More photos">→</button></div>
-          <a class="btn btn-line" href="/portfolio">Full portfolio <span class="arr">→</span></a>
-        </div>
-      </div>
-      <div class="strip" id="stripGrid"></div>
-      <div style="height:2rem"></div>
-    </div>
-  </section>
-
-  <section class="pad-s wine on-dark">
+  <section class="pad-s dark on-dark">
     <div class="container">
       <div class="facts">
         <div class="fact"><b>100%</b><span>of any surplus reinvested</span></div>
@@ -803,9 +1426,9 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
     </div>
   </section>
 
-  <section class="pad">
-    <div class="container cta-band">
-      <h2 class="display h2">Have a story, a skill or an idea? <span class="serif-i">Let's talk.</span></h2>
+  <section class="talk">
+    <div class="container talk-in">
+      <h2 class="talk-big">Have a story?<br><span>Let's talk.</span></h2>
       <div>
         <p class="body" style="margin-bottom:1.5rem">Artists, community groups, schools, funders and anyone with a story to tell. We want to hear from you.</p>
         <div class="btn-row">
@@ -817,258 +1440,246 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   </section>
 </div>
 
+
 <!-- ================= MISSION ================= -->
 <div class="page" id="p-mission">
-  <section class="phead">
+  <section class="ph ph-mission">
     <div class="container">
-      <div class="kicker">Our mission</div>
-      <h1 class="display h1">A voice for the underrepresented.</h1>
+      <p class="ph-meta"><span>02 · Mission</span><span lang="ne">उद्देश्य</span></p>
+      <h1 class="ms-title">A voice for the <span>underrepresented.</span></h1>
       <p class="lead">And a resource that helps all of Australia learn from its many cultures.</p>
     </div>
   </section>
 
-  <section class="pad">
-    <div class="container quote-wrap">
-      <div class="quote-mark" aria-hidden="true">“</div>
-      <div>
-        <p class="quote">KRNBRY Studio exists to give voice to underrepresented and marginalised communities across Australia through authentic, community-centred storytelling in all its forms.</p>
-        <p class="body" style="margin-top:2rem">That includes culturally and linguistically diverse (CALD) communities, rural and remote Australians, refugee and asylum seeker communities, and LGBTQIA+ people. We create original work and platform the work of others. Everything we produce is made to be accessible to community, and any surplus goes back into more work, more events and more voices. None of it is distributed to members.</p>
+  <section class="manifesto">
+    <div class="container">
+      <span class="label">The mission, in one breath</span>
+      <p class="mf" id="mf">KRNBRY Studio exists to give voice to underrepresented and marginalised communities across Australia through authentic, community-centred storytelling in all its forms.</p>
+      <p class="body mf-more">That includes culturally and linguistically diverse (CALD) communities, rural and remote Australians, refugee and asylum seeker communities, and LGBTQIA+ people. We create original work and platform the work of others. Everything we produce is made to be accessible to community, and any surplus goes back into more work, more events and more voices. None of it is distributed to members.</p>
+    </div>
+  </section>
+
+  <section class="pad goals2">
+    <div class="container">
+      <div class="g2-head">
+        <div>
+          <span class="label">Our goal</span>
+          <h2 class="display h2">Content for education and the growth of multicultural Australia.</h2>
+        </div>
+        <p class="body">Storytelling is how people learn about each other. Our long-term goal is to build a library of content that teaches, celebrates and connects, so that multicultural communities feel seen and the wider community understands them better.</p>
+      </div>
+      <div class="fold" id="fold">
+        <button type="button" class="fp on" style="--c:var(--maroon)"><span class="fp-n">01</span><span class="fp-t">Educate</span><span class="fp-ne" lang="ne">शिक्षा</span><span class="fp-p">Explainers and resources that improve media literacy and health literacy, and help people navigate life in Australia.</span></button>
+        <button type="button" class="fp" style="--c:#B9781A"><span class="fp-n">02</span><span class="fp-t">Celebrate</span><span class="fp-ne" lang="ne">उत्सव</span><span class="fp-p">Treat cultural identity as a strength, and give artists from underrepresented backgrounds a real platform.</span></button>
+        <button type="button" class="fp" style="--c:var(--sky)"><span class="fp-n">03</span><span class="fp-t">Connect</span><span class="fp-ne" lang="ne">सम्बन्ध</span><span class="fp-p">Build understanding between cultures, generations and places, from city suburbs to rural towns.</span></button>
+        <button type="button" class="fp" style="--c:var(--ink)"><span class="fp-n">04</span><span class="fp-t">Grow</span><span class="fp-ne" lang="ne">विकास</span><span class="fp-p">Help young people and emerging creators build the skills to tell their own communities' stories.</span></button>
       </div>
     </div>
   </section>
 
-  <section class="pad sand">
-    <div class="container">
-      <div class="kicker">Our goal</div>
-      <h2 class="display h2" style="max-width:18ch">Content for education and the growth of multicultural Australia.</h2>
-      <p class="body" style="margin-top:1.5rem">Storytelling is how people learn about each other. Our long-term goal is to build a library of content that teaches, celebrates and connects, so that multicultural communities feel seen and the wider community understands them better.</p>
-      <div class="goals">
-        <div class="goal">
-          <div class="ic" style="background:var(--maroon)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v5c0 1.7 2.7 3 6 3s6-1.3 6-3V9"/></svg></div>
-          <h3>Educate</h3>
-          <p>Explainers and resources that improve media literacy and health literacy, and help people navigate life in Australia.</p>
-        </div>
-        <div class="goal">
-          <div class="ic" style="background:var(--ochre)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
-          <h3>Celebrate</h3>
-          <p>Treat cultural identity as a strength, and give artists from underrepresented backgrounds a real platform.</p>
-        </div>
-        <div class="goal">
-          <div class="ic" style="background:var(--sky)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M14 15.3c.6-.2 1.3-.3 2-.3 3.3 0 6 2 6 5"/></svg></div>
-          <h3>Connect</h3>
-          <p>Build understanding between cultures, generations and places, from city suburbs to rural towns.</p>
-        </div>
-        <div class="goal">
-          <div class="ic" style="background:var(--ink)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 11c0-4 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 14c0-3-2.5-5-7-5 0 4 2.5 5 7 5z"/></svg></div>
-          <h3>Grow</h3>
-          <p>Help young people and emerging creators build the skills to tell their own communities' stories.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pad dark on-dark">
-    <div class="container">
-      <div class="kicker">Who we serve</div>
-      <h2 class="display h2" style="max-width:16ch">The communities at the centre of our work.</h2>
-      <div class="chips">
-        <span class="chip">CALD communities</span><span class="chip">Rural and remote Australians</span><span class="chip">Refugee and asylum seeker communities</span><span class="chip">LGBTQIA+ people</span><span class="chip">Diaspora youth</span><span class="chip">Health communities</span>
-      </div>
+  <section class="serve dark on-dark">
+    <div class="container"><span class="label">Who we serve</span><h2 class="display h2" style="max-width:16ch">The communities at the centre of our work.</h2></div>
+    <div class="serve-rows" aria-label="CALD communities, rural and remote Australians, refugee and asylum seeker communities, LGBTQIA+ people, diaspora youth, health communities">
+      <div class="sr"><div class="sr-t"><span>CALD communities</span><span>Rural and remote Australians</span><span>Refugee and asylum seeker communities</span><span>CALD communities</span><span>Rural and remote Australians</span><span>Refugee and asylum seeker communities</span></div></div>
+      <div class="sr rev"><div class="sr-t"><span>LGBTQIA+ people</span><span>Diaspora youth</span><span>Health communities</span><span>LGBTQIA+ people</span><span>Diaspora youth</span><span>Health communities</span></div></div>
     </div>
   </section>
 
   <section class="pad">
     <div class="container">
-      <div class="kicker">Three pillars</div>
-      <h2 class="display h2" style="margin-bottom:1.5rem">How we'll pursue the mission.</h2>
-      <div class="note" style="margin-bottom:3rem"><span>●</span><span>These are the <b>aims</b> the organisation was set up to pursue. A few are underway. Most are still ahead of us, and we'll grow into them step by step.</span></div>
-
-      <div class="obj">
-        <div class="obj-t"><span class="num">01</span><h3 class="h3">Media and storytelling</h3></div>
-        <ul>
-          <li>Produce and support documentary, podcast, short-form video and digital content that amplifies the stories of underrepresented and marginalised communities.</li>
-          <li>Tell the stories of health professionals, health students and healthcare communities, with a focus on rural and remote workers, CALD health professionals, and communities facing barriers to care.</li>
-          <li>Create content that improves health literacy and understanding of the healthcare system in multicultural communities.</li>
-          <li>Build a library of educational content that helps Australians learn about the cultures around them.</li>
-          <li>Platform filmmakers, photographers and digital storytellers from underrepresented communities.</li>
-        </ul>
-      </div>
-      <div class="obj">
-        <div class="obj-t"><span class="num">02</span><h3 class="h3">Arts, creative practice and education</h3></div>
-        <ul>
-          <li>Support and resource emerging artists from underrepresented communities across film, fashion, music, theatre, performance and photography.</li>
-          <li>Present and promote creative work by artists from marginalised backgrounds.</li>
-          <li>Develop workshops, school incursions and learning resources on storytelling, media literacy and cultural identity.</li>
-          <li>Involve young people from multicultural backgrounds as co-creators, not just audiences.</li>
-          <li>Help medical students and early-career health professionals from underrepresented backgrounds build media and health communication skills.</li>
-        </ul>
-      </div>
-      <div class="obj">
-        <div class="obj-t"><span class="num">03</span><h3 class="h3">Live events and community activation</h3></div>
-        <ul>
-          <li>Hold community events such as fashion shows, music nights, performance evenings and cultural showcases that celebrate underrepresented artists.</li>
-          <li>Where events are ticketed, direct ticket revenue to the artists and performers involved.</li>
-          <li>Create welcoming spaces, both pop-up and online, for storytelling, cultural exchange and connection.</li>
-          <li>Document events on camera, building a lasting record of multicultural life in Australia.</li>
-        </ul>
+      <span class="label">Three pillars</span>
+      <h2 class="display h2" style="margin-bottom:1.25rem">How we'll pursue the mission.</h2>
+      <p class="aside-note">These are the <b>aims</b> the organisation was set up to pursue. A few are underway. Most are still ahead of us, and we'll grow into them step by step.</p>
+      <div class="pill-tabs" id="pillTabs">
+        <div class="pt-nav" role="tablist" aria-label="Pillars">
+          <button type="button" role="tab" class="pt on" data-p="0"><i>01</i>Media and storytelling</button>
+          <button type="button" role="tab" class="pt" data-p="1"><i>02</i>Arts, creative practice and education</button>
+          <button type="button" role="tab" class="pt" data-p="2"><i>03</i>Live events and community activation</button>
+        </div>
+        <div class="pt-panels">
+          <ol class="pt-p on">
+            <li>Produce and support documentary, podcast, short-form video and digital content that amplifies the stories of underrepresented and marginalised communities.</li>
+            <li>Tell the stories of health professionals, health students and healthcare communities, with a focus on rural and remote workers, CALD health professionals, and communities facing barriers to care.</li>
+            <li>Create content that improves health literacy and understanding of the healthcare system in multicultural communities.</li>
+            <li>Build a library of educational content that helps Australians learn about the cultures around them.</li>
+            <li>Platform filmmakers, photographers and digital storytellers from underrepresented communities.</li>
+          </ol>
+          <ol class="pt-p">
+            <li>Support and resource emerging artists from underrepresented communities across film, fashion, music, theatre, performance and photography.</li>
+            <li>Present and promote creative work by artists from marginalised backgrounds.</li>
+            <li>Develop workshops, school incursions and learning resources on storytelling, media literacy and cultural identity.</li>
+            <li>Involve young people from multicultural backgrounds as co-creators, not just audiences.</li>
+            <li>Help medical students and early-career health professionals from underrepresented backgrounds build media and health communication skills.</li>
+          </ol>
+          <ol class="pt-p">
+            <li>Hold community events such as fashion shows, music nights, performance evenings and cultural showcases that celebrate underrepresented artists.</li>
+            <li>Where events are ticketed, direct ticket revenue to the artists and performers involved.</li>
+            <li>Create welcoming spaces, both pop-up and online, for storytelling, cultural exchange and connection.</li>
+            <li>Document events on camera, building a lasting record of multicultural life in Australia.</li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
 </div>
+
 
 <!-- ================= ABOUT ================= -->
 <div class="page" id="p-about">
-  <section class="phead">
-    <div class="container phead-grid">
+  <section class="ph ph-about">
+    <div class="container ph-grid">
       <div>
-        <div class="kicker">About us</div>
+        <p class="ph-meta"><span>01 · About</span><span lang="ne">हाम्रो कथा</span></p>
         <h1 class="display h1">Medicine, media and culture, <span class="serif-i">together.</span></h1>
+        <p class="lead">An Australian not-for-profit built from lived experience, and a belief that every community's story deserves to be told with care.</p>
       </div>
-      <p class="lead">An Australian not-for-profit built from lived experience, and a belief that every community's story deserves to be told with care.</p>
+      <div class="venn" id="venn" aria-label="Where three worlds meet">
+        <button type="button" class="vc v1" data-t="Medicine: knowing how much better care gets when people understand each other."><span>Medicine</span></button>
+        <button type="button" class="vc v2" data-t="Media: documentary, podcasts and photography made with craft and independence."><span>Media</span></button>
+        <button type="button" class="vc v3" data-t="Culture: deep roots in the Nepali diaspora, and pride in every culture that makes Australia."><span>Culture</span></button>
+        <span class="v-core" aria-hidden="true">क</span>
+        <p class="v-cap" id="vennCap" aria-live="polite">Three worlds, one studio. Hover or tap a circle.</p>
+      </div>
     </div>
   </section>
 
-  <section class="pad">
-    <div class="container about-grid">
-      <aside class="origin">
-        <div class="origin-mark" aria-hidden="true"><i style="background:var(--maroon)"></i><i style="background:var(--ochre)"></i><i style="background:var(--sky)"></i></div>
-        <span style="font-size:.9rem;color:var(--ochre);font-weight:650">Where it began</span>
-        <h3 class="h3">CityVision TV</h3>
-        <p class="body">Before KRNBRY Studio, our work started with CityVision TV, an Australian online platform serving the Nepali diaspora through podcasts, documentary-style interviews and community storytelling. Making media from inside a community shapes everything we do now.</p>
-      </aside>
-      <div>
-        <p class="body" style="font-size:1.2rem;color:var(--ink)">KRNBRY Studio is an Australian not-for-profit founded at the meeting point of <strong>medicine, community media and cultural storytelling.</strong></p>
-        <p class="body">It was started by someone training in medicine who is also a community media maker, with deep roots in the Nepali diaspora in Australia. The idea is simple: the stories of underrepresented communities deserve to be told with craft, care and real independence.</p>
+  <section class="pad story">
+    <div class="container story-grid">
+      <div class="story-intro">
+        <span class="label">The story so far</span>
+        <h2 class="display h2">Started by a med student who makes community media.</h2>
+        <p class="body">KRNBRY Studio sits at the meeting point of <strong>medicine, community media and cultural storytelling.</strong> The idea is simple: the stories of underrepresented communities deserve to be told with craft, care and real independence.</p>
         <p class="body">We want those stories to do more than entertain. We want them to teach. To help a newly arrived family understand the health system, help a classroom understand a culture they haven't met, and help young creators see that their story is worth telling.</p>
-        <p class="body">We're not-for-profit by design. Every dollar goes back into community content, programs, events and supporting artists. No surplus leaves the organisation.</p>
         <p style="margin-top:1.75rem"><a class="textlink" href="/journal/">Read the journal, where I write about where the studio is heading →</a></p>
       </div>
+      <ol class="thread" id="thread">
+        <li><span class="t-k">Roots</span><h3>The Nepali diaspora</h3><p>Deep roots in the Nepali diaspora in Australia, and in the stories that hold a community together.</p></li>
+        <li><span class="t-k">First platform</span><h3>CityVision TV</h3><p>An Australian online platform serving the Nepali diaspora through podcasts, documentary-style interviews and community storytelling. Making media from inside a community shapes everything we do now.</p></li>
+        <li><span class="t-k">Training</span><h3>Medicine</h3><p>Training in medicine while making community media, and seeing where the two meet: health, trust and being understood.</p></li>
+        <li><span class="t-k">Founded</span><h3>KRNBRY Studio Inc.</h3><p>A not-for-profit by design. Every dollar goes back into community content, programs, events and supporting artists. No surplus leaves the organisation.</p></li>
+        <li class="t-now"><span class="t-k">Now</span><h3>Where We Work</h3><p>Our first documentary, following rural and culturally diverse health workers across Victoria, is in production.</p></li>
+        <li class="t-next"><span class="t-k">Next</span><h3>More voices</h3><p>A magazine, podcasts, school programs and showcases. <a class="textlink" href="/work">See the plans →</a></p></li>
+      </ol>
     </div>
   </section>
 
   <section class="pad sand">
     <div class="container">
-      <div class="kicker">What we stand for</div>
-      <h2 class="display h2">Our values.</h2>
-      <div class="values">
-        <div class="value"><h3>Authenticity</h3><p>We tell stories from the inside, centring the people who live the experience, not those watching from a distance.</p></div>
-        <div class="value"><h3>Equity</h3><p>We seek out the voices least heard in mainstream media: rural communities, CALD youth, migrant health professionals.</p></div>
-        <div class="value"><h3>Cultural pride</h3><p>Cultural identity is a strength, not a footnote. Diversity isn't a challenge to manage. It's the story worth telling.</p></div>
-        <div class="value"><h3>Community</h3><p>We exist to serve the communities we come from: multicultural, medical, rural and everything in between.</p></div>
-        <div class="value"><h3>Independence</h3><p>Our creative decisions aren't shaped by funders, institutions or professional hierarchies.</p></div>
-        <div class="value"><h3>Craft</h3><p>High production quality is a form of respect for the people whose stories we carry.</p></div>
+      <div class="sec-head"><span class="label">What we stand for</span><span class="label">Tap a card</span></div>
+      <h2 class="display h2" style="margin:1.75rem 0 2.25rem">Our values.</h2>
+      <div class="deck" id="valDeck">
+        <button type="button" class="vcard"><span class="vf"><i>01</i><b>Authenticity</b><em>↻</em></span><span class="vb">We tell stories from the inside, centring the people who live the experience, not those watching from a distance.</span></button>
+        <button type="button" class="vcard"><span class="vf"><i>02</i><b>Equity</b><em>↻</em></span><span class="vb">We seek out the voices least heard in mainstream media: rural communities, CALD youth, migrant health professionals.</span></button>
+        <button type="button" class="vcard"><span class="vf"><i>03</i><b>Cultural pride</b><em>↻</em></span><span class="vb">Cultural identity is a strength, not a footnote. Diversity isn't a challenge to manage. It's the story worth telling.</span></button>
+        <button type="button" class="vcard"><span class="vf"><i>04</i><b>Community</b><em>↻</em></span><span class="vb">We exist to serve the communities we come from: multicultural, medical, rural and everything in between.</span></button>
+        <button type="button" class="vcard"><span class="vf"><i>05</i><b>Independence</b><em>↻</em></span><span class="vb">Our creative decisions aren't shaped by funders, institutions or professional hierarchies.</span></button>
+        <button type="button" class="vcard"><span class="vf"><i>06</i><b>Craft</b><em>↻</em></span><span class="vb">High production quality is a form of respect for the people whose stories we carry.</span></button>
       </div>
     </div>
   </section>
 
   <section class="pad">
     <div class="container">
-      <div class="kicker">The team</div>
+      <span class="label">The team</span>
       <h2 class="display h2" style="max-width:16ch">The people behind the work.</h2>
       <p class="body" style="margin-top:1.25rem">KRNBRY Studio is governed by a committee of health professionals, media practitioners and community representatives.</p>
-      <div class="team">
-        <div class="person">
-          <!-- To use a photo: replace the K with <img src="portfolio/your-photo.jpg" alt="Kranjol Khanal"> -->
-          <div class="avatar">K</div>
-          <div>
-            <h3>Kranjol Khanal</h3>
-            <p>Founder, Director and Producer</p>
-          </div>
+      <div class="crew">
+        <div class="crew-card">
+          <!-- To use a photo: replace the K with <img src="/portfolio/your-photo.jpg" alt="Kranjol Khanal"> -->
+          <div class="crew-av" aria-hidden="true"><span>K</span><span lang="ne">क</span></div>
+          <div><span class="label">Founder</span><h3>Kranjol Khanal</h3><p>Founder, Director and Producer</p></div>
         </div>
-        <div class="join">
-          <h3 class="h3">Join our committee</h3>
+        <a class="crew-join" href="/contact?about=committee">
+          <span class="label">Open seat</span>
+          <h3>Join our committee</h3>
           <p>We're looking for people with experience in health, media, education or community work who want to help shape what we build.</p>
-          <div><a class="textlink" href="/contact">Express interest →</a></div>
-        </div>
+          <span class="crew-go">Express interest →</span>
+        </a>
       </div>
     </div>
   </section>
 </div>
+
 
 <!-- ================= WORK ================= -->
 <div class="page" id="p-work">
-  <section class="phead">
-    <div class="container phead-grid">
+  <section class="ph ph-work">
+    <div class="container ph-grid">
       <div>
-        <div class="kicker">Our work</div>
+        <p class="ph-meta"><span>03 · Work</span><span lang="ne">काम</span></p>
         <h1 class="display h1">What we're making, and what's next.</h1>
+        <p class="lead">One project in production, a background in community media, and a clear list of what we want to build.</p>
       </div>
-      <p class="lead">One project in progress, a background in community media, and a clear list of what we want to build.</p>
+      <div class="slate" aria-label="The slate">
+        <div class="sl-row"><b id="slNow">1</b><span>in production</span></div>
+        <div class="sl-row"><b id="slOn">2</b><span>ongoing</span></div>
+        <div class="sl-row"><b id="slIdeas">13</b><span>ideas in development</span></div>
+        <p class="sl-foot">Slate · <span id="slDate"></span></p>
+      </div>
     </div>
   </section>
 
-  <section class="pad">
+  <section class="prod dark on-dark">
+    <div class="container prod-grid">
+      <div>
+        <span class="rec"><i></i>Now in production · Short documentary</span>
+        <h2 class="prod-title">Where We Work</h2>
+        <p class="body">Following rural doctors and culturally diverse health professionals across Victoria: why they chose rural practice, what it asks of them, and what their communities gain. We plan to submit it to the Australian Youth Film Festival.</p>
+      </div>
+      <div class="stages" aria-label="Production stages">
+        <div class="stg done"><i></i><b>Idea</b><span>Who keeps rural healthcare running?</span></div>
+        <div class="stg done"><i></i><b>Development</b><span>Research, people and places.</span></div>
+        <div class="stg now"><i></i><b>Production</b><span>Filming and interviews. We are here.</span></div>
+        <div class="stg"><i></i><b>Post-production</b><span>Edit, sound and grade.</span></div>
+        <div class="stg"><i></i><b>Festival</b><span>Submission to the Australian Youth Film Festival.</span></div>
+      </div>
+    </div>
+    <div class="container also">
+      <span class="label">Also on the slate</span>
+      <div class="also-row">
+        <article class="al" data-belonging="soon"><span class="al-s">Coming soon</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p><a class="textlink" href="/contact?about=belonging">Want to be in it? →</a></article>
+        <article class="al" data-belonging="live"><span class="al-s">Out now</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p><a class="textlink" href="/belonging">Look inside →</a></article>
+        <article class="al"><span class="al-s">Ongoing</span><h3>Photography</h3><p>Documenting people, places and events as we go. See the results in the portfolio.</p><a class="textlink" href="/portfolio">Open portfolio →</a></article>
+        <article class="al"><span class="al-s">Background</span><h3>CityVision TV</h3><p>Podcasts, documentary-style interviews and community stories for the Nepali diaspora in Australia. The experience that led to KRNBRY Studio.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad ideas">
     <div class="container">
-      <div class="kicker">Current</div>
-      <div class="work-now">
-        <article class="card feature" style="min-height:420px">
-          <div class="ring" aria-hidden="true"></div>
-          <span class="status dev">In progress</span>
-          <span style="font-size:.9rem;font-weight:650;opacity:.8">Short documentary</span>
-          <h2 class="display" style="font-size:clamp(2.2rem,5vw,3.6rem)">Where We Work</h2>
-          <p class="body">Following rural doctors and culturally diverse health professionals across Victoria: why they chose rural practice, what it asks of them, and what their communities gain. We plan to submit it to the Australian Youth Film Festival.</p>
-        </article>
-        <div class="stack">
-          <article class="card plain" data-belonging="soon">
-            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Coming soon</span>
-            <h3 class="h3">Belonging, Vol. 1</h3>
-            <p class="body">A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p>
-            <div><a class="textlink" href="/contact">Want to be in it? Get in touch →</a></div>
-          </article>
-          <article class="card plain" data-belonging="live">
-            <span class="status dev" style="background:#FBF0DC;color:#8A5A0F">Out now</span>
-            <h3 class="h3">Belonging, Vol. 1</h3>
-            <p class="body">A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p>
-            <div><a class="textlink" href="/belonging">Look inside →</a></div>
-          </article>
-          <article class="card plain">
-            <span class="status live">Background</span>
-            <h3 class="h3">CityVision TV</h3>
-            <p class="body">Podcasts, documentary-style interviews and community stories for the Nepali diaspora in Australia. The experience that led to KRNBRY Studio.</p>
-          </article>
-          <article class="card plain">
-            <span class="status idea">Ongoing</span>
-            <h3 class="h3">Photography</h3>
-            <p class="body">Documenting people, places and events as we go. See the results in the portfolio.</p>
-            <div><a class="textlink" href="/portfolio">Open portfolio →</a></div>
-          </article>
+      <div class="ideas-head">
+        <div>
+          <span class="label">Future plans</span>
+          <h2 class="display h2">Ideas we're working towards.</h2>
         </div>
+        <p class="body"><b>None of these are running yet.</b> They're plans in development. If one speaks to you, as a collaborator, artist, school or funder, press <b>I'm interested</b> and tell us.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="pad sand">
-    <div class="container">
-      <div class="kicker">Future plans</div>
-      <h2 class="display h2" style="max-width:15ch">Ideas we're working towards.</h2>
-      <div class="note" style="margin-top:1.5rem"><span>●</span><span><b>None of these are running yet.</b> They're plans in development. If one of them speaks to you, as a collaborator, artist, school or funder, we'd love to hear from you.</span></div>
-
       <div class="filters" role="group" aria-label="Filter plans">
-        <button class="filter active" data-f="all">All</button>
-        <button class="filter" data-f="edu">Education</button>
-        <button class="filter" data-f="screen">Film and podcast</button>
-        <button class="filter" data-f="arts">Arts and events</button>
-        <button class="filter" data-f="comm">Community</button>
+        <button class="filter active" data-f="all">All <i></i></button>
+        <button class="filter" data-f="edu">Education <i></i></button>
+        <button class="filter" data-f="screen">Film and podcast <i></i></button>
+        <button class="filter" data-f="arts">Arts and events <i></i></button>
+        <button class="filter" data-f="comm">Community <i></i></button>
       </div>
-
-      <div class="plans" id="plans">
-        <article class="plan new" data-c="edu"><span class="cat">Education</span><h3>Multilingual explainers</h3><p>Short videos explaining Australian systems, like healthcare, schooling and support services, in community languages and made with community members.</p><span class="status idea">Future plan</span></article>
-        <article class="plan new" data-c="edu"><span class="cat">Education</span><h3>Culture in Focus</h3><p>A series introducing the traditions, food, festivals and everyday life of Australia's many cultures, told by the people who live them. Designed to be used in classrooms.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="edu"><span class="cat">Education</span><h3>Schools storytelling program</h3><p>Workshops and incursions exploring media literacy, cultural identity and storytelling, for metropolitan, regional and rural schools.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="edu"><span class="cat">Education</span><h3>Health communication workshops</h3><p>Media and storytelling skills for medical students and early-career health professionals from underrepresented backgrounds.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="screen"><span class="cat">Photo documentary</span><h3>Diaspora Portraits</h3><p>A photo series capturing the faces, stories and lives of diaspora communities across Australia.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="screen"><span class="cat">Podcast</span><h3>Community Voices</h3><p>An interview series where multicultural community members talk about identity, belonging, health and life in Australia. Bilingual in Nepali and English.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="screen"><span class="cat">Podcast</span><h3>Medicine from the Outside</h3><p>Long-form conversations with CALD health professionals about their journeys through Australian medicine: the dual identity, the barriers and the breakthroughs.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="arts"><span class="cat">Live event</span><h3>CALD Fashion Showcase</h3><p>A community fashion show for CALD designers, with ongoing support from production help to digital lookbooks. Ticket revenue would go to the artists.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="arts"><span class="cat">Live event</span><h3>Late Night Sessions</h3><p>DJ sets and live music nights celebrating underrepresented artists, streamed online so more people can tune in.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="arts"><span class="cat">Theatre</span><h3>Community theatre program</h3><p>Helping emerging CALD theatre makers with production resources, venue access and community audiences.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="comm"><span class="cat">Creators</span><h3>Creator support program</h3><p>Access to equipment, mentorship and distribution for CALD filmmakers, photographers and digital creators. No experience needed.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="comm"><span class="cat">Community space</span><h3>Community spaces</h3><p>Low-barrier gatherings, in person and online, where communities come together around culture, story and shared experience.</p><span class="status idea">Future plan</span></article>
-        <article class="plan" data-c="comm"><span class="cat">Partnerships</span><h3>Community partnerships</h3><p>Working with cultural associations, health services, diaspora groups and advocacy bodies. If your work serves underrepresented communities, get in touch.</p><span class="status idea">Open to talks</span></article>
+      <div class="tickets" id="plans">
+        <article class="plan" data-c="edu"><div class="tk"><span class="cat">Education</span><h3>Multilingual explainers</h3><p>Short videos explaining Australian systems, like healthcare, schooling and support services, in community languages and made with community members.</p></div></article>
+        <article class="plan" data-c="edu"><div class="tk"><span class="cat">Education</span><h3>Culture in Focus</h3><p>A series introducing the traditions, food, festivals and everyday life of Australia's many cultures, told by the people who live them. Designed to be used in classrooms.</p></div></article>
+        <article class="plan" data-c="edu"><div class="tk"><span class="cat">Education</span><h3>Schools storytelling program</h3><p>Workshops and incursions exploring media literacy, cultural identity and storytelling, for metropolitan, regional and rural schools.</p></div></article>
+        <article class="plan" data-c="edu"><div class="tk"><span class="cat">Education</span><h3>Health communication workshops</h3><p>Media and storytelling skills for medical students and early-career health professionals from underrepresented backgrounds.</p></div></article>
+        <article class="plan" data-c="screen"><div class="tk"><span class="cat">Photo documentary</span><h3>Diaspora Portraits</h3><p>A photo series capturing the faces, stories and lives of diaspora communities across Australia.</p></div></article>
+        <article class="plan" data-c="screen"><div class="tk"><span class="cat">Podcast</span><h3>Community Voices</h3><p>An interview series where multicultural community members talk about identity, belonging, health and life in Australia. Bilingual in Nepali and English.</p></div></article>
+        <article class="plan" data-c="screen"><div class="tk"><span class="cat">Podcast</span><h3>Medicine from the Outside</h3><p>Long-form conversations with CALD health professionals about their journeys through Australian medicine: the dual identity, the barriers and the breakthroughs.</p></div></article>
+        <article class="plan" data-c="arts"><div class="tk"><span class="cat">Live event</span><h3>CALD Fashion Showcase</h3><p>A community fashion show for CALD designers, with ongoing support from production help to digital lookbooks. Ticket revenue would go to the artists.</p></div></article>
+        <article class="plan" data-c="arts"><div class="tk"><span class="cat">Live event</span><h3>Late Night Sessions</h3><p>DJ sets and live music nights celebrating underrepresented artists, streamed online so more people can tune in.</p></div></article>
+        <article class="plan" data-c="arts"><div class="tk"><span class="cat">Theatre</span><h3>Community theatre program</h3><p>Helping emerging CALD theatre makers with production resources, venue access and community audiences.</p></div></article>
+        <article class="plan" data-c="comm"><div class="tk"><span class="cat">Creators</span><h3>Creator support program</h3><p>Access to equipment, mentorship and distribution for CALD filmmakers, photographers and digital creators. No experience needed.</p></div></article>
+        <article class="plan" data-c="comm"><div class="tk"><span class="cat">Community space</span><h3>Community spaces</h3><p>Low-barrier gatherings, in person and online, where communities come together around culture, story and shared experience.</p></div></article>
+        <article class="plan" data-c="comm" data-open="1"><div class="tk"><span class="cat">Partnerships</span><h3>Community partnerships</h3><p>Working with cultural associations, health services, diaspora groups and advocacy bodies. If your work serves underrepresented communities, get in touch.</p></div></article>
       </div>
     </div>
   </section>
 </div>
+
 
 <!-- ================= BELONGING ================= -->
 <div class="page" id="p-belonging" data-belonging="live">
@@ -1202,33 +1813,38 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
 
 <!-- ================= GET INVOLVED ================= -->
 <div class="page" id="p-involve">
-  <section class="phead">
-    <div class="container phead-grid">
-      <div>
-        <div class="kicker">Get involved</div>
-        <h1 class="display h1">Help us tell <span class="serif-i">more</span> stories.</h1>
+  <section class="ph ph-involve">
+    <div class="container">
+      <p class="ph-meta"><span>04 · Get involved</span><span lang="ne">सँगै</span></p>
+      <h1 class="display h1">Help us tell <span class="serif-i">more</span> stories.</h1>
+      <p class="lead">KRNBRY Studio is community-funded and community-driven. Pick what fits you, and be part of it from the start.</p>
+      <div class="paths" id="paths">
+        <p class="paths-q">I am…</p>
+        <div class="paths-opts" role="tablist" aria-label="I am">
+          <button type="button" role="tab" class="po on" data-k="0">an artist or creator</button>
+          <button type="button" role="tab" class="po" data-k="1">an organisation</button>
+          <button type="button" role="tab" class="po" data-k="2">a supporter</button>
+          <button type="button" role="tab" class="po" data-k="3">here to spread the word</button>
+        </div>
+        <div class="paths-out">
+          <div class="pw on"><span class="pw-n">01</span><div><h3>Share your work</h3><p>Are you a CALD artist, filmmaker, musician, designer or performer? We'd love to know about your work as we build our platforms and programs. Emerging creators very welcome.</p></div><a class="btn btn-dark" href="/contact?about=work">Get in touch <span class="arr">→</span></a></div>
+          <div class="pw"><span class="pw-n">02</span><div><h3>Partner with us</h3><p>Community organisations, health services, schools, cultural associations and refugee services. If your work serves underrepresented communities, let's build something together.</p></div><a class="btn btn-dark" href="/contact?about=partner">Reach out <span class="arr">→</span></a></div>
+          <div class="pw"><span class="pw-n">03</span><div><h3>Donate</h3><p>Donations go directly into making content, developing programs and supporting artists. We're a lean, community-first operation, so every bit counts.</p></div><a class="btn btn-dark" href="/donate" data-scroll="donate">Support our work <span class="arr">→</span></a></div>
+          <div class="pw"><span class="pw-n">04</span><div><h3>Spread the word</h3><p>Follow us, share our work and tell your community about KRNBRY Studio. Visibility matters enormously for the people we platform.</p></div><a class="btn btn-dark" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Follow on Instagram <span class="arr">↗</span></a></div>
+        </div>
       </div>
-      <p class="lead">KRNBRY Studio is community-funded and community-driven. Here's how you can be part of it from the start.</p>
     </div>
   </section>
 
-  <section class="pad">
-    <div class="container ways">
-      <div class="way"><h3 class="h3">Share your work</h3><p>Are you a CALD artist, filmmaker, musician, designer or performer? We'd love to know about your work as we build our platforms and programs. Emerging creators very welcome.</p><a class="btn btn-line" href="/contact">Get in touch <span class="arr">→</span></a></div>
-      <div class="way"><h3 class="h3">Partner with us</h3><p>Community organisations, health services, schools, cultural associations and refugee services. If your work serves underrepresented communities, let's build something together.</p><a class="btn btn-line" href="/contact">Reach out <span class="arr">→</span></a></div>
-      <div class="way"><h3 class="h3">Donate</h3><p>Donations go directly into making content, developing programs and supporting artists. We're a lean, community-first operation, so every bit counts.</p><a class="btn btn-dark" href="/donate" data-scroll="donate">Support our work <span class="arr">→</span></a></div>
-      <div class="way"><h3 class="h3">Spread the word</h3><p>Follow us, share our work and tell your community about KRNBRY Studio. Visibility matters enormously for the people we platform.</p><a class="btn btn-line" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Follow on Instagram <span class="arr">↗</span></a></div>
-    </div>
-  </section>
-
-  <section class="pad wine on-dark" id="donate">
+  <section class="pad wine on-dark give" id="donate">
     <div class="container donate-grid">
       <div>
-        <div class="kicker">Donate</div>
+        <span class="label">Donate</span>
         <h2 class="display h2" style="margin-bottom:1.25rem">Support underrepresented voices.</h2>
         <p class="body">100% of donations fund content, community programs, artist support and equipment. We're a not-for-profit. Once we're registered with the ACNC, donations may become tax-deductible.</p>
       </div>
       <div class="donate-box">
+        <p class="give-big" aria-live="polite"><span id="giveAmt">$50</span><small>AUD</small></p>
         <div class="amts" role="group" aria-label="Donation amount">
           <button class="amt" data-a="25">$25</button>
           <button class="amt active" data-a="50">$50</button>
@@ -1237,7 +1853,7 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
           <button class="amt" data-a="500">$500</button>
           <button class="amt" data-a="">Other</button>
         </div>
-        <a href="https://www.paypal.com/paypalme/krnbrystudio/50AUD" target="_blank" rel="noopener" class="btn btn-light" id="donateBtn">Donate $50 via PayPal <span class="arr">→</span></a>
+        <a href="https://www.paypal.com/paypalme/krnbrystudio/50AUD" target="_blank" rel="noopener" class="btn btn-solid-l" id="donateBtn">Donate $50 via PayPal <span class="arr">→</span></a>
         <small>You'll be taken to PayPal to complete your donation securely.</small>
       </div>
     </div>
@@ -1245,52 +1861,54 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
 
   <section class="pad">
     <div class="container">
-      <div class="kicker">Funding and grants</div>
-      <h2 class="display h2" style="max-width:16ch">Funders and supporters.</h2>
-      <p class="body" style="margin-top:1.25rem">We're seeking funding partners who share our commitment to education and multicultural communities. All funding is reported transparently.</p>
-      <ul class="funds">
-        <li><div><h4>VicScreen, Development on Demand</h4><p>A program we plan to apply to for documentary development.</p></div><span class="status idea">Planning to apply</span></li>
-        <li><div><h4>Screen Australia, Documentary Development</h4><p>A program we plan to apply to for long-form documentary development.</p></div><span class="status idea">Planning to apply</span></li>
-        <li><div><h4>Interested in funding KRNBRY Studio?</h4><p>We welcome conversations with foundations, government bodies and sponsors who care about underrepresented communities.</p></div><a class="textlink" href="/contact">Get in touch →</a></li>
-      </ul>
-      <div class="note" style="margin-top:2.5rem"><span>●</span><span><b>Events:</b> nothing is scheduled yet. When we do run events, they'll be free or low-cost. Follow us on social media to hear first.</span></div>
+      <div class="sec-head"><span class="label">Funding and grants</span><span class="label">Tracker</span></div>
+      <div class="fund-grid">
+        <div>
+          <h2 class="display h2" style="max-width:12ch;margin-top:1.75rem">Funders and supporters.</h2>
+          <p class="body" style="margin-top:1.25rem">We're seeking funding partners who share our commitment to education and multicultural communities. All funding is reported transparently.</p>
+        </div>
+        <ul class="funds2">
+          <li><span class="f-dot"></span><div><h4>VicScreen, Development on Demand</h4><p>A program we plan to apply to for documentary development.</p></div><span class="f-s">Planning to apply</span></li>
+          <li><span class="f-dot"></span><div><h4>Screen Australia, Documentary Development</h4><p>A program we plan to apply to for long-form documentary development.</p></div><span class="f-s">Planning to apply</span></li>
+          <li class="f-you"><span class="f-dot"></span><div><h4>Interested in funding KRNBRY Studio?</h4><p>We welcome conversations with foundations, government bodies and sponsors who care about underrepresented communities.</p></div><a class="textlink" href="/contact?about=funding">Get in touch →</a></li>
+        </ul>
+      </div>
+      <p class="aside-note" style="margin-top:2.5rem"><b>Events:</b> nothing is scheduled yet. When we do run events, they'll be free or low-cost. Follow us on social media to hear first.</p>
     </div>
   </section>
 </div>
 
+
 <!-- ================= CONTACT ================= -->
 <div class="page" id="p-contact">
-  <section class="pad">
-    <div class="container contact-grid">
-      <div>
-        <div class="kicker">Contact</div>
-        <h1 class="display h1" style="font-size:clamp(2.6rem,6vw,4.6rem)">Let's work <span class="serif-i">together.</span></h1>
-        <p class="lead" style="margin-top:1.5rem">Artist, community organisation, school, funder, or someone with a story to tell? We'd love to hear from you.</p>
+  <section class="ph ph-contact">
+    <div class="container ct-grid">
+      <div class="ct-side">
+        <p class="ph-meta"><span>05 · Contact</span><span lang="ne">नमस्ते</span></p>
+        <h1 class="display h1">Let's work <span class="serif-i">together.</span></h1>
+        <p class="lead">Artist, community organisation, school, funder, or someone with a story to tell? We'd love to hear from you.</p>
+        <button type="button" class="mailbig" id="mailBig" data-mail="krnbrystudio@outlook.com"><span>krnbrystudio@outlook.com</span><i id="mailTip">Copy</i></button>
         <ul class="cdetails">
-          <li><span>Email</span><a href="mailto:krnbrystudio@outlook.com">krnbrystudio@outlook.com</a></li>
           <li><span>Based in</span><div>Victoria and Queensland, Australia</div></li>
-          <li><span>Response time</span><div>Within 5 business days</div></li>
+          <li><span>Replies</span><div>Within 5 business days</div></li>
           <li><span>Organisation</span><div>KRNBRY Studio Inc. · ABN 92 249 582 525</div></li>
         </ul>
         <div class="socials">
           <a class="soc" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Instagram</a>
-          <a class="soc" href="https://www.linkedin.com/company/krnbrystudio" target="_blank" rel="noopener">LinkedIn</a>
           <a class="soc" href="https://www.youtube.com/@krnbrystudio" target="_blank" rel="noopener">YouTube</a>
           <a class="soc" href="https://www.tiktok.com/@krnbrystudio" target="_blank" rel="noopener">TikTok</a>
         </div>
       </div>
-      <form class="form" action="https://formspree.io/f/myklwldv" method="POST">
+      <form class="letter" id="letter" action="https://formspree.io/f/myklwldv" method="POST">
         <input type="hidden" name="_subject" value="New message via KRNBRY Studio website">
-        <div class="row2">
-          <div class="field"><label for="fn">First name</label><input id="fn" type="text" name="first_name" placeholder="Kiran" required></div>
-          <div class="field"><label for="ln">Last name</label><input id="ln" type="text" name="last_name" placeholder="Sharma"></div>
-        </div>
-        <div class="field"><label for="em">Email</label><input id="em" type="email" name="email" placeholder="hello@example.com" required></div>
-        <div class="field"><label for="org">Organisation <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="org" type="text" name="organisation" placeholder="Organisation, community group or school"></div>
-        <div class="field">
-          <label for="about">I'm reaching out about</label>
-          <select id="about" name="enquiry_type">
-            <option value="">Please select</option>
+        <p class="lt-to">To: KRNBRY Studio <span id="ltDate"></span></p>
+        <p class="lt-line">Hi there, my name is
+          <label class="sr" for="fn">First name</label><input id="fn" type="text" name="first_name" placeholder="first name" autocomplete="given-name" required>
+          <label class="sr" for="ln">Last name</label><input id="ln" type="text" name="last_name" placeholder="last name" autocomplete="family-name">
+          and I'm reaching out about
+          <label class="sr" for="about">I'm reaching out about</label>
+          <select id="about" name="enquiry_type" required>
+            <option value="">choose one</option>
             <option>A collaboration or project</option>
             <option>Sharing my creative work</option>
             <option>Education or schools</option>
@@ -1301,10 +1919,15 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
             <option>Joining the committee</option>
             <option>Media or press</option>
             <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Tell us what you're working on, what you need, or what you'd like to collaborate on." required></textarea></div>
-        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between">
+          </select>.
+          I'm with
+          <label class="sr" for="org">Organisation (optional)</label><input id="org" type="text" name="organisation" placeholder="organisation (optional)" autocomplete="organization">,
+          and you can reach me at
+          <label class="sr" for="em">Email</label><input id="em" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>.
+        </p>
+        <label class="lt-lbl" for="msg">Here's what I have in mind</label>
+        <textarea id="msg" name="message" placeholder="Tell us what you're working on, what you need, or what you'd like to collaborate on." required></textarea>
+        <div class="lt-foot">
           <button class="btn btn-dark" type="submit">Send message <span class="arr">→</span></button>
           <small>We read every message.</small>
         </div>
@@ -1312,17 +1935,20 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
     </div>
   </section>
 </div>
+
+
 </main>
 
 <!-- ================= FOOTER ================= -->
+<div class="weave" aria-hidden="true"></div>
 <footer>
+  <div class="f-wm" aria-hidden="true"><svg class="lg" viewBox="0 0 1149.2 288.34" aria-hidden="true"><g class="lg-w" transform="translate(9.2 161.6)"><g class="lg-k"><path d="M14.8 0.0V-137.6H64.2V-76.80L130.8 -137.6H192.0L131.20 -81.4L193.60 0.0H133.4L94.80 -51.80L64.2 -27.0V0.0Z"/></g><path d="M206.40 0.0V-137.6H325.6Q341.0 -137.6 351.3 -131.2Q361.6 -124.80 366.8 -114.4Q372.0 -104.0 372.0 -92.0Q372.0 -78.2 365.90 -67.5Q359.80 -56.80 348.0 -50.40L375.20 0.0H319.40L298.6 -43.0H255.8V0.0ZM255.8 -77.2H308.20Q313.8 -77.2 317.6 -80.7Q321.40 -84.2 321.40 -90.4Q321.40 -94.60 319.6 -97.5Q317.8 -100.4 314.9 -101.9Q312.0 -103.4 308.20 -103.4H255.8Z"/><path d="M389.00 0.0V-137.6H432.00L500.00 -80.2Q501.20 -79.2 503.40 -77.2Q505.6 -75.2 508.00 -73.0Q510.40 -70.8 512.40 -69.0H514.40Q514.40 -71.8 514.40 -76.5Q514.40 -81.2 514.40 -85.60V-137.6H560.80V0.0H518.2L453.6 -54.2Q449.40 -57.6 444.70 -61.8Q440.00 -66.0 437.20 -68.60H435.40Q435.40 -65.8 435.40 -60.7Q435.40 -55.6 435.40 -50.40V0.0Z"/><path d="M584.4 0.0V-137.6H703.2Q714.6 -137.6 723.90 -133.3Q733.2 -129.0 738.7 -121.4Q744.2 -113.80 744.2 -103.80Q744.2 -93.80 740.80 -87.4Q737.40 -81.0 731.7 -77.30Q726.0 -73.60 719.2 -71.8V-71.0Q727.0 -69.4 733.40 -65.5Q739.80 -61.6 743.60 -54.6Q747.40 -47.6 747.40 -36.6Q747.40 -25.6 741.7 -17.40Q736.0 -9.20 726.2 -4.60Q716.40 0.0 704.40 0.0ZM633.80 -32.0H684.6Q690.0 -32.0 693.40 -35.2Q696.80 -38.40 696.80 -44.80Q696.80 -47.80 695.30 -50.30Q693.80 -52.80 691.0 -54.2Q688.2 -55.6 684.6 -55.6H633.80ZM633.80 -84.0H681.40Q685.2 -84.0 687.90 -85.5Q690.6 -87.0 692.1 -89.80Q693.6 -92.60 693.6 -96.80Q693.6 -101.2 690.0 -104.30Q686.40 -107.4 681.40 -107.4H633.80Z"/><path d="M764.4 0.0V-137.6H883.6Q899.0 -137.6 909.3 -131.2Q919.6 -124.80 924.8 -114.4Q930.0 -104.0 930.0 -92.0Q930.0 -78.2 923.90 -67.5Q917.80 -56.80 906.0 -50.40L933.2 0.0H877.40L856.6 -43.0H813.80V0.0ZM813.80 -77.2H866.2Q871.80 -77.2 875.60 -80.7Q879.40 -84.2 879.40 -90.4Q879.40 -94.60 877.60 -97.5Q875.80 -100.4 872.90 -101.9Q870.0 -103.4 866.2 -103.4H813.80Z"/><path d="M998.2 0.0V-54.2L929.6 -137.6H987.40L1023.2 -91.2H1024.60L1060.4 -137.6H1116.0L1047.60 -54.2V0.0Z"/></g><g class="lg-s" transform="translate(837.1 263.16)"><path d="M8.02 -13.03Q8.20 -9.02 8.67 -6.72Q9.14 -4.42 9.91 -3.42Q10.73 -2.41 11.74 -2.15Q12.74 -1.88 14.04 -1.88Q17.75 -1.88 20.38 -3.06Q23.00 -4.24 24.39 -6.51Q25.78 -8.79 25.78 -11.97Q25.78 -13.86 25.07 -15.98Q24.36 -18.11 22.77 -20.73Q21.18 -23.36 18.46 -26.84Q15.81 -30.32 14.30 -33.15Q12.80 -35.98 12.21 -38.40Q11.62 -40.82 11.62 -43.07Q11.62 -48.20 14.33 -52.39Q17.05 -56.58 21.77 -59.08Q26.49 -61.59 32.56 -61.59Q36.81 -61.59 39.29 -60.65Q41.77 -59.70 42.83 -58.02Q43.89 -56.34 43.89 -54.04Q43.89 -52.27 43.04 -51.00Q42.18 -49.73 40.23 -49.05Q38.29 -48.37 34.86 -48.37Q35.10 -52.56 34.81 -54.75Q34.51 -56.93 33.80 -57.76Q33.09 -58.58 32.06 -58.88Q31.03 -59.17 29.32 -59.17Q24.48 -59.17 21.56 -56.75Q18.64 -54.33 18.64 -49.73Q18.64 -47.96 19.20 -46.04Q19.76 -44.13 21.21 -41.59Q22.65 -39.05 25.31 -35.34Q27.96 -31.68 29.47 -28.85Q30.97 -26.01 31.59 -23.65Q32.21 -21.29 32.21 -18.99Q32.21 -13.09 29.32 -8.55Q26.43 -4.01 21.38 -1.41Q16.34 1.18 9.91 1.18Q5.60 1.18 3.06 0.23Q0.53 -0.70 -0.59 -2.44Q-1.71 -4.18 -1.71 -6.48Q-1.71 -8.79 -0.70 -10.23Q0.29 -11.68 2.44 -12.36Q4.60 -13.03 8.02 -13.03Z"/><path d="M49.38 -57.34 50.32 -60.41H83.66L82.89 -57.34ZM56.22 -13.80Q55.81 -12.44 55.57 -11.53Q55.34 -10.62 55.25 -10.03Q55.16 -9.44 55.16 -8.96Q55.16 -7.84 55.84 -7.37Q56.52 -6.90 57.81 -6.90Q59.23 -6.90 61.44 -7.84Q63.66 -8.79 66.96 -11.62Q70.26 -14.45 74.81 -20.06L75.34 -19.64Q70.85 -12.86 67.23 -8.73Q63.60 -4.60 60.65 -2.44Q57.70 -0.29 55.31 0.44Q52.92 1.18 50.97 1.18Q48.37 1.18 46.61 -0.35Q44.83 -1.88 44.83 -5.48Q44.83 -6.66 45.16 -8.73Q45.48 -10.79 46.96 -15.45L66.02 -74.92H75.81Z"/><path d="M111.74 -3.71 117.29 -21.47H117.82Q113.69 -14.98 110.38 -10.62Q107.08 -6.25 104.22 -3.65Q101.36 -1.06 98.70 0.05Q96.05 1.18 93.22 1.18Q87.85 1.18 85.66 -1.35Q83.48 -3.89 83.48 -7.55Q83.48 -9.26 83.89 -11.18Q84.31 -13.09 85.01 -14.98L100.18 -55.22L101.59 -53.27Q100.53 -53.92 97.99 -53.24Q95.46 -52.56 91.44 -49.67Q87.43 -46.78 81.95 -40.65L81.42 -41.06Q86.55 -48.32 90.86 -52.86Q95.16 -57.40 98.82 -59.50Q102.48 -61.59 105.61 -61.59Q109.09 -61.59 110.38 -60.09Q111.68 -58.58 110.27 -54.98L95.22 -16.57Q94.51 -14.80 94.16 -13.39Q93.81 -11.97 93.81 -10.97Q93.81 -8.85 95.22 -7.99Q96.64 -7.13 99.35 -7.13Q101.95 -7.13 104.90 -9.02Q107.85 -10.91 110.65 -13.83Q113.45 -16.75 115.55 -19.94Q117.64 -23.12 118.53 -25.66L130.21 -60.41H139.82L121.12 -5.13L120.06 -6.96Q121.65 -6.43 124.31 -7.40Q126.96 -8.37 130.59 -11.29Q134.22 -14.21 138.64 -19.47L139.18 -19.05Q131.98 -7.67 126.23 -3.24Q120.47 1.18 116.22 1.18Q113.33 1.18 112.18 -0.11Q111.03 -1.41 111.74 -3.71Z"/><path d="M190.39 -49.73Q188.74 -54.27 186.49 -55.90Q184.25 -57.52 181.30 -57.52Q177.0 -57.52 172.72 -54.39Q168.44 -51.27 164.61 -46.16Q160.77 -41.06 157.76 -35.13Q154.75 -29.20 153.04 -23.45Q151.33 -17.7 151.33 -13.33Q151.33 -9.55 152.95 -8.05Q154.57 -6.54 157.05 -6.54Q158.41 -6.54 160.09 -7.16Q161.77 -7.78 163.78 -9.20Q165.79 -10.62 168.14 -12.92Q170.51 -15.22 173.25 -18.52Q175.99 -21.83 179.12 -26.31L195.52 -76.87Q194.46 -77.58 193.01 -78.49Q191.57 -79.41 189.95 -80.50Q188.32 -81.59 186.61 -82.65L186.67 -83.01L207.85 -87.55H208.03L181.95 -5.13L180.42 -6.90Q181.95 -6.43 184.64 -7.37Q187.32 -8.31 191.18 -11.20Q195.05 -14.10 200.06 -19.47L200.6 -19.05Q192.98 -8.31 187.11 -3.56Q181.24 1.18 176.88 1.18Q173.69 1.18 172.75 -0.32Q171.80 -1.82 172.92 -5.42L179.53 -26.01H180.18Q174.52 -17.34 170.12 -11.94Q165.73 -6.54 162.33 -3.71Q158.94 -0.88 156.35 0.14Q153.75 1.18 151.63 1.18Q148.56 1.18 146.11 -0.08Q143.66 -1.35 142.27 -3.83Q140.89 -6.31 140.89 -9.97Q140.89 -15.75 143.04 -22.65Q145.19 -29.55 148.94 -36.37Q152.69 -43.18 157.53 -48.85Q162.36 -54.51 167.79 -57.93Q173.22 -61.36 178.71 -61.36Q182.42 -61.36 185.58 -58.94Q188.74 -56.52 190.80 -51.74Z"/><path d="M205.37 -5.42 223.96 -55.22 225.08 -53.45Q223.49 -53.86 220.98 -53.01Q218.47 -52.15 214.76 -49.32Q211.04 -46.49 205.73 -40.94L205.20 -41.35Q210.27 -48.55 214.49 -53.01Q218.71 -57.46 222.31 -59.53Q225.91 -61.59 229.03 -61.59Q232.63 -61.59 233.55 -59.85Q234.46 -58.11 233.28 -54.98L214.70 -5.19L213.28 -7.31Q214.58 -6.54 216.85 -7.10Q219.12 -7.67 223.01 -10.53Q226.91 -13.39 232.93 -19.47L233.46 -19.05Q228.38 -11.91 224.08 -7.43Q219.77 -2.94 216.20 -0.88Q212.63 1.18 209.68 1.18Q206.20 1.18 205.14 -0.32Q204.08 -1.82 205.37 -5.42ZM228.32 -79.11Q228.32 -81.00 229.24 -82.62Q230.15 -84.25 231.81 -85.22Q233.46 -86.19 235.76 -86.19Q239.18 -86.19 241.07 -84.07Q242.96 -81.95 242.96 -79.11Q242.96 -77.17 242.10 -75.43Q241.25 -73.69 239.65 -72.59Q238.06 -71.50 235.76 -71.50Q232.34 -71.50 230.33 -73.86Q228.32 -76.22 228.32 -79.11Z"/><path d="M273.34 -61.59Q278.24 -61.59 281.51 -59.56Q284.79 -57.52 286.44 -53.66Q288.09 -49.79 288.09 -44.25Q288.09 -36.10 285.26 -28.05Q282.43 -20.00 277.56 -13.39Q272.69 -6.78 266.44 -2.80Q260.19 1.18 253.34 1.18Q248.50 1.18 245.20 -0.85Q241.89 -2.89 240.24 -6.78Q238.59 -10.67 238.59 -16.16Q238.59 -24.30 241.42 -32.36Q244.26 -40.41 249.12 -47.02Q253.99 -53.63 260.24 -57.61Q266.50 -61.59 273.34 -61.59ZM253.52 -0.82Q257.06 -0.82 260.69 -3.74Q264.32 -6.66 267.56 -11.65Q270.81 -16.63 273.34 -22.95Q275.88 -29.26 277.35 -36.10Q278.83 -42.95 278.83 -49.55Q278.83 -54.63 277.50 -57.11Q276.17 -59.58 273.16 -59.58Q269.63 -59.58 266.00 -56.66Q262.37 -53.74 259.12 -48.76Q255.88 -43.77 253.34 -37.46Q250.80 -31.15 249.33 -24.30Q247.85 -17.46 247.85 -10.85Q247.85 -5.78 249.18 -3.30Q250.51 -0.82 253.52 -0.82Z"/></g></svg></div>
   <div class="container">
     <div class="f-top">
       <div>
-        <div class="f-big">KRNBRY Studio.<br><em>Stories worth learning.</em></div>
+        <div class="f-big">Stories worth <em>learning.</em></div>
         <div class="socials">
           <a class="soc" href="https://www.instagram.com/krnbrystudio" target="_blank" rel="noopener">Instagram</a>
-          <a class="soc" href="https://www.linkedin.com/company/krnbrystudio" target="_blank" rel="noopener">LinkedIn</a>
           <a class="soc" href="https://www.youtube.com/@krnbrystudio" target="_blank" rel="noopener">YouTube</a>
           <a class="soc" href="https://www.tiktok.com/@krnbrystudio" target="_blank" rel="noopener">TikTok</a>
         </div>
@@ -1464,7 +2090,7 @@ const PORTFOLIO = {
     if (!href || href.charAt(0) !== '/' || href.startsWith('//')) return;
     const p = clean(href.split('#')[0].split('?')[0]);
     if (!(p in BY_PATH) && !ALIASES[p]) return;   // e.g. /journal/ loads normally
-    e.preventDefault(); window.krnGo(p);
+    e.preventDefault(); const qs = href.split('#')[0].split('?')[1]; window.krnGo(p + (qs ? '?' + qs : ''));
   });
   window.addEventListener('popstate', route);
   route();
@@ -1805,16 +2431,10 @@ const PORTFOLIO = {
 
   function renderHome(){
     if (!photos.length) return;
-    const hero = document.getElementById('heroMedia');
     const first = photos.find(p => p.src === homeSrc) || photos[0];
-    const im = imgEl(first, true);
-    im.onload = () => { document.getElementById('heroFallback').style.display = 'none'; };
-    hero.prepend(im);
-    const tag = document.createElement('div');
-    tag.className = 'hero-tag';
-    tag.innerHTML = '<span></span><a href="/portfolio">Portfolio →</a>';
-    tag.firstChild.textContent = first.title || 'From our portfolio';
-    im.addEventListener('load', () => hero.appendChild(tag), { once:true });
+    // hero slideshow: the home photo first, then front-page picks, then the rest
+    const heroList = [first].concat(photos.filter(p => p !== first && featSrc.includes(p.src)), photos.filter(p => p !== first && !featSrc.includes(p.src)));
+    if (window.krnHero) window.krnHero(heroList);
 
     const strip = document.getElementById('stripGrid');
     // photos picked in the uploader for the front page, else the first few
@@ -2069,6 +2689,303 @@ const PORTFOLIO = {
 
   onScroll();
 })();
+/* =================== REDESIGN: home motion =================== */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const $ = id => document.getElementById(id);
+  const srcOf = p => /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src;
+  const home = () => document.getElementById('p-home').classList.contains('active');
+
+  /* ---- announcement bar: hides once you scroll, or for good when closed ---- */
+  const root = document.documentElement;
+  let annClosed = false; try { annClosed = sessionStorage.getItem('krn-ann') === '0'; } catch(e){}
+  if (annClosed) { root.classList.add('ann-off'); const a = $('ann'); if (a) a.hidden = true; }
+  const annX = $('annX');
+  if (annX) annX.onclick = () => { annClosed = true; root.classList.add('ann-off'); try { sessionStorage.setItem('krn-ann', '0'); } catch(e){} };
+
+  /* ---- nav sits clear over the hero ---- */
+  const nav = $('nav'), hx = $('hx');
+  function navState(){
+    if (!annClosed) root.classList.toggle('ann-off', scrollY > 40);
+    const over = home() && hx && scrollY < hx.offsetHeight - 90;
+    nav.classList.toggle('over', !!over);
+  }
+  addEventListener('scroll', navState, { passive: true });
+  addEventListener('krn:route', () => requestAnimationFrame(navState));
+  navState();
+
+  /* ---- the K in the logo turns into क now and then ---- */
+  const logo = document.querySelector('.nav .logo');
+  if (logo && !reduce) {
+    const flip = () => { logo.classList.add('ka'); setTimeout(() => logo.classList.remove('ka'), 1800); };
+    setTimeout(flip, 2600); setInterval(() => { if (!document.hidden) flip(); }, 11000);
+    logo.addEventListener('mouseenter', () => logo.classList.add('ka'));
+    logo.addEventListener('mouseleave', () => logo.classList.remove('ka'));
+  }
+
+  /* ---- hero: our aims, one at a time, over portfolio photos ---- */
+  const AIMS = [
+    { label: 'Amplify', text: 'Voices that have gone unheard won\'t stay that way.', hl: ['unheard'] },
+    { label: 'Educate', text: 'Stories that help Australia understand itself.', hl: ['understand'] },
+    { label: 'Celebrate', text: 'Every culture here has a story worth sharing.', hl: ['worth', 'sharing.'] },
+    { label: 'Together', text: 'Made with communities, not just about them.', hl: ['with'] }
+  ];
+  const DUR = 6500;
+  const media = $('heroMedia'), title = $('hxTitle'), steps = $('hxSteps'), weave = $('hxWeave');
+  let slides = [], at = 0, timer = null, busy = false, pics = [];
+  const FB = ['#7A1F2E', '#141010', '#561521', '#23408E'];
+
+  function setTitle(i, first){
+    const a = AIMS[i];
+    const html = a.text.split(' ').map((w, k) => `<span class="w${a.hl.includes(w) ? ' hl' : ''}"><span style="--i:${k}">${w}</span></span>`).join(' ');
+    const go = () => { title.classList.remove('out', 'show'); title.innerHTML = html; title.setAttribute('aria-label', a.text); void title.offsetWidth; title.classList.add('show'); };
+    if (first || reduce) return go();
+    title.classList.add('out'); setTimeout(go, 520);
+  }
+  function makeSlide(i){
+    const s = document.createElement('div'); s.className = 'hx-slide';
+    const p = pics.length ? pics[i % pics.length] : null;
+    if (p) { const im = new Image(); im.alt = ''; im.decoding = 'async'; im.src = srcOf(p); if (p.remote) im.onerror = () => { im.src = p.remote; }; s.appendChild(im); }
+    else { s.classList.add('fb'); s.style.setProperty('--c', FB[i % FB.length]); }
+    return s;
+  }
+  function buildSteps(){
+    steps.innerHTML = '';
+    AIMS.forEach((a, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'hx-step'; b.setAttribute('role', 'tab');
+      b.innerHTML = `<b>0${i + 1}</b>${a.label}<i></i>`; b.style.setProperty('--dur', DUR + 'ms');
+      b.onclick = () => show(i, true); steps.appendChild(b);
+    });
+  }
+  function markSteps(){
+    [...steps.children].forEach((b, i) => { b.classList.toggle('on', i === at); b.classList.toggle('done', i < at); b.setAttribute('aria-selected', i === at);
+      const bar = b.querySelector('i'); if (i === at) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; } });
+  }
+  // the next photo is revealed behind a woven, saw-tooth edge rising up the screen
+  function wipe(el, done){
+    if (reduce) { el.style.clipPath = 'none'; return done(); }
+    const teeth = innerWidth < 620 ? 10 : 18, H = 26, t0 = performance.now(), D = 1150;
+    weave.style.opacity = 1;
+    const ease = k => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+    const frame = t => {
+      const k = Math.min(1, (t - t0) / D), e = ease(k), hh = el.offsetHeight, y = (1 - e) * (hh + H * 2) - H;
+      const pts = []; for (let n = 0; n <= teeth; n++) pts.push(`${(n / teeth * 100).toFixed(2)}% ${(y + (n % 2 ? 0 : H)).toFixed(1)}px`);
+      el.style.clipPath = `polygon(${pts.join(',')},100% 100%,0 100%)`;
+      weave.style.transform = `translateY(${(y + H - 4).toFixed(1)}px)`;
+      if (k < 1) requestAnimationFrame(frame); else { el.style.clipPath = 'none'; weave.style.opacity = 0; done(); }
+    };
+    requestAnimationFrame(frame);
+  }
+  function show(i, user){
+    if (busy || (i === at && slides.length)) { if (user) restart(); return; }
+    busy = true;
+    const prev = slides[slides.length - 1];
+    const s = makeSlide(i); s.style.clipPath = 'polygon(0 100%,100% 100%,100% 100%,0 100%)'; media.appendChild(s); slides.push(s);
+    at = i; markSteps(); setTitle(i);
+    const start = () => wipe(s, () => { s.classList.add('live'); slides.slice(0, -1).forEach(x => x.remove()); slides = [s]; busy = false; });
+    const im = s.querySelector('img');
+    if (im && !im.complete) { im.onload = start; setTimeout(() => { if (busy && !s.classList.contains('live') && s.style.clipPath.indexOf('100% 100%,100% 100%') > -1) start(); }, 1500); } else start();
+    if (prev) prev.classList.add('live');
+    restart();
+  }
+  function restart(){ clearTimeout(timer); if (!reduce) timer = setTimeout(tick, DUR); }
+  function tick(){ if (document.hidden || !home() || hx.classList.contains('paused')) return restart(); show((at + 1) % AIMS.length); }
+  if (media && title && steps) {
+    buildSteps();
+    const s0 = makeSlide(0); s0.classList.add('live'); media.appendChild(s0); slides = [s0];
+    markSteps(); setTitle(0, true); restart();
+    hx.addEventListener('mouseenter', () => { if (fine) hx.classList.add('paused'); });
+    hx.addEventListener('mouseleave', () => { hx.classList.remove('paused'); });
+    if (fine && !reduce) hx.addEventListener('pointermove', e => {
+      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      media.style.transform = `translate(${(-x * 18).toFixed(1)}px, ${(-y * 12).toFixed(1)}px)`;
+    });
+    let sx = null; hx.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    hx.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) show((at + (dx < 0 ? 1 : AIMS.length - 1)) % AIMS.length, true); sx = null; });
+  }
+  // called once portfolio photos have loaded
+  window.krnHero = list => {
+    if (!list || !list.length || !media) return;
+    pics = list.slice(0, 8);
+    const fb = $('heroFallback'); if (fb) fb.remove();
+    const cur = slides[slides.length - 1];
+    if (cur && cur.classList.contains('fb')) {   // swap the colour panel for the first photo, gently
+      const s = makeSlide(at); s.style.opacity = 0; s.style.transition = 'opacity 1.2s'; s.classList.add('live'); media.appendChild(s);
+      const im = s.querySelector('img'); const fade = () => { s.style.opacity = 1; setTimeout(() => { cur.remove(); slides = [s]; }, 1250); };
+      if (im.complete) fade(); else im.onload = fade;
+      slides.push(s);
+    }
+    // the film reel in "Right now"
+    const wrap = $('nowReel'); if (wrap) {
+      const cols = [document.createElement('div'), document.createElement('div')]; cols.forEach(c => { c.className = 'reel-col'; });
+      const src = list.length ? list : [];
+      const n = Math.max(4, src.length);
+      for (let k = 0; k < 2; k++) for (let rep = 0; rep < 2; rep++) for (let j = 0; j < n; j++) {
+        const p = src[(j * 2 + k) % src.length]; const f = document.createElement('div'); f.className = 'frame';
+        if (p) { const im = new Image(); im.alt = ''; im.loading = 'lazy'; im.src = srcOf(p); f.appendChild(im); } else f.classList.add('fb');
+        cols[k].appendChild(f);
+      }
+      wrap.innerHTML = ''; cols.forEach(c => wrap.appendChild(c));
+    }
+  };
+  // reel placeholder before photos arrive
+  (function(){ const wrap = $('nowReel'); if (!wrap) return; wrap.innerHTML = '';
+    for (let k = 0; k < 2; k++) { const c = document.createElement('div'); c.className = 'reel-col'; for (let j = 0; j < 8; j++) { const f = document.createElement('div'); f.className = 'frame fb'; c.appendChild(f); } wrap.appendChild(c); } })();
+
+  /* ---- sliced wordmark opens like a loom as you scroll ---- */
+  const wm = $('wmMark');
+  function wmScroll(){
+    if (!wm || !home()) return;
+    const r = wm.getBoundingClientRect(); if (r.bottom < -100 || r.top > innerHeight + 100) return;
+    const k = Math.max(0, Math.min(1, 1 - (r.top + r.height / 2) / innerHeight)); // 0 when entering, 1 when leaving the top
+    const open = Math.sin(Math.min(1, k * 1.25) * Math.PI / 2);
+    wm.style.setProperty('--gap', (open * Math.min(30, innerWidth * .028)).toFixed(1) + 'px');
+    wm.style.setProperty('--sx', ((k - .5) * Math.min(36, innerWidth * .025)).toFixed(1) + 'px');
+  }
+  if (!reduce) { addEventListener('scroll', () => requestAnimationFrame(wmScroll), { passive: true }); addEventListener('krn:route', wmScroll); wmScroll(); }
+
+  /* ---- the equation: words in, and each turns into Nepali ---- */
+  const eq = $('eqLine');
+  if (eq) {
+    [...eq.children].forEach((c, i) => c.style.setProperty('--i', i));
+    eq.querySelectorAll('.eq-t').forEach(b => {
+      const en = b.textContent; b.innerHTML = `<span class="flip"><span class="en">${en}</span><span class="ne" lang="ne">${b.dataset.ne}</span></span>`;
+      b.setAttribute('aria-label', en + ', in Nepali ' + b.dataset.ne + ' (' + b.dataset.ro + ')');
+      b.addEventListener('click', () => { const on = !b.classList.contains('on'); eq.querySelectorAll('.eq-t').forEach(x => x.classList.remove('on')); b.classList.toggle('on', on); });
+    });
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { eq.classList.add('in'); io.disconnect();
+      // a gentle demo: each word shows its Nepali once
+      if (!reduce) eq.querySelectorAll('.eq-t').forEach((b, i) => { setTimeout(() => b.classList.add('on'), 1400 + i * 420); setTimeout(() => b.classList.remove('on'), 2500 + i * 420); });
+    } }, { threshold: .4 });
+    io.observe(eq);
+    if (!fine) $('eqHint') && ($('eqHint').textContent = 'Tap a word to read it in Nepali.');
+  }
+  document.querySelectorAll('mark').forEach(m => { const o = new IntersectionObserver(es => { if (es[0].isIntersecting) { m.classList.add('in'); o.disconnect(); } }, { threshold: 1 }); o.observe(m); });
+
+  /* ---- drag the portfolio rail ---- */
+  const strip = $('stripGrid');
+  if (strip) {
+    let down = false, x0 = 0, s0 = 0, moved = 0;
+    strip.addEventListener('pointerdown', e => { if (!strip.classList.contains('car') || e.pointerType !== 'mouse') return; down = true; moved = 0; x0 = e.clientX; s0 = strip.scrollLeft; });
+    addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - x0; moved = Math.max(moved, Math.abs(dx)); if (moved > 5) strip.classList.add('dragging'); strip.scrollLeft = s0 - dx; });
+    addEventListener('pointerup', () => { if (!down) return; down = false; setTimeout(() => strip.classList.remove('dragging'), 0); });
+    strip.addEventListener('click', e => { if (moved > 5) { e.stopPropagation(); e.preventDefault(); moved = 0; } }, true);
+    new MutationObserver(() => { const h = $('dragHint'); if (h) h.hidden = !strip.classList.contains('car'); }).observe(strip, { attributes: true, attributeFilter: ['class'] });
+  }
+})();
+
+/* =================== PAGES: interactions =================== */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id), $$ = (q, r = document) => [...r.querySelectorAll(q)];
+  const active = id => document.getElementById(id) && document.getElementById(id).classList.contains('active');
+
+  /* ABOUT: three worlds */
+  const venn = $('venn'), cap = $('vennCap');
+  if (venn) {
+    const base = cap.textContent;
+    $$('.vc', venn).forEach(c => {
+      const say = () => { cap.textContent = c.dataset.t; };
+      c.addEventListener('mouseenter', say); c.addEventListener('focus', say);
+      c.addEventListener('click', () => { const on = !c.classList.contains('on'); $$('.vc', venn).forEach(x => x.classList.remove('on')); c.classList.toggle('on', on); venn.classList.toggle('pick', on); cap.textContent = on ? c.dataset.t : base; });
+      c.addEventListener('mouseleave', () => { if (!venn.querySelector('.vc.on')) cap.textContent = base; });
+    });
+  }
+  /* ABOUT: the thread fills as you read */
+  const thread = $('thread');
+  function threadScroll(){
+    if (!thread || !active('p-about')) return;
+    const r = thread.getBoundingClientRect(), mid = innerHeight * .62;
+    const k = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+    thread.style.setProperty('--p', k.toFixed(3));
+    $$('li', thread).forEach(li => li.classList.toggle('lit', reduce || li.getBoundingClientRect().top < mid));
+  }
+  /* ABOUT: value cards flip */
+  $$('#valDeck .vcard').forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
+
+  /* MISSION: the manifesto lights up word by word */
+  const mf = $('mf'); let mws = [];
+  if (mf) {
+    const KEY = ['voice', 'underrepresented', 'marginalised', 'communities', 'storytelling'];
+    mf.innerHTML = mf.textContent.trim().split(/\s+/).map(w => `<span class="mw${KEY.some(k => w.toLowerCase().startsWith(k)) ? ' key' : ''}">${w}</span>`).join(' ');
+    mws = $$('.mw', mf);
+  }
+  function mfScroll(){
+    if (!mws.length || !active('p-mission')) return;
+    const r = mf.getBoundingClientRect();
+    const k = reduce ? 1 : Math.max(0, Math.min(1, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
+    const n = Math.round(k * mws.length);
+    mws.forEach((w, i) => w.classList.toggle('on', i < n));
+  }
+  /* MISSION: folding goal panels */
+  const fold = $('fold');
+  if (fold) $$('.fp', fold).forEach(p => {
+    const open = () => { $$('.fp', fold).forEach(x => x.classList.toggle('on', x === p)); };
+    p.addEventListener('click', open);
+    if (matchMedia('(hover: hover)').matches) p.addEventListener('mouseenter', open);
+  });
+  /* MISSION: pillar tabs */
+  const pt = $('pillTabs');
+  if (pt) $$('.pt', pt).forEach((b, i) => b.addEventListener('click', () => {
+    $$('.pt', pt).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    $$('.pt-p', pt).forEach((p, j) => { p.classList.toggle('on', j === i); if (j === i) $$('li', p).forEach((li, k) => { li.style.setProperty('--k', k); li.style.animation = 'none'; void li.offsetWidth; li.style.animation = ''; }); });
+  }));
+
+  /* WORK: the slate counts itself, tickets get stubs */
+  const plans = $$('#plans .plan');
+  if (plans.length) {
+    plans.forEach((p, i) => {
+      const title = p.querySelector('h3').textContent;
+      const stub = document.createElement('div'); stub.className = 'stub';
+      stub.innerHTML = `<small>Idea</small><b>${String(i + 1).padStart(2, '0')}</b><a href="/contact?idea=${encodeURIComponent(title)}">I'm interested</a>`;
+      p.appendChild(stub);
+    });
+    const count = f => plans.filter(p => f === 'all' || p.dataset.c === f).length;
+    $$('#p-work .filter').forEach(b => { const i = b.querySelector('i'); if (i) i.textContent = count(b.dataset.f); });
+    const si = $('slIdeas'); if (si) si.textContent = plans.length;
+    const so = $('slOn'); if (so) so.textContent = $$('#p-work .al').filter(a => getComputedStyle(a).display !== 'none' && !a.hidden).length;
+    const sd = $('slDate'); if (sd) sd.textContent = new Date().toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+  }
+  // count-up on the slate when it comes into view
+  if (!reduce) $$('.sl-row b').forEach(b => { const end = +b.textContent; if (!end) return; b.textContent = '0';
+    const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); let v = 0; const t = setInterval(() => { v++; b.textContent = v; if (v >= +b.dataset.end) clearInterval(t); }, 900 / Math.max(1, end)); }, { threshold: .5 });
+    b.dataset.end = end; io.observe(b); });
+
+  /* GET INVOLVED: choose your path */
+  const paths = $('paths');
+  if (paths) $$('.po', paths).forEach((b, i) => b.addEventListener('click', () => {
+    $$('.po', paths).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    $$('.pw', paths).forEach((w, j) => w.classList.toggle('on', j === i));
+  }));
+  /* GET INVOLVED: big number follows the amount */
+  const gA = $('giveAmt');
+  $$('.amt').forEach(b => b.addEventListener('click', () => { if (gA) { gA.textContent = b.dataset.a ? '$' + b.dataset.a : 'Any'; if (!reduce) gA.animate([{ transform: 'translateY(12px)', opacity: .3 }, { transform: 'none', opacity: 1 }], { duration: 380, easing: 'cubic-bezier(.2,.75,.15,1)' }); } }));
+
+  /* CONTACT: copy email, date the letter, pre-fill from links */
+  const mb = $('mailBig');
+  if (mb) mb.addEventListener('click', () => {
+    const m = mb.dataset.mail, tip = $('mailTip');
+    const done = () => { tip.textContent = 'Copied ✓'; setTimeout(() => { tip.textContent = 'Copy'; }, 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(m).then(done, () => { location.href = 'mailto:' + m; }); else location.href = 'mailto:' + m;
+  });
+  const ld = $('ltDate'); if (ld) ld.textContent = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+  function prefill(){
+    if (!active('p-contact')) return;
+    const q = new URLSearchParams(location.search), sel = $('about'), msg = $('msg');
+    const pick = t => { const o = [...sel.options].find(o => o.text === t); if (o) sel.value = o.value || o.text; };
+    const MAP = { committee: 'Joining the committee', work: 'Sharing my creative work', partner: 'Partnership enquiry', funding: 'Funding or grants', belonging: 'Being featured in Belonging' };
+    if (q.get('about') && MAP[q.get('about')]) pick(MAP[q.get('about')]);
+    if (q.get('idea')) { pick('A collaboration or project'); if (!msg.value) msg.value = "I'm interested in your idea: " + q.get('idea') + '.\n\n'; }
+  }
+
+  function onScroll(){ threadScroll(); mfScroll(); }
+  addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
+  addEventListener('resize', onScroll);
+  addEventListener('krn:route', () => requestAnimationFrame(() => { onScroll(); prefill(); }));
+  onScroll(); prefill();
+})();
+
 </script>
 </body>
 </html>
