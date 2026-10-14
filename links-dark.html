@@ -18,7 +18,7 @@
   --disp:'Bricolage Grotesque','Instrument Sans',sans-serif;--ne:'Mukta',sans-serif;--ease:cubic-bezier(.2,.75,.15,1);
   --tooth:polygon(0.00% 10px,4.17% 0px,8.33% 10px,12.50% 0px,16.67% 10px,20.83% 0px,25.00% 10px,29.17% 0px,33.33% 10px,37.50% 0px,41.67% 10px,45.83% 0px,50.00% 10px,54.17% 0px,58.33% 10px,62.50% 0px,66.67% 10px,70.83% 0px,75.00% 10px,79.17% 0px,83.33% 10px,87.50% 0px,91.67% 10px,95.83% 0px,100.00% 10px,100% 100%,0 100%);--band:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Crect width='48' height='24' fill='%237A1F2E'/%3E%3Cpath d='M0 24 12 12 24 24ZM24 24 36 12 48 24Z' fill='%23141010'/%3E%3Cpath d='M24 0 30 6 24 12 18 6Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 6 6 0 12ZM48 0 42 6 48 12Z' fill='%23F2A71B'/%3E%3Ccircle cx='12' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Ccircle cx='36' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Cpath d='M12 17 14 19 12 21 10 19ZM36 17 38 19 36 21 34 19Z' fill='%23F6F1E8'/%3E%3C/svg%3E");--thin:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Crect width='32' height='16' fill='%23141010'/%3E%3Cpath d='M0 16 8 8 16 16ZM16 16 24 8 32 16Z' fill='%237A1F2E'/%3E%3Cpath d='M16 0 20 4 16 8 12 4Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 4 4 0 8ZM32 0 28 4 32 8Z' fill='%23F2A71B'/%3E%3C/svg%3E")}
 html{-webkit-text-size-adjust:100%}
-body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--p);color:var(--i);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+body{overflow-x:hidden;font-family:'Instrument Sans',system-ui,sans-serif;background:var(--p);color:var(--i);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--g);outline-offset:3px}
 .weave{height:14px;background:var(--thin) 0 0/28px 14px;animation:loom 30s linear infinite}
@@ -71,6 +71,36 @@ a{color:inherit;text-decoration:none}
 footer{margin-top:1.8rem;display:grid;gap:.25rem;font-size:.82rem;color:var(--sub)}
 footer a{font-weight:700;color:var(--i);border-bottom:2px solid var(--g);justify-self:start}
 footer .ty{font-family:var(--ne);font-weight:800;font-size:1.4rem;color:#F2A71B;margin-bottom:.4rem}
+
+.deck{position:relative;height:400px;margin:0 0 1.4rem;touch-action:pan-y}
+.card{position:absolute;left:50%;top:10px;width:min(68%,270px);aspect-ratio:4/5;margin-left:calc(min(68%,270px)/-2);background:#FBF8F2;padding:9px 9px 30px;border-radius:14px;box-shadow:0 18px 34px -16px rgba(0,0,0,.6);transition:transform .7s var(--ease),opacity .5s;cursor:pointer;user-select:none;-webkit-user-select:none}
+.card img{width:100%;height:100%;object-fit:cover;border-radius:8px;filter:grayscale(1) contrast(1.08);pointer-events:none}
+.card span{position:absolute;left:12px;right:12px;bottom:7px;font-family:var(--disp);font-size:.78rem;font-weight:600;color:#2a2422;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card.fly{transform:translate(140%,-10%) rotate(24deg)!important;opacity:0}
+.deck-hint{position:absolute;left:0;right:0;bottom:-6px;text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+.deck.solo{height:auto} .deck.solo .deck-hint{display:none}
+.np{display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:center;padding:.85rem 1rem;margin-bottom:6px;border-radius:16px;background:#1E1918;color:#F6F1E8}
+.np-art{width:46px;height:46px;border-radius:10px;background:var(--m);display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:10px 0}
+.np-art i{width:4px;background:var(--g);border-radius:2px;animation:eq 1s ease-in-out infinite}
+.np-art i:nth-child(2){animation-delay:-.3s}.np-art i:nth-child(3){animation-delay:-.6s}.np-art i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:20%}50%{height:100%}}
+.np-t small{display:block;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+.np-t b{display:block;font-family:var(--disp);font-weight:600;font-size:1.1rem;letter-spacing:-.03em}
+.np-bar{display:block;height:3px;background:rgba(246,241,232,.2);border-radius:2px;margin-top:.45rem;overflow:hidden}
+.np-bar span{display:block;height:100%;width:55%;background:#F6F1E8;animation:np 6s ease-in-out infinite alternate}
+@keyframes np{from{width:42%}to{width:62%}}
+.np-go{width:36px;height:36px;border-radius:50%;background:#F6F1E8;color:#141010;display:grid;place-items:center;font-size:.8rem}
+.ln{border-radius:16px;transform-style:preserve-3d;will-change:transform}
+.ln::before{clip-path:none;inset:0}
+.ln::after{content:"क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क ";position:absolute;inset:-40% -10%;z-index:-1;font-family:var(--ne);font-weight:800;font-size:1.3rem;line-height:1.5;letter-spacing:.5em;word-break:break-all;color:rgba(246,241,232,.1);opacity:0;transition:opacity .4s;pointer-events:none}
+.ln:hover::after,.ln:active::after{opacity:1}
+.ln-a{border-radius:50%;transform:none}
+.ln:hover .ln-a{transform:rotate(-45deg)}
+.soc{border-radius:12px}
+.words button{font:inherit;color:inherit;text-transform:inherit;background:none;border:0;cursor:pointer}
+.words button.ne{font-family:var(--ne);text-transform:none;color:#F2A71B}
+.ka-p{position:fixed;z-index:99;pointer-events:none;font-family:var(--ne);font-weight:800;color:#F2A71B;font-size:20px;will-change:transform,opacity}
+.photo{display:none}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
@@ -79,14 +109,18 @@ footer .ty{font-family:var(--ne);font-weight:800;font-size:1.4rem;color:#F2A71B;
 <div class="weave" aria-hidden="true"></div>
 <main class="wrap">
   <header class="top">
-    <p class="meta"><span>Not-for-profit · Australia</span><span lang="ne">नमस्ते</span></p>
+    <p class="meta"><span>NFP Studio · Aus</span><span lang="ne">नमस्ते</span></p>
     <a class="logo" id="logo" href="https://krnbrystudio.com" aria-label="KRNBRY Studio"><svg class="lg" viewBox="0 0 1149.2 288.34" aria-hidden="true"><g class="lg-w" transform="translate(9.2 161.6)"><g class="lg-k"><path d="M14.8 0.0V-137.6H64.2V-76.80L130.8 -137.6H192.0L131.20 -81.4L193.60 0.0H133.4L94.80 -51.80L64.2 -27.0V0.0Z"/></g><text class="lg-ka" x="104" y="2" text-anchor="middle">क</text><path d="M206.40 0.0V-137.6H325.6Q341.0 -137.6 351.3 -131.2Q361.6 -124.80 366.8 -114.4Q372.0 -104.0 372.0 -92.0Q372.0 -78.2 365.90 -67.5Q359.80 -56.80 348.0 -50.40L375.20 0.0H319.40L298.6 -43.0H255.8V0.0ZM255.8 -77.2H308.20Q313.8 -77.2 317.6 -80.7Q321.40 -84.2 321.40 -90.4Q321.40 -94.60 319.6 -97.5Q317.8 -100.4 314.9 -101.9Q312.0 -103.4 308.20 -103.4H255.8Z"/><path d="M389.00 0.0V-137.6H432.00L500.00 -80.2Q501.20 -79.2 503.40 -77.2Q505.6 -75.2 508.00 -73.0Q510.40 -70.8 512.40 -69.0H514.40Q514.40 -71.8 514.40 -76.5Q514.40 -81.2 514.40 -85.60V-137.6H560.80V0.0H518.2L453.6 -54.2Q449.40 -57.6 444.70 -61.8Q440.00 -66.0 437.20 -68.60H435.40Q435.40 -65.8 435.40 -60.7Q435.40 -55.6 435.40 -50.40V0.0Z"/><path d="M584.4 0.0V-137.6H703.2Q714.6 -137.6 723.90 -133.3Q733.2 -129.0 738.7 -121.4Q744.2 -113.80 744.2 -103.80Q744.2 -93.80 740.80 -87.4Q737.40 -81.0 731.7 -77.30Q726.0 -73.60 719.2 -71.8V-71.0Q727.0 -69.4 733.40 -65.5Q739.80 -61.6 743.60 -54.6Q747.40 -47.6 747.40 -36.6Q747.40 -25.6 741.7 -17.40Q736.0 -9.20 726.2 -4.60Q716.40 0.0 704.40 0.0ZM633.80 -32.0H684.6Q690.0 -32.0 693.40 -35.2Q696.80 -38.40 696.80 -44.80Q696.80 -47.80 695.30 -50.30Q693.80 -52.80 691.0 -54.2Q688.2 -55.6 684.6 -55.6H633.80ZM633.80 -84.0H681.40Q685.2 -84.0 687.90 -85.5Q690.6 -87.0 692.1 -89.80Q693.6 -92.60 693.6 -96.80Q693.6 -101.2 690.0 -104.30Q686.40 -107.4 681.40 -107.4H633.80Z"/><path d="M764.4 0.0V-137.6H883.6Q899.0 -137.6 909.3 -131.2Q919.6 -124.80 924.8 -114.4Q930.0 -104.0 930.0 -92.0Q930.0 -78.2 923.90 -67.5Q917.80 -56.80 906.0 -50.40L933.2 0.0H877.40L856.6 -43.0H813.80V0.0ZM813.80 -77.2H866.2Q871.80 -77.2 875.60 -80.7Q879.40 -84.2 879.40 -90.4Q879.40 -94.60 877.60 -97.5Q875.80 -100.4 872.90 -101.9Q870.0 -103.4 866.2 -103.4H813.80Z"/><path d="M998.2 0.0V-54.2L929.6 -137.6H987.40L1023.2 -91.2H1024.60L1060.4 -137.6H1116.0L1047.60 -54.2V0.0Z"/></g><g class="lg-s" transform="translate(837.1 263.16)"><path d="M8.02 -13.03Q8.20 -9.02 8.67 -6.72Q9.14 -4.42 9.91 -3.42Q10.73 -2.41 11.74 -2.15Q12.74 -1.88 14.04 -1.88Q17.75 -1.88 20.38 -3.06Q23.00 -4.24 24.39 -6.51Q25.78 -8.79 25.78 -11.97Q25.78 -13.86 25.07 -15.98Q24.36 -18.11 22.77 -20.73Q21.18 -23.36 18.46 -26.84Q15.81 -30.32 14.30 -33.15Q12.80 -35.98 12.21 -38.40Q11.62 -40.82 11.62 -43.07Q11.62 -48.20 14.33 -52.39Q17.05 -56.58 21.77 -59.08Q26.49 -61.59 32.56 -61.59Q36.81 -61.59 39.29 -60.65Q41.77 -59.70 42.83 -58.02Q43.89 -56.34 43.89 -54.04Q43.89 -52.27 43.04 -51.00Q42.18 -49.73 40.23 -49.05Q38.29 -48.37 34.86 -48.37Q35.10 -52.56 34.81 -54.75Q34.51 -56.93 33.80 -57.76Q33.09 -58.58 32.06 -58.88Q31.03 -59.17 29.32 -59.17Q24.48 -59.17 21.56 -56.75Q18.64 -54.33 18.64 -49.73Q18.64 -47.96 19.20 -46.04Q19.76 -44.13 21.21 -41.59Q22.65 -39.05 25.31 -35.34Q27.96 -31.68 29.47 -28.85Q30.97 -26.01 31.59 -23.65Q32.21 -21.29 32.21 -18.99Q32.21 -13.09 29.32 -8.55Q26.43 -4.01 21.38 -1.41Q16.34 1.18 9.91 1.18Q5.60 1.18 3.06 0.23Q0.53 -0.70 -0.59 -2.44Q-1.71 -4.18 -1.71 -6.48Q-1.71 -8.79 -0.70 -10.23Q0.29 -11.68 2.44 -12.36Q4.60 -13.03 8.02 -13.03Z"/><path d="M49.38 -57.34 50.32 -60.41H83.66L82.89 -57.34ZM56.22 -13.80Q55.81 -12.44 55.57 -11.53Q55.34 -10.62 55.25 -10.03Q55.16 -9.44 55.16 -8.96Q55.16 -7.84 55.84 -7.37Q56.52 -6.90 57.81 -6.90Q59.23 -6.90 61.44 -7.84Q63.66 -8.79 66.96 -11.62Q70.26 -14.45 74.81 -20.06L75.34 -19.64Q70.85 -12.86 67.23 -8.73Q63.60 -4.60 60.65 -2.44Q57.70 -0.29 55.31 0.44Q52.92 1.18 50.97 1.18Q48.37 1.18 46.61 -0.35Q44.83 -1.88 44.83 -5.48Q44.83 -6.66 45.16 -8.73Q45.48 -10.79 46.96 -15.45L66.02 -74.92H75.81Z"/><path d="M111.74 -3.71 117.29 -21.47H117.82Q113.69 -14.98 110.38 -10.62Q107.08 -6.25 104.22 -3.65Q101.36 -1.06 98.70 0.05Q96.05 1.18 93.22 1.18Q87.85 1.18 85.66 -1.35Q83.48 -3.89 83.48 -7.55Q83.48 -9.26 83.89 -11.18Q84.31 -13.09 85.01 -14.98L100.18 -55.22L101.59 -53.27Q100.53 -53.92 97.99 -53.24Q95.46 -52.56 91.44 -49.67Q87.43 -46.78 81.95 -40.65L81.42 -41.06Q86.55 -48.32 90.86 -52.86Q95.16 -57.40 98.82 -59.50Q102.48 -61.59 105.61 -61.59Q109.09 -61.59 110.38 -60.09Q111.68 -58.58 110.27 -54.98L95.22 -16.57Q94.51 -14.80 94.16 -13.39Q93.81 -11.97 93.81 -10.97Q93.81 -8.85 95.22 -7.99Q96.64 -7.13 99.35 -7.13Q101.95 -7.13 104.90 -9.02Q107.85 -10.91 110.65 -13.83Q113.45 -16.75 115.55 -19.94Q117.64 -23.12 118.53 -25.66L130.21 -60.41H139.82L121.12 -5.13L120.06 -6.96Q121.65 -6.43 124.31 -7.40Q126.96 -8.37 130.59 -11.29Q134.22 -14.21 138.64 -19.47L139.18 -19.05Q131.98 -7.67 126.23 -3.24Q120.47 1.18 116.22 1.18Q113.33 1.18 112.18 -0.11Q111.03 -1.41 111.74 -3.71Z"/><path d="M190.39 -49.73Q188.74 -54.27 186.49 -55.90Q184.25 -57.52 181.30 -57.52Q177.0 -57.52 172.72 -54.39Q168.44 -51.27 164.61 -46.16Q160.77 -41.06 157.76 -35.13Q154.75 -29.20 153.04 -23.45Q151.33 -17.7 151.33 -13.33Q151.33 -9.55 152.95 -8.05Q154.57 -6.54 157.05 -6.54Q158.41 -6.54 160.09 -7.16Q161.77 -7.78 163.78 -9.20Q165.79 -10.62 168.14 -12.92Q170.51 -15.22 173.25 -18.52Q175.99 -21.83 179.12 -26.31L195.52 -76.87Q194.46 -77.58 193.01 -78.49Q191.57 -79.41 189.95 -80.50Q188.32 -81.59 186.61 -82.65L186.67 -83.01L207.85 -87.55H208.03L181.95 -5.13L180.42 -6.90Q181.95 -6.43 184.64 -7.37Q187.32 -8.31 191.18 -11.20Q195.05 -14.10 200.06 -19.47L200.6 -19.05Q192.98 -8.31 187.11 -3.56Q181.24 1.18 176.88 1.18Q173.69 1.18 172.75 -0.32Q171.80 -1.82 172.92 -5.42L179.53 -26.01H180.18Q174.52 -17.34 170.12 -11.94Q165.73 -6.54 162.33 -3.71Q158.94 -0.88 156.35 0.14Q153.75 1.18 151.63 1.18Q148.56 1.18 146.11 -0.08Q143.66 -1.35 142.27 -3.83Q140.89 -6.31 140.89 -9.97Q140.89 -15.75 143.04 -22.65Q145.19 -29.55 148.94 -36.37Q152.69 -43.18 157.53 -48.85Q162.36 -54.51 167.79 -57.93Q173.22 -61.36 178.71 -61.36Q182.42 -61.36 185.58 -58.94Q188.74 -56.52 190.80 -51.74Z"/><path d="M205.37 -5.42 223.96 -55.22 225.08 -53.45Q223.49 -53.86 220.98 -53.01Q218.47 -52.15 214.76 -49.32Q211.04 -46.49 205.73 -40.94L205.20 -41.35Q210.27 -48.55 214.49 -53.01Q218.71 -57.46 222.31 -59.53Q225.91 -61.59 229.03 -61.59Q232.63 -61.59 233.55 -59.85Q234.46 -58.11 233.28 -54.98L214.70 -5.19L213.28 -7.31Q214.58 -6.54 216.85 -7.10Q219.12 -7.67 223.01 -10.53Q226.91 -13.39 232.93 -19.47L233.46 -19.05Q228.38 -11.91 224.08 -7.43Q219.77 -2.94 216.20 -0.88Q212.63 1.18 209.68 1.18Q206.20 1.18 205.14 -0.32Q204.08 -1.82 205.37 -5.42ZM228.32 -79.11Q228.32 -81.00 229.24 -82.62Q230.15 -84.25 231.81 -85.22Q233.46 -86.19 235.76 -86.19Q239.18 -86.19 241.07 -84.07Q242.96 -81.95 242.96 -79.11Q242.96 -77.17 242.10 -75.43Q241.25 -73.69 239.65 -72.59Q238.06 -71.50 235.76 -71.50Q232.34 -71.50 230.33 -73.86Q228.32 -76.22 228.32 -79.11Z"/><path d="M273.34 -61.59Q278.24 -61.59 281.51 -59.56Q284.79 -57.52 286.44 -53.66Q288.09 -49.79 288.09 -44.25Q288.09 -36.10 285.26 -28.05Q282.43 -20.00 277.56 -13.39Q272.69 -6.78 266.44 -2.80Q260.19 1.18 253.34 1.18Q248.50 1.18 245.20 -0.85Q241.89 -2.89 240.24 -6.78Q238.59 -10.67 238.59 -16.16Q238.59 -24.30 241.42 -32.36Q244.26 -40.41 249.12 -47.02Q253.99 -53.63 260.24 -57.61Q266.50 -61.59 273.34 -61.59ZM253.52 -0.82Q257.06 -0.82 260.69 -3.74Q264.32 -6.66 267.56 -11.65Q270.81 -16.63 273.34 -22.95Q275.88 -29.26 277.35 -36.10Q278.83 -42.95 278.83 -49.55Q278.83 -54.63 277.50 -57.11Q276.17 -59.58 273.16 -59.58Q269.63 -59.58 266.00 -56.66Q262.37 -53.74 259.12 -48.76Q255.88 -43.77 253.34 -37.46Q250.80 -31.15 249.33 -24.30Q247.85 -17.46 247.85 -10.85Q247.85 -5.78 249.18 -3.30Q250.51 -0.82 253.52 -0.82Z"/></g></svg></a>
     <p class="bio">Stories that teach, connect and <span>grow multicultural Australia.</span></p>
     <p class="handle"><i></i>@krnbrystudio · Where We Work in production</p>
   </header>
-  <a class="photo" id="photo" href="https://krnbrystudio.com/portfolio" target="_blank" rel="noopener">
-    <img src="https://krnbrystudio.com/portfolio/doorway-light.jpg" alt="Black and white portrait from the KRNBRY Studio portfolio" onerror="document.getElementById('photo').remove()">
-    <span>From the portfolio →</span>
+  <div class="deck" id="deck" aria-label="Photos from the portfolio. Tap to flick through.">
+    <p class="deck-hint">Tap or swipe the photos</p>
+  </div>
+  <a class="np" href="https://krnbrystudio.com/work" target="_blank" rel="noopener">
+    <span class="np-art" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="np-t"><small>Now in production</small><b>Where We Work</b><span class="np-bar"><span></span></span></span>
+    <span class="np-go" aria-hidden="true">▶</span>
   </a>
   <div class="lns"><a class="ln main" href="https://krnbrystudio.com" target="_blank" rel="noopener"><span class="ln-n">01</span><span class="ln-t"><b>Our website</b><small>Mission, work, future plans and more</small></span><span class="ln-a" aria-hidden="true">→</span></a></div>
   <p class="lab">Our work</p>
@@ -99,7 +133,7 @@ footer .ty{font-family:var(--ne);font-weight:800;font-size:1.4rem;color:#F2A71B;
     <a class="soc" href="https://www.tiktok.com/@krnbrystudio" target="_blank" rel="noopener">TikTok</a>
     <a class="soc" href="https://www.youtube.com/@krnbrystudio" target="_blank" rel="noopener">YouTube</a>
   </div>
-  <div class="words" aria-hidden="true"><div>
+  <div class="words" id="words"><div>
     <span>Stories</span><span lang="ne">कथा</span><span>Community</span><span lang="ne">समुदाय</span><span>Education</span><span lang="ne">शिक्षा</span><span>Belonging</span><span lang="ne">अपनत्व</span>
     <span>Stories</span><span lang="ne">कथा</span><span>Community</span><span lang="ne">समुदाय</span><span>Education</span><span lang="ne">शिक्षा</span><span>Belonging</span><span lang="ne">अपनत्व</span>
   </div></div>
@@ -112,6 +146,35 @@ footer .ty{font-family:var(--ne);font-weight:800;font-size:1.4rem;color:#F2A71B;
 <div class="weave" aria-hidden="true"></div>
 <script>
 document.querySelectorAll('.ln').forEach((a,i)=>a.style.setProperty('--k',i));
+// photo deck from the portfolio
+(async function(){
+  const deck=document.getElementById('deck'); if(!deck) return;
+  let list=[];
+  try{const r=await fetch('/portfolio/photos.json?v='+Date.now()); if(r.ok){const d=await r.json(); const arr=Array.isArray(d)?d:(d.photos||[]); const pick=(d.lens&&d.lens.length?d.lens:(d.featured||[])); list=(pick.length?pick.map(src=>arr.find(p=>p.src===src)).filter(Boolean):arr).slice(0,8);}}catch(e){}
+  if(!list.length) list=[{src:'portfolio/doorway-light.jpg',title:'In the doorway light'}];
+  const src=p=>/^(https?:)?\//.test(p.src)?p.src:'/'+p.src;
+  const cards=list.map((p,i)=>{const c=document.createElement('div');c.className='card';c.innerHTML='<img alt=""><span></span>';c.querySelector('img').src=src(p);c.querySelector('span').textContent=p.title||'';deck.appendChild(c);return c;});
+  if(cards.length===1){deck.classList.add('solo');cards[0].style.position='relative';cards[0].style.left='auto';cards[0].style.margin='0 auto';cards[0].style.display='block';return;}
+  let order=cards.slice();
+  const lay=()=>order.forEach((c,i)=>{c.style.zIndex=order.length-i;c.style.transform=`translateY(${i*6}px) rotate(${[0,-5,4,-2,3,-4,2,-3][i%8]}deg) scale(${1-i*.03})`;c.style.opacity=i>3?0:1;});
+  lay();
+  const next=()=>{const top=order[0];top.classList.add('fly');setTimeout(()=>{top.classList.remove('fly');order.push(order.shift());lay();},420);};
+  deck.addEventListener('click',next);
+  let sx=null;deck.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  deck.addEventListener('touchend',e=>{if(sx!==null&&Math.abs(e.changedTouches[0].clientX-sx)>40){e.preventDefault();next();}sx=null;});
+})();
+// a little burst of क where you tap
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function burst(x,y){ if(still) return; for(let i=0;i<9;i++){const p=document.createElement('span');p.className='ka-p';p.textContent='क';p.style.left=x+'px';p.style.top=y+'px';document.body.appendChild(p);
+  const a=Math.random()*Math.PI*2,d=40+Math.random()*60;p.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(a)*d}px),calc(-50% + ${Math.sin(a)*d}px)) scale(${.8+Math.random()*.8}) rotate(${(Math.random()-.5)*90}deg)`,opacity:0}],{duration:700+Math.random()*300,easing:'cubic-bezier(.2,.75,.15,1)'}).onfinish=()=>p.remove();}}
+document.querySelectorAll('.ln,.np,.soc').forEach(a=>a.addEventListener('pointerdown',e=>burst(e.clientX,e.clientY)));
+// tiles lean towards your finger or mouse
+if(!still) document.querySelectorAll('.ln').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(700px) rotateX(${(-y*6).toFixed(1)}deg) rotateY(${(x*8).toFixed(1)}deg)`;});el.addEventListener('pointerleave',()=>{el.style.transform='';});});
+// the word strip: tap a word to swap it into Nepali or back
+const W={Stories:'कथा',Community:'समुदाय',Education:'शिक्षा',Belonging:'अपनत्व'};const B=Object.fromEntries(Object.entries(W).map(([a,b])=>[b,a]));
+document.querySelectorAll('#words span').forEach(sp=>{const b=document.createElement('button');b.type='button';b.textContent=sp.textContent;if(sp.lang==='ne')b.className='ne';sp.replaceWith(b);
+  b.addEventListener('click',e=>{const t=b.textContent;b.textContent=W[t]||B[t]||t;b.classList.toggle('ne',!!W[t]);burst(e.clientX,e.clientY);});});
+
 const ph=document.getElementById('photo'); if(ph){const im=ph.querySelector('img'); const go=()=>ph.classList.add('in'); im.complete?go():im.addEventListener('load',go);}
 const lg=document.getElementById('logo');
 if(lg && !matchMedia('(prefers-reduced-motion: reduce)').matches){const f=()=>{lg.classList.add('ka');setTimeout(()=>lg.classList.remove('ka'),1800)};setTimeout(f,1800);setInterval(f,9000);}

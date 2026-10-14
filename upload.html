@@ -12,10 +12,10 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..800&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--paper:#F4EFE7;--paper-2:#EAE2D5;--white:#FFFDF9;--ink:#1A1614;--ink-2:#463E39;--muted:#7A6F66;--red:#7A1F2E;--red-d:#561521;--ochre:#D9962A;--green:#2E6B35;--line:rgba(26,22,20,.14)}
+:root{--paper:#F6F1E8;--paper-2:#ECE3D4;--white:#FFFFFF;--ink:#141010;--ink-2:#3A3330;--muted:#776B65;--red:#7A1F2E;--red-d:#561521;--ochre:#F2A71B;--green:#2E6B35;--line:rgba(20,16,16,.14)}
 body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer;border:0;background:none}
@@ -256,6 +256,51 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   .album .a-side{grid-row:auto;grid-column:auto;flex-direction:row;align-items:center;justify-content:space-between}
   .acts{grid-column:1/-1;flex-direction:row;justify-content:flex-end}
 }
+
+/* ===== studio look, round 2 ===== */
+h1,h2,h3,.logo,.tab,.chip,.fr-lbl b{font-family:'Sora','Instrument Sans',sans-serif}
+h1{font-weight:700;letter-spacing:-.045em}
+h2{font-weight:600;letter-spacing:-.035em}
+header{background:var(--ink);color:var(--paper);border:0;margin-bottom:2.25rem;position:relative}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:repeating-linear-gradient(90deg,var(--red) 0 12px,var(--ochre) 12px 16px,var(--ink) 16px 28px)}
+header .logo{color:var(--paper);font-weight:800;letter-spacing:-.03em}
+header .logo span{color:var(--ochre);font-family:'Instrument Sans',sans-serif}
+header .btn-line{border-color:rgba(246,241,232,.5);color:var(--paper)}
+header .btn-line:hover{background:var(--paper);color:var(--ink)}
+.panel{border-radius:20px;border:1px solid var(--line);box-shadow:0 1px 0 var(--line)}
+.btn{border-radius:12px}
+.tabs{position:sticky;top:.75rem;z-index:40;background:var(--ink);padding:.35rem;border-radius:16px;box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.tab{color:rgba(246,241,232,.7);border-radius:12px}
+.tab.active{background:var(--paper);color:var(--ink)}
+.front{background:linear-gradient(135deg,#FFFFFF,#FBF6EC)}
+.fr-row{display:grid;grid-template-columns:220px 1fr;gap:1.25rem;align-items:center;padding:1rem 0;border-top:1px solid var(--line)}
+.fr-lbl b{display:block;font-weight:600;font-size:1.05rem;letter-spacing:-.02em}
+.fr-lbl small{color:var(--muted);font-size:.84rem}
+.fr-strip{display:flex;gap:.6rem;overflow-x:auto;padding:.3rem .1rem .5rem;min-height:96px;align-items:center}
+.fr-th{position:relative;flex:0 0 auto;width:120px;height:86px;border-radius:12px;overflow:hidden;background:var(--paper-2);cursor:grab;box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.fr-th:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--ink)}
+.fr-th img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.fr-th i{position:absolute;left:6px;top:6px;font-style:normal;font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;background:var(--ink);color:var(--paper);width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
+.fr-th button{position:absolute;right:5px;top:5px;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--ink);font-size:.7rem;font-weight:700;opacity:0;transition:opacity .2s}
+.fr-th:hover button,.fr-th:focus-within button{opacity:1}
+@media (hover:none){.fr-th button{opacity:1}}
+.fr-empty{color:var(--muted);font-size:.9rem;font-style:normal}
+.lib-tools{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.lib-tools input[type=search]{width:260px;max-width:100%;padding:.55rem .85rem;border-radius:12px;border:1.5px solid var(--line);background:var(--white);font:inherit;font-size:.92rem}
+.lib-tools input[type=search]:focus{outline:none;border-color:var(--red)}
+.selbar{position:sticky;top:5rem;z-index:30;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;background:var(--ink);color:var(--paper);padding:.7rem .9rem;border-radius:14px;margin-bottom:1rem;box-shadow:0 14px 30px -18px rgba(0,0,0,.7)}
+.selbar b{font-family:'Sora',sans-serif;font-weight:600;margin-right:.4rem}
+.selbar label{display:flex;align-items:center;gap:.4rem;font-size:.85rem}
+.selbar select{width:auto;padding:.4rem .6rem;border-radius:10px;font-size:.88rem;background:var(--paper);color:var(--ink)}
+.selbar .btn-line{border-color:rgba(246,241,232,.45);color:var(--paper)}
+.selbar .btn-line:hover{background:var(--paper);color:var(--ink)}
+.selbar .btn-line.danger:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+.selbar .btn:disabled,.selbar select:disabled{opacity:.4;pointer-events:none}
+.tile .t-check{position:absolute;right:8px;bottom:8px;width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.3);display:grid;place-items:center;color:#fff;font-weight:800;font-size:.85rem;z-index:2}
+.tile.sel{box-shadow:0 0 0 3px var(--red)}
+.tile.sel .t-check{background:var(--red);border-color:var(--red)}
+.tb-b.feat{background:#23408E}
+@media (max-width:720px){.fr-row{grid-template-columns:1fr;gap:.5rem}.lib-tools input[type=search]{width:100%}.selbar{top:4.5rem}}
 </style>
 </head>
 <body>
@@ -305,11 +350,29 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   </div>
 
   <div id="work" class="hide">
+    <section class="panel front" id="front">
+      <div class="panel-head">
+        <div>
+          <h2>Your front page</h2>
+          <p>Choose what people see first. Drag to change the order, press ✕ to take one off. To add a photo, open it below and press <b>＋ Top slideshow</b> or <b>＋ Seen through our lens</b>.</p>
+        </div>
+        <a class="btn btn-line btn-sm" href="/" target="_blank" rel="noopener">View home page ↗</a>
+      </div>
+      <div class="fr-row">
+        <div class="fr-lbl"><b>Top slideshow</b><small>The big photos behind the headline. Up to 8.</small></div>
+        <div class="fr-strip" id="frHero"></div>
+      </div>
+      <div class="fr-row">
+        <div class="fr-lbl"><b>Seen through our lens</b><small>The row of photos further down. Up to 6.</small></div>
+        <div class="fr-strip" id="frLens"></div>
+      </div>
+    </section>
+
     <section class="panel">
       <div class="panel-head">
         <div>
-          <h2>2. Your photos</h2>
-          <p>Albums fold open and shut. Drag photos to reorder them or move them between albums. Click any photo to write its caption, or to pick it for the front page carousel.</p>
+          <h2>Your photos</h2>
+          <p>Albums fold open and shut. Drag photos to reorder them or move them between albums. Click any photo to write its caption or put it on the front page. Use <b>Select</b> to change many photos at once.</p>
         </div>
         <div class="head-btns">
           <button class="btn btn-line btn-sm" id="foldAll" type="button">Fold all</button>
@@ -329,9 +392,23 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
           <button type="button" class="chip on" data-f="all">All <span id="cAll">0</span></button>
           <button type="button" class="chip" data-f="nocap">Needs a caption <span id="cNo">0</span></button>
           <button type="button" class="chip" data-f="new">New <span id="cNew">0</span></button>
-          <button type="button" class="chip" data-f="feat">Front page <span id="cFeat">0</span></button>
+          <button type="button" class="chip" data-f="hero">Top slideshow <span id="cHero">0</span></button>
+          <button type="button" class="chip" data-f="lens">Lens <span id="cLens">0</span></button>
         </div>
-        <button type="button" class="btn btn-red btn-sm hide" id="capRun">Caption them one by one →</button>
+        <div class="lib-tools">
+          <input type="search" id="q" placeholder="Search titles, captions, places" aria-label="Search photos">
+          <button type="button" class="btn btn-line btn-sm" id="selBtn">Select</button>
+          <button type="button" class="btn btn-red btn-sm hide" id="capRun">Caption them one by one →</button>
+        </div>
+      </div>
+      <div class="selbar hide" id="selBar">
+        <b id="selN">0 selected</b>
+        <label>Move to <select id="selAlbum"></select></label>
+        <button type="button" class="btn btn-line btn-sm" id="selHero">＋ Top slideshow</button>
+        <button type="button" class="btn btn-line btn-sm" id="selLens">＋ Lens</button>
+        <button type="button" class="btn btn-line btn-sm" id="selAll">Select all shown</button>
+        <button type="button" class="btn btn-line btn-sm danger" id="selDel">Remove</button>
+        <button type="button" class="btn btn-red btn-sm" id="selDone">Done</button>
       </div>
       <p class="lib-note hide" id="filterNote">Showing some photos only, so dragging is paused. Choose <b>All</b> to reorder.</p>
 
@@ -536,7 +613,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   async function loadExisting(){
     items = []; shaMap = {}; manifestSha = null;
     const files = await listFolder(FOLDER, 0);
-    let manifest = [], coverSrc = '', featSrc = []; albums = [];
+    let manifest = [], coverSrc = '', featSrc = [], heroSrc = [], lensSrc = []; albums = [];
     const m = await api('/contents/' + MANIFEST + '?ref=' + encodeURIComponent(branch));
     if (m && m.content) {
       manifestSha = m.sha;
@@ -545,6 +622,8 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
         manifest = Array.isArray(d) ? d : (d.photos || []);
         if (!Array.isArray(d) && d.cover) coverSrc = d.cover;
         if (!Array.isArray(d) && Array.isArray(d.featured)) featSrc = d.featured;
+        if (!Array.isArray(d) && Array.isArray(d.hero)) heroSrc = d.hero;
+        if (!Array.isArray(d) && Array.isArray(d.lens)) lensSrc = d.lens;
         if (!Array.isArray(d) && Array.isArray(d.albums)) albums = d.albums.filter(a => a && a.id).map(a => ({ id: a.id, name: a.name || '', description: a.description || '' }));
       } catch(e){}
     }
@@ -566,10 +645,10 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     regroup();
     items._origOrder = items.map(i => i.src).join('|');
     albumsOrig = JSON.stringify(albums);
-    const ch = items.find(i => i.src === coverSrc); coverKey = ch ? ch.key : (items[0] && items[0].key);
-    featKeys = new Set(items.filter(i => featSrc.includes(i.src)).map(i => i.key));
-    featOrig = featSig();
-    coverOrig = (homePhoto() || {}).src || '';
+    const toKeys = list => list.map(src => items.find(i => i.src === src)).filter(Boolean).map(i => i.key);
+    heroK = toKeys(heroSrc.length ? heroSrc : (coverSrc ? [coverSrc] : []));
+    lensK = toKeys(lensSrc.length ? lensSrc : featSrc).slice(0, LENS_MAX);
+    frontOrig = frontSig();
     render();
   }
 
@@ -599,14 +678,20 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
 
   /* ---------- albums ---------- */
-  let albums = [], albumsOrig = '[]', coverKey = null, coverOrig = '', filter = 'all';
-  let featKeys = new Set(), featOrig = '';
-  const FEAT_MAX = 16;
-  const featList = () => items.filter(i => !i.removed && featKeys.has(i.key));
-  const featSig = () => featList().map(i => i.src || i.key).join('|');
+  let albums = [], albumsOrig = '[]', filter = 'all', query = '';
+  // the front page: the big slideshow at the top, and the "seen through our lens" row
+  let heroK = [], lensK = [], frontOrig = '';
+  const HERO_MAX = 8, LENS_MAX = 6;
+  const byKey = k => items.find(i => i.key === k);
+  const liveKeys = arr => arr.filter(k => { const i = byKey(k); return i && !i.removed; });
+  const heroList = () => liveKeys(heroK).map(byKey);
+  const lensList = () => liveKeys(lensK).map(byKey);
+  const frontSig = () => JSON.stringify([heroList().map(i => i.src || i.key), lensList().map(i => i.src || i.key)]);
   const sig = i => JSON.stringify([i.title, i.caption, i.place, i.date, i.album, i.alt]);
   const newId = name => slug(name || 'album') + '-' + Math.random().toString(36).slice(2, 6);
   const hasCap = i => !!(i.caption || '').trim();
+  const matchQ = i => !query || [i.title, i.caption, i.place, i.date].join(' ').toLowerCase().includes(query);
+  const matchF = i => matchQ(i) && (filter === 'nocap' ? !i.removed && !hasCap(i) : filter === 'hero' ? !i.removed && heroK.includes(i.key) : filter === 'lens' ? !i.removed && lensK.includes(i.key) : filter === 'new' ? i.isNew : true);
   const live = () => items.filter(i => !i.removed);
   function albumOptions(sel, none){
     const v = sel.value; sel.innerHTML = '';
@@ -623,7 +708,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     const keep = items._origOrder; items = o.map(x => x[2]); items._origOrder = keep;
   }
   // the home-page photo: the chosen one, or the first photo
-  const homePhoto = () => live().find(i => i.key === coverKey) || live()[0];
+  const homePhoto = () => heroList()[0] || live()[0];
 
   /* open/closed albums, remembered in this browser */
   let openSet = new Set((() => { try { return JSON.parse(store.get('open') || '[]'); } catch(e){ return []; } })());
@@ -646,6 +731,46 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
   });
   $('capRun').onclick = () => { const first = live().find(i => !hasCap(i)); if (first) openEditor(first.key, true); };
 
+  /* ---------- the front page panel ---------- */
+  let frSorts = [];
+  function renderFront(){
+    frSorts.forEach(x => x.destroy()); frSorts = [];
+    [['frHero', heroK, 'No photos picked yet, so the slideshow uses your first photos.'], ['frLens', lensK, 'No photos picked yet, so this row uses your first photos.']].forEach(([id, arr, empty]) => {
+      const el = $(id); if (!el) return; el.innerHTML = '';
+      const keys = liveKeys(arr);
+      if (!keys.length) { el.innerHTML = '<p class="fr-empty">' + empty + '</p>'; return; }
+      keys.forEach((k, n) => {
+        const it = byKey(k), d = document.createElement('div'); d.className = 'fr-th'; d.dataset.key = k;
+        d.innerHTML = '<img alt=""><i>' + (n + 1) + '</i><button type="button" aria-label="Take off">✕</button>';
+        const im = d.querySelector('img'); im.src = it.url; im.onerror = () => { if (it.src) im.src = '/' + it.src; };
+        d.querySelector('button').onclick = e => { e.stopPropagation(); arr.splice(arr.indexOf(k), 1); render(); };
+        d.addEventListener('click', () => openEditor(k));
+        el.appendChild(d);
+      });
+      if (window.Sortable) frSorts.push(Sortable.create(el, { animation: 180, forceFallback: true, fallbackTolerance: 4, delay: 120, delayOnTouchOnly: true, onEnd: () => {
+        const order = [...el.querySelectorAll('.fr-th')].map(x => x.dataset.key);
+        const rest = arr.filter(k => !order.includes(k)); arr.length = 0; arr.push(...order, ...rest); render(); } }));
+    });
+  }
+  /* ---------- search ---------- */
+  $('q').addEventListener('input', () => { query = $('q').value.trim().toLowerCase(); if (query) document.querySelectorAll('.alb').forEach(s => setOpen(s.dataset.id, true)); render(); });
+  /* ---------- select many ---------- */
+  let selMode = false; const sel = new Set();
+  function renderSel(){
+    $('selBar').classList.toggle('hide', !selMode); $('selBtn').classList.toggle('hide', selMode);
+    $('selN').textContent = sel.size + ' selected';
+    albumOptions($('selAlbum'), 'Not in an album'); $('selAlbum').insertAdjacentHTML('afterbegin', '<option value="__">choose…</option>'); $('selAlbum').value = '__';
+    ['selHero', 'selLens', 'selDel', 'selAlbum'].forEach(id => $(id).disabled = !sel.size);
+  }
+  $('selBtn').onclick = () => { selMode = true; sel.clear(); render(); };
+  $('selDone').onclick = () => { selMode = false; sel.clear(); render(); };
+  $('selAll').onclick = () => { document.querySelectorAll('#lib .tile').forEach(t => sel.add(t.dataset.key)); render(); };
+  $('selAlbum').onchange = () => { const v = $('selAlbum').value; if (v === '__') return; items.forEach(i => { if (sel.has(i.key)) i.album = v; }); regroup(); setOpen(v || '_loose', true); render(); };
+  $('selHero').onclick = () => { [...sel].forEach(k => { if (!heroK.includes(k) && liveKeys(heroK).length < HERO_MAX) heroK.push(k); }); render(); };
+  $('selLens').onclick = () => { [...sel].forEach(k => { if (!lensK.includes(k) && liveKeys(lensK).length < LENS_MAX) lensK.push(k); }); render(); };
+  $('selDel').onclick = () => { if (!confirm('Remove ' + sel.size + ' photo' + (sel.size > 1 ? 's' : '') + ' from your portfolio when you publish?')) return;
+    const keep = items._origOrder; items = items.filter(i => !(i.isNew && sel.has(i.key))); items._origOrder = keep; items.forEach(i => { if (sel.has(i.key)) i.removed = true; }); sel.clear(); render(); };
+
   /* ---------- render the library ---------- */
   let sortables = [];
   function render(){
@@ -654,17 +779,17 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     lib.innerHTML = '';
     refreshPickers();
     const L = live();
-    $('cAll').textContent = L.length; $('cNo').textContent = L.filter(i => !hasCap(i)).length; $('cNew').textContent = items.filter(i => i.isNew).length; $('cFeat').textContent = featList().length;
+    $('cAll').textContent = L.length; $('cNo').textContent = L.filter(i => !hasCap(i)).length; $('cNew').textContent = items.filter(i => i.isNew).length; $('cHero').textContent = heroList().length; $('cLens').textContent = lensList().length; renderFront(); renderSel();
     $('capRun').classList.toggle('hide', !L.some(i => !hasCap(i)));
-    $('filterNote').classList.toggle('hide', filter === 'all');
+    $('filterNote').classList.toggle('hide', filter === 'all' && !query);
     if (!items.length && !albums.length) { lib.innerHTML = '<div class="lib-empty">No photos yet. Drop some in above.</div>'; updateSummary(); return; }
     const home = homePhoto();
     const groups = albums.map(a => ({ a, id: a.id })).concat([{ a: null, id: '' }]);
     groups.forEach(g => {
       const inG = items.filter(i => (i.album || '') === g.id);
       if (!g.a && !inG.length && albums.length) return;   // hide the empty "not in an album" box
-      const shownIn = inG.filter(i => filter === 'all' || (filter === 'nocap' ? !i.removed && !hasCap(i) : filter === 'feat' ? !i.removed && featKeys.has(i.key) : i.isNew));
-      if (filter !== 'all' && !shownIn.length) return;
+      const shownIn = inG.filter(i => (filter === 'all' && !query) || matchF(i));
+      if ((filter !== 'all' || query) && !shownIn.length) return;
       const sid = g.id || '_loose';
       const sec = document.createElement('section');
       sec.className = 'alb' + (g.a ? '' : ' loose') + (openSet.has(sid) || !albums.length ? ' open' : '');
@@ -709,13 +834,13 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       sec.addEventListener('dragleave', e => { if (!sec.contains(e.relatedTarget)) sec.classList.remove('file-over'); });
       sec.addEventListener('drop', e => { if (e.dataTransfer && e.dataTransfer.files.length) { e.preventDefault(); sec.classList.remove('file-over'); addFiles(e.dataTransfer.files, g.id); } });
       lib.appendChild(sec);
-      if (window.Sortable && filter === 'all') sortables.push(Sortable.create(tiles, {
+      if (window.Sortable && filter === 'all' && !query && !selMode) sortables.push(Sortable.create(tiles, {
         group: 'photos', animation: 180, forceFallback: true, fallbackTolerance: 4, scrollSensitivity: 90, delay: 160, delayOnTouchOnly: true, ghostClass: 's-ghost', chosenClass: 's-chosen', dragClass: 's-drag',
         filter: '.removed', preventOnFilter: false, onEnd: syncFromDom,
         onMove: ev => { const s = ev.to.closest('.alb'); if (s && !s.classList.contains('open')) { s.classList.add('open'); setOpen(s.dataset.id, true); } }
       }));
     });
-    if (window.Sortable && filter === 'all') sortables.push(Sortable.create(lib, { handle: '.grip', draggable: '.alb:not(.loose)', animation: 180, forceFallback: true, ghostClass: 's-ghost', onEnd: syncFromDom }));
+    if (window.Sortable && filter === 'all' && !query && !selMode) sortables.push(Sortable.create(lib, { handle: '.grip', draggable: '.alb:not(.loose)', animation: 180, forceFallback: true, ghostClass: 's-ghost', onEnd: syncFromDom }));
     updateSummary();
   }
 
@@ -727,14 +852,16 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     const img = document.createElement('img'); img.src = it.url; img.alt = ''; img.loading = 'lazy';
     img.onerror = () => { if (it.src && img.src.indexOf(it.src) === -1) img.src = '/' + it.src; };
     const bd = document.createElement('div'); bd.className = 't-badges';
-    if (isHome) bd.innerHTML += '<span class="tb-b home">★ Home</span>';
     if (isAlbumCover) bd.innerHTML += '<span class="tb-b acov">Album cover</span>';
-    if (!it.removed && featKeys.has(it.key)) bd.innerHTML += '<span class="tb-b feat">◎ Front</span>';
+    const hi = liveKeys(heroK).indexOf(it.key), li = liveKeys(lensK).indexOf(it.key);
+    if (hi > -1) bd.innerHTML += '<span class="tb-b home">▶ Top ' + (hi + 1) + '</span>';
+    if (li > -1) bd.innerHTML += '<span class="tb-b feat">◎ Lens ' + (li + 1) + '</span>';
+    if (selMode) { t.classList.toggle('sel', sel.has(it.key)); const cb = document.createElement('span'); cb.className = 't-check'; cb.textContent = sel.has(it.key) ? '✓' : ''; t.appendChild(cb); }
     if (it.isNew) bd.innerHTML += '<span class="tb-b newb">New</span>';
     t.append(img, bd);
     if (!it.removed && !hasCap(it)) { const d = document.createElement('span'); d.className = 't-dot'; d.title = 'Needs a caption'; t.appendChild(d); }
     const c = document.createElement('span'); c.className = 't-cap'; c.textContent = it.title || 'Untitled'; t.appendChild(c);
-    t.addEventListener('click', () => openEditor(it.key));
+    t.addEventListener('click', () => { if (selMode) { sel.has(it.key) ? sel.delete(it.key) : sel.add(it.key); render(); } else openEditor(it.key); });
     t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEditor(it.key); } });
     return t;
   }
@@ -756,7 +883,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
 
   /* ---------- the photo editor ---------- */
   const pe = $('pe'); let peKey = null, peOnlyNeedy = false;
-  const peList = () => peOnlyNeedy ? items.filter(i => !i.removed && (!hasCap(i) || i.key === peKey)) : items.filter(i => filter === 'all' || (filter === 'nocap' ? !i.removed && !hasCap(i) : filter === 'feat' ? !i.removed && featKeys.has(i.key) : i.isNew) || i.key === peKey);
+  const peList = () => peOnlyNeedy ? items.filter(i => !i.removed && (!hasCap(i) || i.key === peKey)) : items.filter(i => filter === 'all' || matchF(i) || i.key === peKey);
   function openEditor(key, onlyNeedy){
     peKey = key; if (onlyNeedy !== undefined) peOnlyNeedy = !!onlyNeedy;
     const it = items.find(i => i.key === key); if (!it) return;
@@ -768,10 +895,9 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     albumOptions($('peAlbum'), 'Not in an album');
     $('peTitle').value = it.title || ''; $('peAlbum').value = it.album || ''; $('peDate').value = it.date || ''; $('pePlace').value = it.place || ''; $('peCap').value = it.caption || '';
     ['peTitle','peAlbum','peDate','pePlace','peCap'].forEach(id => $(id).disabled = !!it.removed);
-    const home = homePhoto() === it;
-    $('peHome').textContent = home ? '★ On the home page' : '☆ Use on home page'; $('peHome').classList.toggle('is', home);
-    const ft = featKeys.has(it.key) && !it.removed;
-    $('peFeat').textContent = ft ? '◎ In the front page carousel' : '＋ Front page carousel'; $('peFeat').classList.toggle('is', ft); $('peFeat').disabled = !!it.removed;
+    const inH = heroK.includes(it.key) && !it.removed, inL = lensK.includes(it.key) && !it.removed;
+    $('peHome').textContent = inH ? '▶ In the top slideshow ✓' : '＋ Top slideshow'; $('peHome').classList.toggle('is', inH); $('peHome').disabled = !!it.removed;
+    $('peFeat').textContent = inL ? '◎ In "Seen through our lens" ✓' : '＋ Seen through our lens'; $('peFeat').classList.toggle('is', inL); $('peFeat').disabled = !!it.removed;
     const inAlb = items.filter(i => !i.removed && (i.album || '') === (it.album || ''));
     const acov = !!it.album && inAlb[0] === it;
     $('peAlbCover').textContent = acov ? 'Album cover ✓' : 'Make album cover'; $('peAlbCover').classList.toggle('is', acov); $('peAlbCover').classList.toggle('hide', !it.album);
@@ -802,12 +928,14 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     if ((e.altKey || !typing) && e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); step(1); }
   });
-  $('peHome').onclick = () => { const it = cur(); if (!it || it.removed) return; coverKey = it.key; openEditor(it.key); updateSummary(); };
-  $('peFeat').onclick = () => { const it = cur(); if (!it || it.removed) return;
-    if (featKeys.has(it.key)) featKeys.delete(it.key);
-    else if (featList().length >= FEAT_MAX) { alert('The front page carousel holds up to ' + FEAT_MAX + ' photos. Take one off first.'); return; }
-    else featKeys.add(it.key);
-    openEditor(it.key); updateSummary(); };
+  function toggleIn(arr, key, max, name){
+    const i = arr.indexOf(key);
+    if (i > -1) { arr.splice(i, 1); return true; }
+    if (liveKeys(arr).length >= max) { alert(name + ' holds up to ' + max + ' photos. Take one off first.'); return false; }
+    arr.push(key); return true;
+  }
+  $('peHome').onclick = () => { const it = cur(); if (!it || it.removed) return; toggleIn(heroK, it.key, HERO_MAX, 'The top slideshow'); openEditor(it.key); updateSummary(); };
+  $('peFeat').onclick = () => { const it = cur(); if (!it || it.removed) return; toggleIn(lensK, it.key, LENS_MAX, '"Seen through our lens"'); openEditor(it.key); updateSummary(); };
   $('peAlbCover').onclick = () => { const it = cur(); if (!it || it.removed || !it.album) return;
     const first = items.findIndex(i => (i.album || '') === it.album); items.splice(items.indexOf(it), 1); items.splice(first, 0, it); openEditor(it.key); updateSummary(); };
   const nudge = d => { const it = cur(); if (!it) return; const same = items.filter(i => (i.album || '') === (it.album || '')); const n = same.indexOf(it), other = same[n + d]; if (!other) return;
@@ -822,10 +950,9 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     const removed = items.filter(i => i.removed).length;
     const edited = items.filter(i => !i.isNew && !i.removed && i.orig !== sig(i)).length;
     const albumsChanged = JSON.stringify(albums) !== albumsOrig;
-    const hp = homePhoto(), coverChanged = !!hp && (hp.isNew || hp.src !== coverOrig);
-    const featChanged = featSig() !== featOrig;
+    const frontChanged = frontSig() !== frontOrig;
     const reordered = items.filter(i => !i.isNew).map(i => i.src).join('|') !== items._origOrder;
-    return { added, removed, edited, reordered, albumsChanged, coverChanged, featChanged, any: added || removed || edited || reordered || albumsChanged || coverChanged || featChanged };
+    return { added, removed, edited, reordered, albumsChanged, frontChanged, any: added || removed || edited || reordered || albumsChanged || frontChanged };
   }
   function updateSummary(){
     if (busy) return;
@@ -836,8 +963,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
     if (c.edited) parts.push(c.edited + ' caption' + (c.edited > 1 ? 's' : '') + ' edited');
     if (c.reordered && !c.added) parts.push('new order');
     if (c.albumsChanged) parts.push('albums changed');
-    if (c.coverChanged && !c.added) parts.push('new home-page photo');
-    if (c.featChanged) parts.push('front page carousel changed');
+    if (c.frontChanged) parts.push('front page changed');
     $('summary').textContent = parts.length ? 'Ready to publish: ' + parts.join(', ') + '.' : 'No changes yet.';
     $('publishBtn').disabled = !c.any;
   }
@@ -897,8 +1023,10 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       const albumsOut = albums.filter(a => a.name.trim()).map(a => { const o = { id: a.id, name: a.name.trim() }; if (a.description.trim()) o.description = a.description.trim(); return o; });
       const hp = homePhoto();
       const data = { albums: albumsOut, photos: photosOut };
+      const hl = heroList().filter(i => i.src).map(i => i.src), ll = lensList().filter(i => i.src).map(i => i.src);
+      if (hl.length) data.hero = hl;
+      if (ll.length) { data.lens = ll; data.featured = ll; }
       if (hp && hp.src) data.cover = hp.src;
-      const fl = featList().filter(i => i.src).map(i => i.src); if (fl.length) data.featured = fl;
       const body = { message: 'Update portfolio list', content: strB64(JSON.stringify(data, null, 2) + '\n'), branch };
       if (manifestSha) body.sha = manifestSha;
       const r = await api('/contents/' + MANIFEST, { method: 'PUT', body: JSON.stringify(body) });
@@ -916,8 +1044,7 @@ input[type=datetime-local]{width:100%;padding:.75rem .9rem;border-radius:12px;bo
       items.forEach(i => { i.isNew = false; i.orig = sig(i); if (shaMap[i.src]) i.url = shaMap[i.src].url || i.url; });
       albumsOrig = JSON.stringify(albums);
       items._origOrder = items.map(i => i.src).join('|');
-      coverOrig = (homePhoto() || {}).src || '';
-      featOrig = featSig();
+      frontOrig = frontSig();
       render();
       $('summary').textContent = 'Published.';
     } else { updateSummary(); }

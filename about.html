@@ -17,7 +17,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Mukta:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Mukta:wght@600;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -633,11 +633,11 @@ footer .soc:hover{background:var(--paper);color:var(--ink)}
   --line:rgba(20,16,16,.16); --line-l:rgba(246,241,232,.2);
   --nav:76px; --ann:34px;
   --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --disp:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;
+  --disp:'Sora','Instrument Sans',system-ui,sans-serif;
   --serif:var(--disp);
   --ne:'Mukta','Instrument Sans',sans-serif;
   --ease:cubic-bezier(.2,.75,.15,1);
-  --tooth:polygon(0.00% 10px,4.17% 0px,8.33% 10px,12.50% 0px,16.67% 10px,20.83% 0px,25.00% 10px,29.17% 0px,33.33% 10px,37.50% 0px,41.67% 10px,45.83% 0px,50.00% 10px,54.17% 0px,58.33% 10px,62.50% 0px,66.67% 10px,70.83% 0px,75.00% 10px,79.17% 0px,83.33% 10px,87.50% 0px,91.67% 10px,95.83% 0px,100.00% 10px,100% 100%,0 100%);
+  --tooth:inset(0 0 0 0);
   --dhaka:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24'%3E%3Crect width='48' height='24' fill='%237A1F2E'/%3E%3Cpath d='M0 24 12 12 24 24ZM24 24 36 12 48 24Z' fill='%23141010'/%3E%3Cpath d='M24 0 30 6 24 12 18 6Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 6 6 0 12ZM48 0 42 6 48 12Z' fill='%23F2A71B'/%3E%3Ccircle cx='12' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Ccircle cx='36' cy='5' r='1.6' fill='%23F6F1E8'/%3E%3Cpath d='M12 17 14 19 12 21 10 19ZM36 17 38 19 36 21 34 19Z' fill='%23F6F1E8'/%3E%3C/svg%3E");
   --dhaka-big:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='48' viewBox='0 0 64 48'%3E%3Crect width='64' height='48' fill='%237A1F2E'/%3E%3Cpath d='M0 48 16 32 32 48ZM32 48 48 32 64 48Z' fill='%23141010'/%3E%3Cpath d='M0 0 16 16 32 0ZM32 0 48 16 64 0Z' fill='%23141010'/%3E%3Cpath d='M32 10 46 24 32 38 18 24Z' fill='%23F2A71B'/%3E%3Cpath d='M32 16 40 24 32 32 24 24Z' fill='%237A1F2E'/%3E%3Cpath d='M32 21 35 24 32 27 29 24Z' fill='%23F6F1E8'/%3E%3Cpath d='M0 10 14 24 0 38ZM64 10 50 24 64 38Z' fill='%23F6F1E8'/%3E%3Cpath d='M0 17 7 24 0 31ZM64 17 57 24 64 31Z' fill='%2323408E'/%3E%3C/svg%3E");
   --dhaka-thin:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Crect width='32' height='16' fill='%23141010'/%3E%3Cpath d='M0 16 8 8 16 16ZM16 16 24 8 32 16Z' fill='%237A1F2E'/%3E%3Cpath d='M16 0 20 4 16 8 12 4Z' fill='%23F2A71B'/%3E%3Cpath d='M0 0 4 4 0 8ZM32 0 28 4 32 8Z' fill='%23F2A71B'/%3E%3C/svg%3E");
@@ -1221,6 +1221,170 @@ footer ul a:hover{color:var(--ochre)}
   .mf .mw{opacity:1}
 }
 
+
+/* ---------- PORTFOLIO: albums, all, playground ---------- */
+.pf-bar{margin:0 0 clamp(1.75rem,4vw,2.75rem)}
+.pf-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pf-modes button{position:relative;text-align:left;padding:1.1rem 1.25rem;border:1.5px solid rgba(244,239,231,.22);color:#F6F1E8;border-radius:16px;transition:background .35s,border-color .35s,color .35s}
+.pf-modes button b{display:block;font-family:var(--disp);font-weight:600;font-size:clamp(1.1rem,2vw,1.45rem);letter-spacing:-.03em}
+.pf-modes button small{display:block;font-size:.8rem;color:rgba(244,239,231,.6);margin-top:.15rem}
+.pf-modes button:hover{border-color:rgba(244,239,231,.6)}
+.pf-modes button.on{background:#F6F1E8;color:#141010;border-color:#F6F1E8}
+.pf-modes button.on small{color:#3A3330}
+.pf-modes button.on::after{content:"";position:absolute;right:1.1rem;top:50%;width:10px;height:10px;background:var(--maroon);transform:translateY(-50%) rotate(45deg)}
+.alb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:16px}
+.alb-grid[hidden]{display:none}
+.acard{position:relative;display:block;text-align:left;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:#221C19;color:#fff;isolation:isolate}
+.acard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),opacity .7s}
+.acard img+img{opacity:0}
+.acard:hover img:first-child{transform:scale(1.06)}
+.acard:hover img+img{opacity:1;transform:scale(1.02)}
+.acard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.78));z-index:1}
+.acard .ac-t{position:absolute;left:1.4rem;right:1.4rem;bottom:1.25rem;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.acard h3{font-family:var(--disp);font-weight:600;font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.035em;line-height:1.05}
+.acard p{font-size:.88rem;opacity:.8;margin-top:.3rem;max-width:36ch;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.acard .ac-n{flex-shrink:0;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:.4rem .6rem;border-radius:999px}
+.acard.all{background:var(--maroon)}
+.pf-back{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.5rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F6F1E8;border:1.5px solid rgba(244,239,231,.3);padding:.6rem .9rem;border-radius:999px;transition:background .3s,color .3s}
+.pf-back:hover{background:#F6F1E8;color:#141010}
+#p-portfolio .g-item{border-radius:16px;overflow:hidden}
+.play-wrap[hidden]{display:none}
+.play-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:1rem}
+.play-tools .btn{padding:.75rem 1.1rem;border-radius:999px}
+.play-set{display:flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,231,.7)}
+.play-set select{background:rgba(244,239,231,.08);color:#F6F1E8;border:1.5px solid rgba(244,239,231,.25);border-radius:999px;padding:.65rem 1rem;font:inherit;font-size:.9rem;letter-spacing:0;text-transform:none}
+.play-set select option{color:#141010}
+.play-hint{margin-left:auto;font-size:.85rem;color:rgba(244,239,231,.55)}
+.play{position:relative;height:clamp(520px,78vh,860px);border-radius:24px;overflow:hidden;background:radial-gradient(circle at 30% 20%,#2A2321,#151110 70%);touch-action:none;user-select:none;-webkit-user-select:none}
+.play::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,231,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,231,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.play::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--dhaka-thin) 0 0/24px 12px;opacity:.9;pointer-events:none}
+.print{position:absolute;left:0;top:0;width:clamp(130px,17vw,230px);background:#FBF8F2;padding:9px 9px 34px;border-radius:10px;box-shadow:0 14px 30px -12px rgba(0,0,0,.7);cursor:grab;will-change:transform;touch-action:none}
+.print img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:5px;display:block;pointer-events:none;-webkit-user-drag:none}
+.print span{position:absolute;left:12px;right:12px;bottom:9px;font-family:var(--disp);font-size:.78rem;font-weight:600;letter-spacing:-.01em;color:#2a2422;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.print.lift{cursor:grabbing;box-shadow:0 34px 60px -18px rgba(0,0,0,.85)}
+.play.anim .print{transition:transform .9s var(--ease)}
+@media (max-width:700px){
+  .pf-modes{grid-template-columns:repeat(3,1fr);gap:6px}
+  .pf-modes button{padding:.8rem .7rem}
+  .pf-modes button small{display:none}
+  .pf-modes button.on::after{display:none}
+  .play-hint{margin-left:0;width:100%}
+  .play{height:72vh}
+}
+
+#p-portfolio .btn-ghost-l{border-color:rgba(246,241,232,.4);color:#F6F1E8;--hov:#F6F1E8}
+#p-portfolio .btn-ghost-l:hover{color:#141010}
+/* ---------- MAGAZINE: coming soon ---------- */
+.mg-hero{position:relative;background:#141010;color:#F6F1E8;overflow:hidden;padding:clamp(3.5rem,8vw,6rem) 0 clamp(4rem,9vw,7rem)}
+.mg-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--dhaka) 0 0/28px 14px;animation:loom 40s linear infinite}
+.mg-hero .ph-meta{color:rgba(246,241,232,.6);border-color:rgba(246,241,232,.2)}
+.mg-hero .ph-meta [lang=ne]{color:var(--ochre)}
+.mg-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.mg-kick{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre);margin-bottom:1rem}
+.mg-title{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,6.6vw,6rem);line-height:1;letter-spacing:-.05em;margin-bottom:1.5rem}
+.mg-title span{color:#E0204F}
+.mg-hero .lead{color:rgba(246,241,232,.8);max-width:44ch}
+.mg-count{display:flex;gap:10px;margin:2rem 0 1rem}
+.mg-count div{flex:1;max-width:110px;border:1.5px solid rgba(246,241,232,.22);border-radius:14px;padding:.8rem .6rem;text-align:center}
+.mg-count b{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.mg-count small{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,232,.55)}
+.mg-when{font-size:.95rem;color:rgba(246,241,232,.7)}
+.mg-when b{color:#F6F1E8}
+.mg-stage{position:relative;height:clamp(420px,52vw,620px);perspective:1800px;display:grid;place-items:center}
+.mg-page{position:absolute;width:min(68%,360px);aspect-ratio:1/1.414;background-size:cover;background-position:center;border-radius:4px;filter:blur(2.5px) brightness(.75);box-shadow:0 30px 50px -25px rgba(0,0,0,.8);transition:transform 1s var(--ease)}
+.mg-page.p1{transform:translate(-22%,4%) rotate(-9deg)}
+.mg-page.p2{transform:translate(22%,2%) rotate(8deg)}
+.mg-stage:hover .mg-page.p1{transform:translate(-32%,4%) rotate(-14deg)}
+.mg-stage:hover .mg-page.p2{transform:translate(32%,1%) rotate(13deg)}
+.mg-book{position:relative;width:min(70%,370px);aspect-ratio:1/1.414;transform-style:preserve-3d;transform-origin:left center;transition:transform .9s var(--ease);box-shadow:0 40px 70px -30px rgba(0,0,0,.9);border-radius:3px;cursor:pointer}
+.mg-book img{width:100%;height:100%;object-fit:cover;display:block;border-radius:3px}
+.mg-book::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.25),transparent 8%);border-radius:3px;pointer-events:none}
+.mg-book.tug{animation:tug .9s var(--ease)}
+@keyframes tug{0%{transform:rotateY(0)}35%{transform:rotateY(-28deg)}55%{transform:rotateY(-22deg)}100%{transform:rotateY(0)}}
+.mg-ribbon{position:absolute;left:-6%;right:-6%;top:58%;height:30px;background:var(--dhaka) 0 0/30px 15px;transform:rotate(-8deg);box-shadow:0 6px 14px -6px rgba(0,0,0,.6);background-color:var(--maroon)}
+.mg-stamp{position:absolute;right:-6%;top:8%;width:104px;height:104px;border-radius:50%;background:var(--ochre);color:#141010;display:grid;place-items:center;text-align:center;font-family:var(--disp);font-weight:700;font-size:.92rem;line-height:1.05;letter-spacing:-.02em;transform:rotate(12deg);box-shadow:0 10px 20px -8px rgba(0,0,0,.6);animation:stamp 4s ease-in-out infinite}
+@keyframes stamp{50%{transform:rotate(4deg) scale(1.05)}}
+.mg-tip{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.9rem;color:rgba(246,241,232,.7);transition:color .3s}
+.mg-tip.say{color:var(--ochre);font-weight:700}
+.mg-big{font-family:var(--disp);font-weight:600;font-size:clamp(1.8rem,4.4vw,3.6rem);letter-spacing:-.045em;line-height:1.1;max-width:22ch;margin-top:1rem}
+.mg-parts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:2.5rem}
+.mg-part{border:2px solid var(--ink);border-radius:18px;padding:1.4rem;transition:background .35s,color .35s,transform .35s var(--ease)}
+.mg-part:hover{background:var(--maroon);color:var(--paper);border-color:var(--maroon);transform:translateY(-4px)}
+.mg-part i{font-style:normal;font-family:var(--disp);font-weight:700;color:var(--ochre)}
+.mg-part h3{font-family:var(--disp);font-weight:600;font-size:1.4rem;letter-spacing:-.03em;margin:.6rem 0 .3rem}
+.mg-part p{font-size:.95rem;opacity:.85}
+.mg-join{padding:clamp(4rem,8vw,6rem) 0}
+.mg-join-in{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.mg-join .body{margin-top:1rem;max-width:46ch}
+.mg-acts{display:grid;gap:1.5rem}
+.mg-acts .btn{justify-self:start}
+.mg-notify label{display:block;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem}
+.mg-notify div{display:flex;border:2px solid rgba(246,241,232,.5);border-radius:14px;overflow:hidden}
+.mg-notify input{flex:1;min-width:0;background:transparent;border:0;padding:.95rem 1rem;color:#F6F1E8;font:inherit}
+.mg-notify input::placeholder{color:rgba(246,241,232,.5)}
+.mg-notify input:focus{outline:none}
+.mg-notify button{background:#F6F1E8;color:var(--maroon);font-weight:700;padding:0 1.2rem}
+.mg-notify small{display:block;margin-top:.5rem;color:rgba(246,241,232,.65);font-size:.82rem}
+@media (max-width:900px){.mg-grid,.mg-join-in{grid-template-columns:1fr}.mg-parts{grid-template-columns:1fr 1fr}.mg-stage{height:440px}}
+@media (max-width:560px){.mg-parts{grid-template-columns:1fr}.mg-count div{padding:.6rem .3rem}.mg-stamp{width:84px;height:84px;font-size:.78rem}}
+
+/* =================== FIXES ROUND 2 =================== */
+.display{font-weight:600;letter-spacing:-.035em;line-height:1.04}
+.h1{font-size:clamp(2.4rem,6vw,5.2rem)}
+.h2{font-size:clamp(1.9rem,4.2vw,3.4rem)}
+.h3{font-weight:600;letter-spacing:-.03em}
+.hx-title{font-weight:600;font-size:clamp(2.5rem,6.2vw,6.1rem);letter-spacing:-.045em;line-height:1.02;max-width:14ch;text-shadow:0 2px 40px rgba(0,0,0,.35)}
+.hx-shade{background:linear-gradient(90deg,rgba(14,11,11,.78) 0%,rgba(14,11,11,.5) 38%,rgba(14,11,11,.12) 68%,rgba(14,11,11,0) 100%),linear-gradient(180deg,rgba(14,11,11,.55) 0%,rgba(14,11,11,0) 28%,rgba(14,11,11,0) 60%,rgba(14,11,11,.85) 100%)}
+.hx-badge{position:absolute;z-index:3;right:var(--gut);top:calc(var(--nav) + var(--ann) + 1.4rem);display:flex;align-items:center;gap:.55rem;background:var(--ochre);color:var(--ink);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.55rem .8rem}
+.hx-badge .dia{background:var(--maroon)}
+.hx-side{color:var(--paper);opacity:1;font-size:.78rem;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.hx-side span{color:var(--ochre);font-size:1.15rem}
+.now-title,.prod-title{font-weight:700;font-size:clamp(3rem,7.6vw,6.6rem);letter-spacing:-.05em;line-height:.95;text-transform:none}
+.talk-big{font-weight:700;font-size:clamp(2.8rem,7.6vw,6.8rem);letter-spacing:-.05em;line-height:.98;text-transform:none}
+.ms-title{font-weight:700;font-size:clamp(2.6rem,7.6vw,7.2rem);letter-spacing:-.05em;line-height:.98;text-transform:none}
+.eq{text-align:center}
+.eq-line{justify-content:center;font-weight:600;font-size:clamp(1.5rem,4.2vw,3.5rem);letter-spacing:-.04em;gap:.25em .5em}
+.eq-br{flex-basis:100%;height:0}
+.eq-hint{text-align:center}
+.eq-t::after{left:50%;transform:translate(-50%,-4px)}
+.eq-t:hover::after,.eq-t.on::after{transform:translate(-50%,0)}
+.eq-t .ne{justify-self:center}
+.eq-say{text-align:left}
+.aim-t{font-weight:600;font-size:clamp(1.5rem,3.2vw,2.6rem);letter-spacing:-.04em}
+.ticker span{font-weight:600;font-size:1.1rem;letter-spacing:-.01em}
+.sr span{font-weight:700;font-size:clamp(2rem,5.6vw,5rem);letter-spacing:-.04em}
+.fp-t{font-weight:600;font-size:clamp(1.5rem,2.8vw,2.5rem);letter-spacing:-.04em}
+.vf b{font-weight:600;font-size:clamp(1.5rem,2.8vw,2.3rem);letter-spacing:-.04em}
+.mf{font-weight:600;font-size:clamp(1.7rem,4vw,3.4rem);letter-spacing:-.04em;line-height:1.12}
+.lt-line{font-weight:500;font-size:clamp(1.15rem,2.1vw,1.55rem);letter-spacing:-.025em}
+.thread h3,.crew-card h3,.crew-join h3,.pw h3,.tk h3,.al h3,.nc h3,.stg b,.funds2 h4,.plan-list h4,.pt,.po,.paths-q,.jb-link,.f-big,.mailbig,.give-big,.sl-row b{letter-spacing:-.035em;font-weight:600}
+.give-big,.sl-row b{font-weight:700}
+.fact b{font-weight:600;letter-spacing:-.05em}
+/* hover: a soft field of क instead of saw-teeth */
+.kfx::after{content:"क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क क ";position:absolute;inset:-30% -10%;z-index:-1;font-family:var(--ne);font-weight:800;font-size:1.6rem;line-height:1.5;letter-spacing:.55em;word-break:break-all;white-space:normal;color:rgba(246,241,232,.08);pointer-events:none;opacity:0;transform:translate(0,14px);transition:opacity .5s,transform 1.2s var(--ease)}
+.kfx:hover::after,.kfx:focus-visible::after{opacity:1;transform:translate(-14px,-6px)}
+.btn::before{inset:0}
+/* see through our lens: rounded, opens on hover */
+.strip.lens{display:flex;gap:10px;height:clamp(320px,42vw,540px);overflow:visible}
+.strip.lens button{position:relative;flex:1;min-width:0;aspect-ratio:auto;border-radius:22px;overflow:hidden;transition:flex .8s var(--ease),filter .5s;transform:none!important}
+.strip.lens button.on{flex:2.8}
+.strip.lens button img{filter:grayscale(1) contrast(1.08);transition:filter .6s,transform .8s var(--ease)}
+.strip.lens button.on img{filter:none}
+.lens-cap{position:absolute;left:1rem;right:1rem;bottom:1rem;color:#fff;font-family:var(--disp);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;text-align:left;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .5s var(--ease);text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.strip.lens button.on .lens-cap{opacity:1;transform:none}
+.strip.lens button::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.5));opacity:0;transition:opacity .4s;pointer-events:none}
+.strip.lens button.on::after{opacity:1}
+@media (max-width:900px){
+  .strip.lens{overflow-x:auto;scroll-snap-type:x mandatory;height:auto;scrollbar-width:none;margin:0 calc(var(--gut)*-1);padding:0 var(--gut)}
+  .strip.lens button{flex:0 0 72%;aspect-ratio:4/5;scroll-snap-align:center}
+  .strip.lens button img{filter:none}
+  .strip.lens .lens-cap{opacity:1;transform:none}
+  .strip.lens button::after{opacity:1}
+}
+/* portfolio page: white logo on dark */
+html.pf-dark .nav{color:var(--paper)}
+html.pf-dark .lg-s{fill:var(--ochre)}
+@media (max-width:620px){.hx-badge{top:calc(var(--nav) + var(--ann) + .9rem);right:auto;left:var(--gut);font-size:.64rem;padding:.45rem .65rem}}
 </style>
 </head>
 <body>
@@ -1238,6 +1402,7 @@ footer ul a:hover{color:var(--ochre)}
         <li data-belonging="live"><a href="/belonging">Belonging</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/journal/">Journal</a></li>
+        <li data-belonging="soon"><a href="/magazine">Magazine</a></li>
         <li><a href="/get-involved">Get involved</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/get-involved" class="nav-cta" data-cta>Support us</a></li>
@@ -1257,8 +1422,9 @@ footer ul a:hover{color:var(--ochre)}
     </div>
     <div class="hx-shade" aria-hidden="true"></div>
     <div class="hx-weave" id="hxWeave" aria-hidden="true"></div>
+    <p class="hx-badge"><span class="dia" aria-hidden="true"></span>NFP Studio · Aus</p>
     <div class="hx-in container">
-      <p class="hx-tag"><span class="dia" aria-hidden="true"></span><span>Not-for-profit media studio · Australia</span></p>
+      
       <h1 class="hx-title" id="hxTitle">Voices that have gone unheard won't stay that way.</h1>
       <div class="hx-foot">
         <div class="hx-steps" id="hxSteps" role="tablist" aria-label="Our aims"></div>
@@ -1292,7 +1458,7 @@ footer ul a:hover{color:var(--ochre)}
       <p class="eq-line" id="eqLine">
         <button type="button" class="eq-t" data-ne="कथा" data-ro="katha">Stories</button><span class="eq-op">+</span>
         <button type="button" class="eq-t" data-ne="समुदाय" data-ro="samudaya">Community</button><span class="eq-op">+</span>
-        <button type="button" class="eq-t" data-ne="शिक्षा" data-ro="shiksha">Education</button><span class="eq-op">=</span>
+        <button type="button" class="eq-t" data-ne="शिक्षा" data-ro="shiksha">Education</button><span class="eq-br" aria-hidden="true"></span><span class="eq-op">=</span>
         <button type="button" class="eq-t eq-res" data-ne="अपनत्व" data-ro="apanatva">Belonging</button>
       </p>
       <p class="eq-hint" id="eqHint">Hover or tap a word to read it in Nepali.</p>
@@ -1311,19 +1477,19 @@ footer ul a:hover{color:var(--ochre)}
   <section class="aims" aria-label="What we do">
     <div class="container">
       <div class="sec-head"><span class="label">What we do</span><span class="label">03</span></div>
-      <a class="aim" href="/work" data-aim="0">
+      <a class="aim kfx" href="/work" data-aim="0">
         <span class="aim-n">01</span>
         <span class="aim-t">Media and storytelling</span>
         <span class="aim-p">Documentary, podcast and short-form video sharing the lives of multicultural and underrepresented Australians.</span>
         <span class="aim-go" aria-hidden="true">→</span>
       </a>
-      <a class="aim" href="/mission" data-aim="1">
+      <a class="aim kfx" href="/mission" data-aim="1">
         <span class="aim-n">02</span>
         <span class="aim-t">Arts, creativity and education</span>
         <span class="aim-p">Backing artists from underrepresented communities, and turning stories into learning resources for schools and the public.</span>
         <span class="aim-go" aria-hidden="true">→</span>
       </a>
-      <a class="aim" href="/get-involved" data-aim="2">
+      <a class="aim kfx" href="/get-involved" data-aim="2">
         <span class="aim-n">03</span>
         <span class="aim-t">Live events and community</span>
         <span class="aim-p">Showcases, performance nights and gathering spaces where cultures meet, share and are celebrated.</span>
@@ -1589,7 +1755,7 @@ footer ul a:hover{color:var(--ochre)}
           <div class="crew-av" aria-hidden="true"><span>K</span><span lang="ne">क</span></div>
           <div><span class="label">Founder</span><h3>Kranjol Khanal</h3><p>Founder, Director and Producer</p></div>
         </div>
-        <a class="crew-join" href="/contact?about=committee">
+        <a class="crew-join kfx" href="/contact?about=committee">
           <span class="label">Open seat</span>
           <h3>Join our committee</h3>
           <p>We're looking for people with experience in health, media, education or community work who want to help shape what we build.</p>
@@ -1637,10 +1803,10 @@ footer ul a:hover{color:var(--ochre)}
     <div class="container also">
       <span class="label">Also on the slate</span>
       <div class="also-row">
-        <article class="al" data-belonging="soon"><span class="al-s">Coming soon</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p><a class="textlink" href="/contact?about=belonging">Want to be in it? →</a></article>
-        <article class="al" data-belonging="live"><span class="al-s">Out now</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p><a class="textlink" href="/belonging">Look inside →</a></article>
-        <article class="al"><span class="al-s">Ongoing</span><h3>Photography</h3><p>Documenting people, places and events as we go. See the results in the portfolio.</p><a class="textlink" href="/portfolio">Open portfolio →</a></article>
-        <article class="al"><span class="al-s">Background</span><h3>CityVision TV</h3><p>Podcasts, documentary-style interviews and community stories for the Nepali diaspora in Australia. The experience that led to KRNBRY Studio.</p></article>
+        <article class="al kfx" data-belonging="soon"><span class="al-s">Coming soon</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p><a class="textlink" href="/magazine">See what's coming →</a></article>
+        <article class="al kfx" data-belonging="live"><span class="al-s">Out now</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p><a class="textlink" href="/belonging">Look inside →</a></article>
+        <article class="al kfx"><span class="al-s">Ongoing</span><h3>Photography</h3><p>Documenting people, places and events as we go. See the results in the portfolio.</p><a class="textlink" href="/portfolio">Open portfolio →</a></article>
+        <article class="al kfx"><span class="al-s">Background</span><h3>CityVision TV</h3><p>Podcasts, documentary-style interviews and community stories for the Nepali diaspora in Australia. The experience that led to KRNBRY Studio.</p></article>
       </div>
     </div>
   </section>
@@ -1673,8 +1839,7 @@ footer ul a:hover{color:var(--ochre)}
         <article class="plan" data-c="arts"><div class="tk"><span class="cat">Live event</span><h3>Late Night Sessions</h3><p>DJ sets and live music nights celebrating underrepresented artists, streamed online so more people can tune in.</p></div></article>
         <article class="plan" data-c="arts"><div class="tk"><span class="cat">Theatre</span><h3>Community theatre program</h3><p>Helping emerging CALD theatre makers with production resources, venue access and community audiences.</p></div></article>
         <article class="plan" data-c="comm"><div class="tk"><span class="cat">Creators</span><h3>Creator support program</h3><p>Access to equipment, mentorship and distribution for CALD filmmakers, photographers and digital creators. No experience needed.</p></div></article>
-        <article class="plan" data-c="comm"><div class="tk"><span class="cat">Community space</span><h3>Community spaces</h3><p>Low-barrier gatherings, in person and online, where communities come together around culture, story and shared experience.</p></div></article>
-        <article class="plan" data-c="comm" data-open="1"><div class="tk"><span class="cat">Partnerships</span><h3>Community partnerships</h3><p>Working with cultural associations, health services, diaspora groups and advocacy bodies. If your work serves underrepresented communities, get in touch.</p></div></article>
+        <article class="plan" data-c="comm"><div class="tk"><span class="cat">Community</span><h3>Community spaces and partnerships</h3><p>Low-barrier gatherings, in person and online, built with cultural associations, health services, diaspora groups and advocacy bodies. If your work serves underrepresented communities, get in touch.</p></div></article>
       </div>
     </div>
   </section>
@@ -1789,12 +1954,25 @@ footer ul a:hover{color:var(--ochre)}
 
   <section class="pf-pane" id="pfPhotos">
     <div class="container">
-      <div class="decks-wrap" id="decksWrap" hidden>
-        <div class="decks-top"><p class="decks-hint">Albums · hover to flick through, click to open</p><div class="decks-arrows" id="decksArrows" hidden><button type="button" data-d="-1" aria-label="Previous albums">←</button><button type="button" data-d="1" aria-label="More albums">→</button></div></div>
-        <div class="decks" id="decks"></div>
+      <div class="pf-bar" id="pfBar" hidden>
+        <div class="pf-modes" role="tablist" aria-label="How to browse">
+          <button type="button" role="tab" data-m="albums" class="on"><b>Albums</b><small>browse by series</small></button>
+          <button type="button" role="tab" data-m="all"><b>All photos</b><small>everything, in one go</small></button>
+          <button type="button" role="tab" data-m="play"><b>Playground</b><small>spread the prints out</small></button>
+        </div>
       </div>
+      <div class="alb-grid" id="albumsView"></div>
       <div class="pf-view" id="pfView">
         <div id="gallery"><div class="g-loading" aria-label="Loading photos"><div></div><div></div><div></div></div></div>
+      </div>
+      <div class="play-wrap" id="playWrap" hidden>
+        <div class="play-tools">
+          <label class="play-set"><span>Show</span><select id="playSet"></select></label>
+          <button type="button" class="btn btn-ghost-l" id="playShuffle">Shuffle</button>
+          <button type="button" class="btn btn-ghost-l" id="playTidy">Tidy up</button>
+          <span class="play-hint">Drag the prints anywhere. Tap one to look closer.</span>
+        </div>
+        <div class="play" id="play" aria-label="Photo playground"></div>
       </div>
     </div>
   </section>
@@ -1879,6 +2057,69 @@ footer ul a:hover{color:var(--ochre)}
 </div>
 
 
+<!-- ================= MAGAZINE ================= -->
+<div class="page" id="p-magazine">
+  <section class="mg-hero">
+    <div class="container mg-grid">
+      <div class="mg-copy">
+        <p class="ph-meta"><span>06 · Magazine</span><span lang="ne">अपनत्व</span></p>
+        <p class="mg-kick">Belonging · Vol. 1</p>
+        <h1 class="mg-title">Still being<br><span>stitched together.</span></h1>
+        <p class="lead">A yearly magazine of portraits and first-person stories from the people who make multicultural Australia. You'll be able to read every page right here.</p>
+        <div class="mg-count" id="mgCount" aria-live="polite">
+          <div><b id="mgD">--</b><small>days</small></div>
+          <div><b id="mgH">--</b><small>hours</small></div>
+          <div><b id="mgM">--</b><small>minutes</small></div>
+          <div><b id="mgS">--</b><small>seconds</small></div>
+        </div>
+        <p class="mg-when">Coming <b id="mgWhen">January 2027</b></p>
+      </div>
+      <div class="mg-stage" id="mgStage">
+        <div class="mg-page p1" style="background-image:url('/magazine/preview/p2.jpg')"></div>
+        <div class="mg-page p2" style="background-image:url('/magazine/preview/p3.jpg')"></div>
+        <button type="button" class="mg-book" id="mgBook" aria-label="Try opening the magazine">
+          <img src="/magazine/belonging-vol1-cover.jpg" alt="Cover of Belonging Vol. 1">
+          <span class="mg-ribbon" aria-hidden="true"></span>
+          <span class="mg-stamp" aria-hidden="true">Coming<br>soon</span>
+        </button>
+        <p class="mg-tip" id="mgTip">Psst. Try opening it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad mg-q">
+    <div class="container">
+      <span class="label">The question</span>
+      <p class="mg-big">What does belonging mean to you, and where do you find it?</p>
+      <p class="body" style="margin-top:1.5rem">Every edition asks the same question. The answers change with every person, and that's the point. Here's what's being made for the first one.</p>
+      <div class="mg-parts">
+        <div class="mg-part"><i>01</i><h3>Features</h3><p>Long interviews and portraits, told in people's own words.</p></div>
+        <div class="mg-part"><i>02</i><h3>Voices</h3><p>Short portraits, each with one answer to the big question.</p></div>
+        <div class="mg-part"><i>03</i><h3>Place</h3><p>Photo essays from the places where people gather.</p></div>
+        <div class="mg-part"><i>04</i><h3>Your belonging</h3><p>Photos, writing and recipes sent in by readers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mg-join wine on-dark">
+    <div class="container mg-join-in">
+      <div>
+        <span class="label">Be part of it</span>
+        <h2 class="display h2">Have a story about home?</h2>
+        <p class="body">We're meeting people and taking photos for the first edition now. Tell us about yourself, or someone you'd like to nominate.</p>
+      </div>
+      <div class="mg-acts">
+        <a class="btn btn-solid-l" href="/contact?about=belonging">I'd like to be in it <span class="arr">→</span></a>
+        <form class="mg-notify" action="https://api.follow.it/subscription-form/U0s4eFRIRDlzMWFEdTgzQjFHci8wcjNkTjM1WDZvK2RYWXhpeVZhc2F3RktQaVBTamU4aG5aTFBGT3R5RlJpS0dXZURFYUdKRzR3emZTUUhjMVBHTTEycGxHWlNvM3NpQ1FHWDV6Q2FXRXBmMEh4NmJmYlR3aWkwWis5Ukw3bXR8QVRtL0JIbUVLMXV2VnJUZkc1QjlWYWNGSWZyTTgwM3pUSjErUnJaTjBjVT0=/8" method="post" target="_blank">
+          <label for="mgEmail">Tell me when it's out</label>
+          <div><input id="mgEmail" type="email" name="email" placeholder="you@email.com" required><button type="submit">Notify me</button></div>
+          <small>One email when it launches, then new journal entries. Unsubscribe any time.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- ================= CONTACT ================= -->
 <div class="page" id="p-contact">
   <section class="ph ph-contact">
@@ -1887,7 +2128,7 @@ footer ul a:hover{color:var(--ochre)}
         <p class="ph-meta"><span>05 · Contact</span><span lang="ne">नमस्ते</span></p>
         <h1 class="display h1">Let's work <span class="serif-i">together.</span></h1>
         <p class="lead">Artist, community organisation, school, funder, or someone with a story to tell? We'd love to hear from you.</p>
-        <button type="button" class="mailbig" id="mailBig" data-mail="krnbrystudio@outlook.com"><span>krnbrystudio@outlook.com</span><i id="mailTip">Copy</i></button>
+        <button type="button" class="mailbig kfx" id="mailBig" data-mail="krnbrystudio@outlook.com"><span>krnbrystudio@outlook.com</span><i id="mailTip">Copy</i></button>
         <ul class="cdetails">
           <li><span>Based in</span><div>Victoria and Queensland, Australia</div></li>
           <li><span>Replies</span><div>Within 5 business days</div></li>
@@ -1960,6 +2201,7 @@ footer ul a:hover{color:var(--ochre)}
           <li><a href="/mission">Mission</a></li>
           <li><a href="/work">Work and future plans</a></li>
           <li data-belonging="live"><a href="/belonging">Belonging magazine</a></li>
+          <li data-belonging="soon"><a href="/magazine">Magazine (coming soon)</a></li>
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/journal/">Journal</a></li>
         </ul>
@@ -2040,7 +2282,7 @@ const PORTFOLIO = {
   const nav = document.getElementById('nav');
   const pageIds = pages.map(p => p.id.slice(2));
   /* Clean addresses: krnbrystudio.com/about instead of #about or about.html */
-  const PATHS = { home: '/', about: '/about', mission: '/mission', work: '/work', belonging: '/belonging', portfolio: '/portfolio', involve: '/get-involved', contact: '/contact' };
+  const PATHS = { home: '/', about: '/about', mission: '/mission', work: '/work', belonging: '/belonging', portfolio: '/portfolio', involve: '/get-involved', contact: '/contact', magazine: '/magazine' };
   const ALIASES = { '/donate': ['involve', 'donate'], '/be-featured': ['belonging', 'bel-join'], '/portfolio/films': ['portfolio', null] };
   const BY_PATH = {}; Object.keys(PATHS).forEach(k => { BY_PATH[PATHS[k]] = k; });
   const clean = p => { p = (p || '/').replace(/\/index\.html$/, '/').replace(/\.html$/, ''); if (p.length > 1) p = p.replace(/\/+$/, ''); return p || '/'; };
@@ -2073,7 +2315,7 @@ const PORTFOLIO = {
     } else {
       window.scrollTo(0, 0);
     }
-    const titles = { home:'Stories that grow multicultural Australia', about:'About', mission:'Mission', work:'Work and future plans', belonging:'Belonging magazine', portfolio:'Portfolio', involve:'Get involved', contact:'Contact' };
+    const titles = { magazine:'Belonging magazine, coming soon', home:'Stories that grow multicultural Australia', about:'About', mission:'Mission', work:'Work and future plans', belonging:'Belonging magazine', portfolio:'Portfolio', involve:'Get involved', contact:'Contact' };
     document.title = 'KRNBRY Studio | ' + (titles[h] || '');
     window.dispatchEvent(new Event('krn:route'));
   }
@@ -2192,7 +2434,7 @@ const PORTFOLIO = {
       if (r.ok) {
         const d = await r.json();
         const arr = Array.isArray(d) ? d : (d.photos || []);
-        if (arr.length) { if (!Array.isArray(d) && d.cover) homeSrc = d.cover; if (!Array.isArray(d) && Array.isArray(d.featured)) featSrc = d.featured; return norm(arr, Array.isArray(d) ? [] : d.albums); }
+        if (arr.length) { if (!Array.isArray(d) && d.cover) homeSrc = d.cover; if (!Array.isArray(d) && Array.isArray(d.featured)) featSrc = d.featured; if (!Array.isArray(d) && Array.isArray(d.hero)) heroSrc = d.hero; if (!Array.isArray(d) && Array.isArray(d.lens)) lensSrc = d.lens; return norm(arr, Array.isArray(d) ? [] : d.albums); }
       }
     } catch (e) {}
     // 2. Otherwise, list whatever is in the portfolio folder on GitHub
@@ -2208,7 +2450,7 @@ const PORTFOLIO = {
     return norm(list, []);
   }
 
-  let photos = [], albums = [], shown = [], cur = 0, homeSrc = '', featSrc = [];
+  let photos = [], albums = [], shown = [], cur = 0, homeSrc = '', featSrc = [], heroSrc = [], lensSrc = [];
   const gallery = document.getElementById('gallery');
   
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -2286,60 +2528,121 @@ const PORTFOLIO = {
     const rest = photos.filter(p => !albumOf(p.album));
     if (rest.length) { const sec = document.createElement('section'); sec.className = 'g-album'; sec.append(albumHead({ name: 'More photos' }, rest.length), grid(rest)); gallery.appendChild(sec); }
   }
+  /* albums as big cards, plus "all" and a playground */
+  let pfMode = 'albums';
+  const usedAlbums = () => albums.filter(a => photos.some(p => p.album === a.id));
+  function setMode(m){
+    pfMode = m;
+    document.querySelectorAll('.pf-modes button').forEach(b => { b.classList.toggle('on', b.dataset.m === m || (m === 'album' && b.dataset.m === 'albums')); b.setAttribute('aria-selected', b.classList.contains('on')); });
+    const av = document.getElementById('albumsView'), pv = document.getElementById('pfView'), pw = document.getElementById('playWrap');
+    av.hidden = m !== 'albums'; pv.hidden = !(m === 'all' || m === 'album'); pw.hidden = m !== 'play';
+    if (m === 'all') renderGallery('all');
+    if (m === 'play') playground();
+  }
+  function renderDecks(){
+    const used = usedAlbums(), av = document.getElementById('albumsView'), bar = document.getElementById('pfBar');
+    bar.hidden = false;
+    document.querySelectorAll('.pf-modes button').forEach(b => b.onclick = () => setMode(b.dataset.m));
+    if (!used.length) { document.querySelector('.pf-modes [data-m="albums"]').hidden = true; document.querySelector('.pf-modes').style.gridTemplateColumns = '1fr 1fr'; setMode('all'); return; }
+    av.innerHTML = '';
+    used.forEach(a => {
+      const list = photos.filter(p => p.album === a.id);
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'acard';
+      c.setAttribute('aria-label', 'Open album ' + a.name);
+      c.appendChild(imgEl(list[0])); if (list[1]) c.appendChild(imgEl(list[1]));
+      const t = document.createElement('div'); t.className = 'ac-t';
+      const l = document.createElement('div'); const h = document.createElement('h3'); h.textContent = a.name; l.appendChild(h);
+      if (a.description) { const d = document.createElement('p'); d.textContent = a.description; l.appendChild(d); }
+      const n = document.createElement('span'); n.className = 'ac-n'; n.textContent = list.length + (list.length === 1 ? ' photo' : ' photos');
+      t.append(l, n); c.appendChild(t);
+      c.addEventListener('click', () => openAlbum(a.id, true));
+      av.appendChild(c);
+    });
+    const loose = photos.filter(p => !albumOf(p.album));
+    if (loose.length) {
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'acard all';
+      c.appendChild(imgEl(loose[0]));
+      c.insertAdjacentHTML('beforeend', '<div class="ac-t"><div><h3>More photos</h3><p>Moments that sit outside an album.</p></div><span class="ac-n">' + loose.length + '</span></div>');
+      c.addEventListener('click', () => { setMode('all'); });
+      av.appendChild(c);
+    }
+    setMode('albums');
+  }
   function openAlbum(id, scroll){
-    document.querySelectorAll('.deck').forEach(d => d.classList.toggle('active', d.dataset.album === id));
+    if (id === 'all') { setMode('all'); return; }
+    setMode('album');
     renderGallery(id);
-    const act = document.querySelector('.deck.active'); if (act) act.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    if (scroll) { const y = document.getElementById('pfView').getBoundingClientRect().top + scrollY - 90; window.scrollTo({ top: y, behavior: 'smooth' }); }
+    const back = document.createElement('button'); back.type = 'button'; back.className = 'pf-back'; back.textContent = '← All albums';
+    back.onclick = () => { setMode('albums'); const y = document.getElementById('pfBar').getBoundingClientRect().top + scrollY - 100; window.scrollTo({ top: y, behavior: 'smooth' }); };
+    gallery.prepend(back);
+    if (scroll) { const y = document.getElementById('pfBar').getBoundingClientRect().top + scrollY - 100; window.scrollTo({ top: y, behavior: 'smooth' }); }
   }
 
-  /* album decks: fanned stacks you can flick through by moving across them */
-  function renderDecks(){
-    const used = albums.filter(a => photos.some(p => p.album === a.id));
-    if (!used.length) return;
-    const wrap = document.getElementById('decksWrap'), el = document.getElementById('decks');
-    el.innerHTML = ''; wrap.hidden = false;
-    const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-    const hint = wrap.querySelector('.decks-hint'); if (hint && !fine) hint.textContent = 'Albums · swipe to browse, tap to open';
-    [{ id: 'all', name: 'All photos', list: photos }, ...used.map(a => ({ ...a, list: photos.filter(p => p.album === a.id) }))].forEach(a => {
-      const d = document.createElement('button'); d.type = 'button'; d.className = 'deck' + (a.id === 'all' ? ' active' : ''); d.dataset.album = a.id;
-      d.setAttribute('aria-label', 'Open album ' + a.name);
-      const st = document.createElement('div'); st.className = 'deck-stack';
-      const pics = a.list.slice(0, 3);
-      ['c3', 'c2', 'c1'].forEach((c, k) => { const p = pics[2 - k] || pics[0]; const card = document.createElement('div'); card.className = 'deck-card ' + c; if (p) card.appendChild(imgEl(p)); st.appendChild(card); });
-      const front = st.querySelector('.c1 img');
-      if (fine && a.list.length > 1 && front) {
-        const n = Math.min(a.list.length, 12), dots = document.createElement('div'); dots.className = 'deck-dots';
-        for (let i = 0; i < n; i++) dots.appendChild(document.createElement('i'));
-        dots.firstChild.classList.add('on'); st.querySelector('.c1').appendChild(dots);
-        let last = 0;
-        d.addEventListener('pointermove', e => {
-          const r = st.getBoundingClientRect(), i = Math.max(0, Math.min(n - 1, Math.floor((e.clientX - r.left) / r.width * n)));
-          if (i === last) return; last = i; const p = a.list[i];
-          front.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src;
-          [...dots.children].forEach((x, j) => x.classList.toggle('on', j === i));
-        });
-        d.addEventListener('pointerleave', () => { last = 0; const p = a.list[0]; front.src = /^(https?:)?\//.test(p.src) ? p.src : '/' + p.src; [...dots.children].forEach((x, j) => x.classList.toggle('on', j === 0)); });
-      }
-      const b = document.createElement('b'); b.textContent = a.name;
-      const s = document.createElement('small'); s.textContent = a.list.length + (a.list.length === 1 ? ' photo' : ' photos');
-      d.append(st, b, s);
-      d.addEventListener('click', () => openAlbum(a.id, true));
-      el.appendChild(d);
-    });
-    // arrows + soft edges when there are more albums than fit
-    const arrows = document.getElementById('decksArrows'), [prevB, nextB] = arrows.children;
-    const edges = () => {
-      const max = el.scrollWidth - el.clientWidth - 2, x = el.scrollLeft;
-      arrows.hidden = max <= 0; el.classList.toggle('more-l', x > 2); el.classList.toggle('more-r', x < max);
-      prevB.disabled = x <= 2; nextB.disabled = x >= max;
-    };
-    if (!el.dataset.wired) {
-      el.dataset.wired = 1;
-      el.addEventListener('scroll', edges, { passive: true }); addEventListener('resize', edges);
-      arrows.addEventListener('click', e => { const b = e.target.closest('button'); if (b) el.scrollBy({ left: b.dataset.d * el.clientWidth * .8, behavior: 'smooth' }); });
+  /* the playground: prints on a table you can push around */
+  let playBuilt = '';
+  function playground(force){
+    const play = document.getElementById('play'), sel = document.getElementById('playSet');
+    if (!sel.options.length) {
+      [['all', 'All photos'], ...usedAlbums().map(a => [a.id, a.name])].forEach(([v, t]) => { const o = document.createElement('option'); o.value = v; o.textContent = t; sel.appendChild(o); });
+      sel.onchange = () => playground(true);
+      document.getElementById('playShuffle').onclick = () => scatter(true);
+      document.getElementById('playTidy').onclick = tidy;
     }
-    requestAnimationFrame(edges); setTimeout(edges, 600);
+    const key = sel.value;
+    if (playBuilt === key && !force) return;
+    playBuilt = key;
+    const list = (key === 'all' ? photos : photos.filter(p => p.album === key)).slice(0, 24);
+    shown = list.slice();
+    play.innerHTML = '';
+    let z = 1;
+    list.forEach((p, i) => {
+      const pr = document.createElement('div'); pr.className = 'print'; pr.tabIndex = 0; pr.setAttribute('role', 'button'); pr.setAttribute('aria-label', 'Photo: ' + (p.title || 'photo'));
+      pr.appendChild(imgEl(p)); const c = document.createElement('span'); c.textContent = p.title || ''; pr.appendChild(c);
+      pr._s = { x: 0, y: 0, r: 0 };
+      let start = null;
+      pr.addEventListener('pointerdown', e => {
+        pr.setPointerCapture(e.pointerId); play.classList.remove('anim');
+        start = { px: e.clientX, py: e.clientY, x: pr._s.x, y: pr._s.y, moved: 0 };
+        pr.style.zIndex = ++z; pr.classList.add('lift'); place(pr, pr._s.x, pr._s.y, pr._s.r * .4, 1.05);
+      });
+      pr.addEventListener('pointermove', e => {
+        if (!start) return;
+        const dx = e.clientX - start.px, dy = e.clientY - start.py; start.moved = Math.max(start.moved, Math.abs(dx) + Math.abs(dy));
+        const W = play.clientWidth - pr.offsetWidth, H = play.clientHeight - pr.offsetHeight;
+        pr._s.x = Math.max(-pr.offsetWidth * .3, Math.min(W + pr.offsetWidth * .3, start.x + dx));
+        pr._s.y = Math.max(-pr.offsetHeight * .2, Math.min(H + pr.offsetHeight * .2, start.y + dy));
+        place(pr, pr._s.x, pr._s.y, pr._s.r * .4 + Math.max(-8, Math.min(8, dx * .02)), 1.05);
+      });
+      const end = () => {
+        if (!start) return; const m = start.moved; start = null; pr.classList.remove('lift');
+        pr._s.r = pr._s.r * .6 + (Math.random() - .5) * 6; place(pr, pr._s.x, pr._s.y, pr._s.r, 1);
+        if (m < 6) openLb(i);
+      };
+      pr.addEventListener('pointerup', end); pr.addEventListener('pointercancel', end);
+      pr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(i); } });
+      play.appendChild(pr);
+    });
+    requestAnimationFrame(() => scatter(false));
+  }
+  function place(pr, x, y, r, s){ pr.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${r.toFixed(2)}deg) scale(${s || 1})`; }
+  function scatter(animate){
+    const play = document.getElementById('play'), prs = [...play.children]; if (!prs.length) return;
+    play.classList.toggle('anim', !!animate);
+    const W = play.clientWidth, H = play.clientHeight;
+    prs.forEach((pr, i) => {
+      const w = pr.offsetWidth, h = pr.offsetHeight || w * 1.4;
+      pr._s = { x: Math.random() * Math.max(10, W - w), y: Math.random() * Math.max(10, H - h - 10), r: (Math.random() - .5) * 22 };
+      if (!animate) { pr.style.opacity = 0; setTimeout(() => { pr.style.transition = 'opacity .6s'; pr.style.opacity = 1; }, i * 45); }
+      place(pr, pr._s.x, pr._s.y, pr._s.r);
+    });
+  }
+  function tidy(){
+    const play = document.getElementById('play'), prs = [...play.children]; if (!prs.length) return;
+    play.classList.add('anim');
+    const W = play.clientWidth, w = prs[0].offsetWidth, h = prs[0].offsetHeight, gap = 18;
+    const cols = Math.max(1, Math.floor((W - gap) / (w + gap))), x0 = (W - (cols * (w + gap) - gap)) / 2;
+    const rows = Math.ceil(prs.length / cols), step = Math.min(h + gap, (play.clientHeight - h - 30) / Math.max(1, rows - 1));
+    prs.forEach((pr, i) => { pr._s = { x: x0 + (i % cols) * (w + gap), y: 20 + Math.floor(i / cols) * step, r: 0 }; pr.style.zIndex = i + 1; place(pr, pr._s.x, pr._s.y, 0); });
   }
 
   /* photos / films switch, with its own address: /portfolio/films */
@@ -2433,25 +2736,28 @@ const PORTFOLIO = {
     if (!photos.length) return;
     const first = photos.find(p => p.src === homeSrc) || photos[0];
     // hero slideshow: the home photo first, then front-page picks, then the rest
-    const heroList = [first].concat(photos.filter(p => p !== first && featSrc.includes(p.src)), photos.filter(p => p !== first && !featSrc.includes(p.src)));
+    const picked = heroSrc.map(src => photos.find(p => p.src === src)).filter(Boolean);
+    const heroList = picked.length ? picked : [first].concat(photos.filter(p => p !== first && featSrc.includes(p.src)), photos.filter(p => p !== first && !featSrc.includes(p.src)));
     if (window.krnHero) window.krnHero(heroList);
 
     const strip = document.getElementById('stripGrid');
     // photos picked in the uploader for the front page, else the first few
     const chosen = photos.filter(p => featSrc.includes(p.src));
     const rest = photos.length > 4 ? photos.filter(p => p !== first) : photos;
-    const pick = chosen.length >= 2 ? chosen.slice(0, 16) : rest.slice(0, 4);
+    const pick = (lensSrc.length ? photos.filter(p => lensSrc.includes(p.src)).sort((a, b) => lensSrc.indexOf(a.src) - lensSrc.indexOf(b.src)) : chosen.length >= 2 ? chosen : rest).slice(0, 6);
     if (pick.length < 2) return;
-    if (pick.length > 4) strip.classList.add('car');
+    strip.classList.add('lens');
     pick.forEach(p => {
       const b = document.createElement('button');
       b.setAttribute('aria-label', 'Open photo: ' + (p.title || 'photo'));
       b.appendChild(imgEl(p));
+      const cap = document.createElement('span'); cap.className = 'lens-cap'; cap.textContent = p.title || ''; if (p.title) b.appendChild(cap);
+      b.addEventListener('mouseenter', () => { [...strip.children].forEach(x => x.classList.toggle('on', x === b)); });
       b.addEventListener('click', () => { window.krnGo('/portfolio'); setTimeout(() => openLb(shown.indexOf(p)), 350); });
       strip.appendChild(b);
     });
     document.getElementById('homeStrip').hidden = false;
-    if (pick.length > 4) carousel(strip);
+    if (strip.firstChild) strip.firstChild.classList.add('on');
   }
 
   // more than four front-page photos: a slow, swipeable carousel
@@ -2590,7 +2896,7 @@ const PORTFOLIO = {
   const nav = document.getElementById('nav');
   const ticker = document.querySelector('.ticker-track');
   let lastY = scrollY, vel = 0, ticking = false;
-  const PARA = [['.hero-media', .06], ['.bel-cover', .08], ['.card.feature .ring', .15], ['.strip button:nth-child(odd)', .04], ['.strip button:nth-child(even)', -.04]];
+  const PARA = [['.hero-media', .06], ['.bel-cover', .08], ['.card.feature .ring', .15], ];
   function onScroll(){
     const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
@@ -2614,7 +2920,7 @@ const PORTFOLIO = {
   ['gallery', 'stripGrid', 'heroMedia'].forEach(id => { const el = document.getElementById(id); if (el) mo.observe(el, { childList: true, subtree: true }); });
   function prepGallery(){
     if (!reduce) $$('.g-item:not(.rv)').forEach((el, i) => { el.style.setProperty('--d', (i % 6) * 70 + 'ms'); el.classList.add('rv'); io.observe(el); });
-    if (fine && !reduce) $$('.g-item, .strip button').forEach(addTilt);
+    if (fine && !reduce) $$('.g-item').forEach(addTilt);
   }
 
   /* ---- 3D tilt with glare ---- */
@@ -2765,7 +3071,7 @@ const PORTFOLIO = {
   // the next photo is revealed behind a woven, saw-tooth edge rising up the screen
   function wipe(el, done){
     if (reduce) { el.style.clipPath = 'none'; return done(); }
-    const teeth = innerWidth < 620 ? 10 : 18, H = 26, t0 = performance.now(), D = 1150;
+    const teeth = 2, H = 0, t0 = performance.now(), D = 1150;
     weave.style.opacity = 1;
     const ease = k => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
     const frame = t => {
@@ -2976,6 +3282,7 @@ const PORTFOLIO = {
     const pick = t => { const o = [...sel.options].find(o => o.text === t); if (o) sel.value = o.value || o.text; };
     const MAP = { committee: 'Joining the committee', work: 'Sharing my creative work', partner: 'Partnership enquiry', funding: 'Funding or grants', belonging: 'Being featured in Belonging' };
     if (q.get('about') && MAP[q.get('about')]) pick(MAP[q.get('about')]);
+    if (q.get('about') === 'belonging' && !sel.value) { pick('Something else'); if (!msg.value) msg.value = "I'd love to be part of Belonging, Vol. 1.\n\n"; }
     if (q.get('idea')) { pick('A collaboration or project'); if (!msg.value) msg.value = "I'm interested in your idea: " + q.get('idea') + '.\n\n'; }
   }
 
@@ -2984,6 +3291,34 @@ const PORTFOLIO = {
   addEventListener('resize', onScroll);
   addEventListener('krn:route', () => requestAnimationFrame(() => { onScroll(); prefill(); }));
   onScroll(); prefill();
+})();
+
+/* =================== MAGAZINE: coming soon =================== */
+(function(){
+  // Change this when the date is set. The countdown and the text follow it.
+  const MAG_LAUNCH = '2027-01-01T09:00:00+11:00';
+  const when = new Date(MAG_LAUNCH), $ = id => document.getElementById(id);
+  if (!$('mgCount')) return;
+  $('mgWhen').textContent = when.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+  const pad = n => String(n).padStart(2, '0');
+  function tick(){
+    let s = Math.max(0, Math.floor((when - Date.now()) / 1000));
+    if (!s) { $('mgCount').hidden = true; return; }
+    $('mgD').textContent = Math.floor(s / 86400); s %= 86400;
+    $('mgH').textContent = pad(Math.floor(s / 3600)); s %= 3600;
+    $('mgM').textContent = pad(Math.floor(s / 60)); $('mgS').textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+  const book = $('mgBook'), tip = $('mgTip'), stage = $('mgStage');
+  const LINES = ['Not yet! It opens ' + $('mgWhen').textContent + '.', 'Still stitching the pages…', 'Patience. Good stories take time.', 'Nice try. Come back in ' + $('mgWhen').textContent + '.'];
+  let n = 0;
+  book.addEventListener('click', () => { book.classList.remove('tug'); void book.offsetWidth; book.classList.add('tug'); tip.textContent = LINES[n++ % LINES.length]; tip.classList.add('say'); });
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    stage.addEventListener('pointermove', e => { if (book.classList.contains('tug')) return; const r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      book.style.transform = `rotateY(${(x * 16).toFixed(1)}deg) rotateX(${(-y * 10).toFixed(1)}deg)`; });
+    stage.addEventListener('pointerleave', () => { book.style.transform = ''; });
+    book.addEventListener('animationend', () => book.classList.remove('tug'));
+  }
 })();
 
 </script>
