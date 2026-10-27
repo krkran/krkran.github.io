@@ -29,113 +29,12 @@
   ],
   "photos": [
     {
-      "src": "portfolio/2026-09-19-walkies.jpg",
-      "title": "Walkies",
-      "place": "Queen Victoria Market",
-      "album": "album-b2tr",
-      "caption": "The happiest one at the market, and he knows it.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-lookout.jpg",
-      "title": "Lookout",
-      "place": "Queen Victoria Market",
-      "album": "album-b2tr",
-      "caption": "A seagull keeping watch over the market from the stripes of the awning.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-in-red.jpg",
-      "title": "In red",
-      "place": "Queen Victoria Market",
-      "album": "album-ms08",
-      "caption": "Turquoise beads, a red top and a quiet look across the crowd.",
-      "date": "2026-09-19"
-    },
-    {
       "src": "portfolio/2026-09-19-not-today.jpg",
       "title": "Not today",
-      "place": "Melbourne",
-      "album": "album-ms08",
       "caption": "Not everyone wants their photo taken, and that is a moment worth keeping too.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-ink.jpg",
-      "title": "Ink",
-      "place": "Queen Victoria Market",
-      "album": "album-k7tc",
-      "caption": "Stories on his arms, somewhere to be.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-the-weekly-shop.jpg",
-      "title": "The weekly shop",
-      "place": "Queen Victoria Market",
-      "album": "album-k7tc",
-      "caption": "Trolley loaded, a routine she has probably done a thousand times.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-waiting.jpg",
-      "title": "Waiting",
       "place": "Melbourne",
-      "album": "album-k7tc",
-      "caption": "A quiet seat in a laneway full of fairy lights and passing footsteps.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-smoke-break.jpg",
-      "title": "Smoke break",
-      "place": "Queen Victoria Market",
-      "album": "album-strt",
-      "caption": "A quick break in front of a mural much louder than he is.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-queen-vic.jpg",
-      "title": "Queen Vic",
-      "place": "Queen Victoria Market",
-      "album": "album-strt",
-      "caption": "Weathered paint on a market bollard. Still standing after all the crowds.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-bolts-of-colour.jpg",
-      "title": "Bolts of colour",
-      "place": "Queen Victoria Market",
-      "album": "album-strt",
-      "caption": "Rolls of printed fabric lined up like a rainbow waiting to be sewn into something.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-19-clock-tower.jpg",
-      "title": "Clock tower",
-      "place": "Melbourne",
-      "album": "album-po5i",
-      "caption": "Old red brick peeking out from behind the trees.",
-      "date": "2026-09-19"
-    },
-    {
-      "src": "portfolio/2026-09-28-this-way.jpg",
-      "title": "This way",
-      "album": "album-po5i",
-      "caption": "A country street corner with everything you need: a postbox, a sign and a big blue sky.",
-      "date": "2026-09-28"
-    },
-    {
-      "src": "portfolio/2026-09-28-golden-hour.jpg",
-      "title": "Golden hour",
-      "album": "album-po5i",
-      "caption": "Last light over the long grass as the new houses go quiet for the evening.",
-      "date": "2026-09-28"
-    },
-    {
-      "src": "portfolio/2026-09-28-spring.jpg",
-      "title": "Spring",
-      "album": "album-drh9",
-      "caption": "New leaves catching the sun between the power lines.",
-      "date": "2026-09-28"
+      "date": "2026-09-19",
+      "album": "album-ms08"
     },
     {
       "src": "portfolio/2026-09-27-aama.jpg",
@@ -150,34 +49,101 @@
       "album": "album-ms08"
     },
     {
+      "src": "portfolio/2026-09-19-clock-tower.jpg",
+      "title": "Clock tower",
+      "caption": "Old red brick peeking out from behind the trees.",
+      "place": "Melbourne",
+      "date": "2026-09-19",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-09-28-this-way.jpg",
+      "title": "This way",
+      "caption": "A country street corner with everything you need: a postbox, a sign and a big blue sky.",
+      "date": "2026-09-28",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-09-28-golden-hour.jpg",
+      "title": "Golden hour",
+      "caption": "Last light over the long grass as the new houses go quiet for the evening.",
+      "date": "2026-09-28",
+      "album": "album-po5i"
+    },
+    {
       "src": "portfolio/2026-10-04-dscf3728.jpg",
       "title": "Closed for the season",
-      "album": "album-po5i",
-      "caption": "An empty packing shed under a heavy sky. You can almost hear the trucks that used to roll through."
+      "caption": "An empty packing shed under a heavy sky. You can almost hear the trucks that used to roll through.",
+      "album": "album-po5i"
     },
     {
       "src": "portfolio/2026-10-04-dscf3726.jpg",
       "title": "Lines",
-      "album": "album-po5i",
-      "caption": "A lone power pole holding the whole street together."
+      "caption": "A lone power pole holding the whole street together.",
+      "album": "album-po5i"
     },
     {
       "src": "portfolio/2026-10-04-dscf3725.jpg",
       "title": "Cracked",
-      "album": "album-po5i",
-      "caption": "Years of summers and heavy trucks, written into the road."
+      "caption": "Years of summers and heavy trucks, written into the road.",
+      "album": "album-po5i"
     },
     {
       "src": "portfolio/2026-10-04-dscf3724.jpg",
       "title": "This gate",
-      "album": "album-po5i",
-      "caption": "An old fruit packing shed, its painted sign still giving directions to nobody in particular."
+      "caption": "An old fruit packing shed, its painted sign still giving directions to nobody in particular.",
+      "album": "album-po5i"
+    },
+    {
+      "src": "portfolio/2026-09-19-walkies.jpg",
+      "title": "Walkies",
+      "caption": "The happiest one at the market, and he knows it.",
+      "place": "Queen Victoria Market",
+      "date": "2026-09-19",
+      "album": "album-b2tr"
     },
     {
       "src": "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
       "title": "Bee in the midst of lavender",
-      "album": "album-b2tr",
-      "caption": "A busy bee doing the rounds through the lavender."
+      "caption": "A busy bee doing the rounds through the lavender.",
+      "album": "album-b2tr"
+    },
+    {
+      "src": "portfolio/2026-09-28-spring.jpg",
+      "title": "Spring",
+      "caption": "New leaves catching the sun between the power lines.",
+      "date": "2026-09-28",
+      "album": "album-drh9"
+    },
+    {
+      "src": "portfolio/2026-09-27-market.jpg",
+      "title": "Market",
+      "place": "Queen Victoria Market",
+      "album": "album-k7tc"
+    },
+    {
+      "src": "portfolio/2026-09-19-ink.jpg",
+      "title": "Ink",
+      "caption": "Stories on his arms, somewhere to be.",
+      "place": "Queen Victoria Market",
+      "date": "2026-09-19",
+      "album": "album-k7tc"
+    },
+    {
+      "src": "portfolio/2026-09-19-the-weekly-shop.jpg",
+      "title": "The weekly shop",
+      "caption": "Trolley loaded, a routine she has probably done a thousand times.",
+      "place": "Queen Victoria Market",
+      "date": "2026-09-19",
+      "album": "album-k7tc"
+    },
+    {
+      "src": "portfolio/2026-09-19-waiting.jpg",
+      "title": "Waiting",
+      "caption": "A quiet seat in a laneway full of fairy lights and passing footsteps.",
+      "place": "Melbourne",
+      "date": "2026-09-19",
+      "album": "album-k7tc"
     },
     {
       "src": "portfolio/2026-09-28-smile.jpg",
@@ -186,19 +152,46 @@
       "album": "album-k7tc"
     },
     {
-      "src": "portfolio/2026-09-27-market.jpg",
-      "title": "Market",
+      "src": "portfolio/2026-09-19-smoke-break.jpg",
+      "title": "Smoke break",
+      "caption": "A quick break in front of a mural much louder than he is.",
       "place": "Queen Victoria Market",
-      "album": "album-k7tc"
+      "date": "2026-09-19",
+      "album": "album-strt"
+    },
+    {
+      "src": "portfolio/2026-09-19-queen-vic.jpg",
+      "title": "Queen Vic",
+      "caption": "Weathered paint on a market bollard. Still standing after all the crowds.",
+      "place": "Queen Victoria Market",
+      "date": "2026-09-19",
+      "album": "album-strt"
+    },
+    {
+      "src": "portfolio/2026-09-19-bolts-of-colour.jpg",
+      "title": "Bolts of colour",
+      "caption": "Rolls of printed fabric lined up like a rainbow waiting to be sewn into something.",
+      "place": "Queen Victoria Market",
+      "date": "2026-09-19",
+      "album": "album-strt"
     }
   ],
-  "cover": "portfolio/2026-09-27-aama.jpg",
-  "featured": [
+  "hero": [
+    "portfolio/2026-09-27-aama.jpg"
+  ],
+  "lens": [
     "portfolio/2026-09-19-walkies.jpg",
-    "portfolio/2026-09-19-in-red.jpg",
     "portfolio/2026-09-27-together.jpg",
     "portfolio/2026-09-19-waiting.jpg",
     "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
     "portfolio/2026-09-28-golden-hour.jpg"
-  ]
+  ],
+  "featured": [
+    "portfolio/2026-09-19-walkies.jpg",
+    "portfolio/2026-09-27-together.jpg",
+    "portfolio/2026-09-19-waiting.jpg",
+    "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
+    "portfolio/2026-09-28-golden-hour.jpg"
+  ],
+  "cover": "portfolio/2026-09-27-aama.jpg"
 }
