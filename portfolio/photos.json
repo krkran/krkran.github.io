@@ -29,6 +29,12 @@
   ],
   "photos": [
     {
+      "src": "portfolio/2026-09-27-together.jpg",
+      "title": "Together",
+      "place": "Kathmandu, Nepal",
+      "album": "album-ms08"
+    },
+    {
       "src": "portfolio/2026-09-19-not-today.jpg",
       "title": "Not today",
       "caption": "Not everyone wants their photo taken, and that is a moment worth keeping too.",
@@ -40,12 +46,6 @@
       "src": "portfolio/2026-09-27-aama.jpg",
       "title": "Aama",
       "place": "Kirtipur, Nepal",
-      "album": "album-ms08"
-    },
-    {
-      "src": "portfolio/2026-09-27-together.jpg",
-      "title": "Together",
-      "place": "Kathmandu, Nepal",
       "album": "album-ms08"
     },
     {
@@ -177,17 +177,19 @@
     }
   ],
   "hero": [
-    "portfolio/2026-09-27-aama.jpg"
+    "portfolio/2026-09-27-aama.jpg",
+    "portfolio/2026-10-04-dscf3724.jpg",
+    "portfolio/2026-10-04-dscf3725.jpg",
+    "portfolio/2026-09-27-together.jpg",
+    "portfolio/2026-09-27-market.jpg"
   ],
   "lens": [
-    "portfolio/2026-09-19-walkies.jpg",
     "portfolio/2026-09-27-together.jpg",
     "portfolio/2026-09-19-waiting.jpg",
     "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
     "portfolio/2026-09-28-golden-hour.jpg"
   ],
   "featured": [
-    "portfolio/2026-09-19-walkies.jpg",
     "portfolio/2026-09-27-together.jpg",
     "portfolio/2026-09-19-waiting.jpg",
     "portfolio/2026-10-04-bee-in-the-midst-of-lavendar.jpg",
