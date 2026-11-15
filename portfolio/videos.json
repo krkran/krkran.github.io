@@ -1,6 +1,19 @@
 {
   "channel": "krnbrystudio",
   "channelUrl": "https://www.youtube.com/@krnbrystudio",
-  "videos": [],
+  "videos": [
+    {
+      "id": "AZvDm9CV8zY",
+      "title": "HOME | A film about my grandparents | KRNBRY Studio",
+      "published": "2026-11-13",
+      "description": "My grandfather was scared the first time he saw a car. He went on to finish his PhD in Hawaii, having grown up in a small village in rural Nepal. \n\nHOME is a spoken word documentary about my grandparents, Muktinath Khanal, Devidutta Paudyal and Sarita Paudyal. I sat down with each of them in Nepal and asked about the lives they lived before I knew them. A lawyer and journalist who still fills note"
+    },
+    {
+      "id": "xlXlZt46NbY",
+      "title": "60 Second Thrift Challenge | Ep. 1 | KRNBRY Studio",
+      "published": "2026-11-09",
+      "description": "Welcome to the 60 Second Thrift Challenge! \n\nA KRNBRY Studio original production where contestants blindly choose one of three mystery themes. Their challenge? Find a fit that matches the theme in just 60 seconds. Then comes the reveal, and YOU decide: did they nail it or fail it? 👀\n\nOur ethos is to share the stories of CALD communities and create a platform for culture to grow, be expressed and e"
+    }
+  ],
   "channelId": "UCQs5-vRW4pChISm1uygBDkg"
 }
