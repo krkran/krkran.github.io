@@ -1462,6 +1462,17 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
 .nowshow .btn{white-space:nowrap}
 .nowshow button.ns-hit{display:contents;color:inherit;text-align:left}
 @media (max-width:700px){.nowshow .container{grid-template-columns:110px 1fr}.ns-thumb{width:110px}.nowshow .btn{grid-column:1/-1;justify-content:center}}
+
+/* films first: a taste of the photos at the end */
+.f-photos{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;margin:clamp(3rem,6vw,4.5rem) 0 1rem;padding:clamp(1.5rem,3vw,2.25rem);border-radius:24px;border:1px solid rgba(244,239,231,.12);background:rgba(244,239,231,.03)}
+.f-photos h3{font-family:var(--disp);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.02em;margin:.2rem 0 .5rem}
+.f-photos p{color:rgba(244,239,231,.7);margin-bottom:1.25rem}
+.fp-row{display:flex;gap:10px;height:clamp(180px,22vw,280px)}
+.fp-row a{flex:1;border-radius:16px;overflow:hidden;transition:flex .7s var(--ease)}
+.fp-row a:hover{flex:2.2}
+.fp-row img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .5s}
+.fp-row a:hover img{filter:none}
+@media (max-width:800px){.f-photos{grid-template-columns:1fr}.fp-row{height:160px}}
 </style>
 </head>
 <body>
@@ -1507,7 +1518,7 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
         <div class="hx-steps" id="hxSteps" role="tablist" aria-label="Our aims"></div>
         <div class="hx-cta">
           <a class="btn btn-solid-l" href="/mission">Our mission <span class="arr">→</span></a>
-          <a class="btn btn-ghost-l" href="/portfolio">See the work</a>
+          <a class="btn btn-ghost-l" href="/portfolio">Watch our films</a>
         </div>
       </div>
     </div>
@@ -1518,7 +1529,7 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
   <section class="nowshow" id="nowShow" hidden aria-label="Now showing">
     <div class="container">
       <button type="button" class="ns-hit" id="nsHit"><span class="ns-thumb"><img id="nsImg" alt=""></span><span class="ns-t"><small id="nsBadge">Premiere · Now showing</small><b id="nsTitle"></b><span id="nsSub"></span></span></button>
-      <a class="btn btn-solid-l" href="/portfolio/films">All films <span class="arr">→</span></a>
+      <a class="btn btn-solid-l" href="/portfolio">All films <span class="arr">→</span></a>
     </div>
   </section>
 
@@ -1605,7 +1616,7 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
         <span class="label">Ongoing</span>
         <h3>Photography</h3>
         <p>Documenting people, places and moments in our communities as we go.</p>
-        <a class="textlink" href="/portfolio">See the portfolio →</a>
+        <a class="textlink" href="/portfolio/photos">See the photos →</a>
       </article>
       <article class="nc" data-belonging="live">
         <span class="label">Out now</span>
@@ -1632,7 +1643,7 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
         <div class="strip-acts">
           <span class="drag-hint" id="dragHint" hidden>← drag →</span>
           <div class="strip-nav" id="stripNav" hidden><button type="button" aria-label="Previous photos">←</button><button type="button" aria-label="More photos">→</button></div>
-          <a class="btn btn-line" href="/portfolio">Full portfolio <span class="arr">→</span></a>
+          <a class="btn btn-line" href="/portfolio/photos">All photos <span class="arr">→</span></a>
         </div>
       </div>
       <div class="strip" id="stripGrid"></div>
@@ -1889,7 +1900,7 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
       <div class="also-row">
         <article class="al kfx" data-belonging="soon"><span class="al-s">Coming soon</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia. We're meeting people and taking photos for the first edition now.</p><a class="textlink" href="/magazine">See what's coming →</a></article>
         <article class="al kfx" data-belonging="live"><span class="al-s">Out now</span><h3>Belonging, Vol. 1</h3><p>A yearly magazine of portraits and interviews with the people who make multicultural Australia.</p><a class="textlink" href="/belonging">Look inside →</a></article>
-        <article class="al kfx"><span class="al-s">Ongoing</span><h3>Photography</h3><p>Documenting people, places and events as we go. See the results in the portfolio.</p><a class="textlink" href="/portfolio">Open portfolio →</a></article>
+        <article class="al kfx"><span class="al-s">Ongoing</span><h3>Photography</h3><p>Documenting people, places and events as we go. See the results in the portfolio.</p><a class="textlink" href="/portfolio/photos">See the photos →</a></article>
         <article class="al kfx"><span class="al-s">Background</span><h3>CityVision TV</h3><p>Podcasts, documentary-style interviews and community stories for the Nepali diaspora in Australia. The experience that led to KRNBRY Studio.</p></article>
       </div>
     </div>
@@ -2024,15 +2035,15 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
         <div class="kicker">Portfolio</div>
         <h1 class="display h1">Through the <span class="serif-i">lens.</span></h1>
       </div>
-      <p class="lead">Photographs and films of the people, places and moments we've been lucky enough to capture.</p>
+      <p class="lead">Films and photographs of the people, places and moments we've been lucky enough to capture.</p>
     </div>
   </section>
 
   <div class="container">
-    <div class="pf-switch" role="tablist" aria-label="Photos or films">
+    <div class="pf-switch" role="tablist" aria-label="Films or photos">
       <span class="pf-ind" aria-hidden="true"></span>
-      <a href="/portfolio" role="tab" data-pf="photos" class="on">Photos</a>
-      <a href="/portfolio/films" role="tab" data-pf="films">Films</a>
+      <a href="/portfolio" role="tab" data-pf="films" class="on">Films</a>
+      <a href="/portfolio/photos" role="tab" data-pf="photos">Photos</a>
     </div>
   </div>
 
@@ -2367,7 +2378,7 @@ const PORTFOLIO = {
   const pageIds = pages.map(p => p.id.slice(2));
   /* Clean addresses: krnbrystudio.com/about instead of #about or about.html */
   const PATHS = { home: '/', about: '/about', mission: '/mission', work: '/work', belonging: '/belonging', portfolio: '/portfolio', involve: '/get-involved', contact: '/contact', magazine: '/magazine' };
-  const ALIASES = { '/donate': ['involve', 'donate'], '/be-featured': ['belonging', 'bel-join'], '/portfolio/films': ['portfolio', null] };
+  const ALIASES = { '/donate': ['involve', 'donate'], '/be-featured': ['belonging', 'bel-join'], '/portfolio/films': ['portfolio', null], '/portfolio/photos': ['portfolio', null] };
   const BY_PATH = {}; Object.keys(PATHS).forEach(k => { BY_PATH[PATHS[k]] = k; });
   const clean = p => { p = (p || '/').replace(/\/index\.html$/, '/').replace(/\.html$/, ''); if (p.length > 1) p = p.replace(/\/+$/, ''); return p || '/'; };
 
@@ -2733,7 +2744,7 @@ const PORTFOLIO = {
   const pfPhotos = document.getElementById('pfPhotos'), pfFilms = document.getElementById('pfFilms');
   function setPfTab(){
     if (!pfPhotos) return;
-    const films = /^\/portfolio\/films\/?$/.test(location.pathname);
+    const films = !/^\/portfolio\/photos\/?$/.test(location.pathname);
     const was = !pfFilms.hidden;
     pfFilms.hidden = !films; pfPhotos.hidden = films;
     document.querySelectorAll('.pf-switch a').forEach(a => a.classList.toggle('on', (a.dataset.pf === 'films') === films));
@@ -2828,6 +2839,15 @@ const PORTFOLIO = {
     const films = all.filter(v => !used.has(v.id) && !isShort(v)), shorts = all.filter(v => !used.has(v.id) && isShort(v));
     if (films.length) filmsEl.append(head('More films', films.length + (films.length === 1 ? ' video' : ' videos'), chan), row(films));
     if (shorts.length) filmsEl.append(head('Shorts', shorts.length + ' shorts', films.length ? null : chan), row(shorts, true));
+    // a taste of the photos, so people know they're there
+    for (let i = 0; i < 10 && !photos.length; i++) await new Promise(r => setTimeout(r, 200));
+    const pics = (typeof photos !== 'undefined' ? photos : []).slice(0, 5);
+    if (pics.length) {
+      const t = document.createElement('section'); t.className = 'f-photos';
+      t.innerHTML = '<div><span class="f-badge">Also through the lens</span><h3>Photographs</h3><p>Portraits and moments from the communities we film with.</p><a class="btn btn-light" href="/portfolio/photos">Browse photos <span class="arr">→</span></a></div><div class="fp-row"></div>';
+      const r = t.querySelector('.fp-row'); pics.forEach(pp => { const a = document.createElement('a'); a.href = '/portfolio/photos'; a.appendChild(imgEl(pp)); r.appendChild(a); });
+      filmsEl.appendChild(t);
+    }
     if (!films.length && !shorts.length) { const f = document.createElement('p'); f.className = 'f-foot'; f.innerHTML = '<a class="textlink" target="_blank" rel="noopener">More on our YouTube channel ↗</a>'; f.firstChild.href = chan; filmsEl.appendChild(f); }
   }
   window.krnFilmData = filmData;
@@ -2876,7 +2896,7 @@ const PORTFOLIO = {
       b.appendChild(imgEl(p));
       const cap = document.createElement('span'); cap.className = 'lens-cap'; cap.textContent = p.title || ''; if (p.title) b.appendChild(cap);
       b.addEventListener('mouseenter', () => { [...strip.children].forEach(x => x.classList.toggle('on', x === b)); });
-      b.addEventListener('click', () => { window.krnGo('/portfolio'); setTimeout(() => openLb(shown.indexOf(p)), 350); });
+      b.addEventListener('click', () => { window.krnGo('/portfolio/photos'); setTimeout(() => openLb(shown.indexOf(p)), 350); });
       strip.appendChild(b);
     });
     document.getElementById('homeStrip').hidden = false;
