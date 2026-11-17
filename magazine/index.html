@@ -1430,6 +1430,38 @@ html.pf-dark .lg-s{fill:var(--ochre)}
 /* no lonely last words */
 p,li,.lead,.body,blockquote,figcaption,small{text-wrap:pretty}
 h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
+
+/* films: premieres on top, series shelves, shorts */
+#pfFilms .btn-light{background:#F6F1E8;color:#141010;border-color:#F6F1E8;--hov:var(--ochre)}
+#pfFilms .f-feature h2{font-family:var(--disp);font-weight:600;letter-spacing:-.02em}
+#pfFilms .f-badge{background:var(--ochre);color:#141010;border-radius:999px;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem}
+#pfFilms .f-thumb{border-radius:18px}
+.f-series{margin:clamp(3rem,6vw,4.5rem) 0;padding:clamp(1.5rem,3vw,2.25rem);border-radius:24px;background:linear-gradient(135deg,rgba(122,31,46,.55),rgba(122,31,46,.15));border:1px solid rgba(244,239,231,.1)}
+.f-series .f-head{border-bottom-color:rgba(244,239,231,.15)}
+.f-head h3{font-family:var(--disp);font-weight:600;letter-spacing:-.02em}
+.f-desc{flex-basis:100%;color:rgba(244,239,231,.75);max-width:68ch;margin-top:.4rem;font-size:.98rem;line-height:1.55}
+.f-series>.f-grid{margin-bottom:1.6rem}
+.f-ep{position:absolute;left:10px;top:10px;z-index:3;background:#F6F1E8;color:#141010;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .55rem;border-radius:999px}
+.f-rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(150px,17vw,210px);gap:14px;overflow-x:auto;padding-bottom:.6rem;scroll-snap-type:x mandatory;scrollbar-width:thin;margin-bottom:clamp(2rem,4vw,3rem)}
+.f-rail .f-card{scroll-snap-align:start}
+.f-tall .f-thumb{aspect-ratio:9/16;border-radius:16px}
+.f-tall b{font-size:.92rem}
+.f-tag{position:absolute;right:8px;top:8px;z-index:3;background:rgba(0,0,0,.6);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .5rem;border-radius:999px}
+.f-foot{margin-top:2rem}
+.vbox.short .vbox-frame{width:min(92vw,calc((100vh - 11rem) * 9 / 16));aspect-ratio:9/16}
+/* home: now showing */
+.nowshow{background:#141010;color:#F6F1E8}
+.nowshow .container{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding-top:1.1rem;padding-bottom:1.1rem}
+.ns-thumb{position:relative;width:150px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#2A2320}
+.ns-thumb img{width:100%;height:100%;object-fit:cover}
+.ns-thumb::after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:1.1rem;background:rgba(0,0,0,.25)}
+.ns-t small{display:flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre)}
+.ns-t small::before{content:"";width:8px;height:8px;border-radius:50%;background:#E3263F;animation:blink 1.2s steps(2) infinite}
+.ns-t b{display:block;font-family:var(--disp);font-weight:600;font-size:clamp(1.2rem,2.4vw,1.7rem);letter-spacing:-.02em;margin-top:.15rem}
+.ns-t span{display:block;color:rgba(246,241,232,.65);font-size:.9rem}
+.nowshow .btn{white-space:nowrap}
+.nowshow button.ns-hit{display:contents;color:inherit;text-align:left}
+@media (max-width:700px){.nowshow .container{grid-template-columns:110px 1fr}.ns-thumb{width:110px}.nowshow .btn{grid-column:1/-1;justify-content:center}}
 </style>
 </head>
 <body>
@@ -1481,6 +1513,13 @@ h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
     </div>
     <p class="hx-side" aria-hidden="true"><span lang="ne">आवाज</span> · voice through story</p>
     <a class="hx-down" href="#hxNext" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <section class="nowshow" id="nowShow" hidden aria-label="Now showing">
+    <div class="container">
+      <button type="button" class="ns-hit" id="nsHit"><span class="ns-thumb"><img id="nsImg" alt=""></span><span class="ns-t"><small id="nsBadge">Premiere · Now showing</small><b id="nsTitle"></b><span id="nsSub"></span></span></button>
+      <a class="btn btn-solid-l" href="/portfolio/films">All films <span class="arr">→</span></a>
+    </div>
   </section>
 
   <!-- the wordmark, sliced like woven cloth -->
@@ -2712,49 +2751,86 @@ const PORTFOLIO = {
   const filmsEl = document.getElementById('films');
   const fDate = s => { const d = new Date(s); return isNaN(d) ? '' : d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }); };
   const thumb = (v, big) => 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/' + (big ? 'maxresdefault' : 'hqdefault') + '.jpg';
+  /* films: YouTube's list (videos.json) + your picks (films.json: featured, series, hidden, extra) */
+  async function filmData(){
+    let data = { videos: [] }, cur = {};
+    try { const r = await fetch('/portfolio/videos.json?v=' + Date.now()); if (r.ok) data = await r.json(); } catch (e) {}
+    try { const r = await fetch('/portfolio/films.json?v=' + Date.now()); if (r.ok) cur = await r.json(); } catch (e) {}
+    const hidden = new Set(cur.hidden || []), by = new Map();
+    (data.videos || []).concat(cur.extra || []).forEach(v => { if (v && v.id) by.set(v.id, { ...(by.get(v.id) || {}), ...v }); });
+    const all = [...by.values()].filter(v => !hidden.has(v.id)).sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
+    const featured = (cur.featured || []).map(id => all.find(v => v.id === id)).filter(Boolean);
+    const prem = new Set(cur.premieres || []);
+    const series = (cur.series || []).map(sr => ({ ...sr, list: all.filter(v => (sr.ids || []).includes(v.id) || (!(sr.exclude || []).includes(v.id) && (sr.match || []).some(m => (v.title || '').toLowerCase().includes(String(m).toLowerCase())))) })).filter(sr => sr.list.length);
+    return { all, featured, prem, series, chan: data.channelUrl || 'https://www.youtube.com/@krnbrystudio' };
+  }
+  const isShort = v => !!v.short;
+  function card(v, tall){
+    const c = document.createElement('button'); c.type = 'button'; c.className = 'f-card' + (tall ? ' f-tall' : ''); c.setAttribute('aria-label', 'Play ' + v.title);
+    const t = document.createElement('span'); t.className = 'f-thumb'; const im = new Image(); im.src = tall ? 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/oardefault.jpg' : thumb(v, false); im.alt = ''; im.loading = 'lazy'; if (tall) im.onerror = () => { im.onerror = null; im.src = thumb(v, false); };
+    t.append(im, Object.assign(document.createElement('span'), { className: 'f-play' }));
+    if (tall) t.appendChild(Object.assign(document.createElement('span'), { className: 'f-tag', textContent: 'Short' }));
+    const b = document.createElement('b'); b.textContent = cleanTitle(v.title); const sm = document.createElement('small'); sm.textContent = fDate(v.published);
+    c.append(t, b, sm); c.onclick = () => playVideo(v); return c;
+  }
+  const cleanTitle = t => (t || '').replace(/\s*\|\s*KRNBRY Studio\s*$/i, '').replace(/\s+#\S+/g, '').trim();
+  function bigFeature(v, prem){
+    const feat = document.createElement('div'); feat.className = 'f-feature';
+    const fb = document.createElement('button'); fb.type = 'button'; fb.className = 'f-thumb'; fb.setAttribute('aria-label', 'Play ' + v.title);
+    const fi = new Image(); fi.src = thumb(v, true); fi.alt = ''; fi.onerror = () => { fi.onerror = null; fi.src = thumb(v); };
+    fb.append(fi, Object.assign(document.createElement('span'), { className: 'f-play' })); fb.onclick = () => playVideo(v);
+    const info = document.createElement('div');
+    info.innerHTML = '<span class="f-badge"></span><h2></h2><p></p><div class="f-meta"></div><button type="button" class="btn btn-light">▶ Watch now</button>';
+    info.querySelector('.f-badge').textContent = prem ? '★ Premiere' : 'Featured';
+    info.querySelector('h2').textContent = cleanTitle(v.title); info.querySelector('p').textContent = v.description || '';
+    info.querySelector('.f-meta').textContent = fDate(v.published); info.querySelector('.btn').onclick = () => playVideo(v);
+    feat.append(fb, info); return feat;
+  }
+  function head(title, count, link, desc){
+    const h = document.createElement('div'); h.className = 'f-head';
+    h.innerHTML = '<h3></h3><span></span>' + (link ? '<a class="textlink" target="_blank" rel="noopener">Subscribe on YouTube ↗</a>' : '');
+    h.querySelector('h3').textContent = title; h.querySelector('span').textContent = count;
+    if (link) h.querySelector('a').href = link;
+    if (desc) { const p = document.createElement('p'); p.className = 'f-desc'; p.textContent = desc; h.appendChild(p); }
+    return h;
+  }
+  function row(list, tall){ const g = document.createElement('div'); g.className = tall ? 'f-rail' : 'f-grid'; list.forEach(v => g.appendChild(card(v, tall))); return g; }
   async function loadFilms(){
     if (filmsLoaded) return; filmsLoaded = true;
-    let data = { videos: [] };
-    try { const r = await fetch('/portfolio/videos.json?v=' + Date.now()); if (r.ok) data = await r.json(); } catch (e) {}
-    const vids = (data.videos || []).filter(v => v && v.id).sort((a, b) => new Date(b.published) - new Date(a.published));
-    const chan = data.channelUrl || 'https://www.youtube.com/@krnbrystudio';
+    const { all, featured, prem, series, chan } = await filmData();
     filmsEl.innerHTML = '';
-    if (!vids.length) {
+    if (!all.length) {
       filmsEl.innerHTML = `<div class="f-soon">
           <div class="f-frame"><span class="rec">REC</span><span class="f-play" style="opacity:.25"></span><span class="tc">00:00:00:00</span></div>
           <div><span class="f-badge">Coming soon</span>
             <h2 class="display" style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.8rem">Films are in the edit.</h2>
             <p class="body">Documentaries, interviews and short films will live here. New videos from our YouTube channel appear automatically.</p>
             <a class="btn btn-light" style="margin-top:1.4rem" href="${chan}" target="_blank" rel="noopener">Subscribe on YouTube <span class="arr">↗</span></a></div>
-        </div>
-        <div class="f-ghosts" aria-hidden="true">${'<div class="f-ghost"><i></i><b></b><s></s></div>'.repeat(4)}</div>`;
+        </div>`;
       tickTC(); return;
     }
-    const [first, ...rest] = vids;
-    const feat = document.createElement('div'); feat.className = 'f-feature';
-    const fb = document.createElement('button'); fb.type = 'button'; fb.className = 'f-thumb'; fb.setAttribute('aria-label', 'Play ' + first.title);
-    const fi = new Image(); fi.src = thumb(first, true); fi.alt = ''; fi.onerror = () => { fi.onerror = null; fi.src = thumb(first); };
-    fb.append(fi, Object.assign(document.createElement('span'), { className: 'f-play' })); fb.onclick = () => playVideo(first);
-    const info = document.createElement('div');
-    info.innerHTML = '<span class="f-badge">Latest film</span><h2></h2><p></p><div class="f-meta"></div><button type="button" class="btn btn-light">▶ Play film</button>';
-    info.querySelector('h2').textContent = first.title; info.querySelector('p').textContent = first.description || '';
-    info.querySelector('.f-meta').textContent = fDate(first.published); info.querySelector('.btn').onclick = () => playVideo(first);
-    feat.append(fb, info); filmsEl.appendChild(feat);
-    if (rest.length) {
-      const head = document.createElement('div'); head.className = 'f-head';
-      head.innerHTML = '<h3>All films</h3><span></span><a class="textlink" target="_blank" rel="noopener">Subscribe on YouTube ↗</a>';
-      head.querySelector('span').textContent = vids.length + ' videos'; head.querySelector('a').href = chan;
-      const g = document.createElement('div'); g.className = 'f-grid';
-      rest.forEach(v => {
-        const c = document.createElement('button'); c.type = 'button'; c.className = 'f-card'; c.setAttribute('aria-label', 'Play ' + v.title);
-        const t = document.createElement('span'); t.className = 'f-thumb'; const im = new Image(); im.src = thumb(v); im.alt = ''; im.loading = 'lazy';
-        t.append(im, Object.assign(document.createElement('span'), { className: 'f-play' }));
-        const b = document.createElement('b'); b.textContent = v.title; const s = document.createElement('small'); s.textContent = fDate(v.published);
-        c.append(t, b, s); c.onclick = () => playVideo(v); g.appendChild(c);
-      });
-      filmsEl.append(head, g);
-    }
+    const used = new Set();
+    // 1. featured / premieres stay on top, in your order
+    const top = featured.length ? featured : [all.find(v => !isShort(v)) || all[0]];
+    filmsEl.appendChild(bigFeature(top[0], prem.has(top[0].id))); used.add(top[0].id);
+    if (top.length > 1) { filmsEl.append(head('Also featured', (top.length - 1) + ' more'), row(top.slice(1))); top.forEach(v => used.add(v.id)); }
+    // 2. each series gets its own shelf: episodes, then its Shorts
+    series.forEach(sr => {
+      const sec = document.createElement('section'); sec.className = 'f-series';
+      const eps = sr.list.filter(v => !isShort(v)).sort((a, b) => new Date(a.published) - new Date(b.published));
+      const sh = sr.list.filter(isShort);
+      sec.appendChild(head(sr.name, [eps.length && eps.length + (eps.length === 1 ? ' episode' : ' episodes'), sh.length && sh.length + (sh.length === 1 ? ' short' : ' shorts')].filter(Boolean).join(' · '), null, sr.description));
+      if (eps.length) { const g = row(eps); [...g.children].forEach((c, i) => c.querySelector('.f-thumb').appendChild(Object.assign(document.createElement('span'), { className: 'f-ep', textContent: 'Ep. ' + (i + 1) }))); sec.appendChild(g); }
+      if (sh.length) sec.appendChild(row(sh, true));
+      filmsEl.appendChild(sec); sr.list.forEach(v => used.add(v.id));
+    });
+    // 3. everything else: films, then Shorts
+    const films = all.filter(v => !used.has(v.id) && !isShort(v)), shorts = all.filter(v => !used.has(v.id) && isShort(v));
+    if (films.length) filmsEl.append(head('More films', films.length + (films.length === 1 ? ' video' : ' videos'), chan), row(films));
+    if (shorts.length) filmsEl.append(head('Shorts', shorts.length + ' shorts', films.length ? null : chan), row(shorts, true));
+    if (!films.length && !shorts.length) { const f = document.createElement('p'); f.className = 'f-foot'; f.innerHTML = '<a class="textlink" target="_blank" rel="noopener">More on our YouTube channel ↗</a>'; f.firstChild.href = chan; filmsEl.appendChild(f); }
   }
+  window.krnFilmData = filmData;
   function tickTC(){
     const tc = filmsEl.querySelector('.tc'); if (!tc || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const t0 = performance.now();
@@ -2763,12 +2839,14 @@ const PORTFOLIO = {
   }
   const vbox = document.getElementById('vbox'), vbFrame = document.getElementById('vbFrame'), vbCap = document.getElementById('vbCap');
   function playVideo(v){
-    vbFrame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0&modestbranding=1';
-    vbCap.innerHTML = '<b></b><small></small>'; vbCap.firstChild.textContent = v.title; vbCap.lastChild.textContent = fDate(v.published);
+    vbFrame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    vbox.classList.toggle('short', !!v.short);
+    vbCap.innerHTML = '<b></b><small></small>'; vbCap.firstChild.textContent = cleanTitle(v.title); vbCap.lastChild.textContent = fDate(v.published);
     vbox.classList.add('open'); document.body.style.overflow = 'hidden'; document.getElementById('vbClose').focus();
   }
   function closeVideo(){ vbox.classList.remove('open'); vbFrame.src = 'about:blank'; document.body.style.overflow = ''; }
   document.getElementById('vbClose').onclick = closeVideo;
+  window.krnPlay = playVideo;
   vbox.addEventListener('click', e => { if (e.target === vbox) closeVideo(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && vbox.classList.contains('open')) closeVideo(); });
   setPfTab();
@@ -3392,6 +3470,23 @@ const PORTFOLIO = {
   glue(document);
   addEventListener('krn:route', () => requestAnimationFrame(() => glue(document)));
   new MutationObserver(() => glue(document)).observe(document.getElementById('gallery') || document.body, { childList: true, subtree: true });
+})();
+
+
+/* =================== home: now showing (your top featured film) =================== */
+(function(){
+  const box = document.getElementById('nowShow'); if (!box || !window.krnFilmData) return;
+  window.krnFilmData().then(({ all, featured, prem }) => {
+    const v = featured[0] || all.find(x => !x.short); if (!v) return;
+    const clean = (v.title || '').replace(/\s*\|\s*KRNBRY Studio\s*$/i, '');
+    const [main, ...rest] = clean.split('|').map(x => x.trim());
+    document.getElementById('nsImg').src = 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg';
+    document.getElementById('nsTitle').textContent = main;
+    document.getElementById('nsSub').textContent = rest.join(' · ') || 'A KRNBRY Studio film';
+    document.getElementById('nsBadge').textContent = (prem.has(v.id) ? 'Premiere' : 'Featured') + ' · Now showing';
+    document.getElementById('nsHit').onclick = () => window.krnPlay && window.krnPlay(v);
+    box.hidden = false;
+  });
 })();
 
 </script>
