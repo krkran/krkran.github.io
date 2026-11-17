@@ -1,7 +1,7 @@
 name: Sync YouTube films
 on:
   schedule:
-    - cron: '17 20 * * *'   # every day, about 6am Melbourne time
+    - cron: '17 20,2,8,14 * * *'   # four times a day (about 7am, 1pm, 7pm and 1am Melbourne time)
   workflow_dispatch: {}
 permissions:
   contents: write
