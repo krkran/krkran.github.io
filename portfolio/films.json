@@ -15,9 +15,12 @@
       "match": [
         "thrift",
         "outshine the bride",
-        "the dash is on"
+        "the dash is on",
+        "60 second",
+        "challenge"
       ],
-      "ids": []
+      "ids": [],
+      "exclude": []
     }
   ],
   "hidden": [],
