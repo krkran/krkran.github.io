@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>KRNBRY Studio Journal</title>
 <link>https://krnbrystudio.com/journal/</link>
+<atom:link href="https://krnbrystudio.com/journal/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Reflections, articles and thoughts on where KRNBRY Studio is heading.</description>
 <language>en-au</language>
-<lastBuildDate>Sun, 27 Sep 2026 10:35:55 GMT</lastBuildDate>
+<lastBuildDate>Thu, 19 Nov 2026 11:25:18 GMT</lastBuildDate>
+<item>
+<title>Posting my first documentary</title>
+<link>https://krnbrystudio.com/journal/2026-11-14-posting-my-first-documentary</link>
+<guid isPermaLink="false">2026-11-14-posting-my-first-documentary</guid>
+<category>reflection</category>
+<pubDate>Sat, 14 Nov 2026 11:13:00 GMT</pubDate>
+<description><![CDATA[<p>I initially started making the 'home' documentary/spoken word film about my grandparents earlier this year. I don't really rememeber how the story and plan started but I really wanted to submit to a film festival. Due to time constraints that is not how it all panned out, but this week I just felt like it was the right time to finalise this video. </p>
+<p>I feel this video has a special feel of home, of Nepal and of my grandparents. Being able to interview my grandparents and to be able to say a thank you and honour muwa felt like a super special moment. This moment has felt like a total priviledge, in every sense of the world. </p>
+<p>I hope that my family, friends and those interested in their stories watch and learn something. </p>
+<p>Their stories inspires me because they have done so much and gone through so much and now even with time and age, they continue to smile and grow and evolve in their own unique ways. </p>
+<p>Most of all, being able to create a special memory for everyone will stand to be a really proud moment in my life.</p>]]></description>
+</item>
 <item>
 <title>First Reflection</title>
 <link>https://krnbrystudio.com/journal/2026-09-27-first-reflection</link>
