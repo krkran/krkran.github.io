@@ -1432,6 +1432,8 @@ p,li,.lead,.body,blockquote,figcaption,small{text-wrap:pretty}
 h1,h2,h3,h4,.display,.mg-big,.mf{text-wrap:balance}
 
 /* films: premieres on top, series shelves, shorts */
+.f-shorts{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.f-from{position:absolute;left:8px;bottom:8px;z-index:3;background:var(--ochre);color:#141010;font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .55rem;border-radius:999px}
 #pfFilms .btn-light{background:#F6F1E8;color:#141010;border-color:#F6F1E8;--hov:var(--ochre)}
 #pfFilms .f-feature h2{font-family:var(--disp);font-weight:600;letter-spacing:-.02em}
 #pfFilms .f-badge{background:var(--ochre);color:#141010;border-radius:999px;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem}
@@ -2773,12 +2775,16 @@ const PORTFOLIO = {
     const featured = (cur.featured || []).map(id => all.find(v => v.id === id)).filter(Boolean);
     const prem = new Set(cur.premieres || []);
     const series = (cur.series || []).map(sr => ({ ...sr, list: all.filter(v => (sr.ids || []).includes(v.id) || (!(sr.exclude || []).includes(v.id) && (sr.match || []).some(m => (v.title || '').toLowerCase().includes(String(m).toLowerCase())))) })).filter(sr => sr.list.length);
-    return { all, featured, prem, series, chan: data.channelUrl || 'https://www.youtube.com/@krnbrystudio' };
+    const tags = (cur.shortTags && cur.shortTags.length ? cur.shortTags : DEFAULT_TAGS);
+    return { all, featured, prem, series, tags, chan: data.channelUrl || 'https://www.youtube.com/@krnbrystudio' };
   }
   const isShort = v => !!v.short;
+  // Shorts that belong to a film get a little "From …" label. Words are matched in the Short's title.
+  const DEFAULT_TAGS = [{ label: 'From HOME', match: ['grandmother', 'grandfather', 'grandparent', 'buwa', 'muwa', 'aama', 'hajur', 'one home', 'home'] }];
+  const tagFor = (v, tags) => { const t = (v.title || '').toLowerCase(); const hit = (tags || []).find(g => (g.match || []).some(m => m && t.includes(String(m).toLowerCase()))); return hit ? hit.label : ''; };
   function card(v, tall){
     const c = document.createElement('button'); c.type = 'button'; c.className = 'f-card' + (tall ? ' f-tall' : ''); c.setAttribute('aria-label', 'Play ' + v.title);
-    const t = document.createElement('span'); t.className = 'f-thumb'; const im = new Image(); im.src = tall ? 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/oardefault.jpg' : thumb(v, false); im.alt = ''; im.loading = 'lazy'; if (tall) im.onerror = () => { im.onerror = null; im.src = thumb(v, false); };
+    const t = document.createElement('span'); t.className = 'f-thumb'; const im = new Image(); im.src = tall ? 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/oardefault.jpg' : thumb(v, false); im.alt = ''; im.loading = 'lazy'; if (tall) { im.onerror = () => { im.onerror = null; im.src = thumb(v, false); }; im.onload = () => { if (im.naturalWidth <= 120) { im.onload = null; im.onerror = null; im.src = thumb(v, false); } }; }
     t.append(im, Object.assign(document.createElement('span'), { className: 'f-play' }));
     if (tall) t.appendChild(Object.assign(document.createElement('span'), { className: 'f-tag', textContent: 'Short' }));
     const b = document.createElement('b'); b.textContent = cleanTitle(v.title); const sm = document.createElement('small'); sm.textContent = fDate(v.published);
@@ -2808,7 +2814,7 @@ const PORTFOLIO = {
   function row(list, tall){ const g = document.createElement('div'); g.className = tall ? 'f-rail' : 'f-grid'; list.forEach(v => g.appendChild(card(v, tall))); return g; }
   async function loadFilms(){
     if (filmsLoaded) return; filmsLoaded = true;
-    const { all, featured, prem, series, chan } = await filmData();
+    const { all, featured, prem, series, tags, chan } = await filmData();
     filmsEl.innerHTML = '';
     if (!all.length) {
       filmsEl.innerHTML = `<div class="f-soon">
@@ -2825,7 +2831,17 @@ const PORTFOLIO = {
     const top = featured.length ? featured : [all.find(v => !isShort(v)) || all[0]];
     filmsEl.appendChild(bigFeature(top[0], prem.has(top[0].id))); used.add(top[0].id);
     if (top.length > 1) { filmsEl.append(head('Also featured', (top.length - 1) + ' more'), row(top.slice(1))); top.forEach(v => used.add(v.id)); }
-    // 2. each series gets its own shelf: episodes, then its Shorts
+    // 2. Shorts: every Short that isn't part of a series, newest first, labelled with its film
+    const inSeries = new Set(series.flatMap(sr => sr.list.map(v => v.id)));
+    const shortsAll = all.filter(v => isShort(v) && !inSeries.has(v.id) && !used.has(v.id));
+    if (shortsAll.length) {
+      const sec = document.createElement('section'); sec.className = 'f-shorts';
+      sec.appendChild(head('Shorts', shortsAll.length + (shortsAll.length === 1 ? ' short' : ' shorts') + ' · tap to watch', chan));
+      const r = row(shortsAll, true);
+      [...r.children].forEach((c, i) => { const lbl = tagFor(shortsAll[i], tags); if (lbl) c.querySelector('.f-thumb').appendChild(Object.assign(document.createElement('span'), { className: 'f-from', textContent: lbl })); });
+      sec.appendChild(r); filmsEl.appendChild(sec); shortsAll.forEach(v => used.add(v.id));
+    }
+    // 3. each series gets its own shelf: episodes, then its Shorts
     series.forEach(sr => {
       const sec = document.createElement('section'); sec.className = 'f-series';
       const eps = sr.list.filter(v => !isShort(v)).sort((a, b) => new Date(a.published) - new Date(b.published));
@@ -2838,7 +2854,6 @@ const PORTFOLIO = {
     // 3. everything else: films, then Shorts
     const films = all.filter(v => !used.has(v.id) && !isShort(v)), shorts = all.filter(v => !used.has(v.id) && isShort(v));
     if (films.length) filmsEl.append(head('More films', films.length + (films.length === 1 ? ' video' : ' videos'), chan), row(films));
-    if (shorts.length) filmsEl.append(head('Shorts', shorts.length + ' shorts', films.length ? null : chan), row(shorts, true));
     // a taste of the photos, so people know they're there
     for (let i = 0; i < 10 && !photos.length; i++) await new Promise(r => setTimeout(r, 200));
     const pics = (typeof photos !== 'undefined' ? photos : []).slice(0, 5);
