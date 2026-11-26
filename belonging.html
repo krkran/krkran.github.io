@@ -1553,8 +1553,16 @@ mark,.hl{background:var(--blush);color:inherit}
 .rt-mini b{display:block;font-weight:600;font-size:24px;letter-spacing:-.02em;line-height:1.1}
 .rt-mini b+span{display:block;margin-top:8px;font-size:16px;line-height:1.5;color:var(--muted)}
 .rt-mini:hover b{color:var(--rt)}
-.rt-shorts-sec{padding-bottom:12vh;overflow-x:clip}
-.rt-drift{display:flex;gap:22px;padding-left:max(64px,calc(50% - 556px));width:max-content}
+.rt-shorts-sec{padding-bottom:12vh}
+.rt-drift{display:flex;gap:22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:4px max(64px,calc(50% - 556px)) 18px;scroll-padding-left:max(64px,calc(50% - 556px));scrollbar-width:thin;scrollbar-color:var(--rt) transparent;cursor:grab}
+.rt-drift.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.rt-drift .rt-short{flex:none;scroll-snap-align:start;padding:0;align-self:flex-start}
+.rt-drift{position:relative;z-index:5;align-items:flex-start}
+.rt-drift::-webkit-scrollbar{height:6px}.rt-drift::-webkit-scrollbar-thumb{background:var(--rt);border-radius:9px}
+.rt-acts{display:flex;align-items:center;gap:10px}
+.rt-arw{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);font-size:18px;line-height:1;display:grid;place-items:center;transition:background .2s,color .2s;margin-right:4px}
+.rt-arw:hover{background:var(--ink);color:var(--paper)}
+.rt-arw:disabled{opacity:.3;pointer-events:none}
 .rt-short{display:block;width:clamp(180px,19vw,260px);text-decoration:none;color:var(--ink);text-align:left;cursor:pointer}
 .rt-short img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:var(--paper-2)}
 .rt-short span{display:block;margin-top:12px;font-size:15px;line-height:1.4}
@@ -1601,6 +1609,85 @@ mark,.hl{background:var(--blush);color:inherit}
 .rt-ways a:hover b{text-decoration:underline;text-underline-offset:4px}
 .rt-mail{margin-top:11vh}
 .rt-mail a{color:var(--paper);text-decoration:none;font-weight:300;font-size:clamp(28px,4.4vw,64px);letter-spacing:-.03em;border-bottom:2px solid var(--paper)}
+
+/* ---------- clean-up pass: plain labels, hairlines, light portfolio, tidy work page ---------- */
+.kicker,.label{font-size:.95rem;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted)}
+.kicker::before,.label::before{content:none}
+.on-dark .kicker,.on-dark .label,.dark .label,.wine .label{color:rgba(244,241,236,.72)}
+.ph-meta{font-size:.92rem;font-weight:500;letter-spacing:0;text-transform:none}
+.ph-meta span:first-child::before{content:none}
+.phead::after,.ph::after,.ahead::before,.mg-hero::after{height:1px;background:currentColor;opacity:.16;animation:none}
+.weave{height:1px;background:rgba(244,241,236,.14);animation:none}
+.vf::after,.letter::before,.play::after,.nav-links::after,.hx-weave,.fp::before{display:none}
+.f-wm .lg-s,footer .lg-s{fill:rgba(244,241,236,.55)}
+footer .f-big em{color:var(--pink)}
+footer ul a:hover{color:var(--pink)}
+footer .soc{border-radius:999px}
+.rec{border-radius:999px;letter-spacing:0;text-transform:none;font-size:.9rem;font-weight:500}
+
+/* filters: quiet pills */
+.filter{border-radius:999px;border:1.5px solid var(--line);font-size:.92rem;font-weight:500;letter-spacing:0;text-transform:none;padding:.55rem 1.05rem}
+.filter i{background:none;color:var(--muted);padding:0;min-width:0;font-size:.85rem}
+.filter:hover{border-color:var(--ink)}
+.filter.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.filter.active i{background:none;color:rgba(244,241,236,.6)}
+
+/* work: the live slate, light and simple */
+.slate{background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 60px -40px rgba(20,16,16,.35)}
+.sl-head{color:var(--muted);letter-spacing:0;text-transform:none;font-size:.88rem;font-weight:500}
+.sl-head span:first-child{color:var(--red)}
+.sl-row{border-bottom:1px solid var(--line)}
+.sl-row b{color:var(--ink);font-weight:600}
+.sl-row span{color:var(--muted);letter-spacing:0;text-transform:none;font-size:1rem;font-weight:500}
+.sl-rec{color:var(--muted);letter-spacing:0;text-transform:none;font-size:.85rem;font-weight:500}
+.sl-run{background:var(--line)}
+.sl-run em{background:var(--red)}
+.sl-dots{display:none}
+/* work: also on the slate */
+.al{border-color:rgba(244,241,236,.18);border-radius:18px}
+.al-s{background:none;color:var(--pink);padding:0;letter-spacing:0;text-transform:none;font-size:.9rem;font-weight:500}
+/* work: idea cards instead of tickets */
+.tickets{gap:18px}
+.plan{-webkit-mask:none;mask:none;filter:none;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:18px;min-height:0;overflow:hidden}
+.plan:hover{transform:translateY(-3px);filter:none;box-shadow:0 24px 44px -30px rgba(20,16,16,.4)}
+.tk{border-top:0;padding:1.5rem 1.5rem .75rem;gap:.55rem}
+.tk .cat{letter-spacing:0;text-transform:none;font-size:.9rem;font-weight:500;color:var(--red)}
+.tk h3{font-weight:600;font-stretch:100%;font-size:1.35rem;letter-spacing:-.02em}
+.stub{width:auto;border:0;border-top:1px solid var(--line);flex-direction:row;align-items:center;justify-content:space-between;padding:.95rem 1.5rem;margin-top:auto;text-align:left}
+.stub small{display:none}
+.stub b,.plan[data-c=arts] .stub b{font-family:var(--sans);font-size:.92rem;font-weight:500;color:var(--muted)}
+.stub a{writing-mode:horizontal-tb;transform:none;border:0;padding:0;letter-spacing:0;text-transform:none;font-size:.95rem;font-weight:500;color:var(--red)}
+.stub a::after{content:" \2192"}
+.stub a:hover{background:none;color:var(--ink)}
+
+/* portfolio: same warm paper as the rest of the site */
+#p-portfolio{--paper:#F4F1EC;--paper-2:#EAE4DB;--white:#FBF9F6;--ink:#141010;--ink-2:#3F3836;--muted:#6E6560;--line:rgba(20,16,16,.13);background:var(--paper);color:var(--ink)}
+#p-portfolio .serif-i{color:var(--red)}
+#p-portfolio .kicker{color:var(--muted)}
+#p-portfolio .g-item{background:var(--paper-2)}
+#p-portfolio .textlink:hover{color:var(--red)}
+#p-portfolio .btn-light{background:var(--ink);color:var(--paper)}
+#p-portfolio .btn-light:hover{background:var(--red)}
+#p-portfolio .btn-ghost-l{border-color:var(--ink);color:var(--ink)}
+#p-portfolio .btn-ghost-l:hover{background:var(--ink);color:var(--paper)}
+.pf-switch{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0;gap:2rem}
+.pf-switch a{padding:.85rem 0;border-radius:0;font-weight:500;font-stretch:100%;color:var(--muted)}
+.pf-switch a.on{color:var(--ink)}
+.pf-ind{top:auto;bottom:-1px;left:0;height:2px;border-radius:0;background:var(--red)}
+.f-thumb{background:var(--paper-2);border-radius:16px}
+.f-play{background:#F4F1EC}
+.f-badge,#pfFilms .f-badge{background:none;color:var(--red);padding:0;letter-spacing:0;text-transform:none;font-size:.95rem;font-weight:500;border-radius:0}
+.f-tag{display:none}
+.f-from,.f-ep{background:rgba(20,16,16,.72);color:#F4F1EC;text-transform:none;letter-spacing:0;font-weight:500;font-size:.74rem;border-radius:6px;padding:.25rem .5rem}
+.f-head h3{font-weight:600}
+.f-series{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:clamp(2rem,4vw,3rem) 0 0}
+.f-series .f-head{border-bottom-color:var(--line)}
+.f-desc{color:var(--muted)}
+.f-photos{border:0;background:var(--white);border-radius:24px}
+.f-photos p{color:var(--muted)}
+.fp-row img{filter:none}
+.f-card:hover .f-thumb{box-shadow:0 26px 44px -26px rgba(20,16,16,.45)}
+.f-soon .f-frame{border-radius:16px}
 @supports (animation-timeline: view()){
  .rt-tangle path{animation:rtUnravel linear both;animation-timeline:--rtpin;animation-range:contain 0% contain 80%}
  @keyframes rtUnravel{92%{opacity:1}to{stroke-dashoffset:-1;opacity:0}}
@@ -1624,7 +1711,6 @@ mark,.hl{background:var(--blush);color:inherit}
  @keyframes rtW{from{opacity:.13}to{opacity:1}}
  .rt-open{animation:rtOpen linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
  @keyframes rtOpen{from{clip-path:inset(10% 14% round 22px)}to{clip-path:inset(0 round 22px)}}
- .rt-drift{animation:rtDx linear both;animation-timeline:view()}
  @keyframes rtDx{from{transform:translateX(8%)}to{transform:translateX(-18%)}}
  .rt-tilt{animation:rtTilt linear both;animation-timeline:view()}
  @keyframes rtTilt{from{transform:rotate(-8deg) translateY(50px)}to{transform:rotate(3deg) translateY(-30px)}}
@@ -1645,7 +1731,8 @@ mark,.hl{background:var(--blush);color:inherit}
 }
 @media (max-width:760px){
  .rt-two,.rt-head2,.rt-val,.rt-bel{grid-template-columns:1fr}
- .rt-drift{width:auto;overflow-x:auto;padding-left:44px;padding-right:20px;scroll-padding-left:44px;scroll-snap-type:x mandatory;scrollbar-width:none;animation:none !important}
+ .rt-drift{padding-left:44px;padding-right:20px;scroll-padding-left:44px;scroll-snap-type:x mandatory}
+ .rt-arw{display:none}
  .rt-title{font-size:clamp(40px,11vw,60px)}
  .rt-title br{display:none}
  .rt-short{flex:none;width:62vw;scroll-snap-align:start}
@@ -1725,8 +1812,8 @@ mark,.hl{background:var(--blush);color:inherit}
  </section>
 
  <section class="rt-sec rt-shorts-sec">
-  <div class="rt-wrap"><span class="rt-knot" aria-hidden="true"></span><div class="rt-head rt-rv"><h2 class="rt-h2">Shorts</h2><a class="rt-link" href="/portfolio">See them all →</a></div></div>
-  <div class="rt-drift" id="rtShorts">
+  <div class="rt-wrap"><span class="rt-knot" aria-hidden="true"></span><div class="rt-head rt-rv"><h2 class="rt-h2">Shorts</h2><div class="rt-acts"><button type="button" class="rt-arw" id="rtPrev" aria-label="Previous shorts">←</button><button type="button" class="rt-arw" id="rtNext" aria-label="More shorts">→</button><a class="rt-link" href="/portfolio">See them all →</a></div></div></div>
+  <div class="rt-drift" id="rtShorts" tabindex="0" aria-label="Shorts, scroll sideways">
 <a class="rt-short" href="https://www.youtube.com/watch?v=3fhGaoCsqZo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/3fhGaoCsqZo/oardefault.jpg" alt="" loading="lazy"><span>My grandmother still remembers wanting to go to school.</span></a>
 <a class="rt-short" href="https://www.youtube.com/watch?v=CGl3uVYR3zY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CGl3uVYR3zY/oardefault.jpg" alt="" loading="lazy"><span>The first time my grandfather saw a car, he was scared.</span></a>
 <a class="rt-short" href="https://www.youtube.com/watch?v=thw7qoC_NGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/thw7qoC_NGQ/oardefault.jpg" alt="" loading="lazy"><span>Buwa still sings Narayan Gopal in memory of Muwa.</span></a>
@@ -2891,7 +2978,7 @@ const PORTFOLIO = {
     if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; }
     if (films !== was) { const pane = films ? pfFilms : pfPhotos; pane.classList.remove('enter'); void pane.offsetWidth; pane.classList.add('enter'); }
     if (films) loadFilms();
-    document.documentElement.classList.toggle('pf-dark', document.getElementById('p-portfolio').classList.contains('active'));
+    document.documentElement.classList.remove('pf-dark');
   }
   window.addEventListener('krn:route', setPfTab);
   window.addEventListener('resize', () => { const on = document.querySelector('.pf-switch a.on'), ind = document.querySelector('.pf-ind'); if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; } });
@@ -3663,6 +3750,22 @@ const PORTFOLIO = {
 
 
 /* RT-JS START */
+(function(){
+  const box = document.getElementById('rtShorts'); if (!box) return;
+  const prev = document.getElementById('rtPrev'), next = document.getElementById('rtNext');
+  const step = () => { const c = box.querySelector('.rt-short'); return c ? (c.getBoundingClientRect().width + 22) * 2 : 500; };
+  const sync = () => { if (!prev) return; prev.disabled = box.scrollLeft < 4; next.disabled = box.scrollLeft >= box.scrollWidth - box.clientWidth - 4; };
+  if (prev) prev.onclick = () => box.scrollBy({ left: -step(), behavior: 'smooth' });
+  if (next) next.onclick = () => box.scrollBy({ left: step(), behavior: 'smooth' });
+  box.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+  addEventListener('resize', sync); new MutationObserver(sync).observe(box, { childList: true }); setTimeout(sync, 300);
+  let down = false, x0 = 0, s0 = 0, moved = 0;
+  box.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; down = true; moved = 0; x0 = e.clientX; s0 = box.scrollLeft; });
+  addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - x0; moved = Math.max(moved, Math.abs(dx)); if (moved > 5) box.classList.add('drag'); box.scrollLeft = s0 - dx; });
+  addEventListener('pointerup', () => { if (!down) return; down = false; setTimeout(() => box.classList.remove('drag'), 0); });
+  box.addEventListener('click', e => { if (moved > 5) { e.preventDefault(); e.stopPropagation(); moved = 0; } }, true);
+  box.addEventListener('dragstart', e => e.preventDefault());
+})();
 (function(){
   const film = document.getElementById('rtFilm'); if (!film || !window.krnFilmData) return;
   let cur = { id: 'AZvDm9CV8zY', title: 'HOME | A film about my grandparents | KRNBRY Studio' };
