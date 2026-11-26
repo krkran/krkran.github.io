@@ -1619,7 +1619,7 @@ mark,.hl{background:var(--blush);color:inherit}
 .phead::after,.ph::after,.ahead::before,.mg-hero::after{height:1px;background:currentColor;opacity:.16;animation:none}
 .weave{height:1px;background:rgba(244,241,236,.14);animation:none}
 .vf::after,.letter::before,.play::after,.nav-links::after,.hx-weave,.fp::before{display:none}
-.f-wm .lg-s,footer .lg-s{fill:rgba(244,241,236,.55)}
+.f-wm .lg-s,footer .lg-s{fill:var(--pink)}
 footer .f-big em{color:var(--pink)}
 footer ul a:hover{color:var(--pink)}
 footer .soc{border-radius:999px}
@@ -1660,34 +1660,33 @@ footer .soc{border-radius:999px}
 .stub a::after{content:" \2192"}
 .stub a:hover{background:none;color:var(--ink)}
 
-/* portfolio: same warm paper as the rest of the site */
-#p-portfolio{--paper:#F4F1EC;--paper-2:#EAE4DB;--white:#FBF9F6;--ink:#141010;--ink-2:#3F3836;--muted:#6E6560;--line:rgba(20,16,16,.13);background:var(--paper);color:var(--ink)}
-#p-portfolio .serif-i{color:var(--red)}
+/* portfolio: black, clean, no old maroon */
+#p-portfolio{--paper:#141010;--paper-2:#231D1C;--white:#1C1716;--ink:#F4F1EC;--ink-2:rgba(244,241,236,.78);--muted:rgba(244,241,236,.55);--line:rgba(244,241,236,.12);background:#141010;color:var(--ink)}
+#p-portfolio .serif-i{color:var(--pink)}
 #p-portfolio .kicker{color:var(--muted)}
-#p-portfolio .g-item{background:var(--paper-2)}
-#p-portfolio .textlink:hover{color:var(--red)}
-#p-portfolio .btn-light{background:var(--ink);color:var(--paper)}
-#p-portfolio .btn-light:hover{background:var(--red)}
-#p-portfolio .btn-ghost-l{border-color:var(--ink);color:var(--ink)}
-#p-portfolio .btn-ghost-l:hover{background:var(--ink);color:var(--paper)}
+#p-portfolio .g-item{background:#231D1C}
+#p-portfolio .textlink:hover{color:var(--pink)}
+html.pf-dark .nav{background:rgba(20,16,16,.9)}
+html.pf-dark .grain{opacity:.03}
 .pf-switch{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0;gap:2rem}
 .pf-switch a{padding:.85rem 0;border-radius:0;font-weight:500;font-stretch:100%;color:var(--muted)}
 .pf-switch a.on{color:var(--ink)}
-.pf-ind{top:auto;bottom:-1px;left:0;height:2px;border-radius:0;background:var(--red)}
-.f-thumb{background:var(--paper-2);border-radius:16px}
+.pf-ind{top:auto;bottom:-1px;left:0;height:2px;border-radius:0;background:var(--pink)}
+.f-thumb{background:#231D1C;border-radius:16px}
 .f-play{background:#F4F1EC}
-.f-badge,#pfFilms .f-badge{background:none;color:var(--red);padding:0;letter-spacing:0;text-transform:none;font-size:.95rem;font-weight:500;border-radius:0}
+.f-badge,#pfFilms .f-badge{background:none;color:var(--pink);padding:0;letter-spacing:0;text-transform:none;font-size:.95rem;font-weight:500;border-radius:0}
 .f-tag{display:none}
-.f-from,.f-ep{background:rgba(20,16,16,.72);color:#F4F1EC;text-transform:none;letter-spacing:0;font-weight:500;font-size:.74rem;border-radius:6px;padding:.25rem .5rem}
+.f-from,.f-ep{background:rgba(0,0,0,.62);color:#F4F1EC;text-transform:none;letter-spacing:0;font-weight:500;font-size:.74rem;border-radius:6px;padding:.25rem .5rem;backdrop-filter:blur(6px)}
 .f-head h3{font-weight:600}
+.f-head small,.f-head span{color:var(--muted)}
 .f-series{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:clamp(2rem,4vw,3rem) 0 0}
 .f-series .f-head{border-bottom-color:var(--line)}
 .f-desc{color:var(--muted)}
-.f-photos{border:0;background:var(--white);border-radius:24px}
+.f-photos{border:1px solid var(--line);background:#1C1716;border-radius:24px}
 .f-photos p{color:var(--muted)}
-.fp-row img{filter:none}
-.f-card:hover .f-thumb{box-shadow:0 26px 44px -26px rgba(20,16,16,.45)}
-.f-soon .f-frame{border-radius:16px}
+.f-card:hover .f-thumb{box-shadow:0 26px 44px -26px rgba(0,0,0,.9)}
+.f-soon .f-frame{border-radius:16px;background:#1C1716}
+#p-portfolio .btn{letter-spacing:0;text-transform:none;font-size:.95rem}
 @supports (animation-timeline: view()){
  .rt-tangle path{animation:rtUnravel linear both;animation-timeline:--rtpin;animation-range:contain 0% contain 80%}
  @keyframes rtUnravel{92%{opacity:1}to{stroke-dashoffset:-1;opacity:0}}
@@ -1738,6 +1737,70 @@ footer .soc{border-radius:999px}
  .rt-short{flex:none;width:62vw;scroll-snap-align:start}
  .rt-story{grid-template-columns:1fr;gap:6px}
 }
+/* PC-CSS START */
+/* ---------- portfolio chapters ---------- */
+#p-portfolio{--pk:#F4A7B9}
+.pc-intro{padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem)}
+.pc-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:end}
+.pc-h1{font-family:var(--disp);font-weight:700;font-size:clamp(64px,9vw,136px);letter-spacing:-.055em;line-height:.86;margin:0}
+.pc-h1 span{color:var(--pk)}
+.pc-lead{font-size:17px;line-height:1.6;color:rgba(244,241,236,.68);margin-top:22px;max-width:420px}
+#p-portfolio .pf-switch{margin:30px 0 0}
+#p-portfolio .pf-ind{background:var(--pk)}
+.pc-toc{border-top:1px solid rgba(244,241,236,.12)}
+.pc-toc a{display:grid;grid-template-columns:34px 14px minmax(0,1fr) auto;align-items:center;gap:16px;padding:17px 0;border-bottom:1px solid rgba(244,241,236,.12);text-decoration:none;color:#F4F1EC;transition:padding .3s}
+.pc-toc a:hover{padding-left:8px}.pc-toc a:hover b{color:var(--pk)}
+.pc-toc small{font-size:13px;color:rgba(244,241,236,.45)}.pc-toc i{width:12px;height:12px;border-radius:50%}
+.pc-toc b{font-weight:500;font-size:20px;letter-spacing:-.01em;transition:color .2s}.pc-toc span{font-size:14px;color:rgba(244,241,236,.5)}
+#p-portfolio:has(#pfFilms[hidden]) .pc-toc{visibility:hidden}
+.pc-wrap{padding:0 clamp(8px,1vw,14px)}
+.pc{position:sticky;top:calc(var(--nav) + var(--ann) + 10px);min-height:calc(100vh - var(--nav) - var(--ann) - 24px);margin-bottom:14px;border-radius:34px;padding:clamp(30px,4.5vw,68px) clamp(22px,5vw,80px);background:var(--bg);color:var(--fg);display:flex;flex-direction:column;justify-content:space-between;gap:36px;box-shadow:0 -30px 60px -34px rgba(0,0,0,.7)}
+.pc-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pc-no{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:14px}.pc-no b{background:var(--ac);color:var(--at);font-weight:600;padding:3px 10px;border-radius:999px}.pc-no span{opacity:.8}
+.pc h2{font-family:var(--disp);font-weight:800;font-size:clamp(52px,6.4vw,108px);letter-spacing:-.06em;line-height:.88;margin:20px 0}
+.pc-ne{font-family:var(--ne);font-weight:700;font-size:.42em;letter-spacing:0;color:var(--ac)}
+.pc p{font-size:18px;line-height:1.6;max-width:470px;opacity:.88}
+.pc-bt{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pc-b1,.pc-b2{display:inline-flex;align-items:center;gap:8px;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .2s}
+.pc-b1{background:var(--ac);color:var(--at)}.pc-b2{border:1.5px solid currentColor;color:var(--fg)}
+.pc-b1:hover,.pc-b2:hover{transform:translateY(-2px)}
+.pc-big{position:relative;display:block;width:100%;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.pc-big img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform 1s var(--ease)}.pc-big:hover img{transform:scale(1.03)}
+.pc-play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(244,241,236,.94);transition:transform .3s}
+.pc-play::after{content:"";position:absolute;left:34px;top:26px;border-left:22px solid #141010;border-top:16px solid transparent;border-bottom:16px solid transparent}
+.pc-big:hover .pc-play{transform:scale(1.08)}
+.pc-stack{display:flex;gap:12px;justify-content:flex-end}.pc-stack .pc-tile{width:30%}
+.pc-big-ne{font-family:var(--ne);font-size:clamp(80px,9vw,128px);line-height:.8;margin-bottom:22px}
+.pc-stages{list-style:none;padding:0;margin:0;border-top:1.5px solid color-mix(in srgb,var(--fg) 25%,transparent)}
+.pc-stages li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:14px;padding:17px 0;border-bottom:1.5px solid color-mix(in srgb,var(--fg) 25%,transparent)}
+.pc-stages i{width:14px;height:14px;border-radius:50%;border:2px solid currentColor}
+.pc-stages b{font-size:20px;font-weight:600}.pc-stages span{font-size:14px;opacity:.7}
+.pc-stages .done i{background:currentColor}.pc-stages .now i{background:#E5484D;border-color:#E5484D;box-shadow:0 0 0 6px rgba(229,72,77,.2);animation:ping 1.8s ease-out infinite}.pc-stages .next{opacity:.5}
+.pc-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--fg) 22%,transparent)}
+.pc-row>span{font-size:14px;opacity:.75;white-space:nowrap}
+.pc-strip{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;max-width:72%}
+.pc-tile{flex:none;display:block;text-align:left;color:inherit;cursor:pointer;padding:0}
+.pc-tile img{width:clamp(150px,12vw,190px);aspect-ratio:16/9;object-fit:cover;border-radius:12px;transition:transform .3s}
+.pc-tile.tall img{width:clamp(74px,7vw,104px);aspect-ratio:9/16}
+.pc-tile span{display:none}
+.pc-stack .pc-tile img{width:100%}
+.pc-tile:hover img{transform:translateY(-4px)}
+.pc-link{color:inherit;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.pc-gal{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}.pc-gal a{display:block;border-radius:20px;overflow:hidden}.pc-gal img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover}
+.pc-gal a:nth-child(3){display:none}
+.pc-earlier,.pc-end{position:relative;z-index:2;background:#141010}
+.pc-earlier{max-width:1240px;margin:60px auto 0;padding:0 var(--gut)}.pc-earlier h3{font-weight:600;font-size:24px;margin-bottom:12px}
+.pc-earlier button{display:grid;grid-template-columns:14px minmax(0,1fr) auto auto;gap:16px;align-items:center;width:100%;padding:16px 0;border-bottom:1px solid rgba(244,241,236,.12);text-align:left;color:#F4F1EC}
+.pc-earlier i{width:12px;height:12px;border-radius:50%}.pc-earlier span{color:rgba(244,241,236,.5);font-size:14px}.pc-earlier em{font-style:normal;color:var(--pk);font-size:14px}
+.pc-end{border-radius:34px 34px 0 0;max-width:none;margin:0 calc(-1 * clamp(8px,1vw,14px));padding:80px max(var(--gut),calc(50% - 620px)) 50px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.pc-end b{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.03em}.pc-end a{background:var(--pk);color:#141010;padding:15px 24px;border-radius:999px;font-weight:600;text-decoration:none}
+@media (max-width:860px){
+ .pc-in,.pc-g{grid-template-columns:1fr}.pc{position:relative;top:0;min-height:0;border-radius:26px}
+ .pc-row{flex-direction:column;align-items:flex-start}.pc-strip{max-width:100%;width:100%}
+ .pc-tile img{width:58vw}.pc-tile.tall img{width:28vw}.pc-big-ne{font-size:72px}
+}
+@media (prefers-reduced-motion:reduce){.pc{position:relative;top:0}}
+/* PC-CSS END */
 /* RT-CSS END */
 </style>
 </head>
@@ -2255,23 +2318,20 @@ footer .soc{border-radius:999px}
 
 <!-- ================= PORTFOLIO ================= -->
 <div class="page" id="p-portfolio">
-  <section class="phead pf-head">
-    <div class="container phead-grid">
-      <div>
-        <div class="kicker">Portfolio</div>
-        <h1 class="display h1">Through the <span class="serif-i">lens.</span></h1>
+  <section class="pc-intro"><div class="container pc-in">
+    <div>
+      <h1 class="pc-h1">Portfolio<span>.</span></h1>
+      <p class="pc-lead">Our films, series and photographs. Every project has its own colour, so you always know where you are.</p>
+      <div class="pf-switch" role="tablist" aria-label="Films or photos">
+        <span class="pf-ind" aria-hidden="true"></span>
+        <a href="/portfolio" role="tab" data-pf="films" class="on">Films</a>
+        <a href="/portfolio/photos" role="tab" data-pf="photos">Photos</a>
       </div>
-      <p class="lead">Films and photographs of the people, places and moments we've been lucky enough to capture.</p>
     </div>
-  </section>
+    <nav class="pc-toc" id="pfToc" aria-label="Projects on this page"></nav>
+  </div></section>
 
-  <div class="container">
-    <div class="pf-switch" role="tablist" aria-label="Films or photos">
-      <span class="pf-ind" aria-hidden="true"></span>
-      <a href="/portfolio" role="tab" data-pf="films" class="on">Films</a>
-      <a href="/portfolio/photos" role="tab" data-pf="photos">Photos</a>
-    </div>
-  </div>
+
 
   <section class="pf-pane" id="pfPhotos">
     <div class="container">
@@ -2299,7 +2359,7 @@ footer .soc{border-radius:999px}
   </section>
 
   <section class="pf-pane" id="pfFilms" hidden>
-    <div class="container" id="films"></div>
+    <div id="films"></div>
   </section>
 </div>
 
@@ -2978,7 +3038,7 @@ const PORTFOLIO = {
     if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; }
     if (films !== was) { const pane = films ? pfFilms : pfPhotos; pane.classList.remove('enter'); void pane.offsetWidth; pane.classList.add('enter'); }
     if (films) loadFilms();
-    document.documentElement.classList.remove('pf-dark');
+    document.documentElement.classList.toggle('pf-dark', document.getElementById('p-portfolio').classList.contains('active'));
   }
   window.addEventListener('krn:route', setPfTab);
   window.addEventListener('resize', () => { const on = document.querySelector('.pf-switch a.on'), ind = document.querySelector('.pf-ind'); if (on && ind) { ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (on.offsetLeft - 6) + 'px)'; } });
@@ -3000,7 +3060,7 @@ const PORTFOLIO = {
     const prem = new Set(cur.premieres || []);
     const series = (cur.series || []).map(sr => ({ ...sr, list: all.filter(v => (sr.ids || []).includes(v.id) || (!(sr.exclude || []).includes(v.id) && (sr.match || []).some(m => (v.title || '').toLowerCase().includes(String(m).toLowerCase())))) })).filter(sr => sr.list.length);
     const tags = (cur.shortTags && cur.shortTags.length ? cur.shortTags : DEFAULT_TAGS);
-    return { all, featured, prem, series, tags, chan: data.channelUrl || 'https://www.youtube.com/@krnbrystudio' };
+    return { all, featured, prem, series, tags, fcfg: cur, chan: data.channelUrl || 'https://www.youtube.com/@krnbrystudio' };
   }
   const isShort = v => !!v.short;
   // Shorts that belong to a film get a little "From …" label. Words are matched in the Short's title.
@@ -3036,7 +3096,136 @@ const PORTFOLIO = {
     return h;
   }
   function row(list, tall){ const g = document.createElement('div'); g.className = tall ? 'f-rail' : 'f-grid'; list.forEach(v => g.appendChild(card(v, tall))); return g; }
+  /* PC-JS START: portfolio chapters, one colour world per project */
+  const PC_COL = {
+    navy:   ['#1E2B4D', '#F4EFE8', '#FFC94D', '#1E2B4D'],
+    pink:   ['#FF3E8A', '#1A0F14', '#1A0F14', '#FFD60A'],
+    mint:   ['#7FD1C4', '#10302B', '#10302B', '#7FD1C4'],
+    cream:  ['#EFE4D2', '#2A1E17', '#2A1E17', '#EFE4D2'],
+    blush:  ['#F4A7B9', '#2A1218', '#2A1218', '#F4A7B9'],
+    red:    ['#B3122E', '#F8EDEF', '#F4A7B9', '#2A1218'],
+    forest: ['#1F3D2B', '#F1EAD8', '#E9B44C', '#1F3D2B'],
+    plum:   ['#3B1F3F', '#F4E9F0', '#F4A7B9', '#3B1F3F'],
+    ochre:  ['#E9A23B', '#2A1A08', '#2A1A08', '#E9A23B'],
+    sky:    ['#BFD7EA', '#13263A', '#13263A', '#BFD7EA'],
+    ink:    ['#241F25', '#F4EFE8', '#F4A7B9', '#241F25']
+  };
+  window.KRN_PC_COL = PC_COL;
+  const pcColours = c => {
+    if (PC_COL[c]) return PC_COL[c];
+    if (/^#[0-9a-f]{6}$/i.test(c || '')) { const n = parseInt(c.slice(1), 16), L = (0.299 * (n >> 16) + 0.587 * (n >> 8 & 255) + 0.114 * (n & 255)) / 255; const fg = L > 0.6 ? '#1A1416' : '#F6F1EA'; return [c, fg, fg, c]; }
+    return PC_COL.ink;
+  };
+  const PC_STAGES = ['Idea', 'Development', 'Production', 'Post-production', 'Release'];
+  function pcDefaults(fc, series){
+    const d = [{ id: 'home', name: 'HOME', ne: 'घर', kind: 'Documentary', colour: 'navy', ids: ['AZvDm9CV8zY'], match: ['grandmother', 'grandfather', 'grandparent', 'buwa', 'muwa', 'aama', 'hajur', 'one home'], description: 'A spoken-word documentary about my grandparents, and the home they built.' }];
+    const spare = ['pink', 'plum', 'sky', 'forest', 'ochre'];
+    (series || []).forEach((s, i) => d.push({ id: s.id || ('s' + i), name: s.name, kind: 'Original series', colour: spare[i % spare.length], ids: s.ids || [], match: s.match || [], exclude: s.exclude || [], description: s.description || '' }));
+    d.push({ id: 'where-we-work', name: 'Where We Work', ne: 'काम', kind: 'Documentary', status: 'production', stage: 2, colour: 'mint', ids: [], match: ['where we work'], description: 'Following rural and culturally diverse health workers across Australia: why they chose rural practice, and what their communities gain.', note: 'Made for the Australian Youth Film Festival' });
+    return d;
+  }
+  window.krnPcDefaults = pcDefaults;
+  const pcE = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const pcThumb = (v, size) => 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/' + size + '.jpg';
+  function pcImg(v, tall){
+    const im = new Image(); im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+    const fb = () => { im.onerror = null; im.onload = null; im.src = pcThumb(v, 'hqdefault'); };
+    im.src = pcThumb(v, tall ? 'oardefault' : 'maxresdefault');
+    im.onerror = fb; im.onload = () => { if (im.naturalWidth <= 120) fb(); };
+    return im;
+  }
+  function pcTile(v, tall){
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'pc-tile' + (tall ? ' tall' : '');
+    b.setAttribute('aria-label', 'Play ' + cleanTitle(v.title)); b.appendChild(pcImg(v, tall));
+    const t = document.createElement('span'); t.textContent = cleanTitle(v.title); b.appendChild(t);
+    b.onclick = () => playVideo(v); return b;
+  }
   async function loadFilms(){
+    if (filmsLoaded) return; filmsLoaded = true;
+    const { all, prem, series, chan, fcfg } = await filmData();
+    const toc = document.getElementById('pfToc');
+    if (!all.length) { filmsLoaded = false; return loadFilmsOld(); }
+    filmsEl.innerHTML = ''; filmsEl.className = 'pc-wrap';
+    const projects = (Array.isArray(fcfg.projects) && fcfg.projects.length ? fcfg.projects : pcDefaults(fcfg, series)).filter(p => p && p.name && !p.hidden);
+    const used = new Set(), chapters = [];
+    projects.forEach(p => {
+      const ids = p.ids || [], ex = new Set(p.exclude || []), m = (p.match || []).map(x => String(x).toLowerCase().trim()).filter(Boolean);
+      const list = all.filter(v => !used.has(v.id) && !ex.has(v.id) && (ids.includes(v.id) || m.some(k => (v.title || '').toLowerCase().includes(k))));
+      list.forEach(v => used.add(v.id));
+      const longs = list.filter(v => !isShort(v)), shorts = list.filter(isShort);
+      const main = (p.main && longs.find(v => v.id === p.main)) || longs[0] || null;
+      if (!main && !shorts.length && p.status !== 'production') return;
+      chapters.push({ p, main, eps: longs.filter(v => v !== main), shorts, list });
+    });
+    const restL = all.filter(v => !used.has(v.id) && !isShort(v)), restS = all.filter(v => !used.has(v.id) && isShort(v));
+    let shown = chapters, earlier = [];
+    if (chapters.length > 6) { shown = chapters.slice(0, 6); earlier = chapters.slice(6); }
+    if (restL.length || restS.length) shown = shown.concat([{ p: { id: 'more', name: 'More films and Shorts', kind: 'Everything else', colour: 'ink', description: 'Interviews, behind the scenes and one-offs from our channel.' }, main: restL[0] || null, eps: restL.slice(1), shorts: restS, list: restL.concat(restS) }]);
+    // photos
+    for (let i = 0; i < 10 && !photos.length; i++) await new Promise(r => setTimeout(r, 200));
+    const pics = photos.slice(0, 3);
+    const tocItems = [];
+    shown.forEach((c, i) => {
+      const p = c.p, [bg, fg, ac, at] = pcColours(p.colour), num = String(i + 1).padStart(2, '0');
+      const sec = document.createElement('section'); sec.className = 'pc'; sec.id = 'ch-' + (p.id || i);
+      sec.style.cssText = `--bg:${bg};--fg:${fg};--ac:${ac};--at:${at}`;
+      const prod = p.status === 'production';
+      const yr = c.main ? new Date(c.main.published).getFullYear() : (c.list[0] ? new Date(c.list[0].published).getFullYear() : '');
+      const meta = [p.kind || (c.eps.length ? 'Series' : 'Film'), prod ? 'In production' : (c.main && prem.has(c.main.id) ? 'Premiere' : ''), c.eps.length ? (c.eps.length + 1) + ' episodes' : '', !prod && yr ? yr : ''].filter(Boolean).join(' · ');
+      const desc = p.description || (c.main && c.main.description ? c.main.description.split('\n')[0].slice(0, 220) : '');
+      sec.innerHTML = `<div class="pc-g"><div class="pc-txt"><div class="pc-no"><b>${num}</b><span>${pcE(meta)}</span></div><h2>${pcE(p.name)}${p.ne && !prod ? ` <span class="pc-ne" lang="ne">${pcE(p.ne)}</span>` : ''}</h2>${desc ? `<p>${pcE(desc)}</p>` : ''}<div class="pc-bt"></div></div><div class="pc-media"></div></div>`;
+      const bt = sec.querySelector('.pc-bt'), media = sec.querySelector('.pc-media');
+      const btn = (label, cls, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = cls; b.textContent = label; b.onclick = fn; bt.appendChild(b); };
+      if (c.main && !prod) {
+        btn('▶ ' + (/series/i.test(p.kind || '') || c.eps.length ? (c.eps.length ? 'Watch the latest episode' : 'Watch episode 1') : 'Play film'), 'pc-b1', () => playVideo(c.main));
+        const big = document.createElement('button'); big.type = 'button'; big.className = 'pc-big'; big.setAttribute('aria-label', 'Play ' + cleanTitle(c.main.title));
+        big.appendChild(pcImg(c.main, false)); big.appendChild(Object.assign(document.createElement('span'), { className: 'pc-play' })); big.onclick = () => playVideo(c.main); media.appendChild(big);
+      } else if (!prod && c.shorts.length) {
+        btn('▶ Watch the shorts', 'pc-b1', () => playVideo(c.shorts[0]));
+        const st = document.createElement('div'); st.className = 'pc-stack'; c.shorts.slice(0, 3).forEach(v => st.appendChild(pcTile(v, true))); media.appendChild(st);
+      }
+      if (prod) {
+        const a = document.createElement('a'); a.className = 'pc-b1'; a.href = '/contact?about=' + encodeURIComponent(p.name); a.textContent = 'Follow the project →'; bt.appendChild(a);
+        const stg = p.stages && p.stages.length ? p.stages : PC_STAGES, at_ = Math.min(stg.length - 1, Math.max(0, p.stage == null ? 2 : +p.stage));
+        media.innerHTML = (p.ne ? `<div class="pc-big-ne" lang="ne" aria-hidden="true">${pcE(p.ne)}</div>` : '') + '<ol class="pc-stages">' + stg.map((s, k) => `<li class="${k < at_ ? 'done' : k === at_ ? 'now' : 'next'}"><i></i><b>${pcE(s)}</b><span>${k < at_ ? 'Done' : k === at_ ? 'Happening now' : 'Next'}</span></li>`).join('') + '</ol>';
+      }
+      if (c.shorts.length && (c.main || prod)) btn('Watch the shorts', 'pc-b2', () => playVideo(c.shorts[0]));
+      const rowItems = c.eps.map(v => [v, false]).concat(c.shorts.map(v => [v, true]));
+      const rw = document.createElement('div'); rw.className = 'pc-row';
+      const lbl = [c.eps.length && (c.eps.length + (c.eps.length === 1 ? ' more episode' : ' more episodes')), c.shorts.length && (c.shorts.length + (c.shorts.length === 1 ? ' short' : ' shorts'))].filter(Boolean).join(' · ');
+      rw.innerHTML = `<span>${pcE(lbl || (prod ? (p.note || 'Coming soon') : ''))}</span>`;
+      if (rowItems.length) { const r = document.createElement('div'); r.className = 'pc-strip'; rowItems.forEach(([v, t]) => r.appendChild(pcTile(v, t))); rw.appendChild(r); }
+      else if (prod) rw.insertAdjacentHTML('beforeend', '<a class="pc-link" href="/contact">Want to be part of it? Get in touch →</a>');
+      if (rowItems.length || prod) sec.appendChild(rw);
+      filmsEl.appendChild(sec);
+      tocItems.push({ id: sec.id, num, name: p.name, kind: prod ? 'In production' : (p.kind || 'Film'), bg, ac });
+    });
+    if (pics.length) {
+      const [bg, fg, ac, at] = PC_COL.cream, num = String(shown.length + 1).padStart(2, '0');
+      const sec = document.createElement('section'); sec.className = 'pc'; sec.id = 'ch-photos'; sec.style.cssText = `--bg:${bg};--fg:${fg};--ac:${ac};--at:${at}`;
+      sec.innerHTML = `<div class="pc-g"><div class="pc-txt"><div class="pc-no"><b>${num}</b><span>Photography</span></div><h2>Through the lens.</h2><p>Portraits and moments from the communities we film with, in Australia and Nepal.</p><div class="pc-bt"><a class="pc-b1" href="/portfolio/photos">Open the gallery →</a></div></div><div class="pc-media"><div class="pc-gal"></div></div></div><div class="pc-row"><span>${photos.length} photograph${photos.length === 1 ? '' : 's'}</span><a class="pc-link" href="/portfolio/photos">See them all →</a></div>`;
+      const g = sec.querySelector('.pc-gal'); pics.forEach(pp => { const a = document.createElement('a'); a.href = '/portfolio/photos'; a.setAttribute('aria-label', 'Open photo: ' + (pp.title || 'photo')); a.appendChild(imgEl(pp)); g.appendChild(a); });
+      filmsEl.appendChild(sec); tocItems.push({ id: sec.id, num, name: 'Through the lens', kind: 'Photographs', bg, ac });
+    }
+    if (earlier.length) {
+      const e = document.createElement('section'); e.className = 'pc-earlier';
+      e.innerHTML = '<h3>Earlier work</h3>';
+      earlier.forEach(c => { const v = c.main || c.shorts[0]; if (!v) return; const [bg] = pcColours(c.p.colour); const b = document.createElement('button'); b.type = 'button';
+        b.innerHTML = `<i style="background:${bg}"></i><b>${pcE(c.p.name)}</b><span>${pcE(c.p.kind || 'Film')}</span><em>Play ▶</em>`; b.onclick = () => playVideo(v); e.appendChild(b); });
+      filmsEl.appendChild(e);
+    }
+    const end = document.createElement('div'); end.className = 'pc-end';
+    end.innerHTML = '<b>More on our channel.</b><a target="_blank" rel="noopener">Subscribe on YouTube ↗</a>'; end.querySelector('a').href = chan; filmsEl.appendChild(end);
+    if (toc) {
+      toc.innerHTML = '';
+      tocItems.forEach(t => { const a = document.createElement('a'); a.href = '#' + t.id;
+        a.innerHTML = `<small>${t.num}</small><i style="background:${t.bg};box-shadow:inset 0 0 0 2px ${t.ac}"></i><b>${pcE(t.name)}</b><span>${pcE(t.kind)}</span>`;
+        a.onclick = e => { e.preventDefault(); const el = document.getElementById(t.id); if (el) scrollTo({ top: el.getBoundingClientRect().top + scrollY - 110, behavior: 'smooth' }); };
+        toc.appendChild(a); });
+    }
+  }
+  /* PC-JS END */
+  async function loadFilmsOld(){
     if (filmsLoaded) return; filmsLoaded = true;
     const { all, featured, prem, series, tags, chan } = await filmData();
     filmsEl.innerHTML = '';
